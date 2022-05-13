@@ -1,0 +1,51 @@
+apiVersion: 1
+
+datasources:
+
+  - name: Telegraf
+    type: influxdb
+    access: proxy
+    orgId: 1
+    url: http://influxdb:8086
+    password:
+    user:
+    database: "telegraf"
+    basicAuth: false
+    isDefault: true
+    jsonData:
+      httpMode: "POST"
+      keepCookies: [ ]
+    readOnly: false
+    editable: true
+
+  - name: Unifi
+    type: influxdb
+    access: proxy
+    orgId: 1
+    url: http://influxdb:8086
+    password:
+    user:
+    database: "telegraf_unifi"
+    basicAuth: false
+    isDefault: false
+    jsonData:
+      httpMode: "POST"
+      keepCookies: [ ]
+    readOnly: false
+    editable: true
+
+  - name: Snmp
+    type: influxdb
+    access: proxy
+    orgId: 1
+    url: http://influxdb:8086
+    password:
+    user:
+    database: "telegraf_snmp"
+    basicAuth: false
+    isDefault: false
+    jsonData:
+      httpMode: "POST"
+      keepCookies: [ ]
+    readOnly: false
+    editable: true

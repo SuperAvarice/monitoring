@@ -1,0 +1,86 @@
+version: '3'
+services:
+  influxdb:
+    image: influxdb:1.8-alpine
+    restart: "always"
+    environment:
+      INFLUXDB_REPORTING_DISABLED: "true"
+      INFLUXDB_HTTP_FLUX_ENABLED: "true"
+      INFLUXDB_DATA_QUERY_LOG_ENABLED: "false"
+      INFLUXDB_HTTP_LOG_ENABLED: "false"
+    ports:
+      - "8086:8086"
+    volumes:
+      - ./influx/data:/var/lib/influxdb
+
+  setup:
+    image: influxdb:1.8-alpine
+    entrypoint: ["/bin/sh","-cx"]
+    command: 
+      - |
+        until wget -q http://influxdb:8086/ping; do sleep 1; done
+        influx -host influxdb -execute 'CREATE DATABASE "telegraf" WITH DURATION 31d'
+        influx -host influxdb -execute 'CREATE DATABASE "telegraf_snmp" WITH DURATION 31d'
+        influx -host influxdb -execute 'CREATE DATABASE "telegraf_unifi" WITH DURATION 31d'
+    depends_on:
+      - influxdb
+
+  grafana:
+    image: grafana/grafana
+    restart: "always"
+    depends_on:
+      - influxdb
+    environment:
+      GF_ANALYTICS_REPORTING_ENABLED: "false"
+      GF_ANALYTICS_CHECK_FOR_UPDATES: "false"
+      GF_SECURITY_ADMIN_USER: "admin"
+      #GF_SECURITY_ADMIN_PASSWORD: "admin"
+      GF_INSTALL_PLUGINS: grafana-clock-panel,natel-discrete-panel,grafana-piechart-panel
+      #GF_DASHBOARDS_DEFAULT_HOME_DASHBOARD_PATH: "/etc/grafana/dashboards/default.json"
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./grafana/data:/var/lib/grafana
+      - ./grafana/provisioning/:/etc/grafana/provisioning/
+
+  unifi-poller:
+    image: golift/unifi-poller
+    restart: "always"
+    depends_on:
+      - influxdb
+      - setup
+    environment:
+      UP_INFLUXDB_URL: "http://influxdb:8086"
+      UP_INFLUXDB_DB: "telegraf_unifi"
+      UP_INFLUXDB_INTERVAL: "60s"
+      UP_PROMETHEUS_DISABLE: "true"
+      UP_UNIFI_DEFAULT_URL: "${UNIFI_CONTROLLER}"
+      UP_UNIFI_DEFAULT_USER: "${UNIFI_POLLER_USER}"
+      UP_UNIFI_DEFAULT_PASS: "${UNIFI_POLLER_PASS}"
+
+  telegraf:
+    image: telegraf:alpine
+    restart: "always"
+    depends_on:
+      - influxdb
+      - setup
+    extra_hosts:
+      - "usg:${HOST_IP_USG}"
+      - "uap:${HOST_IP_UAP}"
+      - "usw:${HOST_IP_USW}"
+    volumes:
+      - ./telegraf/telegraf-docker.conf:/etc/telegraf/telegraf.conf:ro
+      - ./telegraf/UBNT-MIB:/usr/share/snmp/mibs/UBNT-MIB
+      - ./telegraf/UBNT-UniFi-MIB:/usr/share/snmp/mibs/UBNT-UniFi-MIB
+
+  chronograf:
+    image: chronograf:alpine
+    restart: "always"
+    depends_on:
+      - influxdb
+    environment:
+      INFLUXDB_URL: "http://influxdb:8086"
+    ports:
+      - "8888:8888"
+    volumes:
+      - ./chronograf/data:/var/lib/chronograf
