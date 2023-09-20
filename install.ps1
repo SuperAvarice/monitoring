@@ -24,7 +24,8 @@ $SETUP_FILE = "${SCRIPT_PATH}\setup.ps1"
 if (!(Test-Path $SETUP_FILE)) {
     Add-Content $SETUP_FILE "`$BASE_DIR `= `"$env:USERPROFILE\AppData\Local\Monitoring`""
     Add-Content $SETUP_FILE "`$TELEGRAF_VER `= `"1.21.4`""
-    Add-Content $SETUP_FILE "`$LIBRE_HARDWARE_VER `= `"0.8.9`""
+    Add-Content $SETUP_FILE "`$LIBRE_HARDWARE_VER `= `"0.9.2`""
+    Add-Content $SETUP_FILE "`$LIBRE_HARDWARE_ZIP `= `"LibreHardwareMonitor-net472.zip`""
     Add-Content $SETUP_FILE "Write-Host `"Base Directory == `$BASE_DIR`""
     Add-Content $SETUP_FILE "Write-Host `"Telegraf Version == `$TELEGRAF_VER`""
     Add-Content $SETUP_FILE "Write-Host `"Libre Hardware Version == `$LIBRE_HARDWARE_VER`""
@@ -56,7 +57,6 @@ if (!(Test-Path ${BASE_DIR})) {
 
     Write-Host ""
     Write-Host "Download LibreHardwareMonitor."
-    $LIBRE_HARDWARE_ZIP = "LibreHardwareMonitor-net452.zip"
     $LIBRE_DOWNLOAD = "https://github.com/LibreHardwareMonitor/LibreHardwareMonitor/releases/download/v${LIBRE_HARDWARE_VER}/${LIBRE_HARDWARE_ZIP}"
     Invoke-WebRequest ${LIBRE_DOWNLOAD} -UseBasicParsing -OutFile "${LIBRE_HARDWARE_ZIP}"
     Expand-Archive ".\${LIBRE_HARDWARE_ZIP}" -DestinationPath "${BASE_DIR}\LibreHardwareMonitor"
