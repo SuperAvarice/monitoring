@@ -1,0 +1,78 @@
+version: '3'
+services:
+  influxdb:
+    image: influxdb:1.8-alpine
+    restart: "always"
+    environment:
+      INFLUXDB_REPORTING_DISABLED: "true"
+      INFLUXDB_HTTP_FLUX_ENABLED: "true"
+      INFLUXDB_DATA_QUERY_LOG_ENABLED: "false"
+      INFLUXDB_HTTP_LOG_ENABLED: "false"
+    ports:
+      - "8086:8086"
+    volumes:
+      - ${INFLUX_DIR}/data:/var/lib/influxdb
+
+  setup:
+    image: influxdb:1.8-alpine
+    entrypoint: ["/bin/sh","-cx"]
+    command: 
+      - |
+        until wget -q http://influxdb:8086/ping; do sleep 1; done
+        influx -host influxdb -execute 'CREATE DATABASE "telegraf" WITH DURATION 31d'
+        influx -host influxdb -execute 'CREATE DATABASE "telegraf_unifi" WITH DURATION 31d'
+    depends_on:
+      - influxdb
+    volumes:
+      - ${INFLUX_DIR}/setup-data:/var/lib/influxdb
+
+  grafana:
+    image: grafana/grafana-oss:latest
+    restart: "always"
+    depends_on:
+      - influxdb
+    environment:
+      GF_SERVER_DOMAIN: "${SERVER_DOMAIN}"
+      GF_SERVER_ROOT_URL: "${SERVER_ROOT_URL}"
+      GF_SERVER_SERVE_FROM_SUB_PATH: "${SERVE_FROM_SUB_PATH}"
+      GF_ANALYTICS_REPORTING_ENABLED: "false"
+      GF_ANALYTICS_CHECK_FOR_UPDATES: "false"
+      GF_SECURITY_ADMIN_USER: "${ADMIN_USER}"
+      GF_SECURITY_ADMIN_PASSWORD: "${ADMIN_PASSWORD}"
+      GF_AUTH_ANONYMOUS_ENABLED: "${ANONYMOUS_ENABLED}"
+      GF_AUTH_ANONYMOUS_ORG_ROLE: "Viewer"
+      GF_SNAPSHOTS_EXTERNAL_ENABLED: "false"
+      GF_INSTALL_PLUGINS: grafana-clock-panel,natel-discrete-panel,grafana-piechart-panel
+      #GF_DASHBOARDS_DEFAULT_HOME_DASHBOARD_PATH: "/etc/grafana/dashboards/default.json"
+    ports:
+      - "3000:3000"
+    volumes:
+      - ${GRAFANA_DIR}/data:/var/lib/grafana
+      - ${GRAFANA_DIR}/provisioning/:/etc/grafana/provisioning/
+
+  unifi-poller:
+    image: golift/unifi-poller
+    restart: "always"
+    depends_on:
+      - influxdb
+      - setup
+    environment:
+      UP_INFLUXDB_URL: "http://influxdb:8086"
+      UP_INFLUXDB_DB: "telegraf_unifi"
+      UP_INFLUXDB_INTERVAL: "60s"
+      UP_PROMETHEUS_DISABLE: "true"
+      UP_UNIFI_DEFAULT_URL: "${UNIFI_CONTROLLER}"
+      UP_UNIFI_DEFAULT_USER: "${UNIFI_POLLER_USER}"
+      UP_UNIFI_DEFAULT_PASS: "${UNIFI_POLLER_PASS}"
+
+  chronograf:
+    image: chronograf:alpine
+    restart: "always"
+    depends_on:
+      - influxdb
+    environment:
+      INFLUXDB_URL: "http://influxdb:8086"
+    ports:
+      - "8888:8888"
+    volumes:
+      - ${CHRONOGRAF_DIR}/data:/var/lib/chronograf
