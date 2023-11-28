@@ -11,7 +11,6 @@
   "gnetId": 10418,
   "graphTooltip": 1,
   "id": null,
-  "iteration": 1647442938103,
   "links": [
     {
       "asDropdown": true,
@@ -49,196 +48,244 @@
   "liveNow": false,
   "panels": [
     {
-      "columns": [],
       "datasource": "Unifi",
       "description": "",
-      "fontSize": "80%",
+      "fieldConfig": {
+        "defaults": {
+        "color": {
+            "mode": "thresholds"
+          },
+        "custom": {
+            "align": "auto",
+      "cellOptions": {
+              "type": "auto"
+            },
+      "inspect": false
+          },
+      "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+      "steps": [
+        {
+          "color": "green",
+          "value": null
+              },
+              {
+                "color": "red",
+          "value": 80
+              }
+            ]
+          }
+        },
+          "overrides": [
+          {
+            "matcher": {
+              "id": "byName",
+          "options": "Time"
+            },
+          "properties": [
+              {
+                "id": "displayName",
+                "value": "Time"
+              },
+              {
+                "id": "custom.align"
+              },
+              {
+                "id": "custom.width",
+                "value": 214
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byRegexp",
+              "options": "/^Bytes/"
+            },
+          "properties": [
+              {
+                "id": "unit",
+          "value": "decbytes"
+        },
+        {
+          "id": "decimals",
+          "value": 1
+              },
+              {
+                "id": "custom.align"
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "name"
+            },
+          "properties": [
+              {
+                "id": "displayName",
+          "value": "Name"
+        },
+        {
+          "id": "unit",
+          "value": "short"
+              },
+              {
+                "id": "decimals",
+                "value": 2
+              },
+              {
+                "id": "custom.align"
+              }
+            ]
+          },
+        {
+          "matcher": {
+              "id": "byName",
+          "options": "mac"
+            },
+            "properties": [
+              {
+                "id": "displayName",
+                "value": "Device MAC"
+              },
+              {
+                "id": "unit",
+          "value": "short"
+        },
+        {
+          "id": "decimals",
+          "value": 2
+              },
+              {
+                "id": "custom.align"
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "ap_name"
+            },
+          "properties": [
+              {
+                "id": "displayName",
+          "value": "AP"
+        },
+        {
+          "id": "unit",
+          "value": "short"
+              },
+              {
+                "id": "decimals",
+            "value": 2
+              },
+              {
+                "id": "custom.align"
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "channel"
+            },
+          "properties": [
+              {
+                "id": "displayName",
+          "value": "Chan"
+        },
+        {
+          "id": "unit",
+          "value": "short"
+              },
+              {
+                "id": "decimals",
+            "value": 2
+              },
+              {
+                "id": "custom.align"
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "oui"
+            },
+          "properties": [
+              {
+                "id": "displayName",
+          "value": "OUI"
+        },
+        {
+          "id": "unit",
+          "value": "short"
+              },
+              {
+                "id": "decimals",
+            "value": 2
+              },
+              {
+                "id": "custom.align"
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "Uptime"
+            },
+          "properties": [
+              {
+                "id": "unit",
+          "value": "s"
+        },
+        {
+          "id": "decimals",
+          "value": 2
+              },
+              {
+                "id": "custom.align"
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "Name"
+            },
+          "properties": [
+              {
+                "id": "custom.width",
+          "value": 193
+              }
+            ]
+          }
+        ]
+      },
       "gridPos": {
-        "h": 12,
-        "w": 24,
+        "h": 14,
+          "w": 24,
         "x": 0,
-        "y": 0
+            "y": 0
       },
-      "id": 21,
+            "id": 21,
       "links": [],
-      "scroll": true,
-      "showHeader": true,
-      "sort": {
-        "col": 1,
-        "desc": true
+          "options": {
+        "cellHeight": "sm",
+          "footer": {
+          "countRows": false,
+          "fields": "",
+          "reducer": [
+            "sum"
+          ],
+          "show": false
+        },
+        "showHeader": true,
+          "sortBy": []
       },
-      "styles": [
-        {
-          "alias": "Time",
-          "align": "auto",
-          "dateFormat": "YYYY-MM-DD HH:mm:ss",
-          "link": true,
-          "linkTargetBlank": true,
-          "linkUrl": "http://sleepers.pro",
-          "pattern": "Time",
-          "type": "hidden"
-        },
-        {
-          "alias": "",
-          "align": "auto",
-          "colors": [
-            "rgba(245, 54, 54, 0.9)",
-            "rgba(237, 129, 40, 0.89)",
-            "rgba(50, 172, 45, 0.97)"
-          ],
-          "dateFormat": "YYYY-MM-DD HH:mm:ss",
-          "decimals": 1,
-          "mappingType": 1,
-          "pattern": "/^Bytes/",
-          "thresholds": [],
-          "type": "number",
-          "unit": "decbytes"
-        },
-        {
-          "alias": "Name",
-          "align": "auto",
-          "colors": [
-            "rgba(245, 54, 54, 0.9)",
-            "rgba(237, 129, 40, 0.89)",
-            "rgba(50, 172, 45, 0.97)"
-          ],
-          "dateFormat": "YYYY-MM-DD HH:mm:ss",
-          "decimals": 2,
-          "mappingType": 1,
-          "pattern": "name",
-          "thresholds": [],
-          "type": "string",
-          "unit": "short"
-        },
-        {
-          "alias": "Device MAC",
-          "align": "auto",
-          "colors": [
-            "rgba(245, 54, 54, 0.9)",
-            "rgba(237, 129, 40, 0.89)",
-            "rgba(50, 172, 45, 0.97)"
-          ],
-          "dateFormat": "YYYY-MM-DD HH:mm:ss",
-          "decimals": 2,
-          "mappingType": 1,
-          "pattern": "mac",
-          "thresholds": [],
-          "type": "string",
-          "unit": "short"
-        },
-        {
-          "alias": "Controller",
-          "align": "auto",
-          "colors": [
-            "rgba(245, 54, 54, 0.9)",
-            "rgba(237, 129, 40, 0.89)",
-            "rgba(50, 172, 45, 0.97)"
-          ],
-          "dateFormat": "YYYY-MM-DD HH:mm:ss",
-          "decimals": 2,
-          "mappingType": 1,
-          "pattern": "source",
-          "thresholds": [],
-          "type": "hidden",
-          "unit": "short"
-        },
-        {
-          "alias": "AP",
-          "align": "auto",
-          "colors": [
-            "rgba(245, 54, 54, 0.9)",
-            "rgba(237, 129, 40, 0.89)",
-            "rgba(50, 172, 45, 0.97)"
-          ],
-          "dateFormat": "YYYY-MM-DD HH:mm:ss",
-          "decimals": 2,
-          "mappingType": 1,
-          "pattern": "ap_name",
-          "thresholds": [],
-          "type": "string",
-          "unit": "short"
-        },
-        {
-          "alias": "Chan",
-          "align": "auto",
-          "colors": [
-            "rgba(245, 54, 54, 0.9)",
-            "rgba(237, 129, 40, 0.89)",
-            "rgba(50, 172, 45, 0.97)"
-          ],
-          "dateFormat": "YYYY-MM-DD HH:mm:ss",
-          "decimals": 2,
-          "mappingType": 1,
-          "pattern": "channel",
-          "thresholds": [],
-          "type": "string",
-          "unit": "short"
-        },
-        {
-          "alias": "OUI",
-          "align": "auto",
-          "colors": [
-            "rgba(245, 54, 54, 0.9)",
-            "rgba(237, 129, 40, 0.89)",
-            "rgba(50, 172, 45, 0.97)"
-          ],
-          "dateFormat": "YYYY-MM-DD HH:mm:ss",
-          "decimals": 2,
-          "mappingType": 1,
-          "pattern": "oui",
-          "thresholds": [],
-          "type": "string",
-          "unit": "short"
-        },
-        {
-          "alias": "Radio",
-          "align": "auto",
-          "colors": [
-            "rgba(245, 54, 54, 0.9)",
-            "rgba(237, 129, 40, 0.89)",
-            "rgba(50, 172, 45, 0.97)"
-          ],
-          "dateFormat": "YYYY-MM-DD HH:mm:ss",
-          "decimals": 2,
-          "mappingType": 1,
-          "pattern": "radio_name",
-          "thresholds": [],
-          "type": "string",
-          "unit": "short"
-        },
-        {
-          "alias": "Proto",
-          "align": "auto",
-          "colors": [
-            "rgba(245, 54, 54, 0.9)",
-            "rgba(237, 129, 40, 0.89)",
-            "rgba(50, 172, 45, 0.97)"
-          ],
-          "dateFormat": "YYYY-MM-DD HH:mm:ss",
-          "decimals": 2,
-          "mappingType": 1,
-          "pattern": "radio_proto",
-          "thresholds": [],
-          "type": "string",
-          "unit": "short"
-        },
-        {
-          "alias": "",
-          "align": "auto",
-          "colors": [
-            "rgba(245, 54, 54, 0.9)",
-            "rgba(237, 129, 40, 0.89)",
-            "rgba(50, 172, 45, 0.97)"
-          ],
-          "dateFormat": "YYYY-MM-DD HH:mm:ss",
-          "decimals": 2,
-          "mappingType": 1,
-          "pattern": "Uptime",
-          "thresholds": [],
-          "type": "number",
-          "unit": "s"
-        }
-      ],
+          "pluginVersion": "10.2.1",
       "targets": [
         {
           "groupBy": [
@@ -254,43 +301,19 @@
               ],
               "type": "tag"
             },
-            {
-              "params": [
-                "source"
-              ],
-              "type": "tag"
-            },
-            {
+                        {
               "params": [
                 "channel"
               ],
               "type": "tag"
             },
-            {
-              "params": [
-                "radio_name"
-              ],
-              "type": "tag"
-            },
-            {
-              "params": [
-                "radio_proto"
-              ],
-              "type": "tag"
-            },
-            {
+                        {
               "params": [
                 "ap_name"
               ],
               "type": "tag"
             },
-            {
-              "params": [
-                "site_name"
-              ],
-              "type": "tag"
-            },
-            {
+                        {
               "params": [
                 "oui"
               ],
@@ -397,183 +420,275 @@
             ]
           ],
           "tags": [
-            {
-              "key": "name",
-              "operator": "=~",
-              "value": "/^$Wireless$/"
-            },
-            {
+                        {
               "condition": "AND",
-              "key": "site_name",
-              "operator": "=~",
-              "value": "/^$Site$/"
+              "key": "is_wired",
+              "operator": "=",
+              "value": "false"
             }
           ]
         }
       ],
       "timeFrom": "5m",
       "title": "Wireless Devices",
-      "transform": "table",
-      "type": "table-old"
-    },
-    {
-      "columns": [],
-      "datasource": "Unifi",
-      "description": "",
-      "fontSize": "80%",
-      "gridPos": {
-        "h": 12,
-        "w": 24,
-        "x": 0,
-        "y": 12
-      },
-      "hideTimeOverride": false,
-      "id": 22,
-      "links": [],
-      "scroll": true,
-      "showHeader": true,
-      "sort": {
-        "col": 8,
-        "desc": true
-      },
-      "styles": [
+      "transformations": [
         {
-          "alias": "Time",
-          "align": "auto",
-          "dateFormat": "YYYY-MM-DD HH:mm:ss",
-          "link": false,
-          "linkUrl": "http://$__cell",
-          "pattern": "Time",
-          "type": "hidden"
-        },
-        {
-          "alias": "Sw Port",
-          "align": "auto",
-          "colors": [
-            "rgba(245, 54, 54, 0.9)",
-            "rgba(237, 129, 40, 0.89)",
-            "rgba(50, 172, 45, 0.97)"
-          ],
-          "decimals": 0,
-          "pattern": "sw_port",
-          "thresholds": [],
-          "type": "number",
-          "unit": "short"
-        },
-        {
-          "alias": "Name",
-          "align": "auto",
-          "colors": [
-            "rgba(245, 54, 54, 0.9)",
-            "rgba(237, 129, 40, 0.89)",
-            "rgba(50, 172, 45, 0.97)"
-          ],
-          "dateFormat": "YYYY-MM-DD HH:mm:ss",
-          "decimals": 2,
-          "mappingType": 1,
-          "pattern": "name",
-          "thresholds": [],
-          "type": "string",
-          "unit": "short"
-        },
-        {
-          "alias": "Device MAC",
-          "align": "auto",
-          "colors": [
-            "rgba(245, 54, 54, 0.9)",
-            "rgba(237, 129, 40, 0.89)",
-            "rgba(50, 172, 45, 0.97)"
-          ],
-          "dateFormat": "YYYY-MM-DD HH:mm:ss",
-          "decimals": 2,
-          "link": false,
-          "mappingType": 1,
-          "pattern": "mac",
-          "thresholds": [],
-          "type": "string",
-          "unit": "short"
-        },
-        {
-          "alias": "",
-          "align": "auto",
-          "colors": [
-            "rgba(245, 54, 54, 0.9)",
-            "rgba(237, 129, 40, 0.89)",
-            "rgba(50, 172, 45, 0.97)"
-          ],
-          "dateFormat": "YYYY-MM-DD HH:mm:ss",
-          "decimals": 1,
-          "mappingType": 1,
-          "pattern": "/^Bytes/",
-          "thresholds": [],
-          "type": "number",
-          "unit": "decbytes"
-        },
-        {
-          "alias": "Controller",
-          "align": "auto",
-          "colors": [
-            "rgba(245, 54, 54, 0.9)",
-            "rgba(237, 129, 40, 0.89)",
-            "rgba(50, 172, 45, 0.97)"
-          ],
-          "dateFormat": "YYYY-MM-DD HH:mm:ss",
-          "decimals": 2,
-          "mappingType": 1,
-          "pattern": "source",
-          "thresholds": [],
-          "type": "hidden",
-          "unit": "short"
-        },
-        {
-          "alias": "",
-          "align": "auto",
-          "colors": [
-            "rgba(245, 54, 54, 0.9)",
-            "rgba(237, 129, 40, 0.89)",
-            "rgba(50, 172, 45, 0.97)"
-          ],
-          "dateFormat": "YYYY-MM-DD HH:mm:ss",
-          "decimals": 2,
-          "mappingType": 1,
-          "pattern": "Uptime",
-          "thresholds": [],
-          "type": "number",
-          "unit": "s"
-        },
-        {
-          "alias": "OUI",
-          "align": "auto",
-          "colors": [
-            "rgba(245, 54, 54, 0.9)",
-            "rgba(237, 129, 40, 0.89)",
-            "rgba(50, 172, 45, 0.97)"
-          ],
-          "dateFormat": "YYYY-MM-DD HH:mm:ss",
-          "decimals": 2,
-          "mappingType": 1,
-          "pattern": "oui",
-          "thresholds": [],
-          "type": "string",
-          "unit": "short"
-        },
-        {
-          "alias": "Site",
-          "align": "auto",
-          "colors": [
-            "rgba(245, 54, 54, 0.9)",
-            "rgba(237, 129, 40, 0.89)",
-            "rgba(50, 172, 45, 0.97)"
-          ],
-          "dateFormat": "YYYY-MM-DD HH:mm:ss",
-          "decimals": 2,
-          "mappingType": 1,
-          "pattern": "site_name",
-          "thresholds": [],
-          "type": "string",
-          "unit": "short"
+          "id": "organize",
+          "options": {
+            "excludeByName": {},
+            "indexByName": {
+              "Address": 2,
+              "Bytes Rx": 8,
+              "Bytes Tx": 9,
+              "ESSID": 7,
+              "Time": 0,
+              "Uptime": 10,
+              "ap_name": 5,
+              "channel": 6,
+              "mac": 1,
+              "name": 3,
+              "oui": 4
+            },
+            "renameByName": {}
+          }
         }
       ],
+      "transparent": true,
+      "type": "table"
+    },
+    {
+      "datasource": "Unifi",
+      "description": "",
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+        "mode": "thresholds"
+          },
+        "custom": {
+            "align": "auto",
+        "cellOptions": {
+              "type": "auto"
+      },
+      "inspect": false
+          },
+      "mappings": [],
+      "thresholds": {
+            "mode": "absolute",
+      "steps": [
+              {
+        "color": "green",
+        "value": null
+      },
+      {
+          "color": "red",
+          "value": 80
+              }
+            ]
+          }
+        },
+        "overrides": [
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "Time"
+            },
+          "properties": [
+              {
+                "id": "displayName",
+          "value": "Time"
+        },
+        {
+          "id": "custom.align"
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "sw_port"
+            },
+          "properties": [
+              {
+                "id": "displayName",
+          "value": "Sw Port"
+        },
+        {
+          "id": "unit",
+          "value": "short"
+              },
+              {
+                "id": "custom.align"
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "name"
+            },
+          "properties": [
+              {
+                "id": "displayName",
+          "value": "Name"
+        },
+        {
+          "id": "unit",
+          "value": "short"
+              },
+              {
+                "id": "decimals",
+            "value": 2
+              },
+              {
+                "id": "custom.align"
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "mac"
+            },
+          "properties": [
+              {
+                "id": "displayName",
+          "value": "Device MAC"
+        },
+        {
+          "id": "unit",
+          "value": "short"
+              },
+              {
+                "id": "decimals",
+            "value": 2
+              },
+              {
+                "id": "custom.align"
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byRegexp",
+              "options": "/^Bytes/"
+            },
+          "properties": [
+              {
+                "id": "unit",
+          "value": "decbytes"
+        },
+        {
+          "id": "decimals",
+                "value": 1
+              },
+              {
+                "id": "custom.align"
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "Uptime"
+            },
+            "properties": [
+              {
+                "id": "unit",
+          "value": "s"
+              },
+              {
+                "id": "decimals",
+                "value": 2
+              },
+              {
+                "id": "custom.align"
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "oui"
+            },
+          "properties": [
+              {
+                "id": "displayName",
+          "value": "OUI"
+        },
+        {
+          "id": "unit",
+          "value": "short"
+              },
+              {
+                "id": "decimals",
+            "value": 2
+              },
+              {
+                "id": "custom.align"
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "Device MAC"
+            },
+          "properties": [
+              {
+                "id": "custom.width",
+          "value": 155
+              }
+            ]
+        },
+        {
+          "matcher": {
+              "id": "byName",
+          "options": "Address"
+            },
+          "properties": [
+              {
+                "id": "custom.width",
+            "value": 154
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "Name"
+            },
+          "properties": [
+              {
+                "id": "custom.width",
+          "value": 158
+              }
+            ]
+          }
+        ]
+      },
+      "gridPos": {
+        "h": 12,
+          "w": 24,
+        "x": 0,
+            "y": 14
+      },
+            "hideTimeOverride": false,
+      "id": 22,
+      "links": [],
+          "options": {
+        "cellHeight": "sm",
+          "footer": {
+          "countRows": false,
+          "fields": "",
+          "reducer": [
+            "sum"
+          ],
+          "show": false
+        },
+        "showHeader": true,
+          "sortBy": []
+      },
+          "pluginVersion": "10.2.1",
       "targets": [
         {
           "groupBy": [
@@ -595,24 +710,12 @@
               ],
               "type": "tag"
             },
-            {
-              "params": [
-                "source"
-              ],
-              "type": "tag"
-            },
-            {
+                        {
               "params": [
                 "oui"
               ],
               "type": "tag"
-            },
-            {
-              "params": [
-                "site_name"
-              ],
-              "type": "tag"
-            }
+                        }
           ],
           "measurement": "clients",
           "orderByTime": "ASC",
@@ -700,26 +803,34 @@
               "key": "is_wired",
               "operator": "!=",
               "value": "false"
-            },
-            {
-              "condition": "AND",
-              "key": "name",
-              "operator": "=~",
-              "value": "/^$Wired$/"
-            },
-            {
-              "condition": "AND",
-              "key": "sw_name",
-              "operator": "=~",
-              "value": "/^$Switch$/"
-            }
+                        }
           ]
         }
       ],
       "timeFrom": "5m",
       "title": "Wired Devices",
-      "transform": "table",
-      "type": "table-old"
+      "transformations": [
+        {
+          "id": "organize",
+          "options": {
+            "excludeByName": {},
+            "indexByName": {
+              "Address": 2,
+              "Bytes Rx": 6,
+              "Bytes Tx": 7,
+              "Time": 0,
+              "Uptime": 8,
+              "mac": 1,
+              "name": 3,
+              "oui": 4,
+              "sw_port": 5
+            },
+            "renameByName": {}
+          }
+        }
+      ],
+      "transparent": true,
+      "type": "table"
     },
     {
       "aliasColors": {},
@@ -737,7 +848,7 @@
         "h": 8,
         "w": 6,
         "x": 0,
-        "y": 24
+        "y": 26
       },
       "hideTimeOverride": false,
       "id": 9,
@@ -854,7 +965,7 @@
         "h": 8,
         "w": 6,
         "x": 6,
-        "y": 24
+        "y": 26
       },
       "hideTimeOverride": false,
       "id": 11,
@@ -933,7 +1044,7 @@
         "h": 8,
         "w": 6,
         "x": 12,
-        "y": 24
+        "y": 26
       },
       "hideTimeOverride": false,
       "id": 12,
@@ -1013,7 +1124,7 @@
         "h": 8,
         "w": 6,
         "x": 18,
-        "y": 24
+        "y": 26
       },
       "hideTimeOverride": false,
       "id": 14,
@@ -1076,63 +1187,102 @@
       "valueName": "current"
     },
     {
-      "aliasColors": {},
-      "bars": false,
-      "dashLength": 10,
-      "dashes": false,
       "datasource": "Unifi",
       "description": "Wired TX / RX bytes per second (calculated in 30 second buckets). Rx is on the negative axis. Does not include amazon and camera devices. Unaffected by the AP setting.",
       "fieldConfig": {
         "defaults": {
-          "links": []
-        },
-        "overrides": []
+          "color": {
+            "mode": "palette-classic"
+          },
+          "custom": {
+            "axisBorderShow": false,
+            "axisCenteredZero": false,
+            "axisColorMode": "text",
+            "axisLabel": "bytes / sec",
+            "axisPlacement": "auto",
+            "barAlignment": 0,
+            "drawStyle": "line",
+            "fillOpacity": 0,
+            "gradientMode": "none",
+            "hideFrom": {
+              "legend": false,
+              "tooltip": false,
+              "viz": false
       },
-      "fill": 0,
-      "fillGradient": 0,
+      "insertNulls": false,
+            "lineInterpolation": "linear",
+            "lineWidth": 1,
+      "pointSize": 5,
+            "scaleDistribution": {
+              "type": "linear"
+            },
+            "showPoints": "never",
+            "spanNulls": true,
+            "stacking": {
+              "group": "A",
+              "mode": "none"
+            },
+            "thresholdsStyle": {
+              "mode": "off"
+            }
+          },
+          "links": [],
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          },
+          "unit": "Bps"
+        },
+        "overrides": [
+          {
+            "matcher": {
+              "id": "byRegexp",
+              "options": "/Rx$/"
+            },
+            "properties": [
+              {
+                "id": "custom.transform",
+                "value": "negative-Y"
+              }
+            ]
+          }
+        ]
+      },
       "gridPos": {
         "h": 15,
         "w": 24,
         "x": 0,
-        "y": 32
+        "y": 34
       },
-      "hiddenSeries": false,
-      "id": 2,
-      "legend": {
-        "alignAsTable": true,
-        "avg": true,
-        "current": true,
-        "max": true,
-        "min": false,
-        "rightSide": true,
-        "show": true,
-        "sort": "max",
-        "sortDesc": true,
-        "total": false,
-        "values": true
+            "id": 2,
+            "links": [],
+            "options": {
+        "legend": {
+          "calcs": [
+            "mean",
+            "lastNotNull",
+            "max"
+          ],
+          "displayMode": "table",
+          "placement": "right",
+          "showLegend": true
       },
-      "lines": true,
-      "linewidth": 1,
-      "links": [],
-      "nullPointMode": "connected",
-      "options": {
-        "alertThreshold": true
-      },
-      "percentage": false,
-      "pluginVersion": "8.4.3",
-      "pointradius": 5,
-      "points": false,
-      "renderer": "flot",
-      "seriesOverrides": [
-        {
-          "$$hashKey": "object:4978",
-          "alias": "/Rx$/",
-          "transform": "negative-Y"
+      "tooltip": {
+          "mode": "multi",
+          "sort": "desc"
         }
-      ],
-      "spaceLength": 10,
-      "stack": false,
-      "steppedLine": false,
+      },
+      "pluginVersion": "10.2.1",
       "targets": [
         {
           "alias": "[[Identifier]] $col",
@@ -1221,123 +1371,115 @@
           ],
           "tags": [
             {
-              "key": "name",
-              "operator": "!~",
-              "value": "/^amazon-|camera|cam$/"
-            },
-            {
               "condition": "AND",
-              "key": "name",
-              "operator": "=~",
-              "value": "/^$Wired$/"
-            },
-            {
-              "condition": "AND",
-              "key": "site_name",
-              "operator": "=~",
-              "value": "/^$Site$/"
-            },
-            {
-              "condition": "AND",
-              "key": "sw_name",
-              "operator": "=~",
-              "value": "/^$Switch$/"
+              "key": "is_wired",
+              "operator": "=",
+              "value": "true"
             }
           ]
         }
       ],
-      "thresholds": [],
-      "timeRegions": [],
       "title": "Switch Bandwidth / Wired Devices",
-      "tooltip": {
-        "shared": true,
-        "sort": 2,
-        "value_type": "individual"
-      },
       "transparent": true,
-      "type": "graph",
-      "xaxis": {
-        "mode": "time",
-        "show": true,
-        "values": []
-      },
-      "yaxes": [
-        {
-          "$$hashKey": "object:227",
-          "format": "Bps",
-          "label": "bytes / sec",
-          "logBase": 1,
-          "show": true
-        },
-        {
-          "$$hashKey": "object:228",
-          "format": "short",
-          "logBase": 1,
-          "show": false
-        }
-      ],
-      "yaxis": {
-        "align": false
-      }
+      "type": "timeseries"
     },
     {
-      "aliasColors": {},
-      "bars": false,
-      "dashLength": 10,
-      "dashes": false,
       "datasource": "Unifi",
       "description": "Bandwidth usage per wireless devices as reported by the UAPs. Rx is on the negative axis. Does not include amazon devices.",
       "fieldConfig": {
         "defaults": {
-          "links": []
-        },
-        "overrides": []
+          "color": {
+            "mode": "palette-classic"
       },
-      "fill": 1,
-      "fillGradient": 0,
+      "custom": {
+            "axisBorderShow": false,
+      "axisCenteredZero": false,
+      "axisColorMode": "text",
+        "axisLabel": "bytes / sec",
+        "axisPlacement": "auto",
+      "barAlignment": 0,
+            "drawStyle": "line",
+            "fillOpacity": 10,
+          "gradientMode": "none",
+          "hideFrom": {
+              "legend": false,
+          "tooltip": false,
+          "viz": false
+        },
+        "insertNulls": false,
+          "lineInterpolation": "linear",
+          "lineWidth": 1,
+          "pointSize": 5,
+      "scaleDistribution": {
+        "type": "linear"
+    },
+    "showPoints": "never",
+      "spanNulls": true,
+      "stacking": {
+              "group": "A",
+      "mode": "none"
+            },
+      "thresholdsStyle": {
+              "mode": "off"
+            }
+          },
+          "links": [],
+      "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          },
+          "unit": "Bps"
+        },
+        "overrides": [
+          {
+        "matcher": {
+          "id": "byRegexp",
+              "options": "/Rx$/"
+        },
+        "properties": [
+              {
+                "id": "custom.transform",
+      "value": "negative-Y"
+              }
+            ]
+          }
+        ]
+      },
       "gridPos": {
         "h": 16,
         "w": 24,
         "x": 0,
-        "y": 47
+        "y": 49
       },
-      "hiddenSeries": false,
-      "id": 3,
-      "legend": {
-        "alignAsTable": true,
-        "avg": true,
-        "current": true,
-        "max": true,
-        "min": false,
-        "rightSide": true,
-        "show": true,
-        "sort": "max",
-        "sortDesc": true,
-        "total": false,
-        "values": true
+            "id": 3,
+            "links": [],
+            "options": {
+        "legend": {
+          "calcs": [
+            "mean",
+            "lastNotNull",
+            "max"
+          ],
+          "displayMode": "table",
+          "placement": "right",
+          "showLegend": true
       },
-      "lines": true,
-      "linewidth": 1,
-      "links": [],
-      "nullPointMode": "connected",
-      "options": {
-        "alertThreshold": true
-      },
-      "percentage": false,
-      "pluginVersion": "8.4.3",
-      "pointradius": 5,
-      "points": false,
-      "renderer": "flot",
-      "seriesOverrides": [
-        {
-          "$$hashKey": "object:5499",
-          "alias": "/Rx$/",
-          "transform": "negative-Y"
+      "tooltip": {
+          "mode": "multi",
+          "sort": "desc"
         }
-      ],
-      "spaceLength": 10,
-      "stack": false,
-      "steppedLine": false,
+      },
+      "pluginVersion": "10.2.1",
       "targets": [
         {
           "alias": "[[Identifier]] $col",
@@ -1425,28 +1567,11 @@
             ]
           ],
           "tags": [
-            {
-              "key": "name",
-              "operator": "!~",
-              "value": "/^amazon-|camera|cam$/"
-            },
-            {
+                        {
               "condition": "AND",
-              "key": "name",
-              "operator": "=~",
-              "value": "/^$Wireless$/"
-            },
-            {
-              "condition": "AND",
-              "key": "ap_name",
-              "operator": "=~",
-              "value": "/^$AP$/"
-            },
-            {
-              "condition": "AND",
-              "key": "site_name",
-              "operator": "=~",
-              "value": "/^$Site$/"
+              "key": "is_wired",
+              "operator": "=",
+              "value": "false"
             }
           ]
         }
@@ -1454,33 +1579,7 @@
       "thresholds": [],
       "timeRegions": [],
       "title": "UAP Bandwidth / Wireless Devices",
-      "tooltip": {
-        "shared": true,
-        "sort": 2,
-        "value_type": "individual"
-      },
-      "type": "graph",
-      "xaxis": {
-        "mode": "time",
-        "show": true,
-        "values": []
-      },
-      "yaxes": [
-        {
-          "format": "Bps",
-          "label": "bytes / sec",
-          "logBase": 1,
-          "show": true
-        },
-        {
-          "format": "short",
-          "logBase": 1,
-          "show": false
-        }
-      ],
-      "yaxis": {
-        "align": false
-      }
+      "type": "timeseries"
     },
     {
       "backgroundColor": "rgba(128,128,128,0.1)",
@@ -1512,7 +1611,7 @@
         "h": 16,
         "w": 12,
         "x": 0,
-        "y": 63
+        "y": 65
       },
       "highlightOnMouseover": true,
       "id": 17,
@@ -1689,7 +1788,7 @@
         "h": 16,
         "w": 12,
         "x": 12,
-        "y": 63
+        "y": 65
       },
       "highlightOnMouseover": true,
       "id": 18,
@@ -1880,511 +1979,7 @@
       "writeLastValue": false,
       "writeMetricNames": true
     },
-    {
-      "aliasColors": {},
-      "bars": false,
-      "dashLength": 10,
-      "dashes": false,
-      "datasource": "Unifi",
-      "description": "Amazon Devices TX / RX bytes per second (calculated in 30 second buckets). Rx is on the native axis. My home network has a ton of Amazon devices, so I broke them out separately. If you don't have Amazon devices, don't fret, just don't include this graph in the new dashboards you're building. :)",
-      "fieldConfig": {
-        "defaults": {
-          "links": []
-        },
-        "overrides": []
-      },
-      "fill": 0,
-      "fillGradient": 0,
-      "gridPos": {
-        "h": 9,
-        "w": 12,
-        "x": 0,
-        "y": 79
-      },
-      "hiddenSeries": false,
-      "id": 23,
-      "legend": {
-        "alignAsTable": true,
-        "avg": true,
-        "current": true,
-        "max": true,
-        "min": false,
-        "rightSide": true,
-        "show": true,
-        "sort": "current",
-        "sortDesc": true,
-        "total": false,
-        "values": true
-      },
-      "lines": true,
-      "linewidth": 1,
-      "links": [],
-      "nullPointMode": "connected",
-      "options": {
-        "alertThreshold": true
-      },
-      "percentage": false,
-      "pluginVersion": "8.4.3",
-      "pointradius": 5,
-      "points": false,
-      "renderer": "flot",
-      "seriesOverrides": [
         {
-          "$$hashKey": "object:7363",
-          "alias": "/Rx$/",
-          "transform": "negative-Y"
-        }
-      ],
-      "spaceLength": 10,
-      "stack": false,
-      "steppedLine": false,
-      "targets": [
-        {
-          "alias": "e [[Identifier]] $col",
-          "groupBy": [
-            {
-              "params": [
-                "$__interval"
-              ],
-              "type": "time"
-            },
-            {
-              "params": [
-                "name"
-              ],
-              "type": "tag"
-            },
-            {
-              "params": [
-                "mac"
-              ],
-              "type": "tag"
-            },
-            {
-              "params": [
-                "none"
-              ],
-              "type": "fill"
-            }
-          ],
-          "measurement": "clients",
-          "orderByTime": "ASC",
-          "policy": "default",
-          "query": "SELECT derivative(first(\"wired-rx_bytes\"), 1s) FROM \"clients\" WHERE (\"hostname\" = 'dns-rtn') AND $timeFilter GROUP BY time(10s) fill(none)",
-          "rawQuery": false,
-          "refId": "A",
-          "resultFormat": "time_series",
-          "select": [
-            [
-              {
-                "params": [
-                  "wired-rx_bytes"
-                ],
-                "type": "field"
-              },
-              {
-                "params": [],
-                "type": "sum"
-              },
-              {
-                "params": [
-                  "1s"
-                ],
-                "type": "non_negative_derivative"
-              },
-              {
-                "params": [
-                  "Rx"
-                ],
-                "type": "alias"
-              }
-            ],
-            [
-              {
-                "params": [
-                  "wired-tx_bytes"
-                ],
-                "type": "field"
-              },
-              {
-                "params": [],
-                "type": "sum"
-              },
-              {
-                "params": [
-                  "1s"
-                ],
-                "type": "non_negative_derivative"
-              },
-              {
-                "params": [
-                  "Tx"
-                ],
-                "type": "alias"
-              }
-            ]
-          ],
-          "tags": [
-            {
-              "key": "name",
-              "operator": "=~",
-              "value": "/^amazon-/"
-            },
-            {
-              "condition": "AND",
-              "key": "name",
-              "operator": "=~",
-              "value": "/^$Wired$/"
-            },
-            {
-              "condition": "AND",
-              "key": "sw_name",
-              "operator": "=~",
-              "value": "/^$Switch$/"
-            },
-            {
-              "condition": "AND",
-              "key": "site_name",
-              "operator": "=~",
-              "value": "/^$Site$/"
-            }
-          ]
-        },
-        {
-          "alias": "w [[Identifier]] $col",
-          "groupBy": [
-            {
-              "params": [
-                "$__interval"
-              ],
-              "type": "time"
-            },
-            {
-              "params": [
-                "name"
-              ],
-              "type": "tag"
-            },
-            {
-              "params": [
-                "mac"
-              ],
-              "type": "tag"
-            },
-            {
-              "params": [
-                "none"
-              ],
-              "type": "fill"
-            }
-          ],
-          "hide": false,
-          "measurement": "clients",
-          "orderByTime": "ASC",
-          "policy": "default",
-          "query": "SELECT derivative(first(\"wired-rx_bytes\"), 1s) FROM \"clients\" WHERE (\"hostname\" = 'dns-rtn') AND $timeFilter GROUP BY time(10s) fill(none)",
-          "rawQuery": false,
-          "refId": "B",
-          "resultFormat": "time_series",
-          "select": [
-            [
-              {
-                "params": [
-                  "rx_bytes"
-                ],
-                "type": "field"
-              },
-              {
-                "params": [],
-                "type": "sum"
-              },
-              {
-                "params": [
-                  "1s"
-                ],
-                "type": "non_negative_derivative"
-              },
-              {
-                "params": [
-                  "Rx"
-                ],
-                "type": "alias"
-              }
-            ],
-            [
-              {
-                "params": [
-                  "tx_bytes"
-                ],
-                "type": "field"
-              },
-              {
-                "params": [],
-                "type": "sum"
-              },
-              {
-                "params": [
-                  "1s"
-                ],
-                "type": "non_negative_derivative"
-              },
-              {
-                "params": [
-                  "Tx"
-                ],
-                "type": "alias"
-              }
-            ]
-          ],
-          "tags": [
-            {
-              "key": "name",
-              "operator": "=~",
-              "value": "/^amazon-/"
-            },
-            {
-              "condition": "AND",
-              "key": "name",
-              "operator": "=~",
-              "value": "/^$Wireless$/"
-            },
-            {
-              "condition": "AND",
-              "key": "site_name",
-              "operator": "=~",
-              "value": "/^$Site$/"
-            },
-            {
-              "condition": "AND",
-              "key": "ap_name",
-              "operator": "=~",
-              "value": "/^$AP$/"
-            }
-          ]
-        }
-      ],
-      "thresholds": [],
-      "timeRegions": [],
-      "title": "Switch Bandwidth / Echos & FireTVs",
-      "tooltip": {
-        "shared": true,
-        "sort": 2,
-        "value_type": "individual"
-      },
-      "type": "graph",
-      "xaxis": {
-        "mode": "time",
-        "show": true,
-        "values": []
-      },
-      "yaxes": [
-        {
-          "format": "Bps",
-          "label": "bytes / sec",
-          "logBase": 1,
-          "show": true
-        },
-        {
-          "format": "short",
-          "logBase": 1,
-          "show": false
-        }
-      ],
-      "yaxis": {
-        "align": false
-      }
-    },
-    {
-      "aliasColors": {},
-      "bars": false,
-      "dashLength": 10,
-      "dashes": false,
-      "datasource": "Unifi",
-      "description": "Cameras TX / RX bytes per second. Rx is on the negative axis. Cameras probably don't do much Tx. If you don't have cameras, don't include this graph on your dashboards. This graph shows any device with the word \"camera\" in its name and has nothing to do with UniFi Protect.",
-      "fieldConfig": {
-        "defaults": {
-          "links": []
-        },
-        "overrides": []
-      },
-      "fill": 0,
-      "fillGradient": 0,
-      "gridPos": {
-        "h": 9,
-        "w": 12,
-        "x": 12,
-        "y": 79
-      },
-      "hiddenSeries": false,
-      "id": 15,
-      "legend": {
-        "alignAsTable": true,
-        "avg": true,
-        "current": true,
-        "max": true,
-        "min": false,
-        "rightSide": true,
-        "show": true,
-        "sort": "avg",
-        "sortDesc": true,
-        "total": false,
-        "values": true
-      },
-      "lines": true,
-      "linewidth": 1,
-      "links": [],
-      "nullPointMode": "connected",
-      "options": {
-        "alertThreshold": true
-      },
-      "percentage": false,
-      "pluginVersion": "8.4.3",
-      "pointradius": 5,
-      "points": false,
-      "renderer": "flot",
-      "seriesOverrides": [
-        {
-          "$$hashKey": "object:7497",
-          "alias": "/Rx$/",
-          "transform": "negative-Y"
-        }
-      ],
-      "spaceLength": 10,
-      "stack": true,
-      "steppedLine": false,
-      "targets": [
-        {
-          "alias": "[[Identifier]] $col",
-          "groupBy": [
-            {
-              "params": [
-                "$__interval"
-              ],
-              "type": "time"
-            },
-            {
-              "params": [
-                "name"
-              ],
-              "type": "tag"
-            }
-          ],
-          "measurement": "clients",
-          "orderByTime": "ASC",
-          "policy": "default",
-          "query": "SELECT non_negative_derivative(sum(\"wired-rx_bytes\"), 1s) AS \"Rx\", non_negative_derivative(sum(\"wired-tx_bytes\"), 1s) AS \"Tx\" FROM \"clients\" WHERE \"name\" =~ /camera|cam$/ AND \"site_name\" =~ /^$Site$/ AND (\"sw_name\" =~ /^$Switch$/ OR \"ap_name\" =~ /^$AP$/) AND $timeFilter GROUP BY time($__interval), \"name\", \"mac\"",
-          "rawQuery": true,
-          "refId": "A",
-          "resultFormat": "time_series",
-          "select": [
-            [
-              {
-                "params": [
-                  "wired-rx_bytes"
-                ],
-                "type": "field"
-              },
-              {
-                "params": [],
-                "type": "sum"
-              },
-              {
-                "params": [
-                  "1s"
-                ],
-                "type": "non_negative_derivative"
-              },
-              {
-                "params": [
-                  "Rx"
-                ],
-                "type": "alias"
-              }
-            ],
-            [
-              {
-                "params": [
-                  "wired-tx_bytes"
-                ],
-                "type": "field"
-              },
-              {
-                "params": [],
-                "type": "sum"
-              },
-              {
-                "params": [
-                  "1s"
-                ],
-                "type": "non_negative_derivative"
-              },
-              {
-                "params": [
-                  "Tx"
-                ],
-                "type": "alias"
-              }
-            ]
-          ],
-          "tags": [
-            {
-              "key": "name",
-              "operator": "=~",
-              "value": "/camera|cam$/"
-            },
-            {
-              "condition": "AND",
-              "key": "site_name",
-              "operator": "=~",
-              "value": "/^$Site$/"
-            },
-            {
-              "condition": "AND",
-              "key": "sw_name",
-              "operator": "=~",
-              "value": "/^$Switch$/"
-            },
-            {
-              "condition": "OR",
-              "key": "ap_name",
-              "operator": "=~",
-              "value": "/^$AP$/"
-            }
-          ]
-        }
-      ],
-      "thresholds": [],
-      "timeRegions": [],
-      "title": "Switch Bandwidth / Cameras",
-      "tooltip": {
-        "shared": true,
-        "sort": 2,
-        "value_type": "individual"
-      },
-      "type": "graph",
-      "xaxis": {
-        "mode": "time",
-        "show": true,
-        "values": []
-      },
-      "yaxes": [
-        {
-          "format": "Bps",
-          "label": "bytes / sec",
-          "logBase": 1,
-          "show": true
-        },
-        {
-          "format": "short",
-          "logBase": 1,
-          "show": false
-        }
-      ],
-      "yaxis": {
-        "align": false
-      }
-    },
-    {
       "aliasColors": {},
       "bars": false,
       "dashLength": 10,
@@ -2403,7 +1998,7 @@
         "h": 9,
         "w": 12,
         "x": 0,
-        "y": 88
+        "y": 81
       },
       "hiddenSeries": false,
       "id": 7,
@@ -2430,7 +2025,7 @@
         "alertThreshold": true
       },
       "percentage": false,
-      "pluginVersion": "8.4.3",
+      "pluginVersion": "10.2.1",
       "pointradius": 5,
       "points": false,
       "renderer": "flot",
@@ -2544,7 +2139,7 @@
         "h": 9,
         "w": 12,
         "x": 12,
-        "y": 88
+        "y": 81
       },
       "hiddenSeries": false,
       "id": 10,
@@ -2571,7 +2166,7 @@
         "alertThreshold": true
       },
       "percentage": false,
-      "pluginVersion": "8.4.3",
+      "pluginVersion": "10.2.1",
       "pointradius": 5,
       "points": false,
       "renderer": "flot",
@@ -2684,7 +2279,7 @@
         "h": 8,
         "w": 12,
         "x": 0,
-        "y": 97
+        "y": 90
       },
       "hiddenSeries": false,
       "id": 6,
@@ -2711,7 +2306,7 @@
         "alertThreshold": true
       },
       "percentage": false,
-      "pluginVersion": "8.4.3",
+      "pluginVersion": "10.2.1",
       "pointradius": 5,
       "points": false,
       "renderer": "flot",
@@ -2825,7 +2420,7 @@
         "h": 8,
         "w": 12,
         "x": 12,
-        "y": 97
+        "y": 90
       },
       "hiddenSeries": false,
       "id": 19,
@@ -2850,7 +2445,7 @@
         "alertThreshold": true
       },
       "percentage": false,
-      "pluginVersion": "8.4.3",
+      "pluginVersion": "10.2.1",
       "pointradius": 5,
       "points": false,
       "renderer": "flot",
@@ -2962,7 +2557,7 @@
         "h": 8,
         "w": 12,
         "x": 0,
-        "y": 105
+        "y": 98
       },
       "hiddenSeries": false,
       "id": 24,
@@ -2989,7 +2584,7 @@
         "alertThreshold": true
       },
       "percentage": false,
-      "pluginVersion": "8.4.3",
+      "pluginVersion": "10.2.1",
       "pointradius": 5,
       "points": false,
       "renderer": "flot",
@@ -3110,7 +2705,7 @@
         "h": 8,
         "w": 12,
         "x": 12,
-        "y": 105
+        "y": 98
       },
       "hiddenSeries": false,
       "id": 26,
@@ -3135,7 +2730,7 @@
         "alertThreshold": true
       },
       "percentage": false,
-      "pluginVersion": "8.4.3",
+      "pluginVersion": "10.2.1",
       "pointradius": 5,
       "points": false,
       "renderer": "flot",
@@ -3248,7 +2843,7 @@
         "h": 9,
         "w": 12,
         "x": 0,
-        "y": 113
+        "y": 106
       },
       "hiddenSeries": false,
       "id": 27,
@@ -3275,7 +2870,7 @@
         "alertThreshold": true
       },
       "percentage": false,
-      "pluginVersion": "8.4.3",
+      "pluginVersion": "10.2.1",
       "pointradius": 5,
       "points": false,
       "renderer": "flot",
@@ -3395,7 +2990,7 @@
         "h": 9,
         "w": 12,
         "x": 12,
-        "y": 113
+        "y": 106
       },
       "hiddenSeries": false,
       "id": 31,
@@ -3422,7 +3017,7 @@
         "alertThreshold": true
       },
       "percentage": false,
-      "pluginVersion": "8.4.3",
+      "pluginVersion": "10.2.1",
       "pointradius": 5,
       "points": false,
       "renderer": "flot",
@@ -3535,7 +3130,7 @@
         "h": 7,
         "w": 12,
         "x": 0,
-        "y": 122
+        "y": 115
       },
       "hiddenSeries": false,
       "id": 25,
@@ -3562,7 +3157,7 @@
         "alertThreshold": true
       },
       "percentage": false,
-      "pluginVersion": "8.4.3",
+      "pluginVersion": "10.2.1",
       "pointradius": 5,
       "points": false,
       "renderer": "flot",
@@ -3678,7 +3273,7 @@
         "h": 7,
         "w": 12,
         "x": 12,
-        "y": 122
+        "y": 115
       },
       "hiddenSeries": false,
       "id": 30,
@@ -3703,7 +3298,7 @@
         "alertThreshold": true
       },
       "percentage": false,
-      "pluginVersion": "8.4.3",
+      "pluginVersion": "10.2.1",
       "pointradius": 5,
       "points": false,
       "renderer": "flot",
@@ -3817,7 +3412,7 @@
         "h": 9,
         "w": 12,
         "x": 0,
-        "y": 129
+        "y": 122
       },
       "hiddenSeries": false,
       "id": 28,
@@ -3844,7 +3439,7 @@
         "alertThreshold": true
       },
       "percentage": false,
-      "pluginVersion": "8.4.3",
+      "pluginVersion": "10.2.1",
       "pointradius": 5,
       "points": false,
       "renderer": "flot",
@@ -3959,7 +3554,7 @@
         "h": 9,
         "w": 12,
         "x": 12,
-        "y": 129
+        "y": 122
       },
       "hiddenSeries": false,
       "id": 29,
@@ -3984,7 +3579,7 @@
         "alertThreshold": true
       },
       "percentage": false,
-      "pluginVersion": "8.4.3",
+      "pluginVersion": "10.2.1",
       "pointradius": 5,
       "points": false,
       "renderer": "flot",
@@ -4085,9 +3680,8 @@
       }
     }
   ],
-  "refresh": false,
-  "schemaVersion": 35,
-  "style": "dark",
+  "refresh": "",
+  "schemaVersion": 38,
   "tags": [
     "unifi",
     "unifi-poller"
@@ -4096,7 +3690,11 @@
     "list": [
       {
         "allValue": ".*",
-        "current": {},
+        "current": {
+          "selected": false,
+          "text": "All",
+          "value": "$__all"
+        },
         "datasource": "Unifi",
         "definition": "SHOW TAG VALUES FROM \"clients\" WITH KEY = \"source\" ",
         "hide": 2,
@@ -4115,7 +3713,15 @@
         "useTags": false
       },
       {
-        "current": {},
+        "current": {
+          "selected": true,
+          "text": [
+            "All"
+          ],
+          "value": [
+            "$__all"
+          ]
+        },
         "datasource": "Unifi",
         "definition": "SHOW TAG VALUES FROM \"clients\" WITH KEY = \"site_name\"  WHERE source =~ /^$Controller$/ ",
         "hide": 0,
@@ -4134,7 +3740,15 @@
         "useTags": false
       },
       {
-        "current": {},
+        "current": {
+          "selected": true,
+          "text": [
+            "All"
+          ],
+          "value": [
+            "$__all"
+          ]
+        },
         "datasource": "Unifi",
         "definition": "SHOW TAG VALUES FROM \"clients\" WITH KEY = \"ap_name\" WHERE site_name =~ /^$Site$/ ",
         "hide": 0,
@@ -4153,7 +3767,15 @@
         "useTags": false
       },
       {
-        "current": {},
+        "current": {
+          "selected": true,
+          "text": [
+            "All"
+          ],
+          "value": [
+            "$__all"
+          ]
+        },
         "datasource": "Unifi",
         "definition": "SHOW TAG VALUES FROM \"clients\" WITH KEY = \"sw_name\" WHERE site_name =~ /^$Site$/ ",
         "hide": 0,
@@ -4173,7 +3795,15 @@
       },
       {
         "allValue": ".*",
-        "current": {},
+        "current": {
+          "selected": true,
+          "text": [
+            "All"
+          ],
+          "value": [
+            "$__all"
+          ]
+        },
         "datasource": "Unifi",
         "definition": "SHOW TAG VALUES FROM \"clients\" WITH KEY = \"name\" WHERE site_name =~ /^$Site$/ AND ap_name =~ /^$AP$/ AND is_wired=false",
         "hide": 0,
@@ -4193,7 +3823,15 @@
       },
       {
         "allValue": ".*",
-        "current": {},
+        "current": {
+          "selected": true,
+          "text": [
+            "All"
+          ],
+          "value": [
+            "$__all"
+          ]
+        },
         "datasource": "Unifi",
         "definition": "SHOW TAG VALUES FROM \"clients\" WITH KEY = \"name\" WHERE site_name =~ /^$Site$/ AND sw_name =~ /^$Switch$/ AND is_wired=true",
         "hide": 0,
@@ -4213,7 +3851,7 @@
       },
       {
         "current": {
-          "selected": true,
+          "selected": false,
           "text": "$tag_name",
           "value": "$tag_name"
         },
