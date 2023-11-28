@@ -17,9 +17,7 @@
       "icon": "external link",
       "includeVars": false,
       "keepTime": true,
-      "tags": [
-        "unifi-poller"
-      ],
+      "tags": ["unifi-poller"],
       "title": "UniFi Poller",
       "type": "dashboards"
     },
@@ -52,38 +50,38 @@
       "description": "",
       "fieldConfig": {
         "defaults": {
-        "color": {
+          "color": {
             "mode": "thresholds"
           },
-        "custom": {
+          "custom": {
             "align": "auto",
-      "cellOptions": {
+            "cellOptions": {
               "type": "auto"
             },
-      "inspect": false
+            "inspect": false
           },
-      "mappings": [],
+          "mappings": [],
           "thresholds": {
             "mode": "absolute",
-      "steps": [
-        {
-          "color": "green",
-          "value": null
+            "steps": [
+              {
+                "color": "green",
+                "value": null
               },
               {
                 "color": "red",
-          "value": 80
+                "value": 80
               }
             ]
           }
         },
-          "overrides": [
+        "overrides": [
           {
             "matcher": {
               "id": "byName",
-          "options": "Time"
+              "options": "Time"
             },
-          "properties": [
+            "properties": [
               {
                 "id": "displayName",
                 "value": "Time"
@@ -102,14 +100,14 @@
               "id": "byRegexp",
               "options": "/^Bytes/"
             },
-          "properties": [
+            "properties": [
               {
                 "id": "unit",
-          "value": "decbytes"
-        },
-        {
-          "id": "decimals",
-          "value": 1
+                "value": "decbytes"
+              },
+              {
+                "id": "decimals",
+                "value": 1
               },
               {
                 "id": "custom.align"
@@ -121,14 +119,14 @@
               "id": "byName",
               "options": "name"
             },
-          "properties": [
+            "properties": [
               {
                 "id": "displayName",
-          "value": "Name"
-        },
-        {
-          "id": "unit",
-          "value": "short"
+                "value": "Name"
+              },
+              {
+                "id": "unit",
+                "value": "short"
               },
               {
                 "id": "decimals",
@@ -139,10 +137,10 @@
               }
             ]
           },
-        {
-          "matcher": {
+          {
+            "matcher": {
               "id": "byName",
-          "options": "mac"
+              "options": "mac"
             },
             "properties": [
               {
@@ -151,11 +149,11 @@
               },
               {
                 "id": "unit",
-          "value": "short"
-        },
-        {
-          "id": "decimals",
-          "value": 2
+                "value": "short"
+              },
+              {
+                "id": "decimals",
+                "value": 2
               },
               {
                 "id": "custom.align"
@@ -167,18 +165,18 @@
               "id": "byName",
               "options": "ap_name"
             },
-          "properties": [
+            "properties": [
               {
                 "id": "displayName",
-          "value": "AP"
-        },
-        {
-          "id": "unit",
-          "value": "short"
+                "value": "AP"
+              },
+              {
+                "id": "unit",
+                "value": "short"
               },
               {
                 "id": "decimals",
-            "value": 2
+                "value": 2
               },
               {
                 "id": "custom.align"
@@ -190,18 +188,18 @@
               "id": "byName",
               "options": "channel"
             },
-          "properties": [
+            "properties": [
               {
                 "id": "displayName",
-          "value": "Chan"
-        },
-        {
-          "id": "unit",
-          "value": "short"
+                "value": "Chan"
+              },
+              {
+                "id": "unit",
+                "value": "short"
               },
               {
                 "id": "decimals",
-            "value": 2
+                "value": 2
               },
               {
                 "id": "custom.align"
@@ -213,18 +211,18 @@
               "id": "byName",
               "options": "oui"
             },
-          "properties": [
+            "properties": [
               {
                 "id": "displayName",
-          "value": "OUI"
-        },
-        {
-          "id": "unit",
-          "value": "short"
+                "value": "OUI"
+              },
+              {
+                "id": "unit",
+                "value": "short"
               },
               {
                 "id": "decimals",
-            "value": 2
+                "value": 2
               },
               {
                 "id": "custom.align"
@@ -236,14 +234,14 @@
               "id": "byName",
               "options": "Uptime"
             },
-          "properties": [
+            "properties": [
               {
                 "id": "unit",
-          "value": "s"
-        },
-        {
-          "id": "decimals",
-          "value": 2
+                "value": "s"
+              },
+              {
+                "id": "decimals",
+                "value": 2
               },
               {
                 "id": "custom.align"
@@ -255,10 +253,10 @@
               "id": "byName",
               "options": "Name"
             },
-          "properties": [
+            "properties": [
               {
                 "id": "custom.width",
-          "value": 193
+                "value": 193
               }
             ]
           }
@@ -266,57 +264,45 @@
       },
       "gridPos": {
         "h": 14,
-          "w": 24,
+        "w": 24,
         "x": 0,
-            "y": 0
+        "y": 0
       },
-            "id": 21,
+      "id": 21,
       "links": [],
-          "options": {
+      "options": {
         "cellHeight": "sm",
-          "footer": {
+        "footer": {
           "countRows": false,
           "fields": "",
-          "reducer": [
-            "sum"
-          ],
+          "reducer": ["sum"],
           "show": false
         },
         "showHeader": true,
-          "sortBy": []
+        "sortBy": []
       },
-          "pluginVersion": "10.2.1",
+      "pluginVersion": "10.2.1",
       "targets": [
         {
           "groupBy": [
             {
-              "params": [
-                "mac"
-              ],
+              "params": ["mac"],
               "type": "tag"
             },
             {
-              "params": [
-                "name"
-              ],
+              "params": ["name"],
               "type": "tag"
             },
-                        {
-              "params": [
-                "channel"
-              ],
+            {
+              "params": ["channel"],
               "type": "tag"
             },
-                        {
-              "params": [
-                "ap_name"
-              ],
+            {
+              "params": ["ap_name"],
               "type": "tag"
             },
-                        {
-              "params": [
-                "oui"
-              ],
+            {
+              "params": ["oui"],
               "type": "tag"
             }
           ],
@@ -330,9 +316,7 @@
           "select": [
             [
               {
-                "params": [
-                  "essid"
-                ],
+                "params": ["essid"],
                 "type": "field"
               },
               {
@@ -340,17 +324,13 @@
                 "type": "last"
               },
               {
-                "params": [
-                  "ESSID"
-                ],
+                "params": ["ESSID"],
                 "type": "alias"
               }
             ],
             [
               {
-                "params": [
-                  "uptime"
-                ],
+                "params": ["uptime"],
                 "type": "field"
               },
               {
@@ -358,17 +338,13 @@
                 "type": "last"
               },
               {
-                "params": [
-                  "Uptime"
-                ],
+                "params": ["Uptime"],
                 "type": "alias"
               }
             ],
             [
               {
-                "params": [
-                  "rx_bytes"
-                ],
+                "params": ["rx_bytes"],
                 "type": "field"
               },
               {
@@ -376,17 +352,13 @@
                 "type": "last"
               },
               {
-                "params": [
-                  "Bytes Rx"
-                ],
+                "params": ["Bytes Rx"],
                 "type": "alias"
               }
             ],
             [
               {
-                "params": [
-                  "tx_bytes"
-                ],
+                "params": ["tx_bytes"],
                 "type": "field"
               },
               {
@@ -394,17 +366,13 @@
                 "type": "last"
               },
               {
-                "params": [
-                  "Bytes Tx"
-                ],
+                "params": ["Bytes Tx"],
                 "type": "alias"
               }
             ],
             [
               {
-                "params": [
-                  "ip"
-                ],
+                "params": ["ip"],
                 "type": "field"
               },
               {
@@ -412,15 +380,13 @@
                 "type": "last"
               },
               {
-                "params": [
-                  "Address"
-                ],
+                "params": ["Address"],
                 "type": "alias"
               }
             ]
           ],
           "tags": [
-                        {
+            {
               "condition": "AND",
               "key": "is_wired",
               "operator": "=",
@@ -462,26 +428,26 @@
       "fieldConfig": {
         "defaults": {
           "color": {
-        "mode": "thresholds"
+            "mode": "thresholds"
           },
-        "custom": {
+          "custom": {
             "align": "auto",
-        "cellOptions": {
+            "cellOptions": {
               "type": "auto"
-      },
-      "inspect": false
+            },
+            "inspect": false
           },
-      "mappings": [],
-      "thresholds": {
+          "mappings": [],
+          "thresholds": {
             "mode": "absolute",
-      "steps": [
+            "steps": [
               {
-        "color": "green",
-        "value": null
-      },
-      {
-          "color": "red",
-          "value": 80
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
               }
             ]
           }
@@ -492,13 +458,13 @@
               "id": "byName",
               "options": "Time"
             },
-          "properties": [
+            "properties": [
               {
                 "id": "displayName",
-          "value": "Time"
-        },
-        {
-          "id": "custom.align"
+                "value": "Time"
+              },
+              {
+                "id": "custom.align"
               }
             ]
           },
@@ -507,14 +473,14 @@
               "id": "byName",
               "options": "sw_port"
             },
-          "properties": [
+            "properties": [
               {
                 "id": "displayName",
-          "value": "Sw Port"
-        },
-        {
-          "id": "unit",
-          "value": "short"
+                "value": "Sw Port"
+              },
+              {
+                "id": "unit",
+                "value": "short"
               },
               {
                 "id": "custom.align"
@@ -526,18 +492,18 @@
               "id": "byName",
               "options": "name"
             },
-          "properties": [
+            "properties": [
               {
                 "id": "displayName",
-          "value": "Name"
-        },
-        {
-          "id": "unit",
-          "value": "short"
+                "value": "Name"
+              },
+              {
+                "id": "unit",
+                "value": "short"
               },
               {
                 "id": "decimals",
-            "value": 2
+                "value": 2
               },
               {
                 "id": "custom.align"
@@ -549,18 +515,18 @@
               "id": "byName",
               "options": "mac"
             },
-          "properties": [
+            "properties": [
               {
                 "id": "displayName",
-          "value": "Device MAC"
-        },
-        {
-          "id": "unit",
-          "value": "short"
+                "value": "Device MAC"
+              },
+              {
+                "id": "unit",
+                "value": "short"
               },
               {
                 "id": "decimals",
-            "value": 2
+                "value": 2
               },
               {
                 "id": "custom.align"
@@ -572,13 +538,13 @@
               "id": "byRegexp",
               "options": "/^Bytes/"
             },
-          "properties": [
+            "properties": [
               {
                 "id": "unit",
-          "value": "decbytes"
-        },
-        {
-          "id": "decimals",
+                "value": "decbytes"
+              },
+              {
+                "id": "decimals",
                 "value": 1
               },
               {
@@ -594,7 +560,7 @@
             "properties": [
               {
                 "id": "unit",
-          "value": "s"
+                "value": "s"
               },
               {
                 "id": "decimals",
@@ -610,18 +576,18 @@
               "id": "byName",
               "options": "oui"
             },
-          "properties": [
+            "properties": [
               {
                 "id": "displayName",
-          "value": "OUI"
-        },
-        {
-          "id": "unit",
-          "value": "short"
+                "value": "OUI"
+              },
+              {
+                "id": "unit",
+                "value": "short"
               },
               {
                 "id": "decimals",
-            "value": 2
+                "value": 2
               },
               {
                 "id": "custom.align"
@@ -633,22 +599,22 @@
               "id": "byName",
               "options": "Device MAC"
             },
-          "properties": [
+            "properties": [
               {
                 "id": "custom.width",
-          "value": 155
+                "value": 155
               }
             ]
-        },
-        {
-          "matcher": {
+          },
+          {
+            "matcher": {
               "id": "byName",
-          "options": "Address"
+              "options": "Address"
             },
-          "properties": [
+            "properties": [
               {
                 "id": "custom.width",
-            "value": 154
+                "value": 154
               }
             ]
           },
@@ -657,10 +623,10 @@
               "id": "byName",
               "options": "Name"
             },
-          "properties": [
+            "properties": [
               {
                 "id": "custom.width",
-          "value": 158
+                "value": 158
               }
             ]
           }
@@ -668,54 +634,44 @@
       },
       "gridPos": {
         "h": 12,
-          "w": 24,
+        "w": 24,
         "x": 0,
-            "y": 14
+        "y": 14
       },
-            "hideTimeOverride": false,
+      "hideTimeOverride": false,
       "id": 22,
       "links": [],
-          "options": {
+      "options": {
         "cellHeight": "sm",
-          "footer": {
+        "footer": {
           "countRows": false,
           "fields": "",
-          "reducer": [
-            "sum"
-          ],
+          "reducer": ["sum"],
           "show": false
         },
         "showHeader": true,
-          "sortBy": []
+        "sortBy": []
       },
-          "pluginVersion": "10.2.1",
+      "pluginVersion": "10.2.1",
       "targets": [
         {
           "groupBy": [
             {
-              "params": [
-                "sw_port"
-              ],
+              "params": ["sw_port"],
               "type": "tag"
             },
             {
-              "params": [
-                "mac"
-              ],
+              "params": ["mac"],
               "type": "tag"
             },
             {
-              "params": [
-                "name"
-              ],
+              "params": ["name"],
               "type": "tag"
             },
-                        {
-              "params": [
-                "oui"
-              ],
+            {
+              "params": ["oui"],
               "type": "tag"
-                        }
+            }
           ],
           "measurement": "clients",
           "orderByTime": "ASC",
@@ -727,9 +683,7 @@
           "select": [
             [
               {
-                "params": [
-                  "ip"
-                ],
+                "params": ["ip"],
                 "type": "field"
               },
               {
@@ -737,17 +691,13 @@
                 "type": "last"
               },
               {
-                "params": [
-                  "Address"
-                ],
+                "params": ["Address"],
                 "type": "alias"
               }
             ],
             [
               {
-                "params": [
-                  "wired-rx_bytes"
-                ],
+                "params": ["wired-rx_bytes"],
                 "type": "field"
               },
               {
@@ -755,17 +705,13 @@
                 "type": "last"
               },
               {
-                "params": [
-                  "Bytes Rx"
-                ],
+                "params": ["Bytes Rx"],
                 "type": "alias"
               }
             ],
             [
               {
-                "params": [
-                  "wired-tx_bytes"
-                ],
+                "params": ["wired-tx_bytes"],
                 "type": "field"
               },
               {
@@ -773,17 +719,13 @@
                 "type": "last"
               },
               {
-                "params": [
-                  "Bytes Tx"
-                ],
+                "params": ["Bytes Tx"],
                 "type": "alias"
               }
             ],
             [
               {
-                "params": [
-                  "uptime"
-                ],
+                "params": ["uptime"],
                 "type": "field"
               },
               {
@@ -791,9 +733,7 @@
                 "type": "last"
               },
               {
-                "params": [
-                  "Uptime"
-                ],
+                "params": ["Uptime"],
                 "type": "alias"
               }
             ]
@@ -803,7 +743,7 @@
               "key": "is_wired",
               "operator": "!=",
               "value": "false"
-                        }
+            }
           ]
         }
       ],
@@ -833,17 +773,26 @@
       "type": "table"
     },
     {
-      "aliasColors": {},
-      "breakPoint": "50%",
-      "combine": {
-        "label": "Others",
-        "threshold": 0
-      },
       "datasource": "Unifi",
+"description": "Visualize wireless channel usage w/ wired client counts.",
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "palette-classic"
+          },
+          "custom": {
+            "hideFrom": {
+              "legend": false,
+              "tooltip": false,
+              "viz": false
+            }
+          },
       "decimals": 0,
-      "description": "Visualize wireless channel usage w/ wired client counts.",
-      "fontSize": "70%",
-      "format": "short",
+      "mappings": [],
+      "unit": "short"
+        },
+        "overrides": []
+      },
       "gridPos": {
         "h": 8,
         "w": 6,
@@ -852,26 +801,34 @@
       },
       "hideTimeOverride": false,
       "id": 9,
-      "legend": {
-        "header": "",
-        "show": false,
-        "values": true
-      },
-      "legendType": "Under graph",
-      "links": [],
+"links": [],
       "maxDataPoints": 3,
-      "nullPointMode": "connected",
-      "pieType": "pie",
+      "options": {
+      "legend": {
+        "calcs": [],
+          "displayMode": "table",
+          "placement": "bottom",
+        "showLegend": false,
+        "values": ["value"]
+      },
+            "pieType": "pie",
+"reduceOptions": {
+          "calcs": ["lastNotNull"],
+          "fields": "",
+          "values": false
+        },
+        "tooltip": {
+          "mode": "single",
+          "sort": "none"
+        }
+      },
       "pluginVersion": "6.5.1",
-      "strokeWidth": 1,
-      "targets": [
+            "targets": [
         {
           "alias": "Wired",
           "groupBy": [
             {
-              "params": [
-                "channel"
-              ],
+              "params": ["channel"],
               "type": "tag"
             }
           ],
@@ -886,9 +843,7 @@
           "select": [
             [
               {
-                "params": [
-                  "channel"
-                ],
+                "params": ["channel"],
                 "type": "field"
               },
               {
@@ -907,15 +862,11 @@
           "alias": "Channel $tag_channel",
           "groupBy": [
             {
-              "params": [
-                "$__interval"
-              ],
+              "params": ["$__interval"],
               "type": "time"
             },
             {
-              "params": [
-                "null"
-              ],
+              "params": ["null"],
               "type": "fill"
             }
           ],
@@ -929,9 +880,7 @@
           "select": [
             [
               {
-                "params": [
-                  "value"
-                ],
+                "params": ["value"],
                 "type": "field"
               },
               {
@@ -946,21 +895,29 @@
       "timeFrom": "5m",
       "title": "Clients / Channel",
       "transparent": true,
-      "type": "grafana-piechart-panel",
-      "valueName": "current"
+      "type": "piechart"
     },
     {
-      "aliasColors": {},
-      "breakPoint": "25%",
-      "combine": {
-        "label": "Others",
-        "threshold": 0
-      },
       "datasource": "Unifi",
+"description": "Visualize how many clients are connected to which radios/APs.",
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "palette-classic"
+          },
+          "custom": {
+            "hideFrom": {
+              "legend": false,
+              "tooltip": false,
+              "viz": false
+            }
+          },
       "decimals": 0,
-      "description": "Visualize how many clients are connected to which radios/APs.",
-      "fontSize": "70%",
-      "format": "short",
+      "mappings": [],
+      "unit": "short"
+        },
+        "overrides": []
+      },
       "gridPos": {
         "h": 8,
         "w": 6,
@@ -969,26 +926,33 @@
       },
       "hideTimeOverride": false,
       "id": 11,
+"links": [],
+      "maxDataPoints": 3,
+      "options": {
       "legend": {
-        "header": "",
-        "percentage": true,
-        "show": false,
+        "calcs": [],
+          "displayMode": "table",
+        "placement": "bottom",
+        "showLegend": false,
+"values": ["percent"]
+        },
+        "pieType": "pie",
+        "reduceOptions": {
+          "calcs": ["lastNotNull"],
+          "fields": "",
         "values": false
       },
-      "legendType": "Under graph",
-      "links": [],
-      "maxDataPoints": 3,
-      "nullPointMode": "connected",
-      "pieType": "pie",
-      "strokeWidth": "3",
+      "tooltip": {
+          "mode": "single",
+          "sort": "none"
+        }
+      },
       "targets": [
         {
           "alias": "$tag_radio_proto",
           "groupBy": [
             {
-              "params": [
-                "channel"
-              ],
+              "params": ["channel"],
               "type": "tag"
             }
           ],
@@ -1002,9 +966,7 @@
           "select": [
             [
               {
-                "params": [
-                  "hostname"
-                ],
+                "params": ["hostname"],
                 "type": "field"
               },
               {
@@ -1025,21 +987,29 @@
       "timeFrom": "5m",
       "title": "Clients / AP Radio",
       "transparent": true,
-      "type": "grafana-piechart-panel",
-      "valueName": "current"
+      "type": "piechart"
     },
     {
-      "aliasColors": {},
-      "breakPoint": "50%",
-      "combine": {
-        "label": "Others",
-        "threshold": 0
-      },
       "datasource": "Unifi",
+"description": "This shows an OUI breakdown from Unifi's perspective. e = wired, w = wireless",
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "palette-classic"
+          },
+          "custom": {
+            "hideFrom": {
+              "legend": false,
+              "tooltip": false,
+              "viz": false
+            }
+          },
       "decimals": 0,
-      "description": "This shows an OUI breakdown from Unifi's perspective. e = wired, w = wireless",
-      "fontSize": "70%",
-      "format": "short",
+      "mappings": [],
+      "unit": "short"
+        },
+        "overrides": []
+      },
       "gridPos": {
         "h": 8,
         "w": 6,
@@ -1048,27 +1018,33 @@
       },
       "hideTimeOverride": false,
       "id": 12,
-      "legend": {
-        "header": "",
-        "show": true,
-        "sort": "current",
-        "sortDesc": true,
-        "values": true
-      },
-      "legendType": "Right side",
-      "links": [],
+"links": [],
       "maxDataPoints": 3,
-      "nullPointMode": "connected",
-      "pieType": "pie",
-      "strokeWidth": 1,
+      "options": {
+      "legend": {
+        "calcs": [],
+        "displayMode": "table",
+        "placement": "right",
+        "showLegend": true,
+        "values": ["value"]
+      },
+            "pieType": "pie",
+      "reduceOptions": {
+          "calcs": ["lastNotNull"],
+          "fields": "",
+          "values": false
+        },
+        "tooltip": {
+          "mode": "single",
+          "sort": "none"
+        }
+      },
       "targets": [
         {
           "alias": "$tag_oui",
           "groupBy": [
             {
-              "params": [
-                "channel"
-              ],
+              "params": ["channel"],
               "type": "tag"
             }
           ],
@@ -1082,9 +1058,7 @@
           "select": [
             [
               {
-                "params": [
-                  "hostname"
-                ],
+                "params": ["hostname"],
                 "type": "field"
               },
               {
@@ -1105,21 +1079,29 @@
       "timeFrom": "5m",
       "title": "Client MAC OUI Breakdown",
       "transparent": true,
-      "type": "grafana-piechart-panel",
-      "valueName": "current"
+      "type": "piechart"
     },
     {
-      "aliasColors": {},
-      "breakPoint": "50%",
-      "combine": {
-        "label": "Others",
-        "threshold": 0
-      },
       "datasource": "Unifi",
-      "decimals": 0,
       "description": "No real idea what these numbers are, but Unifi provides them, so I made a cool pie chart out of them. What's your pie chart look like?",
-      "fontSize": "70%",
-      "format": "short",
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+        "mode": "palette-classic"
+          },
+        "custom": {
+            "hideFrom": {
+              "legend": false,
+      "tooltip": false,
+              "viz": false
+            }
+          },
+      "decimals": 0,
+      "mappings": [],
+      "unit": "short"
+        },
+        "overrides": []
+      },
       "gridPos": {
         "h": 8,
         "w": 6,
@@ -1128,25 +1110,33 @@
       },
       "hideTimeOverride": false,
       "id": 14,
-      "legend": {
-        "header": "",
-        "show": false,
-        "values": true
-      },
-      "legendType": "Right side",
-      "links": [],
+"links": [],
       "maxDataPoints": 3,
-      "nullPointMode": "connected",
-      "pieType": "pie",
-      "strokeWidth": 1,
+      "options": {
+      "legend": {
+        "calcs": [],
+          "displayMode": "table",
+          "placement": "right",
+        "showLegend": false,
+        "values": ["value"]
+      },
+            "pieType": "pie",
+      "reduceOptions": {
+          "calcs": ["lastNotNull"],
+          "fields": "",
+          "values": false
+        },
+        "tooltip": {
+          "mode": "single",
+          "sort": "none"
+        }
+      },
       "targets": [
         {
           "alias": "$tag_os_class, $tag_os_name, $tag_dev_cat, $tag_dev_family, $tag_dev_id,",
           "groupBy": [
             {
-              "params": [
-                "channel"
-              ],
+              "params": ["channel"],
               "type": "tag"
             }
           ],
@@ -1160,9 +1150,7 @@
           "select": [
             [
               {
-                "params": [
-                  "hostname"
-                ],
+                "params": ["hostname"],
                 "type": "field"
               },
               {
@@ -1183,8 +1171,7 @@
       "timeFrom": "5m",
       "title": "OS/Dev Class/ID Breakdown",
       "transparent": true,
-      "type": "grafana-piechart-panel",
-      "valueName": "current"
+      "type": "piechart"
     },
     {
       "datasource": "Unifi",
@@ -1208,11 +1195,11 @@
               "legend": false,
               "tooltip": false,
               "viz": false
-      },
-      "insertNulls": false,
+            },
+            "insertNulls": false,
             "lineInterpolation": "linear",
             "lineWidth": 1,
-      "pointSize": 5,
+            "pointSize": 5,
             "scaleDistribution": {
               "type": "linear"
             },
@@ -1264,20 +1251,16 @@
         "x": 0,
         "y": 34
       },
-            "id": 2,
-            "links": [],
-            "options": {
+      "id": 2,
+      "links": [],
+      "options": {
         "legend": {
-          "calcs": [
-            "mean",
-            "lastNotNull",
-            "max"
-          ],
+          "calcs": ["mean", "lastNotNull", "max"],
           "displayMode": "table",
           "placement": "right",
           "showLegend": true
-      },
-      "tooltip": {
+        },
+        "tooltip": {
           "mode": "multi",
           "sort": "desc"
         }
@@ -1288,27 +1271,19 @@
           "alias": "[[Identifier]] $col",
           "groupBy": [
             {
-              "params": [
-                "$__interval"
-              ],
+              "params": ["$__interval"],
               "type": "time"
             },
             {
-              "params": [
-                "name"
-              ],
+              "params": ["name"],
               "type": "tag"
             },
             {
-              "params": [
-                "mac"
-              ],
+              "params": ["mac"],
               "type": "tag"
             },
             {
-              "params": [
-                "none"
-              ],
+              "params": ["none"],
               "type": "fill"
             }
           ],
@@ -1322,9 +1297,7 @@
           "select": [
             [
               {
-                "params": [
-                  "wired-rx_bytes"
-                ],
+                "params": ["wired-rx_bytes"],
                 "type": "field"
               },
               {
@@ -1332,23 +1305,17 @@
                 "type": "sum"
               },
               {
-                "params": [
-                  "1s"
-                ],
+                "params": ["1s"],
                 "type": "derivative"
               },
               {
-                "params": [
-                  "Rx"
-                ],
+                "params": ["Rx"],
                 "type": "alias"
               }
             ],
             [
               {
-                "params": [
-                  "wired-tx_bytes"
-                ],
+                "params": ["wired-tx_bytes"],
                 "type": "field"
               },
               {
@@ -1356,15 +1323,11 @@
                 "type": "sum"
               },
               {
-                "params": [
-                  "1s"
-                ],
+                "params": ["1s"],
                 "type": "derivative"
               },
               {
-                "params": [
-                  "Tx"
-                ],
+                "params": ["Tx"],
                 "type": "alias"
               }
             ]
@@ -1390,41 +1353,41 @@
         "defaults": {
           "color": {
             "mode": "palette-classic"
-      },
-      "custom": {
+          },
+          "custom": {
             "axisBorderShow": false,
-      "axisCenteredZero": false,
-      "axisColorMode": "text",
-        "axisLabel": "bytes / sec",
-        "axisPlacement": "auto",
-      "barAlignment": 0,
+            "axisCenteredZero": false,
+            "axisColorMode": "text",
+            "axisLabel": "bytes / sec",
+            "axisPlacement": "auto",
+            "barAlignment": 0,
             "drawStyle": "line",
             "fillOpacity": 10,
-          "gradientMode": "none",
-          "hideFrom": {
+            "gradientMode": "none",
+            "hideFrom": {
               "legend": false,
-          "tooltip": false,
-          "viz": false
-        },
-        "insertNulls": false,
-          "lineInterpolation": "linear",
-          "lineWidth": 1,
-          "pointSize": 5,
-      "scaleDistribution": {
-        "type": "linear"
-    },
-    "showPoints": "never",
-      "spanNulls": true,
-      "stacking": {
-              "group": "A",
-      "mode": "none"
+              "tooltip": false,
+              "viz": false
             },
-      "thresholdsStyle": {
+            "insertNulls": false,
+            "lineInterpolation": "linear",
+            "lineWidth": 1,
+            "pointSize": 5,
+            "scaleDistribution": {
+              "type": "linear"
+            },
+            "showPoints": "never",
+            "spanNulls": true,
+            "stacking": {
+              "group": "A",
+              "mode": "none"
+            },
+            "thresholdsStyle": {
               "mode": "off"
             }
           },
           "links": [],
-      "mappings": [],
+          "mappings": [],
           "thresholds": {
             "mode": "absolute",
             "steps": [
@@ -1442,14 +1405,14 @@
         },
         "overrides": [
           {
-        "matcher": {
-          "id": "byRegexp",
+            "matcher": {
+              "id": "byRegexp",
               "options": "/Rx$/"
-        },
-        "properties": [
+            },
+            "properties": [
               {
                 "id": "custom.transform",
-      "value": "negative-Y"
+                "value": "negative-Y"
               }
             ]
           }
@@ -1461,20 +1424,16 @@
         "x": 0,
         "y": 49
       },
-            "id": 3,
-            "links": [],
-            "options": {
+      "id": 3,
+      "links": [],
+      "options": {
         "legend": {
-          "calcs": [
-            "mean",
-            "lastNotNull",
-            "max"
-          ],
+          "calcs": ["mean", "lastNotNull", "max"],
           "displayMode": "table",
           "placement": "right",
           "showLegend": true
-      },
-      "tooltip": {
+        },
+        "tooltip": {
           "mode": "multi",
           "sort": "desc"
         }
@@ -1485,27 +1444,19 @@
           "alias": "[[Identifier]] $col",
           "groupBy": [
             {
-              "params": [
-                "$__interval"
-              ],
+              "params": ["$__interval"],
               "type": "time"
             },
             {
-              "params": [
-                "name"
-              ],
+              "params": ["name"],
               "type": "tag"
             },
             {
-              "params": [
-                "mac"
-              ],
+              "params": ["mac"],
               "type": "tag"
             },
             {
-              "params": [
-                "none"
-              ],
+              "params": ["none"],
               "type": "fill"
             }
           ],
@@ -1519,9 +1470,7 @@
           "select": [
             [
               {
-                "params": [
-                  "rx_bytes"
-                ],
+                "params": ["rx_bytes"],
                 "type": "field"
               },
               {
@@ -1529,23 +1478,17 @@
                 "type": "sum"
               },
               {
-                "params": [
-                  "1s"
-                ],
+                "params": ["1s"],
                 "type": "non_negative_derivative"
               },
               {
-                "params": [
-                  "Rx"
-                ],
+                "params": ["Rx"],
                 "type": "alias"
               }
             ],
             [
               {
-                "params": [
-                  "tx_bytes"
-                ],
+                "params": ["tx_bytes"],
                 "type": "field"
               },
               {
@@ -1553,21 +1496,17 @@
                 "type": "sum"
               },
               {
-                "params": [
-                  "1s"
-                ],
+                "params": ["1s"],
                 "type": "non_negative_derivative"
               },
               {
-                "params": [
-                  "Tx"
-                ],
+                "params": ["Tx"],
                 "type": "alias"
               }
             ]
           ],
           "tags": [
-                        {
+            {
               "condition": "AND",
               "key": "is_wired",
               "operator": "=",
@@ -1579,75 +1518,79 @@
       "thresholds": [],
       "timeRegions": [],
       "title": "UAP Bandwidth / Wireless Devices",
+      "transparent": true,
       "type": "timeseries"
     },
     {
-      "backgroundColor": "rgba(128,128,128,0.1)",
-      "colorMaps": [
-        {
-          "color": "#70dbed",
-          "text": "Upper N"
-        },
-        {
-          "color": "#806eb7",
-          "text": "Lower G"
-        },
-        {
-          "color": "#806eb7",
-          "text": "Lower N"
-        },
-        {
-          "color": "#64b0c8",
-          "text": "Upper G"
-        }
-      ],
-      "crosshairColor": "#8F070C",
       "datasource": "Unifi",
       "description": "Shows which wireless radio a client is connected to. Setting AP does not change this.",
-      "display": "timeline",
-      "expandFromQueryS": 0,
-      "extendLastValue": true,
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "continuous-GrYlRd"
+          },
+      "custom": {
+            "fillOpacity": 70,
+            "hideFrom": {
+              "legend": false,
+              "tooltip": false,
+              "viz": false
+            },
+            "insertNulls": false,
+            "lineWidth": 0,
+      "spanNulls": false
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          }
+        },
+        "overrides": []
+      },
       "gridPos": {
         "h": 16,
         "w": 12,
         "x": 0,
         "y": 65
       },
-      "highlightOnMouseover": true,
-      "id": 17,
-      "legendSortBy": "-ms",
-      "lineColor": "rgba(0,0,0,0.1)",
-      "links": [],
-      "metricNameColor": "#000000",
-      "rangeMaps": [
-        {
-          "from": "null",
-          "text": "N/A",
-          "to": "null"
+            "id": 17,
+            "links": [],
+      "options": {
+        "alignValue": "left",
+          "legend": {
+          "displayMode": "list",
+      "placement": "bottom",
+      "showLegend": true
+        },
+      "mergeValues": true,
+      "rowHeight": 0.9,
+      "showValue": "auto",
+      "tooltip": {
+          "mode": "single",
+      "sort": "none"
         }
-      ],
-      "rowHeight": 28,
-      "showDistinctCount": false,
-      "showLegend": true,
-      "showLegendNames": false,
-      "showLegendPercent": true,
-      "showLegendValues": true,
-      "showTimeAxis": true,
-      "showTransitionCount": true,
+      },
       "targets": [
         {
           "alias": "[[Identifier]]",
-          "groupBy": [
+          "datasource": "Unifi",
+                    "groupBy": [
             {
-              "params": [
-                "name"
-              ],
+              "params": ["name"],
               "type": "tag"
             },
             {
-              "params": [
-                "mac"
-              ],
+              "params": ["mac"],
               "type": "tag"
             }
           ],
@@ -1659,172 +1602,94 @@
           "select": [
             [
               {
-                "params": [
-                  "radio_desc"
-                ],
+                "params": ["radio_desc"],
                 "type": "field"
               }
             ]
           ],
           "tags": [
             {
-              "key": "name",
-              "operator": "=~",
-              "value": "/^$Wireless$/"
-            },
-            {
-              "condition": "AND",
-              "key": "site_name",
-              "operator": "=~",
-              "value": "/^$Site$/"
-            },
-            {
-              "condition": "AND",
-              "key": "ap_name",
-              "operator": "=~",
-              "value": "/^$AP$/"
+              "key": "is_wired",
+              "operator": "=",
+              "value": "false"
             }
           ]
         }
       ],
-      "textSize": 16,
-      "textSizeTime": 14,
-      "timeOptions": [
-        {
-          "name": "Years",
-          "value": "years"
-        },
-        {
-          "name": "Months",
-          "value": "months"
-        },
-        {
-          "name": "Weeks",
-          "value": "weeks"
-        },
-        {
-          "name": "Days",
-          "value": "days"
-        },
-        {
-          "name": "Hours",
-          "value": "hours"
-        },
-        {
-          "name": "Minutes",
-          "value": "minutes"
-        },
-        {
-          "name": "Seconds",
-          "value": "seconds"
-        },
-        {
-          "name": "Milliseconds",
-          "value": "milliseconds"
-        }
-      ],
-      "timePrecision": {
-        "name": "Minutes",
-        "value": "minutes"
-      },
-      "timeTextColor": "#d8d9da",
       "title": "Wifi Client / AP",
-      "type": "natel-discrete-panel",
-      "units": "short",
-      "use12HourClock": false,
-      "useTimePrecision": false,
-      "valueMaps": [
-        {
-          "op": "=",
-          "text": "Upper G",
-          "value": "80:2a:a8:12:ae:0c"
+          "transparent": true,
+          "type": "state-timeline"
         },
         {
-          "op": "=",
-          "text": "Lower G",
-          "value": "80:2a:a8:11:ae:87"
-        },
-        {
-          "op": "=",
-          "text": "Lower N",
-          "value": "80:2a:a8:12:ae:87"
-        },
-        {
-          "op": "=",
-          "text": "Upper N",
-          "value": "80:2a:a8:11:ae:0c"
-        },
-        {
-          "op": "=",
-          "text": "NAME",
-          "value": "MAC"
-        },
-        {
-          "op": "=",
-          "text": "YOUR OWN!",
-          "value": "ADD"
-        }
-      ],
-      "valueTextColor": "#000000",
-      "writeAllValues": false,
-      "writeLastValue": false,
-      "writeMetricNames": true
-    },
-    {
-      "backgroundColor": "rgba(128,128,128,0.1)",
-      "colorMaps": [
-        {
-          "color": "#CCC",
-          "text": "N/A"
-        }
-      ],
-      "crosshairColor": "#8F070C",
-      "datasource": "Unifi",
+          "datasource": "Unifi",
       "description": "Shows IPs assigned to non-static clients. Clients with many changes may indicate misconfiguration or two clients sharing the same name.",
-      "display": "timeline",
-      "expandFromQueryS": 0,
-      "extendLastValue": true,
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+          "mode": "continuous-GrYlRd"
+        },
+        "custom": {
+          "fillOpacity": 70,
+          "hideFrom": {
+              "legend": false,
+              "tooltip": false,
+              "viz": false
+            },
+            "insertNulls": false,
+            "lineWidth": 0,
+      "spanNulls": false
+          },
+      "mappings": [],
+      "thresholds": {
+      "mode": "absolute",
+      "steps": [
+        {
+          "color": "green",
+          "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          }
+        },
+        "overrides": []
+      },
       "gridPos": {
         "h": 16,
         "w": 12,
         "x": 12,
         "y": 65
       },
-      "highlightOnMouseover": true,
-      "id": 18,
-      "legendSortBy": "-ms",
-      "lineColor": "rgba(0,0,0,0.1)",
-      "links": [],
-      "metricNameColor": "#000000",
-      "rangeMaps": [
-        {
-          "from": "null",
-          "text": "N/A",
-          "to": "null"
+            "id": 18,
+            "links": [],
+      "options": {
+        "alignValue": "left",
+          "legend": {
+          "displayMode": "list",
+      "placement": "bottom",
+      "showLegend": true
+        },
+      "mergeValues": true,
+      "rowHeight": 0.9,
+      "showValue": "auto",
+      "tooltip": {
+          "mode": "single",
+      "sort": "none"
         }
-      ],
-      "rowHeight": 28,
-      "showDistinctCount": false,
-      "showLegend": false,
-      "showLegendNames": false,
-      "showLegendPercent": true,
-      "showLegendValues": true,
-      "showTimeAxis": true,
-      "showTransitionCount": false,
+      },
       "targets": [
         {
           "alias": "[[Identifier]]",
-          "groupBy": [
+          "datasource": "Unifi",
+                    "groupBy": [
             {
-              "params": [
-                "name"
-              ],
+              "params": ["name"],
               "type": "tag"
             },
             {
-              "params": [
-                "mac"
-              ],
+              "params": ["mac"],
               "type": "tag"
             }
           ],
@@ -1839,46 +1704,22 @@
           "select": [
             [
               {
-                "params": [
-                  "ip"
-                ],
+                "params": ["ip"],
                 "type": "field"
               }
             ]
-          ],
-          "tags": [
-            {
-              "key": "name",
-              "operator": "=~",
-              "value": "/^$Wireless$/"
-            },
-            {
-              "condition": "AND",
-              "key": "ap_name",
-              "operator": "=~",
-              "value": "/^$AP$/"
-            },
-            {
-              "condition": "AND",
-              "key": "site_name",
-              "operator": "=~",
-              "value": "/^$Site$/"
-            }
-          ]
+                    ]
         },
         {
           "alias": "[[Identifier]]",
-          "groupBy": [
+          "datasource": "Unifi",
+                    "groupBy": [
             {
-              "params": [
-                "name"
-              ],
+              "params": ["name"],
               "type": "tag"
             },
             {
-              "params": [
-                "mac"
-              ],
+              "params": ["mac"],
               "type": "tag"
             }
           ],
@@ -1893,9 +1734,7 @@
           "select": [
             [
               {
-                "params": [
-                  "ip"
-                ],
+                "params": ["ip"],
                 "type": "field"
               }
             ]
@@ -1921,132 +1760,101 @@
           ]
         }
       ],
-      "textSize": 16,
-      "textSizeTime": 14,
-      "timeOptions": [
-        {
-          "name": "Years",
-          "value": "years"
-        },
-        {
-          "name": "Months",
-          "value": "months"
-        },
-        {
-          "name": "Weeks",
-          "value": "weeks"
-        },
-        {
-          "name": "Days",
-          "value": "days"
-        },
-        {
-          "name": "Hours",
-          "value": "hours"
-        },
-        {
-          "name": "Minutes",
-          "value": "minutes"
-        },
-        {
-          "name": "Seconds",
-          "value": "seconds"
-        },
-        {
-          "name": "Milliseconds",
-          "value": "milliseconds"
-        }
-      ],
-      "timePrecision": {
-        "name": "Minutes",
-        "value": "minutes"
-      },
-      "timeTextColor": "#d8d9da",
-      "title": "Client / IP",
-      "type": "natel-discrete-panel",
-      "units": "short",
-      "use12HourClock": false,
-      "useTimePrecision": false,
-      "valueMaps": [
-        {
-          "op": "=",
-          "text": "N/A",
-          "value": "null"
-        }
-      ],
-      "valueTextColor": "#000000",
-      "writeAllValues": false,
-      "writeLastValue": false,
-      "writeMetricNames": true
+            "title": "Client / IP",
+      "transparent": true,
+      "type": "state-timeline"
     },
-        {
-      "aliasColors": {},
-      "bars": false,
-      "dashLength": 10,
-      "dashes": false,
+    {
       "datasource": "Unifi",
-      "decimals": 0,
       "fieldConfig": {
         "defaults": {
-          "links": []
+          "color": {
+            "mode": "palette-classic"
+          },
+          "custom": {
+            "axisBorderShow": false,
+            "axisCenteredZero": false,
+            "axisColorMode": "text",
+            "axisLabel": "RSSI Quality",
+            "axisPlacement": "auto",
+            "barAlignment": 0,
+            "drawStyle": "line",
+            "fillOpacity": 0,
+            "gradientMode": "none",
+            "hideFrom": {
+              "legend": false,
+              "tooltip": false,
+              "viz": false
+            },
+            "insertNulls": false,
+            "lineInterpolation": "linear",
+            "lineWidth": 1,
+            "pointSize": 5,
+            "scaleDistribution": {
+              "type": "linear"
+            },
+            "showPoints": "never",
+            "spanNulls": true,
+            "stacking": {
+              "group": "A",
+              "mode": "none"
+            },
+            "thresholdsStyle": {
+              "mode": "off"
+            }
+          },
+          "decimals": 0,
+          "links": [],
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          },
+          "unit": "short"
         },
         "overrides": []
       },
-      "fill": 0,
-      "fillGradient": 0,
       "gridPos": {
         "h": 9,
         "w": 12,
         "x": 0,
         "y": 81
       },
-      "hiddenSeries": false,
       "id": 7,
-      "legend": {
-        "alignAsTable": true,
-        "avg": false,
-        "current": true,
-        "hideEmpty": false,
-        "hideZero": false,
-        "max": true,
-        "min": true,
-        "rightSide": true,
-        "show": true,
-        "sort": "min",
-        "sortDesc": true,
-        "total": false,
-        "values": true
-      },
-      "lines": true,
-      "linewidth": 1,
       "links": [],
-      "nullPointMode": "connected",
       "options": {
-        "alertThreshold": true
+        "legend": {
+          "calcs": ["lastNotNull", "max", "min"],
+          "displayMode": "table",
+          "placement": "right",
+          "showLegend": true
+        },
+        "tooltip": {
+          "mode": "multi",
+          "sort": "desc"
+        }
       },
-      "percentage": false,
       "pluginVersion": "10.2.1",
-      "pointradius": 5,
-      "points": false,
-      "renderer": "flot",
-      "seriesOverrides": [],
-      "spaceLength": 10,
-      "stack": false,
-      "steppedLine": false,
       "targets": [
         {
           "alias": "[[Identifier]]",
-          "groupBy": [
+          "datasource": "Unifi",
+                    "groupBy": [
             {
-              "params": [
-                "name"
-              ],
+              "params": ["name"],
               "type": "tag"
             },
             {
-              "params": [
-                "mac"
-              ],
+              "params": ["mac"],
               "type": "tag"
             }
           ],
@@ -2060,134 +1868,115 @@
           "select": [
             [
               {
-                "params": [
-                  "rssi"
-                ],
+                "params": ["rssi"],
                 "type": "field"
               }
             ]
           ],
           "tags": [
-            {
-              "key": "name",
-              "operator": "=~",
-              "value": "/^$Wireless$/"
-            },
-            {
+                        {
               "condition": "AND",
-              "key": "ap_name",
-              "operator": "=~",
-              "value": "/^$AP$/"
-            },
-            {
-              "condition": "AND",
-              "key": "site_name",
-              "operator": "=~",
-              "value": "/^$Site$/"
+              "key": "is_wired",
+              "operator": "=",
+              "value": "false"
             }
           ]
         }
       ],
-      "thresholds": [],
-      "timeRegions": [],
       "title": "Received Signal Strength Indicator",
-      "tooltip": {
-        "shared": true,
-        "sort": 2,
-        "value_type": "individual"
-      },
       "transparent": true,
-      "type": "graph",
-      "xaxis": {
-        "mode": "time",
-        "show": true,
-        "values": []
-      },
-      "yaxes": [
-        {
-          "decimals": 0,
-          "format": "short",
-          "label": "RSSI Quality",
-          "logBase": 1,
-          "show": true
-        },
-        {
-          "format": "short",
-          "logBase": 1,
-          "show": false
-        }
-      ],
-      "yaxis": {
-        "align": false
-      }
+      "type": "timeseries"
     },
     {
-      "aliasColors": {},
-      "bars": false,
-      "dashLength": 10,
-      "dashes": false,
       "datasource": "Unifi",
       "fieldConfig": {
         "defaults": {
-          "links": []
+          "color": {
+            "mode": "palette-classic"
+          },
+          "custom": {
+            "axisBorderShow": false,
+            "axisCenteredZero": false,
+            "axisColorMode": "text",
+            "axisLabel": "Signal Power",
+            "axisPlacement": "auto",
+            "barAlignment": 0,
+            "drawStyle": "line",
+            "fillOpacity": 0,
+            "gradientMode": "none",
+            "hideFrom": {
+              "legend": false,
+              "tooltip": false,
+              "viz": false
+            },
+            "insertNulls": false,
+            "lineInterpolation": "linear",
+            "lineWidth": 1,
+            "pointSize": 5,
+            "scaleDistribution": {
+              "type": "linear"
+            },
+            "showPoints": "never",
+            "spanNulls": true,
+            "stacking": {
+              "group": "A",
+              "mode": "none"
+            },
+            "thresholdsStyle": {
+              "mode": "off"
+            }
+          },
+          "links": [],
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          },
+          "unit": "dBm"
         },
         "overrides": []
       },
-      "fill": 0,
-      "fillGradient": 0,
       "gridPos": {
         "h": 9,
         "w": 12,
         "x": 12,
         "y": 81
       },
-      "hiddenSeries": false,
       "id": 10,
-      "legend": {
-        "alignAsTable": true,
-        "avg": false,
-        "current": true,
-        "hideEmpty": false,
-        "hideZero": false,
-        "max": true,
-        "min": true,
-        "rightSide": true,
-        "show": true,
-        "sort": "max",
-        "sortDesc": true,
-        "total": false,
-        "values": true
-      },
-      "lines": true,
-      "linewidth": 1,
       "links": [],
-      "nullPointMode": "connected",
       "options": {
-        "alertThreshold": true
+        "legend": {
+          "calcs": ["lastNotNull", "max", "min"],
+          "displayMode": "table",
+          "placement": "right",
+          "showLegend": true
+        },
+        "tooltip": {
+          "mode": "multi",
+          "sort": "desc"
+        }
       },
-      "percentage": false,
       "pluginVersion": "10.2.1",
-      "pointradius": 5,
-      "points": false,
-      "renderer": "flot",
-      "seriesOverrides": [],
-      "spaceLength": 10,
-      "stack": false,
-      "steppedLine": false,
       "targets": [
         {
           "alias": "[[Identifier]]",
-          "groupBy": [
+          "datasource": "Unifi",
+                    "groupBy": [
             {
-              "params": [
-                "name"
-              ],
+              "params": ["name"],
               "type": "tag"
             },
             {
-              "params": [
-                "mac"
-              ],
+              "params": ["mac"],
               "type": "tag"
             }
           ],
@@ -2201,133 +1990,116 @@
           "select": [
             [
               {
-                "params": [
-                  "signal"
-                ],
+                "params": ["signal"],
                 "type": "field"
               }
             ]
           ],
           "tags": [
-            {
-              "key": "name",
-              "operator": "=~",
-              "value": "/^$Wireless$/"
-            },
-            {
+                        {
               "condition": "AND",
-              "key": "ap_name",
-              "operator": "=~",
-              "value": "/^$AP$/"
-            },
-            {
-              "condition": "AND",
-              "key": "site_name",
-              "operator": "=~",
-              "value": "/^$Site$/"
+              "key": "is_wired",
+              "operator": "=",
+              "value": "false"
             }
           ]
         }
       ],
-      "thresholds": [],
-      "timeRegions": [],
       "title": "Wireless Signal",
-      "tooltip": {
-        "shared": true,
-        "sort": 2,
-        "value_type": "individual"
-      },
       "transparent": true,
-      "type": "graph",
-      "xaxis": {
-        "mode": "time",
-        "show": true,
-        "values": []
-      },
-      "yaxes": [
-        {
-          "format": "dBm",
-          "label": "Signal Power",
-          "logBase": 1,
-          "show": true
-        },
-        {
-          "format": "short",
-          "logBase": 1,
-          "show": false
-        }
-      ],
-      "yaxis": {
-        "align": false
-      }
+      "type": "timeseries"
     },
     {
-      "aliasColors": {},
-      "bars": false,
-      "dashLength": 10,
-      "dashes": false,
       "datasource": "Unifi",
       "fieldConfig": {
         "defaults": {
-          "links": []
+          "color": {
+            "mode": "palette-classic"
+          },
+          "custom": {
+            "axisBorderShow": false,
+            "axisCenteredZero": false,
+            "axisColorMode": "text",
+            "axisLabel": "Noise",
+            "axisPlacement": "auto",
+            "barAlignment": 0,
+            "drawStyle": "line",
+            "fillOpacity": 0,
+            "gradientMode": "none",
+            "hideFrom": {
+              "legend": false,
+              "tooltip": false,
+              "viz": false
+            },
+            "insertNulls": false,
+            "lineInterpolation": "linear",
+            "lineWidth": 1,
+            "pointSize": 5,
+            "scaleDistribution": {
+              "type": "linear"
+            },
+            "showPoints": "never",
+            "spanNulls": true,
+            "stacking": {
+              "group": "A",
+              "mode": "none"
+            },
+            "thresholdsStyle": {
+              "mode": "off"
+            }
+          },
+          "decimals": 0,
+          "links": [],
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          },
+          "unit": "short"
         },
         "overrides": []
       },
-      "fill": 0,
-      "fillGradient": 0,
       "gridPos": {
         "h": 8,
         "w": 12,
         "x": 0,
         "y": 90
       },
-      "hiddenSeries": false,
       "id": 6,
-      "legend": {
-        "alignAsTable": true,
-        "avg": false,
-        "current": true,
-        "hideEmpty": false,
-        "hideZero": false,
-        "max": true,
-        "min": true,
-        "rightSide": true,
-        "show": true,
-        "sort": "current",
-        "sortDesc": true,
-        "total": false,
-        "values": true
-      },
-      "lines": true,
-      "linewidth": 1,
       "links": [],
-      "nullPointMode": "connected",
       "options": {
-        "alertThreshold": true
+        "legend": {
+          "calcs": ["lastNotNull", "max", "min"],
+          "displayMode": "table",
+          "placement": "right",
+          "showLegend": true
+        },
+        "tooltip": {
+          "mode": "multi",
+          "sort": "asc"
+        }
       },
-      "percentage": false,
       "pluginVersion": "10.2.1",
-      "pointradius": 5,
-      "points": false,
-      "renderer": "flot",
-      "seriesOverrides": [],
-      "spaceLength": 10,
-      "stack": false,
-      "steppedLine": false,
       "targets": [
         {
           "alias": "[[Identifier]]",
-          "groupBy": [
+          "datasource": "Unifi",
+                    "groupBy": [
             {
-              "params": [
-                "name"
-              ],
+              "params": ["name"],
               "type": "tag"
             },
             {
-              "params": [
-                "mac"
-              ],
+              "params": ["mac"],
               "type": "tag"
             }
           ],
@@ -2341,132 +2113,115 @@
           "select": [
             [
               {
-                "params": [
-                  "noise"
-                ],
+                "params": ["noise"],
                 "type": "field"
               }
             ]
           ],
           "tags": [
             {
-              "key": "name",
-              "operator": "=~",
-              "value": "/^$Wireless$/"
-            },
-            {
-              "condition": "AND",
-              "key": "ap_name",
-              "operator": "=~",
-              "value": "/^$AP$/"
-            },
-            {
-              "condition": "AND",
-              "key": "site_name",
-              "operator": "=~",
-              "value": "/^$Site$/"
+              "key": "is_wired",
+              "operator": "=",
+              "value": "false"
             }
           ]
         }
       ],
-      "thresholds": [],
-      "timeRegions": [],
       "title": "UAP Client Stats / Noise",
-      "tooltip": {
-        "shared": true,
-        "sort": 1,
-        "value_type": "individual"
-      },
-      "type": "graph",
-      "xaxis": {
-        "mode": "time",
-        "show": true,
-        "values": []
-      },
-      "yaxes": [
-        {
-          "decimals": 0,
-          "format": "short",
-          "label": "Noise",
-          "logBase": 1,
-          "show": true
-        },
-        {
-          "format": "short",
-          "logBase": 1,
-          "show": false
-        }
-      ],
-      "yaxis": {
-        "align": false
-      }
+      "transparent": true,
+      "type": "timeseries"
     },
     {
-      "aliasColors": {},
-      "bars": false,
-      "dashLength": 10,
-      "dashes": false,
       "datasource": "Unifi",
       "description": "Client reported transmit rate.",
       "fieldConfig": {
         "defaults": {
-          "links": []
+          "color": {
+            "mode": "palette-classic"
+          },
+          "custom": {
+            "axisBorderShow": false,
+            "axisCenteredZero": false,
+            "axisColorMode": "text",
+            "axisLabel": "",
+            "axisPlacement": "auto",
+            "barAlignment": 0,
+            "drawStyle": "line",
+            "fillOpacity": 0,
+            "gradientMode": "none",
+            "hideFrom": {
+              "legend": false,
+              "tooltip": false,
+              "viz": false
+            },
+            "insertNulls": false,
+            "lineInterpolation": "linear",
+            "lineWidth": 1,
+            "pointSize": 5,
+            "scaleDistribution": {
+              "type": "linear"
+            },
+            "showPoints": "never",
+            "spanNulls": true,
+            "stacking": {
+              "group": "A",
+              "mode": "none"
+            },
+            "thresholdsStyle": {
+              "mode": "off"
+            }
+          },
+          "links": [],
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          },
+          "unit": "Kbits"
         },
         "overrides": []
       },
-      "fill": 0,
-      "fillGradient": 0,
       "gridPos": {
         "h": 8,
         "w": 12,
         "x": 12,
         "y": 90
       },
-      "hiddenSeries": false,
       "id": 19,
-      "legend": {
-        "alignAsTable": true,
-        "avg": true,
-        "current": true,
-        "max": true,
-        "min": false,
-        "rightSide": true,
-        "show": true,
-        "sort": "current",
-        "sortDesc": true,
-        "total": false,
-        "values": true
-      },
-      "lines": true,
-      "linewidth": 1,
       "links": [],
-      "nullPointMode": "connected",
       "options": {
-        "alertThreshold": true
+        "legend": {
+          "calcs": ["mean", "lastNotNull", "max"],
+          "displayMode": "table",
+          "placement": "right",
+          "showLegend": true
+        },
+        "tooltip": {
+          "mode": "multi",
+          "sort": "desc"
+        }
       },
-      "percentage": false,
       "pluginVersion": "10.2.1",
-      "pointradius": 5,
-      "points": false,
-      "renderer": "flot",
-      "seriesOverrides": [],
-      "spaceLength": 10,
-      "stack": false,
-      "steppedLine": false,
       "targets": [
         {
           "alias": "[[Identifier]]",
-          "groupBy": [
+          "datasource": "Unifi",
+                    "groupBy": [
             {
-              "params": [
-                "name"
-              ],
+              "params": ["name"],
               "type": "tag"
             },
             {
-              "params": [
-                "mac"
-              ],
+              "params": ["mac"],
               "type": "tag"
             }
           ],
@@ -2480,132 +2235,116 @@
           "select": [
             [
               {
-                "params": [
-                  "tx_rate"
-                ],
+                "params": ["tx_rate"],
                 "type": "field"
               }
             ]
           ],
           "tags": [
-            {
-              "key": "name",
-              "operator": "=~",
-              "value": "/^$Wireless$/"
-            },
-            {
+                        {
               "condition": "AND",
-              "key": "ap_name",
-              "operator": "=~",
-              "value": "/^$AP$/"
-            },
-            {
-              "condition": "AND",
-              "key": "site_name",
-              "operator": "=~",
-              "value": "/^$Site$/"
+              "key": "is_wired",
+              "operator": "=",
+              "value": "false"
             }
           ]
         }
       ],
-      "thresholds": [],
-      "timeRegions": [],
       "title": "TX Rate",
-      "tooltip": {
-        "shared": true,
-        "sort": 2,
-        "value_type": "individual"
-      },
-      "type": "graph",
-      "xaxis": {
-        "mode": "time",
-        "show": true,
-        "values": []
-      },
-      "yaxes": [
-        {
-          "format": "Kbits",
-          "logBase": 1,
-          "show": true
-        },
-        {
-          "format": "short",
-          "logBase": 1,
-          "show": false
-        }
-      ],
-      "yaxis": {
-        "align": false
-      }
+      "transparent": true,
+      "type": "timeseries"
     },
     {
-      "aliasColors": {},
-      "bars": false,
-      "dashLength": 10,
-      "dashes": false,
       "datasource": "Unifi",
-      "decimals": 0,
       "fieldConfig": {
         "defaults": {
-          "links": []
+          "color": {
+            "mode": "palette-classic"
+          },
+          "custom": {
+            "axisBorderShow": false,
+            "axisCenteredZero": false,
+            "axisColorMode": "text",
+            "axisLabel": "Attempts / Second",
+            "axisPlacement": "auto",
+            "barAlignment": 0,
+            "drawStyle": "line",
+            "fillOpacity": 0,
+            "gradientMode": "none",
+            "hideFrom": {
+              "legend": false,
+              "tooltip": false,
+              "viz": false
+            },
+            "insertNulls": false,
+            "lineInterpolation": "linear",
+            "lineWidth": 1,
+            "pointSize": 5,
+            "scaleDistribution": {
+              "type": "linear"
+            },
+            "showPoints": "never",
+            "spanNulls": true,
+            "stacking": {
+              "group": "A",
+              "mode": "none"
+            },
+            "thresholdsStyle": {
+              "mode": "off"
+            }
+          },
+          "decimals": 0,
+          "links": [],
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          },
+          "unit": "short"
         },
         "overrides": []
       },
-      "fill": 0,
-      "fillGradient": 0,
       "gridPos": {
         "h": 8,
         "w": 12,
         "x": 0,
         "y": 98
       },
-      "hiddenSeries": false,
       "id": 24,
-      "legend": {
-        "alignAsTable": true,
-        "avg": false,
-        "current": true,
-        "hideEmpty": false,
-        "hideZero": false,
-        "max": true,
-        "min": true,
-        "rightSide": true,
-        "show": true,
-        "sort": "current",
-        "sortDesc": true,
-        "total": false,
-        "values": true
-      },
-      "lines": true,
-      "linewidth": 1,
       "links": [],
-      "nullPointMode": "connected",
       "options": {
-        "alertThreshold": true
+        "legend": {
+          "calcs": ["lastNotNull", "max", "min"],
+          "displayMode": "table",
+          "placement": "right",
+          "showLegend": true
+        },
+        "tooltip": {
+          "mode": "multi",
+          "sort": "asc"
+        }
       },
-      "percentage": false,
       "pluginVersion": "10.2.1",
-      "pointradius": 5,
-      "points": false,
-      "renderer": "flot",
-      "seriesOverrides": [],
-      "spaceLength": 10,
-      "stack": false,
-      "steppedLine": false,
       "targets": [
         {
           "alias": "[[Identifier]]",
-          "groupBy": [
+          "datasource": "Unifi",
+                    "groupBy": [
             {
-              "params": [
-                "name"
-              ],
+              "params": ["name"],
               "type": "tag"
             },
             {
-              "params": [
-                "mac"
-              ],
+              "params": ["mac"],
               "type": "tag"
             }
           ],
@@ -2619,139 +2358,120 @@
           "select": [
             [
               {
-                "params": [
-                  "wifi_tx_attempts"
-                ],
+                "params": ["wifi_tx_attempts"],
                 "type": "field"
               },
               {
-                "params": [
-                  "1s"
-                ],
+                "params": ["1s"],
                 "type": "non_negative_derivative"
               }
             ]
           ],
           "tags": [
-            {
-              "key": "name",
-              "operator": "=~",
-              "value": "/^$Wireless$/"
-            },
-            {
+                        {
               "condition": "AND",
-              "key": "ap_name",
-              "operator": "=~",
-              "value": "/^$AP$/"
-            },
-            {
-              "condition": "AND",
-              "key": "site_name",
-              "operator": "=~",
-              "value": "/^$Site$/"
+              "key": "is_wired",
+              "operator": "=",
+              "value": "false"
             }
           ]
         }
       ],
-      "thresholds": [],
-      "timeRegions": [],
       "title": "Client Wifi Tx Attempts",
-      "tooltip": {
-        "shared": true,
-        "sort": 1,
-        "value_type": "individual"
-      },
       "transparent": true,
-      "type": "graph",
-      "xaxis": {
-        "mode": "time",
-        "show": true,
-        "values": []
-      },
-      "yaxes": [
-        {
-          "decimals": 0,
-          "format": "short",
-          "label": "Attempts / Second",
-          "logBase": 1,
-          "show": true
-        },
-        {
-          "format": "short",
-          "logBase": 1,
-          "show": false
-        }
-      ],
-      "yaxis": {
-        "align": false
-      }
+      "type": "timeseries"
     },
     {
-      "aliasColors": {},
-      "bars": false,
-      "dashLength": 10,
-      "dashes": false,
       "datasource": "Unifi",
       "description": "Client reported receive rate.",
       "fieldConfig": {
         "defaults": {
-          "links": []
+          "color": {
+            "mode": "palette-classic"
+          },
+          "custom": {
+            "axisBorderShow": false,
+            "axisCenteredZero": false,
+            "axisColorMode": "text",
+            "axisLabel": "",
+            "axisPlacement": "auto",
+            "barAlignment": 0,
+            "drawStyle": "line",
+            "fillOpacity": 0,
+            "gradientMode": "none",
+            "hideFrom": {
+              "legend": false,
+              "tooltip": false,
+              "viz": false
+            },
+            "insertNulls": false,
+            "lineInterpolation": "linear",
+            "lineWidth": 1,
+            "pointSize": 5,
+            "scaleDistribution": {
+              "type": "linear"
+            },
+            "showPoints": "never",
+            "spanNulls": true,
+            "stacking": {
+              "group": "A",
+              "mode": "none"
+            },
+            "thresholdsStyle": {
+              "mode": "off"
+            }
+          },
+          "links": [],
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          },
+          "unit": "Kbits"
         },
         "overrides": []
       },
-      "fill": 0,
-      "fillGradient": 0,
       "gridPos": {
         "h": 8,
         "w": 12,
         "x": 12,
         "y": 98
       },
-      "hiddenSeries": false,
       "id": 26,
-      "legend": {
-        "alignAsTable": true,
-        "avg": true,
-        "current": true,
-        "max": true,
-        "min": false,
-        "rightSide": true,
-        "show": true,
-        "sort": "current",
-        "sortDesc": true,
-        "total": false,
-        "values": true
-      },
-      "lines": true,
-      "linewidth": 1,
       "links": [],
-      "nullPointMode": "connected",
       "options": {
-        "alertThreshold": true
+        "legend": {
+          "calcs": ["mean", "lastNotNull", "max"],
+          "displayMode": "table",
+          "placement": "right",
+          "showLegend": true
+        },
+        "tooltip": {
+          "mode": "multi",
+          "sort": "desc"
+        }
       },
-      "percentage": false,
       "pluginVersion": "10.2.1",
-      "pointradius": 5,
-      "points": false,
-      "renderer": "flot",
-      "seriesOverrides": [],
-      "spaceLength": 10,
-      "stack": false,
-      "steppedLine": false,
       "targets": [
         {
           "alias": "[[Identifier]]",
-          "groupBy": [
+          "datasource": "Unifi",
+                    "groupBy": [
             {
-              "params": [
-                "name"
-              ],
+              "params": ["name"],
               "type": "tag"
             },
             {
-              "params": [
-                "mac"
-              ],
+              "params": ["mac"],
               "type": "tag"
             }
           ],
@@ -2765,133 +2485,115 @@
           "select": [
             [
               {
-                "params": [
-                  "rx_rate"
-                ],
+                "params": ["rx_rate"],
                 "type": "field"
               }
             ]
           ],
           "tags": [
             {
-              "key": "name",
-              "operator": "=~",
-              "value": "/^$Wireless$/"
-            },
-            {
-              "condition": "AND",
-              "key": "ap_name",
-              "operator": "=~",
-              "value": "/^$AP$/"
-            },
-            {
-              "condition": "AND",
-              "key": "site_name",
-              "operator": "=~",
-              "value": "/^$Site$/"
+              "key": "is_wired",
+              "operator": "=",
+              "value": "false"
             }
           ]
         }
       ],
-      "thresholds": [],
-      "timeRegions": [],
       "title": "RX Rate",
-      "tooltip": {
-        "shared": true,
-        "sort": 2,
-        "value_type": "individual"
-      },
       "transparent": true,
-      "type": "graph",
-      "xaxis": {
-        "mode": "time",
-        "show": true,
-        "values": []
-      },
-      "yaxes": [
-        {
-          "format": "Kbits",
-          "logBase": 1,
-          "show": true
-        },
-        {
-          "format": "short",
-          "logBase": 1,
-          "show": false
-        }
-      ],
-      "yaxis": {
-        "align": false
-      }
+      "type": "timeseries"
     },
     {
-      "aliasColors": {},
-      "bars": false,
-      "dashLength": 10,
-      "dashes": false,
       "datasource": "Unifi",
-      "decimals": 0,
       "fieldConfig": {
         "defaults": {
-          "links": []
+          "color": {
+            "mode": "palette-classic"
+          },
+          "custom": {
+            "axisBorderShow": false,
+            "axisCenteredZero": false,
+            "axisColorMode": "text",
+            "axisLabel": "Attempts / Second",
+            "axisPlacement": "auto",
+            "barAlignment": 0,
+            "drawStyle": "line",
+            "fillOpacity": 0,
+            "gradientMode": "none",
+            "hideFrom": {
+              "legend": false,
+              "tooltip": false,
+              "viz": false
+            },
+            "insertNulls": false,
+            "lineInterpolation": "linear",
+            "lineWidth": 1,
+            "pointSize": 5,
+            "scaleDistribution": {
+              "type": "linear"
+            },
+            "showPoints": "never",
+            "spanNulls": true,
+            "stacking": {
+              "group": "A",
+              "mode": "none"
+            },
+            "thresholdsStyle": {
+              "mode": "off"
+            }
+          },
+          "decimals": 0,
+          "links": [],
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          },
+          "unit": "short"
         },
         "overrides": []
       },
-      "fill": 0,
-      "fillGradient": 0,
       "gridPos": {
         "h": 9,
         "w": 12,
         "x": 0,
         "y": 106
       },
-      "hiddenSeries": false,
       "id": 27,
-      "legend": {
-        "alignAsTable": true,
-        "avg": false,
-        "current": true,
-        "hideEmpty": false,
-        "hideZero": false,
-        "max": true,
-        "min": true,
-        "rightSide": true,
-        "show": true,
-        "sort": "max",
-        "sortDesc": true,
-        "total": false,
-        "values": true
-      },
-      "lines": true,
-      "linewidth": 1,
       "links": [],
-      "nullPointMode": "connected",
       "options": {
-        "alertThreshold": true
+        "legend": {
+          "calcs": ["lastNotNull", "max", "min"],
+          "displayMode": "table",
+          "placement": "right",
+          "showLegend": true
+        },
+        "tooltip": {
+          "mode": "multi",
+          "sort": "asc"
+        }
       },
-      "percentage": false,
       "pluginVersion": "10.2.1",
-      "pointradius": 5,
-      "points": false,
-      "renderer": "flot",
-      "seriesOverrides": [],
-      "spaceLength": 10,
-      "stack": false,
-      "steppedLine": false,
       "targets": [
         {
           "alias": "[[Identifier]]",
-          "groupBy": [
+          "datasource": "Unifi",
+                    "groupBy": [
             {
-              "params": [
-                "name"
-              ],
+              "params": ["name"],
               "type": "tag"
             },
             {
-              "params": [
-                "mac"
-              ],
+              "params": ["mac"],
               "type": "tag"
             }
           ],
@@ -2905,140 +2607,118 @@
           "select": [
             [
               {
-                "params": [
-                  "tx_retries"
-                ],
+                "params": ["tx_retries"],
                 "type": "field"
               },
               {
-                "params": [
-                  "1s"
-                ],
+                "params": ["1s"],
                 "type": "non_negative_derivative"
               }
             ]
           ],
           "tags": [
             {
-              "key": "name",
-              "operator": "=~",
-              "value": "/^$Wireless$/"
-            },
-            {
-              "condition": "AND",
-              "key": "ap_name",
-              "operator": "=~",
-              "value": "/^$AP$/"
-            },
-            {
-              "condition": "AND",
-              "key": "site_name",
-              "operator": "=~",
-              "value": "/^$Site$/"
+              "key": "is_wired",
+              "operator": "=",
+              "value": "false"
             }
           ]
         }
       ],
-      "thresholds": [],
-      "timeRegions": [],
       "title": "Client Transmit Retries",
-      "tooltip": {
-        "shared": true,
-        "sort": 1,
-        "value_type": "individual"
-      },
-      "type": "graph",
-      "xaxis": {
-        "mode": "time",
-        "show": true,
-        "values": []
-      },
-      "yaxes": [
-        {
-          "decimals": 0,
-          "format": "short",
-          "label": "Attempts / Second",
-          "logBase": 1,
-          "show": true
-        },
-        {
-          "format": "short",
-          "logBase": 1,
-          "show": false
-        }
-      ],
-      "yaxis": {
-        "align": false
-      }
+      "transparent": true,
+      "type": "timeseries"
     },
     {
-      "aliasColors": {},
-      "bars": false,
-      "dashLength": 10,
-      "dashes": false,
       "datasource": "Unifi",
-      "decimals": 0,
       "fieldConfig": {
         "defaults": {
-          "links": []
+          "color": {
+            "mode": "palette-classic"
+          },
+          "custom": {
+            "axisBorderShow": false,
+            "axisCenteredZero": false,
+            "axisColorMode": "text",
+            "axisLabel": "Signal Power",
+            "axisPlacement": "auto",
+            "barAlignment": 0,
+            "drawStyle": "line",
+            "fillOpacity": 0,
+            "gradientMode": "none",
+            "hideFrom": {
+              "legend": false,
+              "tooltip": false,
+              "viz": false
+            },
+            "insertNulls": false,
+            "lineInterpolation": "linear",
+            "lineWidth": 1,
+            "pointSize": 5,
+            "scaleDistribution": {
+              "type": "linear"
+            },
+            "showPoints": "never",
+            "spanNulls": true,
+            "stacking": {
+              "group": "A",
+              "mode": "none"
+            },
+            "thresholdsStyle": {
+              "mode": "off"
+            }
+          },
+          "links": [],
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          },
+          "unit": "dBm"
         },
         "overrides": []
       },
-      "fill": 0,
-      "fillGradient": 0,
       "gridPos": {
         "h": 9,
         "w": 12,
         "x": 12,
         "y": 106
       },
-      "hiddenSeries": false,
       "id": 31,
-      "legend": {
-        "alignAsTable": true,
-        "avg": false,
-        "current": true,
-        "hideEmpty": false,
-        "hideZero": false,
-        "max": true,
-        "min": true,
-        "rightSide": true,
-        "show": true,
-        "sort": "current",
-        "sortDesc": true,
-        "total": false,
-        "values": true
-      },
-      "lines": true,
-      "linewidth": 1,
       "links": [],
-      "nullPointMode": "connected",
       "options": {
-        "alertThreshold": true
+        "legend": {
+          "calcs": ["lastNotNull", "max", "min"],
+          "displayMode": "table",
+          "placement": "right",
+          "showLegend": true
+        },
+        "tooltip": {
+          "mode": "multi",
+          "sort": "desc"
+        }
       },
-      "percentage": false,
       "pluginVersion": "10.2.1",
-      "pointradius": 5,
-      "points": false,
-      "renderer": "flot",
-      "seriesOverrides": [],
-      "spaceLength": 10,
-      "stack": false,
-      "steppedLine": false,
       "targets": [
         {
           "alias": "[[Identifier]]",
-          "groupBy": [
+          "datasource": "Unifi",
+                    "groupBy": [
             {
-              "params": [
-                "name"
-              ],
+              "params": ["name"],
               "type": "tag"
             },
             {
-              "params": [
-                "mac"
-              ],
+              "params": ["mac"],
               "type": "tag"
             }
           ],
@@ -3052,133 +2732,115 @@
           "select": [
             [
               {
-                "params": [
-                  "tx_power"
-                ],
+                "params": ["tx_power"],
                 "type": "field"
               }
             ]
           ],
           "tags": [
             {
-              "key": "name",
-              "operator": "=~",
-              "value": "/^$Wireless$/"
-            },
-            {
-              "condition": "AND",
-              "key": "ap_name",
-              "operator": "=~",
-              "value": "/^$AP$/"
-            },
-            {
-              "condition": "AND",
-              "key": "site_name",
-              "operator": "=~",
-              "value": "/^$Site$/"
+              "key": "is_wired",
+              "operator": "=",
+              "value": "false"
             }
           ]
         }
       ],
-      "thresholds": [],
-      "timeRegions": [],
       "title": "Client Transmit Power",
-      "tooltip": {
-        "shared": true,
-        "sort": 2,
-        "value_type": "individual"
-      },
-      "type": "graph",
-      "xaxis": {
-        "mode": "time",
-        "show": true,
-        "values": []
-      },
-      "yaxes": [
-        {
-          "format": "dBm",
-          "label": "Signal Power",
-          "logBase": 1,
-          "show": true
-        },
-        {
-          "format": "short",
-          "logBase": 1,
-          "show": false
-        }
-      ],
-      "yaxis": {
-        "align": false
-      }
+      "transparent": true,
+      "type": "timeseries"
     },
     {
-      "aliasColors": {},
-      "bars": false,
-      "dashLength": 10,
-      "dashes": false,
       "datasource": "Unifi",
-      "decimals": 0,
       "fieldConfig": {
         "defaults": {
-          "links": []
+          "color": {
+            "mode": "palette-classic"
+          },
+          "custom": {
+            "axisBorderShow": false,
+            "axisCenteredZero": false,
+            "axisColorMode": "text",
+            "axisLabel": "Anomalies",
+            "axisPlacement": "auto",
+            "barAlignment": 0,
+            "drawStyle": "line",
+            "fillOpacity": 10,
+            "gradientMode": "none",
+            "hideFrom": {
+              "legend": false,
+              "tooltip": false,
+              "viz": false
+            },
+            "insertNulls": false,
+            "lineInterpolation": "linear",
+            "lineWidth": 2,
+            "pointSize": 5,
+            "scaleDistribution": {
+              "type": "linear"
+            },
+            "showPoints": "never",
+            "spanNulls": true,
+            "stacking": {
+              "group": "A",
+              "mode": "none"
+            },
+            "thresholdsStyle": {
+              "mode": "off"
+            }
+          },
+          "decimals": 0,
+          "links": [],
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          },
+          "unit": "short"
         },
         "overrides": []
       },
-      "fill": 1,
-      "fillGradient": 0,
       "gridPos": {
         "h": 7,
         "w": 12,
         "x": 0,
         "y": 115
       },
-      "hiddenSeries": false,
       "id": 25,
-      "legend": {
-        "alignAsTable": true,
-        "avg": false,
-        "current": true,
-        "hideEmpty": false,
-        "hideZero": false,
-        "max": true,
-        "min": true,
-        "rightSide": true,
-        "show": true,
-        "sort": "max",
-        "sortDesc": true,
-        "total": false,
-        "values": true
-      },
-      "lines": true,
-      "linewidth": 2,
       "links": [],
-      "nullPointMode": "connected",
       "options": {
-        "alertThreshold": true
+        "legend": {
+          "calcs": ["lastNotNull", "max", "min"],
+          "displayMode": "table",
+          "placement": "right",
+          "showLegend": true
+        },
+        "tooltip": {
+          "mode": "multi",
+          "sort": "desc"
+        }
       },
-      "percentage": false,
       "pluginVersion": "10.2.1",
-      "pointradius": 5,
-      "points": false,
-      "renderer": "flot",
-      "seriesOverrides": [],
-      "spaceLength": 10,
-      "stack": false,
-      "steppedLine": false,
       "targets": [
         {
           "alias": "[[Identifier]]",
-          "groupBy": [
+          "datasource": "Unifi",
+                    "groupBy": [
             {
-              "params": [
-                "name"
-              ],
+              "params": ["name"],
               "type": "tag"
             },
             {
-              "params": [
-                "mac"
-              ],
+              "params": ["mac"],
               "type": "tag"
             }
           ],
@@ -3192,134 +2854,117 @@
           "select": [
             [
               {
-                "params": [
-                  "anomalies"
-                ],
+                "params": ["anomalies"],
                 "type": "field"
               }
             ]
           ],
           "tags": [
-            {
-              "key": "name",
-              "operator": "=~",
-              "value": "/^$Wireless$/"
-            },
-            {
+                        {
               "condition": "AND",
-              "key": "ap_name",
-              "operator": "=~",
-              "value": "/^$AP$/"
-            },
-            {
-              "condition": "AND",
-              "key": "site_name",
-              "operator": "=~",
-              "value": "/^$Site$/"
+              "key": "is_wired",
+              "operator": "=",
+              "value": "false"
             }
           ]
         }
       ],
-      "thresholds": [],
-      "timeRegions": [],
       "title": "Client Anomalies",
-      "tooltip": {
-        "shared": true,
-        "sort": 2,
-        "value_type": "individual"
-      },
       "transparent": true,
-      "type": "graph",
-      "xaxis": {
-        "mode": "time",
-        "show": true,
-        "values": []
-      },
-      "yaxes": [
-        {
-          "decimals": 0,
-          "format": "short",
-          "label": "Anomalies",
-          "logBase": 1,
-          "show": true
-        },
-        {
-          "format": "short",
-          "logBase": 1,
-          "show": false
-        }
-      ],
-      "yaxis": {
-        "align": false
-      }
+      "type": "timeseries"
     },
     {
-      "aliasColors": {},
-      "bars": false,
-      "dashLength": 10,
-      "dashes": false,
       "datasource": "Unifi",
-      "decimals": 0,
       "description": "",
       "fieldConfig": {
         "defaults": {
-          "links": []
+          "color": {
+            "mode": "palette-classic"
+          },
+          "custom": {
+            "axisBorderShow": false,
+            "axisCenteredZero": false,
+            "axisColorMode": "text",
+            "axisLabel": "",
+            "axisPlacement": "auto",
+            "barAlignment": 0,
+            "drawStyle": "line",
+            "fillOpacity": 0,
+            "gradientMode": "none",
+            "hideFrom": {
+              "legend": false,
+              "tooltip": false,
+              "viz": false
+            },
+            "insertNulls": false,
+            "lineInterpolation": "linear",
+            "lineWidth": 1,
+            "pointSize": 5,
+            "scaleDistribution": {
+              "type": "linear"
+            },
+            "showPoints": "never",
+            "spanNulls": true,
+            "stacking": {
+              "group": "A",
+              "mode": "none"
+            },
+            "thresholdsStyle": {
+              "mode": "off"
+            }
+          },
+          "decimals": 0,
+          "links": [],
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          },
+          "unit": "percent"
         },
         "overrides": []
       },
-      "fill": 0,
-      "fillGradient": 0,
       "gridPos": {
         "h": 7,
         "w": 12,
         "x": 12,
         "y": 115
       },
-      "hiddenSeries": false,
       "id": 30,
-      "legend": {
-        "alignAsTable": true,
-        "avg": true,
-        "current": true,
-        "max": true,
-        "min": false,
-        "rightSide": true,
-        "show": true,
-        "sort": "current",
-        "sortDesc": true,
-        "total": false,
-        "values": true
-      },
-      "lines": true,
-      "linewidth": 1,
       "links": [],
-      "nullPointMode": "connected",
       "options": {
-        "alertThreshold": true
+        "legend": {
+          "calcs": ["mean", "lastNotNull", "max"],
+          "displayMode": "table",
+          "placement": "right",
+          "showLegend": true
+        },
+        "tooltip": {
+          "mode": "multi",
+          "sort": "desc"
+        }
       },
-      "percentage": false,
       "pluginVersion": "10.2.1",
-      "pointradius": 5,
-      "points": false,
-      "renderer": "flot",
-      "seriesOverrides": [],
-      "spaceLength": 10,
-      "stack": false,
-      "steppedLine": false,
       "targets": [
         {
           "alias": "[[Identifier]]",
-          "groupBy": [
+          "datasource": "Unifi",
+                    "groupBy": [
             {
-              "params": [
-                "name"
-              ],
+              "params": ["name"],
               "type": "tag"
             },
             {
-              "params": [
-                "mac"
-              ],
+              "params": ["mac"],
               "type": "tag"
             }
           ],
@@ -3333,134 +2978,115 @@
           "select": [
             [
               {
-                "params": [
-                  "satisfaction"
-                ],
+                "params": ["satisfaction"],
                 "type": "field"
               }
             ]
           ],
           "tags": [
             {
-              "key": "name",
-              "operator": "=~",
-              "value": "/^$Wireless$/"
-            },
-            {
-              "condition": "AND",
-              "key": "ap_name",
-              "operator": "=~",
-              "value": "/^$AP$/"
-            },
-            {
-              "condition": "AND",
-              "key": "site_name",
-              "operator": "=~",
-              "value": "/^$Site$/"
+              "key": "is_wired",
+              "operator": "=",
+              "value": "false"
             }
           ]
         }
       ],
-      "thresholds": [],
-      "timeRegions": [],
       "title": "Client Satisafaction",
-      "tooltip": {
-        "shared": true,
-        "sort": 2,
-        "value_type": "individual"
-      },
       "transparent": true,
-      "type": "graph",
-      "xaxis": {
-        "mode": "time",
-        "show": true,
-        "values": []
-      },
-      "yaxes": [
-        {
-          "decimals": 0,
-          "format": "percent",
-          "logBase": 1,
-          "show": true
-        },
-        {
-          "format": "short",
-          "logBase": 1,
-          "show": false
-        }
-      ],
-      "yaxis": {
-        "align": false
-      }
+      "type": "timeseries"
     },
     {
-      "aliasColors": {},
-      "bars": false,
-      "dashLength": 10,
-      "dashes": false,
       "datasource": "Unifi",
-      "decimals": 0,
       "fieldConfig": {
         "defaults": {
-          "links": []
+          "color": {
+            "mode": "palette-classic"
+          },
+          "custom": {
+            "axisBorderShow": false,
+            "axisCenteredZero": false,
+            "axisColorMode": "text",
+            "axisLabel": "Anomalies",
+            "axisPlacement": "auto",
+            "barAlignment": 0,
+            "drawStyle": "line",
+            "fillOpacity": 0,
+            "gradientMode": "none",
+            "hideFrom": {
+              "legend": false,
+              "tooltip": false,
+              "viz": false
+            },
+            "insertNulls": false,
+            "lineInterpolation": "linear",
+            "lineWidth": 2,
+            "pointSize": 5,
+            "scaleDistribution": {
+              "type": "linear"
+            },
+            "showPoints": "never",
+            "spanNulls": true,
+            "stacking": {
+              "group": "A",
+              "mode": "none"
+            },
+            "thresholdsStyle": {
+              "mode": "off"
+            }
+          },
+          "decimals": 0,
+          "links": [],
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          },
+          "unit": "short"
         },
         "overrides": []
       },
-      "fill": 0,
-      "fillGradient": 0,
       "gridPos": {
         "h": 9,
         "w": 12,
         "x": 0,
         "y": 122
       },
-      "hiddenSeries": false,
       "id": 28,
-      "legend": {
-        "alignAsTable": true,
-        "avg": false,
-        "current": true,
-        "hideEmpty": false,
-        "hideZero": false,
-        "max": true,
-        "min": true,
-        "rightSide": true,
-        "show": true,
-        "sort": "max",
-        "sortDesc": true,
-        "total": false,
-        "values": true
-      },
-      "lines": true,
-      "linewidth": 2,
       "links": [],
-      "nullPointMode": "connected",
       "options": {
-        "alertThreshold": true
+        "legend": {
+          "calcs": ["lastNotNull", "max", "min"],
+          "displayMode": "table",
+          "placement": "right",
+          "showLegend": true
+        },
+        "tooltip": {
+          "mode": "multi",
+          "sort": "desc"
+        }
       },
-      "percentage": false,
       "pluginVersion": "10.2.1",
-      "pointradius": 5,
-      "points": false,
-      "renderer": "flot",
-      "seriesOverrides": [],
-      "spaceLength": 10,
-      "stack": false,
-      "steppedLine": false,
       "targets": [
         {
           "alias": "[[Identifier]]",
-          "groupBy": [
+          "datasource": "Unifi",
+                    "groupBy": [
             {
-              "params": [
-                "name"
-              ],
+              "params": ["name"],
               "type": "tag"
             },
             {
-              "params": [
-                "mac"
-              ],
+              "params": ["mac"],
               "type": "tag"
             }
           ],
@@ -3474,133 +3100,116 @@
           "select": [
             [
               {
-                "params": [
-                  "roam_count"
-                ],
+                "params": ["roam_count"],
                 "type": "field"
               }
             ]
           ],
           "tags": [
             {
-              "key": "name",
-              "operator": "=~",
-              "value": "/^$Wireless$/"
-            },
-            {
-              "condition": "AND",
-              "key": "ap_name",
-              "operator": "=~",
-              "value": "/^$AP$/"
-            },
-            {
-              "condition": "AND",
-              "key": "site_name",
-              "operator": "=~",
-              "value": "/^$Site$/"
+              "key": "is_wired",
+              "operator": "=",
+              "value": "false"
             }
           ]
         }
       ],
-      "thresholds": [],
-      "timeRegions": [],
       "title": "Roam Count",
-      "tooltip": {
-        "shared": true,
-        "sort": 2,
-        "value_type": "individual"
-      },
-      "type": "graph",
-      "xaxis": {
-        "mode": "time",
-        "show": true,
-        "values": []
-      },
-      "yaxes": [
-        {
-          "decimals": 0,
-          "format": "short",
-          "label": "Anomalies",
-          "logBase": 1,
-          "show": true
-        },
-        {
-          "format": "short",
-          "logBase": 1,
-          "show": false
-        }
-      ],
-      "yaxis": {
-        "align": false
-      }
+      "transparent": true,
+      "type": "timeseries"
     },
     {
-      "aliasColors": {},
-      "bars": false,
-      "dashLength": 10,
-      "dashes": false,
       "datasource": "Unifi",
-      "decimals": 0,
       "description": "",
       "fieldConfig": {
         "defaults": {
-          "links": []
+          "color": {
+            "mode": "palette-classic"
+          },
+          "custom": {
+            "axisBorderShow": false,
+            "axisCenteredZero": false,
+            "axisColorMode": "text",
+            "axisLabel": "",
+            "axisPlacement": "auto",
+            "barAlignment": 0,
+            "drawStyle": "line",
+            "fillOpacity": 0,
+            "gradientMode": "none",
+            "hideFrom": {
+              "legend": false,
+              "tooltip": false,
+              "viz": false
+            },
+            "insertNulls": false,
+            "lineInterpolation": "linear",
+            "lineWidth": 1,
+            "pointSize": 5,
+            "scaleDistribution": {
+              "type": "linear"
+            },
+            "showPoints": "never",
+            "spanNulls": true,
+            "stacking": {
+              "group": "A",
+              "mode": "none"
+            },
+            "thresholdsStyle": {
+              "mode": "off"
+            }
+          },
+          "decimals": 0,
+          "links": [],
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          },
+          "unit": "percent"
         },
         "overrides": []
       },
-      "fill": 0,
-      "fillGradient": 0,
       "gridPos": {
         "h": 9,
         "w": 12,
         "x": 12,
         "y": 122
       },
-      "hiddenSeries": false,
       "id": 29,
-      "legend": {
-        "alignAsTable": true,
-        "avg": true,
-        "current": true,
-        "max": true,
-        "min": false,
-        "rightSide": true,
-        "show": true,
-        "sort": "current",
-        "sortDesc": true,
-        "total": false,
-        "values": true
-      },
-      "lines": true,
-      "linewidth": 1,
       "links": [],
-      "nullPointMode": "connected",
       "options": {
-        "alertThreshold": true
+        "legend": {
+          "calcs": ["mean", "lastNotNull", "max"],
+          "displayMode": "table",
+          "placement": "right",
+          "showLegend": true
+        },
+        "tooltip": {
+          "mode": "multi",
+          "sort": "desc"
+        }
       },
-      "percentage": false,
       "pluginVersion": "10.2.1",
-      "pointradius": 5,
-      "points": false,
-      "renderer": "flot",
-      "seriesOverrides": [],
-      "spaceLength": 10,
-      "stack": false,
-      "steppedLine": false,
       "targets": [
         {
           "alias": "[[Identifier]]",
-          "groupBy": [
+          "datasource": "Unifi",
+                    "groupBy": [
             {
-              "params": [
-                "name"
-              ],
+              "params": ["name"],
               "type": "tag"
             },
             {
-              "params": [
-                "mac"
-              ],
+              "params": ["mac"],
               "type": "tag"
             }
           ],
@@ -3614,78 +3223,32 @@
           "select": [
             [
               {
-                "params": [
-                  "ccq"
-                ],
+                "params": ["ccq"],
                 "type": "field"
               },
               {
-                "params": [
-                  " / 10"
-                ],
+                "params": [" / 10"],
                 "type": "math"
               }
             ]
           ],
           "tags": [
             {
-              "key": "name",
-              "operator": "=~",
-              "value": "/^$Wireless$/"
-            },
-            {
-              "condition": "AND",
-              "key": "ap_name",
-              "operator": "=~",
-              "value": "/^$AP$/"
-            },
-            {
-              "condition": "AND",
-              "key": "site_name",
-              "operator": "=~",
-              "value": "/^$Site$/"
+              "key": "is_wired",
+              "operator": "=",
+              "value": "false"
             }
           ]
         }
       ],
-      "thresholds": [],
-      "timeRegions": [],
       "title": "Client Connection Quality",
-      "tooltip": {
-        "shared": true,
-        "sort": 2,
-        "value_type": "individual"
-      },
-      "type": "graph",
-      "xaxis": {
-        "mode": "time",
-        "show": true,
-        "values": []
-      },
-      "yaxes": [
-        {
-          "decimals": 0,
-          "format": "percent",
-          "logBase": 1,
-          "show": true
-        },
-        {
-          "format": "short",
-          "logBase": 1,
-          "show": false
-        }
-      ],
-      "yaxis": {
-        "align": false
-      }
+      "transparent": true,
+      "type": "timeseries"
     }
   ],
   "refresh": "",
   "schemaVersion": 38,
-  "tags": [
-    "unifi",
-    "unifi-poller"
-  ],
+  "tags": ["unifi", "unifi-poller"],
   "templating": {
     "list": [
       {
@@ -3715,12 +3278,8 @@
       {
         "current": {
           "selected": true,
-          "text": [
-            "All"
-          ],
-          "value": [
-            "$__all"
-          ]
+          "text": ["All"],
+          "value": ["$__all"]
         },
         "datasource": "Unifi",
         "definition": "SHOW TAG VALUES FROM \"clients\" WITH KEY = \"site_name\"  WHERE source =~ /^$Controller$/ ",
@@ -3742,12 +3301,8 @@
       {
         "current": {
           "selected": true,
-          "text": [
-            "All"
-          ],
-          "value": [
-            "$__all"
-          ]
+          "text": ["All"],
+          "value": ["$__all"]
         },
         "datasource": "Unifi",
         "definition": "SHOW TAG VALUES FROM \"clients\" WITH KEY = \"ap_name\" WHERE site_name =~ /^$Site$/ ",
@@ -3769,12 +3324,8 @@
       {
         "current": {
           "selected": true,
-          "text": [
-            "All"
-          ],
-          "value": [
-            "$__all"
-          ]
+          "text": ["All"],
+          "value": ["$__all"]
         },
         "datasource": "Unifi",
         "definition": "SHOW TAG VALUES FROM \"clients\" WITH KEY = \"sw_name\" WHERE site_name =~ /^$Site$/ ",
@@ -3797,12 +3348,8 @@
         "allValue": ".*",
         "current": {
           "selected": true,
-          "text": [
-            "All"
-          ],
-          "value": [
-            "$__all"
-          ]
+          "text": ["All"],
+          "value": ["$__all"]
         },
         "datasource": "Unifi",
         "definition": "SHOW TAG VALUES FROM \"clients\" WITH KEY = \"name\" WHERE site_name =~ /^$Site$/ AND ap_name =~ /^$AP$/ AND is_wired=false",
@@ -3825,12 +3372,8 @@
         "allValue": ".*",
         "current": {
           "selected": true,
-          "text": [
-            "All"
-          ],
-          "value": [
-            "$__all"
-          ]
+          "text": ["All"],
+          "value": ["$__all"]
         },
         "datasource": "Unifi",
         "definition": "SHOW TAG VALUES FROM \"clients\" WITH KEY = \"name\" WHERE site_name =~ /^$Site$/ AND sw_name =~ /^$Switch$/ AND is_wired=true",
@@ -3884,31 +3427,13 @@
     ]
   },
   "time": {
-    "from": "now-3h",
+    "from": "now-12h",
     "to": "now-5s"
   },
   "timepicker": {
     "nowDelay": "5s",
-    "refresh_intervals": [
-      "30s",
-      "1m",
-      "5m",
-      "15m",
-      "30m",
-      "1h",
-      "2h"
-    ],
-    "time_options": [
-      "5m",
-      "15m",
-      "1h",
-      "6h",
-      "12h",
-      "24h",
-      "2d",
-      "7d",
-      "30d"
-    ]
+    "refresh_intervals": ["30s", "1m", "5m", "15m", "30m", "1h", "2h"],
+    "time_options": ["5m", "15m", "1h", "6h", "12h", "24h", "2d", "7d", "30d"]
   },
   "timezone": "browser",
   "title": "UniFi: Client Insights",
