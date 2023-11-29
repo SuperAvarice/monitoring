@@ -774,7 +774,7 @@
     },
     {
       "datasource": "Unifi",
-"description": "Visualize wireless channel usage w/ wired client counts.",
+      "description": "Visualize wireless channel usage w/ wired client counts.",
       "fieldConfig": {
         "defaults": {
           "color": {
@@ -787,9 +787,9 @@
               "viz": false
             }
           },
-      "decimals": 0,
-      "mappings": [],
-      "unit": "short"
+          "decimals": 0,
+          "mappings": [],
+          "unit": "short"
         },
         "overrides": []
       },
@@ -801,18 +801,18 @@
       },
       "hideTimeOverride": false,
       "id": 9,
-"links": [],
+      "links": [],
       "maxDataPoints": 3,
       "options": {
-      "legend": {
-        "calcs": [],
+        "legend": {
+          "calcs": [],
           "displayMode": "table",
           "placement": "bottom",
-        "showLegend": false,
-        "values": ["value"]
-      },
-            "pieType": "pie",
-"reduceOptions": {
+          "showLegend": false,
+          "values": ["value"]
+        },
+        "pieType": "pie",
+        "reduceOptions": {
           "calcs": ["lastNotNull"],
           "fields": "",
           "values": false
@@ -823,7 +823,7 @@
         }
       },
       "pluginVersion": "6.5.1",
-            "targets": [
+      "targets": [
         {
           "alias": "Wired",
           "groupBy": [
@@ -899,7 +899,7 @@
     },
     {
       "datasource": "Unifi",
-"description": "Visualize how many clients are connected to which radios/APs.",
+      "description": "Visualize how many clients are connected to which radios/APs.",
       "fieldConfig": {
         "defaults": {
           "color": {
@@ -912,9 +912,9 @@
               "viz": false
             }
           },
-      "decimals": 0,
-      "mappings": [],
-      "unit": "short"
+          "decimals": 0,
+          "mappings": [],
+          "unit": "short"
         },
         "overrides": []
       },
@@ -926,23 +926,23 @@
       },
       "hideTimeOverride": false,
       "id": 11,
-"links": [],
+      "links": [],
       "maxDataPoints": 3,
       "options": {
-      "legend": {
-        "calcs": [],
+        "legend": {
+          "calcs": [],
           "displayMode": "table",
-        "placement": "bottom",
-        "showLegend": false,
-"values": ["percent"]
+          "placement": "bottom",
+          "showLegend": false,
+          "values": ["percent"]
         },
         "pieType": "pie",
         "reduceOptions": {
           "calcs": ["lastNotNull"],
           "fields": "",
-        "values": false
-      },
-      "tooltip": {
+          "values": false
+        },
+        "tooltip": {
           "mode": "single",
           "sort": "none"
         }
@@ -991,7 +991,7 @@
     },
     {
       "datasource": "Unifi",
-"description": "This shows an OUI breakdown from Unifi's perspective. e = wired, w = wireless",
+      "description": "This shows an OUI breakdown from Unifi's perspective. e = wired, w = wireless",
       "fieldConfig": {
         "defaults": {
           "color": {
@@ -1004,9 +1004,9 @@
               "viz": false
             }
           },
-      "decimals": 0,
-      "mappings": [],
-      "unit": "short"
+          "decimals": 0,
+          "mappings": [],
+          "unit": "short"
         },
         "overrides": []
       },
@@ -1018,18 +1018,18 @@
       },
       "hideTimeOverride": false,
       "id": 12,
-"links": [],
+      "links": [],
       "maxDataPoints": 3,
       "options": {
-      "legend": {
-        "calcs": [],
-        "displayMode": "table",
-        "placement": "right",
-        "showLegend": true,
-        "values": ["value"]
-      },
-            "pieType": "pie",
-      "reduceOptions": {
+        "legend": {
+          "calcs": [],
+          "displayMode": "table",
+          "placement": "right",
+          "showLegend": true,
+          "values": ["value"]
+        },
+        "pieType": "pie",
+        "reduceOptions": {
           "calcs": ["lastNotNull"],
           "fields": "",
           "values": false
@@ -1087,18 +1087,18 @@
       "fieldConfig": {
         "defaults": {
           "color": {
-        "mode": "palette-classic"
+            "mode": "palette-classic"
           },
-        "custom": {
+          "custom": {
             "hideFrom": {
               "legend": false,
-      "tooltip": false,
+              "tooltip": false,
               "viz": false
             }
           },
-      "decimals": 0,
-      "mappings": [],
-      "unit": "short"
+          "decimals": 0,
+          "mappings": [],
+          "unit": "short"
         },
         "overrides": []
       },
@@ -1110,18 +1110,18 @@
       },
       "hideTimeOverride": false,
       "id": 14,
-"links": [],
+      "links": [],
       "maxDataPoints": 3,
       "options": {
-      "legend": {
-        "calcs": [],
+        "legend": {
+          "calcs": [],
           "displayMode": "table",
           "placement": "right",
-        "showLegend": false,
-        "values": ["value"]
-      },
-            "pieType": "pie",
-      "reduceOptions": {
+          "showLegend": false,
+          "values": ["value"]
+        },
+        "pieType": "pie",
+        "reduceOptions": {
           "calcs": ["lastNotNull"],
           "fields": "",
           "values": false
@@ -1529,7 +1529,7 @@
           "color": {
             "mode": "continuous-GrYlRd"
           },
-      "custom": {
+          "custom": {
             "fillOpacity": 70,
             "hideFrom": {
               "legend": false,
@@ -1538,7 +1538,7 @@
             },
             "insertNulls": false,
             "lineWidth": 0,
-      "spanNulls": false
+            "spanNulls": false
           },
           "mappings": [],
           "thresholds": {
@@ -1563,28 +1563,28 @@
         "x": 0,
         "y": 65
       },
-            "id": 17,
-            "links": [],
+      "id": 17,
+      "links": [],
       "options": {
         "alignValue": "left",
-          "legend": {
+        "legend": {
           "displayMode": "list",
-      "placement": "bottom",
-      "showLegend": true
+          "placement": "bottom",
+          "showLegend": true
         },
-      "mergeValues": true,
-      "rowHeight": 0.9,
-      "showValue": "auto",
-      "tooltip": {
+        "mergeValues": true,
+        "rowHeight": 0.9,
+        "showValue": "auto",
+        "tooltip": {
           "mode": "single",
-      "sort": "none"
+          "sort": "none"
         }
       },
       "targets": [
         {
           "alias": "[[Identifier]]",
           "datasource": "Unifi",
-                    "groupBy": [
+          "groupBy": [
             {
               "params": ["name"],
               "type": "tag"
@@ -1617,35 +1617,35 @@
         }
       ],
       "title": "Wifi Client / AP",
-          "transparent": true,
-          "type": "state-timeline"
-        },
-        {
-          "datasource": "Unifi",
+      "transparent": true,
+      "type": "state-timeline"
+    },
+    {
+      "datasource": "Unifi",
       "description": "Shows IPs assigned to non-static clients. Clients with many changes may indicate misconfiguration or two clients sharing the same name.",
       "fieldConfig": {
         "defaults": {
           "color": {
-          "mode": "continuous-GrYlRd"
-        },
-        "custom": {
-          "fillOpacity": 70,
-          "hideFrom": {
+            "mode": "continuous-GrYlRd"
+          },
+          "custom": {
+            "fillOpacity": 70,
+            "hideFrom": {
               "legend": false,
               "tooltip": false,
               "viz": false
             },
             "insertNulls": false,
             "lineWidth": 0,
-      "spanNulls": false
+            "spanNulls": false
           },
-      "mappings": [],
-      "thresholds": {
-      "mode": "absolute",
-      "steps": [
-        {
-          "color": "green",
-          "value": null
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
               },
               {
                 "color": "red",
@@ -1662,28 +1662,28 @@
         "x": 12,
         "y": 65
       },
-            "id": 18,
-            "links": [],
+      "id": 18,
+      "links": [],
       "options": {
         "alignValue": "left",
-          "legend": {
+        "legend": {
           "displayMode": "list",
-      "placement": "bottom",
-      "showLegend": true
+          "placement": "bottom",
+          "showLegend": true
         },
-      "mergeValues": true,
-      "rowHeight": 0.9,
-      "showValue": "auto",
-      "tooltip": {
+        "mergeValues": true,
+        "rowHeight": 0.9,
+        "showValue": "auto",
+        "tooltip": {
           "mode": "single",
-      "sort": "none"
+          "sort": "none"
         }
       },
       "targets": [
         {
           "alias": "[[Identifier]]",
           "datasource": "Unifi",
-                    "groupBy": [
+          "groupBy": [
             {
               "params": ["name"],
               "type": "tag"
@@ -1708,59 +1708,10 @@
                 "type": "field"
               }
             ]
-                    ]
-        },
-        {
-          "alias": "[[Identifier]]",
-          "datasource": "Unifi",
-                    "groupBy": [
-            {
-              "params": ["name"],
-              "type": "tag"
-            },
-            {
-              "params": ["mac"],
-              "type": "tag"
-            }
-          ],
-          "hide": false,
-          "measurement": "clients",
-          "orderByTime": "ASC",
-          "policy": "default",
-          "query": "SELECT \"ip\" FROM \"clients\" WHERE \"use_fixedip\" != 'true' AND \"name\" =~ /^$Client$/ AND (\"ap_name\" =~ /^$AP$/ OR \"sw_name\" =~ /$Switch$/) AND \"site_name\" =~ /^$Site$/ AND $timeFilter GROUP BY \"name\"",
-          "rawQuery": false,
-          "refId": "B",
-          "resultFormat": "time_series",
-          "select": [
-            [
-              {
-                "params": ["ip"],
-                "type": "field"
-              }
-            ]
-          ],
-          "tags": [
-            {
-              "key": "name",
-              "operator": "=~",
-              "value": "/^$Wired$/"
-            },
-            {
-              "condition": "AND",
-              "key": "sw_name",
-              "operator": "=~",
-              "value": "/^$Switch$/"
-            },
-            {
-              "condition": "AND",
-              "key": "site_name",
-              "operator": "=~",
-              "value": "/^$Site$/"
-            }
           ]
         }
       ],
-            "title": "Client / IP",
+      "title": "Client / IP",
       "transparent": true,
       "type": "state-timeline"
     },
@@ -1848,7 +1799,7 @@
         {
           "alias": "[[Identifier]]",
           "datasource": "Unifi",
-                    "groupBy": [
+          "groupBy": [
             {
               "params": ["name"],
               "type": "tag"
@@ -1874,7 +1825,7 @@
             ]
           ],
           "tags": [
-                        {
+            {
               "condition": "AND",
               "key": "is_wired",
               "operator": "=",
@@ -1970,7 +1921,7 @@
         {
           "alias": "[[Identifier]]",
           "datasource": "Unifi",
-                    "groupBy": [
+          "groupBy": [
             {
               "params": ["name"],
               "type": "tag"
@@ -1996,7 +1947,7 @@
             ]
           ],
           "tags": [
-                        {
+            {
               "condition": "AND",
               "key": "is_wired",
               "operator": "=",
@@ -2093,7 +2044,7 @@
         {
           "alias": "[[Identifier]]",
           "datasource": "Unifi",
-                    "groupBy": [
+          "groupBy": [
             {
               "params": ["name"],
               "type": "tag"
@@ -2215,7 +2166,7 @@
         {
           "alias": "[[Identifier]]",
           "datasource": "Unifi",
-                    "groupBy": [
+          "groupBy": [
             {
               "params": ["name"],
               "type": "tag"
@@ -2241,7 +2192,7 @@
             ]
           ],
           "tags": [
-                        {
+            {
               "condition": "AND",
               "key": "is_wired",
               "operator": "=",
@@ -2338,7 +2289,7 @@
         {
           "alias": "[[Identifier]]",
           "datasource": "Unifi",
-                    "groupBy": [
+          "groupBy": [
             {
               "params": ["name"],
               "type": "tag"
@@ -2368,7 +2319,7 @@
             ]
           ],
           "tags": [
-                        {
+            {
               "condition": "AND",
               "key": "is_wired",
               "operator": "=",
@@ -2465,7 +2416,7 @@
         {
           "alias": "[[Identifier]]",
           "datasource": "Unifi",
-                    "groupBy": [
+          "groupBy": [
             {
               "params": ["name"],
               "type": "tag"
@@ -2587,7 +2538,7 @@
         {
           "alias": "[[Identifier]]",
           "datasource": "Unifi",
-                    "groupBy": [
+          "groupBy": [
             {
               "params": ["name"],
               "type": "tag"
@@ -2712,7 +2663,7 @@
         {
           "alias": "[[Identifier]]",
           "datasource": "Unifi",
-                    "groupBy": [
+          "groupBy": [
             {
               "params": ["name"],
               "type": "tag"
@@ -2834,7 +2785,7 @@
         {
           "alias": "[[Identifier]]",
           "datasource": "Unifi",
-                    "groupBy": [
+          "groupBy": [
             {
               "params": ["name"],
               "type": "tag"
@@ -2860,7 +2811,7 @@
             ]
           ],
           "tags": [
-                        {
+            {
               "condition": "AND",
               "key": "is_wired",
               "operator": "=",
@@ -2958,7 +2909,7 @@
         {
           "alias": "[[Identifier]]",
           "datasource": "Unifi",
-                    "groupBy": [
+          "groupBy": [
             {
               "params": ["name"],
               "type": "tag"
@@ -3080,7 +3031,7 @@
         {
           "alias": "[[Identifier]]",
           "datasource": "Unifi",
-                    "groupBy": [
+          "groupBy": [
             {
               "params": ["name"],
               "type": "tag"
@@ -3203,7 +3154,7 @@
         {
           "alias": "[[Identifier]]",
           "datasource": "Unifi",
-                    "groupBy": [
+          "groupBy": [
             {
               "params": ["name"],
               "type": "tag"
