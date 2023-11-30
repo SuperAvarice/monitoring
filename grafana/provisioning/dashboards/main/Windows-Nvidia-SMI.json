@@ -81,9 +81,7 @@
       "options": {
         "orientation": "horizontal",
         "reduceOptions": {
-          "calcs": [
-            "lastNotNull"
-          ],
+          "calcs": ["lastNotNull"],
           "fields": "",
           "values": false
         },
@@ -96,15 +94,11 @@
           "datasource": "Telegraf",
           "groupBy": [
             {
-              "params": [
-                "$__interval"
-              ],
+              "params": ["$__interval"],
               "type": "time"
             },
             {
-              "params": [
-                "null"
-              ],
+              "params": ["null"],
               "type": "fill"
             }
           ],
@@ -116,9 +110,7 @@
           "select": [
             [
               {
-                "params": [
-                  "utilization_gpu"
-                ],
+                "params": ["utilization_gpu"],
                 "type": "field"
               },
               {
@@ -197,9 +189,7 @@
       "options": {
         "orientation": "horizontal",
         "reduceOptions": {
-          "calcs": [
-            "lastNotNull"
-          ],
+          "calcs": ["lastNotNull"],
           "fields": "",
           "values": false
         },
@@ -212,15 +202,11 @@
           "datasource": "Telegraf",
           "groupBy": [
             {
-              "params": [
-                "$__interval"
-              ],
+              "params": ["$__interval"],
               "type": "time"
             },
             {
-              "params": [
-                "null"
-              ],
+              "params": ["null"],
               "type": "fill"
             }
           ],
@@ -232,9 +218,7 @@
           "select": [
             [
               {
-                "params": [
-                  "utilization_memory"
-                ],
+                "params": ["utilization_memory"],
                 "type": "field"
               },
               {
@@ -313,9 +297,7 @@
       "options": {
         "orientation": "horizontal",
         "reduceOptions": {
-          "calcs": [
-            "lastNotNull"
-          ],
+          "calcs": ["lastNotNull"],
           "fields": "",
           "values": false
         },
@@ -328,15 +310,11 @@
           "datasource": "Telegraf",
           "groupBy": [
             {
-              "params": [
-                "$__interval"
-              ],
+              "params": ["$__interval"],
               "type": "time"
             },
             {
-              "params": [
-                "null"
-              ],
+              "params": ["null"],
               "type": "fill"
             }
           ],
@@ -348,9 +326,7 @@
           "select": [
             [
               {
-                "params": [
-                  "temperature_gpu"
-                ],
+                "params": ["temperature_gpu"],
                 "type": "field"
               },
               {
@@ -429,9 +405,7 @@
       "options": {
         "orientation": "horizontal",
         "reduceOptions": {
-          "calcs": [
-            "lastNotNull"
-          ],
+          "calcs": ["lastNotNull"],
           "fields": "",
           "values": false
         },
@@ -444,15 +418,11 @@
           "datasource": "Telegraf",
           "groupBy": [
             {
-              "params": [
-                "$__interval"
-              ],
+              "params": ["$__interval"],
               "type": "time"
             },
             {
-              "params": [
-                "null"
-              ],
+              "params": ["null"],
               "type": "fill"
             }
           ],
@@ -464,9 +434,7 @@
           "select": [
             [
               {
-                "params": [
-                  "fan_speed"
-                ],
+                "params": ["fan_speed"],
                 "type": "field"
               },
               {
@@ -547,9 +515,7 @@
         "justifyMode": "auto",
         "orientation": "horizontal",
         "reduceOptions": {
-          "calcs": [
-            "lastNotNull"
-          ],
+          "calcs": ["lastNotNull"],
           "fields": "",
           "values": false
         },
@@ -561,15 +527,11 @@
           "datasource": "Telegraf",
           "groupBy": [
             {
-              "params": [
-                "$__interval"
-              ],
+              "params": ["$__interval"],
               "type": "time"
             },
             {
-              "params": [
-                "null"
-              ],
+              "params": ["null"],
               "type": "fill"
             }
           ],
@@ -581,9 +543,7 @@
           "select": [
             [
               {
-                "params": [
-                  "clocks_current_graphics"
-                ],
+                "params": ["clocks_current_graphics"],
                 "type": "field"
               },
               {
@@ -662,9 +622,7 @@
       "options": {
         "orientation": "horizontal",
         "reduceOptions": {
-          "calcs": [
-            "lastNotNull"
-          ],
+          "calcs": ["lastNotNull"],
           "fields": "",
           "values": false
         },
@@ -677,15 +635,11 @@
           "datasource": "Telegraf",
           "groupBy": [
             {
-              "params": [
-                "$__interval"
-              ],
+              "params": ["$__interval"],
               "type": "time"
             },
             {
-              "params": [
-                "null"
-              ],
+              "params": ["null"],
               "type": "fill"
             }
           ],
@@ -697,9 +651,7 @@
           "select": [
             [
               {
-                "params": [
-                  "power_draw"
-                ],
+                "params": ["power_draw"],
                 "type": "field"
               },
               {
@@ -778,9 +730,7 @@
       "options": {
         "orientation": "horizontal",
         "reduceOptions": {
-          "calcs": [
-            "lastNotNull"
-          ],
+          "calcs": ["lastNotNull"],
           "fields": "",
           "values": false
         },
@@ -793,15 +743,11 @@
           "datasource": "Telegraf",
           "groupBy": [
             {
-              "params": [
-                "$__interval"
-              ],
+              "params": ["$__interval"],
               "type": "time"
             },
             {
-              "params": [
-                "null"
-              ],
+              "params": ["null"],
               "type": "fill"
             }
           ],
@@ -813,9 +759,7 @@
           "select": [
             [
               {
-                "params": [
-                  "memory_used"
-                ],
+                "params": ["memory_used"],
                 "type": "field"
               },
               {
@@ -895,9 +839,7 @@
       "options": {
         "orientation": "horizontal",
         "reduceOptions": {
-          "calcs": [
-            "lastNotNull"
-          ],
+          "calcs": ["lastNotNull"],
           "fields": "",
           "values": false
         },
@@ -910,15 +852,11 @@
           "dsType": "influxdb",
           "groupBy": [
             {
-              "params": [
-                "$interval"
-              ],
+              "params": ["$interval"],
               "type": "time"
             },
             {
-              "params": [
-                "null"
-              ],
+              "params": ["null"],
               "type": "fill"
             }
           ],
@@ -932,9 +870,7 @@
           "select": [
             [
               {
-                "params": [
-                  "Percent_Processor_Time"
-                ],
+                "params": ["Percent_Processor_Time"],
                 "type": "field"
               },
               {
@@ -1009,9 +945,7 @@
       "options": {
         "orientation": "horizontal",
         "reduceOptions": {
-          "calcs": [
-            "lastNotNull"
-          ],
+          "calcs": ["lastNotNull"],
           "fields": "",
           "values": false
         },
@@ -1024,15 +958,11 @@
           "dsType": "influxdb",
           "groupBy": [
             {
-              "params": [
-                "$interval"
-              ],
+              "params": ["$interval"],
               "type": "time"
             },
             {
-              "params": [
-                "null"
-              ],
+              "params": ["null"],
               "type": "fill"
             }
           ],
@@ -1044,9 +974,7 @@
           "select": [
             [
               {
-                "params": [
-                  "Available_Bytes"
-                ],
+                "params": ["Available_Bytes"],
                 "type": "field"
               },
               {
@@ -1121,9 +1049,7 @@
         "justifyMode": "auto",
         "orientation": "horizontal",
         "reduceOptions": {
-          "calcs": [
-            "lastNotNull"
-          ],
+          "calcs": ["lastNotNull"],
           "fields": "",
           "values": false
         },
@@ -1135,15 +1061,11 @@
           "datasource": "Telegraf",
           "groupBy": [
             {
-              "params": [
-                "$__interval"
-              ],
+              "params": ["$__interval"],
               "type": "time"
             },
             {
-              "params": [
-                "null"
-              ],
+              "params": ["null"],
               "type": "fill"
             }
           ],
@@ -1155,9 +1077,7 @@
           "select": [
             [
               {
-                "params": [
-                  "clocks_current_memory"
-                ],
+                "params": ["clocks_current_memory"],
                 "type": "field"
               },
               {
@@ -1218,9 +1138,7 @@
         "justifyMode": "auto",
         "orientation": "auto",
         "reduceOptions": {
-          "calcs": [
-            "lastNotNull"
-          ],
+          "calcs": ["lastNotNull"],
           "fields": "/^nvidia_smi\\.driver_version$/",
           "values": false
         },
@@ -1239,9 +1157,7 @@
           "select": [
             [
               {
-                "params": [
-                  "driver_version"
-                ],
+                "params": ["driver_version"],
                 "type": "field"
               }
             ]
@@ -1355,15 +1271,11 @@
           "alias": "GPU Utilization for $GPU on $hostname",
           "groupBy": [
             {
-              "params": [
-                "$__interval"
-              ],
+              "params": ["$__interval"],
               "type": "time"
             },
             {
-              "params": [
-                "null"
-              ],
+              "params": ["null"],
               "type": "fill"
             }
           ],
@@ -1375,9 +1287,7 @@
           "select": [
             [
               {
-                "params": [
-                  "utilization_gpu"
-                ],
+                "params": ["utilization_gpu"],
                 "type": "field"
               },
               {
@@ -1481,15 +1391,11 @@
           "alias": "Memory Utilization for $GPU on $hostname",
           "groupBy": [
             {
-              "params": [
-                "$__interval"
-              ],
+              "params": ["$__interval"],
               "type": "time"
             },
             {
-              "params": [
-                "null"
-              ],
+              "params": ["null"],
               "type": "fill"
             }
           ],
@@ -1501,9 +1407,7 @@
           "select": [
             [
               {
-                "params": [
-                  "utilization_memory"
-                ],
+                "params": ["utilization_memory"],
                 "type": "field"
               },
               {
@@ -1607,15 +1511,11 @@
           "alias": "GPU_Clocks for  $GPU on $hostname",
           "groupBy": [
             {
-              "params": [
-                "$__interval"
-              ],
+              "params": ["$__interval"],
               "type": "time"
             },
             {
-              "params": [
-                "null"
-              ],
+              "params": ["null"],
               "type": "fill"
             }
           ],
@@ -1627,9 +1527,7 @@
           "select": [
             [
               {
-                "params": [
-                  "clocks_current_graphics"
-                ],
+                "params": ["clocks_current_graphics"],
                 "type": "field"
               },
               {
@@ -1733,15 +1631,11 @@
           "alias": "Memory_Clocks for  $GPU on $hostname",
           "groupBy": [
             {
-              "params": [
-                "$__interval"
-              ],
+              "params": ["$__interval"],
               "type": "time"
             },
             {
-              "params": [
-                "null"
-              ],
+              "params": ["null"],
               "type": "fill"
             }
           ],
@@ -1753,9 +1647,7 @@
           "select": [
             [
               {
-                "params": [
-                  "clocks_current_memory"
-                ],
+                "params": ["clocks_current_memory"],
                 "type": "field"
               },
               {
@@ -1859,15 +1751,11 @@
           "alias": "Clocks_current_sm",
           "groupBy": [
             {
-              "params": [
-                "$__interval"
-              ],
+              "params": ["$__interval"],
               "type": "time"
             },
             {
-              "params": [
-                "null"
-              ],
+              "params": ["null"],
               "type": "fill"
             }
           ],
@@ -1879,9 +1767,7 @@
           "select": [
             [
               {
-                "params": [
-                  "clocks_current_sm"
-                ],
+                "params": ["clocks_current_sm"],
                 "type": "field"
               },
               {
@@ -1908,15 +1794,11 @@
           "alias": "Clocks_current_Video",
           "groupBy": [
             {
-              "params": [
-                "$__interval"
-              ],
+              "params": ["$__interval"],
               "type": "time"
             },
             {
-              "params": [
-                "null"
-              ],
+              "params": ["null"],
               "type": "fill"
             }
           ],
@@ -1928,9 +1810,7 @@
           "select": [
             [
               {
-                "params": [
-                  "clocks_current_video"
-                ],
+                "params": ["clocks_current_video"],
                 "type": "field"
               },
               {
@@ -2034,15 +1914,11 @@
           "alias": "-TOTAL",
           "groupBy": [
             {
-              "params": [
-                "$__interval"
-              ],
+              "params": ["$__interval"],
               "type": "time"
             },
             {
-              "params": [
-                "null"
-              ],
+              "params": ["null"],
               "type": "fill"
             }
           ],
@@ -2054,9 +1930,7 @@
           "select": [
             [
               {
-                "params": [
-                  "memory_total"
-                ],
+                "params": ["memory_total"],
                 "type": "field"
               },
               {
@@ -2083,15 +1957,11 @@
           "alias": "-USED",
           "groupBy": [
             {
-              "params": [
-                "$__interval"
-              ],
+              "params": ["$__interval"],
               "type": "time"
             },
             {
-              "params": [
-                "null"
-              ],
+              "params": ["null"],
               "type": "fill"
             }
           ],
@@ -2103,9 +1973,7 @@
           "select": [
             [
               {
-                "params": [
-                  "memory_used"
-                ],
+                "params": ["memory_used"],
                 "type": "field"
               },
               {
@@ -2209,15 +2077,11 @@
           "alias": "Fan Speed % for  $GPU on $hostname",
           "groupBy": [
             {
-              "params": [
-                "$__interval"
-              ],
+              "params": ["$__interval"],
               "type": "time"
             },
             {
-              "params": [
-                "null"
-              ],
+              "params": ["null"],
               "type": "fill"
             }
           ],
@@ -2229,9 +2093,7 @@
           "select": [
             [
               {
-                "params": [
-                  "fan_speed"
-                ],
+                "params": ["fan_speed"],
                 "type": "field"
               },
               {
@@ -2335,15 +2197,11 @@
           "alias": "GPU Temperature for  $GPU on $hostname",
           "groupBy": [
             {
-              "params": [
-                "$__interval"
-              ],
+              "params": ["$__interval"],
               "type": "time"
             },
             {
-              "params": [
-                "null"
-              ],
+              "params": ["null"],
               "type": "fill"
             }
           ],
@@ -2355,9 +2213,7 @@
           "select": [
             [
               {
-                "params": [
-                  "temperature_gpu"
-                ],
+                "params": ["temperature_gpu"],
                 "type": "field"
               },
               {
@@ -2461,15 +2317,11 @@
           "alias": "PCI-GEN",
           "groupBy": [
             {
-              "params": [
-                "$__interval"
-              ],
+              "params": ["$__interval"],
               "type": "time"
             },
             {
-              "params": [
-                "null"
-              ],
+              "params": ["null"],
               "type": "fill"
             }
           ],
@@ -2481,9 +2333,7 @@
           "select": [
             [
               {
-                "params": [
-                  "pcie_link_gen_current"
-                ],
+                "params": ["pcie_link_gen_current"],
                 "type": "field"
               },
               {
@@ -2510,15 +2360,11 @@
           "alias": "PCI-WIDTH",
           "groupBy": [
             {
-              "params": [
-                "$__interval"
-              ],
+              "params": ["$__interval"],
               "type": "time"
             },
             {
-              "params": [
-                "null"
-              ],
+              "params": ["null"],
               "type": "fill"
             }
           ],
@@ -2530,9 +2376,7 @@
           "select": [
             [
               {
-                "params": [
-                  "pcie_link_width_current"
-                ],
+                "params": ["pcie_link_width_current"],
                 "type": "field"
               },
               {
@@ -2636,15 +2480,11 @@
           "alias": "Power Draw for $GPU on $hostname",
           "groupBy": [
             {
-              "params": [
-                "$__interval"
-              ],
+              "params": ["$__interval"],
               "type": "time"
             },
             {
-              "params": [
-                "null"
-              ],
+              "params": ["null"],
               "type": "fill"
             }
           ],
@@ -2656,9 +2496,7 @@
           "select": [
             [
               {
-                "params": [
-                  "power_draw"
-                ],
+                "params": ["power_draw"],
                 "type": "field"
               },
               {
@@ -2751,17 +2589,7 @@
       "2h",
       "1d"
     ],
-    "time_options": [
-      "5m",
-      "15m",
-      "1h",
-      "6h",
-      "12h",
-      "24h",
-      "2d",
-      "7d",
-      "30d"
-    ]
+    "time_options": ["5m", "15m", "1h", "6h", "12h", "24h", "2d", "7d", "30d"]
   },
   "timezone": "",
   "title": "Windows: Nvidia SMI",

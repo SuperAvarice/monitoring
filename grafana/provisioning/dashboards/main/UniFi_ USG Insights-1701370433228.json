@@ -1,16 +1,26 @@
 {
-  "__inputs": [],
-  "__elements": [],
-  "__requires": [],
   "annotations": {
-    "list": []
+    "list": [
+      {
+        "builtIn": 1,
+        "datasource": {
+          "type": "grafana",
+          "uid": "-- Grafana --"
+        },
+        "enable": true,
+        "hide": true,
+        "iconColor": "rgba(0, 211, 255, 1)",
+        "name": "Annotations & Alerts",
+        "type": "dashboard"
+      }
+    ]
   },
-  "editable": true,
   "description": "UniFi Poller v2.0 Displays detailed information for security gateways in a UniFi network.",
+  "editable": true,
   "fiscalYearStartMonth": 0,
   "gnetId": 10416,
   "graphTooltip": 2,
-  "id": null,
+  "id": 6,
   "links": [
     {
       "asDropdown": true,
@@ -407,6 +417,13 @@
       "targets": [
         {
           "alias": "$col",
+          "datasource": {
+            "0": "U",
+            "1": "n",
+            "2": "i",
+            "3": "f",
+            "4": "i"
+          },
           "dsType": "influxdb",
           "groupBy": [
             {
@@ -521,6 +538,13 @@
       "repeat": "host",
       "targets": [
         {
+          "datasource": {
+            "0": "U",
+            "1": "n",
+            "2": "i",
+            "3": "f",
+            "4": "i"
+          },
           "refId": "A"
         }
       ],
@@ -549,6 +573,13 @@
       "pluginVersion": "10.2.1",
       "targets": [
         {
+          "datasource": {
+            "0": "U",
+            "1": "n",
+            "2": "i",
+            "3": "f",
+            "4": "i"
+          },
           "refId": "A"
         }
       ],
@@ -556,7 +587,10 @@
       "type": "text"
     },
     {
-      "datasource": "Unifi",
+      "datasource": {
+        "type": "influxdb",
+        "uid": "PED42A5EF7B8971E2"
+      },
       "fieldConfig": {
         "defaults": {
           "color": {
@@ -616,6 +650,13 @@
       "pluginVersion": "10.2.1",
       "targets": [
         {
+          "datasource": {
+            "0": "U",
+            "1": "n",
+            "2": "i",
+            "3": "f",
+            "4": "i"
+          },
           "groupBy": [
             {
               "params": ["name"],
@@ -642,7 +683,10 @@
       "type": "stat"
     },
     {
-      "datasource": "Unifi",
+      "datasource": {
+        "type": "influxdb",
+        "uid": "PED42A5EF7B8971E2"
+      },
       "description": "",
       "fieldConfig": {
         "defaults": {
@@ -704,6 +748,13 @@
       "pluginVersion": "10.2.1",
       "targets": [
         {
+          "datasource": {
+            "0": "U",
+            "1": "n",
+            "2": "i",
+            "3": "f",
+            "4": "i"
+          },
           "groupBy": [
             {
               "params": ["name"],
@@ -729,7 +780,10 @@
       "type": "stat"
     },
     {
-      "datasource": "Unifi",
+      "datasource": {
+        "type": "influxdb",
+        "uid": "PED42A5EF7B8971E2"
+      },
       "fieldConfig": {
         "defaults": {
           "color": {
@@ -793,6 +847,13 @@
       "pluginVersion": "10.2.1",
       "targets": [
         {
+          "datasource": {
+            "0": "U",
+            "1": "n",
+            "2": "i",
+            "3": "f",
+            "4": "i"
+          },
           "groupBy": [
             {
               "params": ["name"],
@@ -819,7 +880,10 @@
       "type": "stat"
     },
     {
-      "datasource": "Unifi",
+      "datasource": {
+        "type": "influxdb",
+        "uid": "PED42A5EF7B8971E2"
+      },
       "fieldConfig": {
         "defaults": {
           "color": {
@@ -880,6 +944,13 @@
       "pluginVersion": "10.2.1",
       "targets": [
         {
+          "datasource": {
+            "0": "U",
+            "1": "n",
+            "2": "i",
+            "3": "f",
+            "4": "i"
+          },
           "groupBy": [
             {
               "params": ["name"],
@@ -907,7 +978,10 @@
       "type": "stat"
     },
     {
-      "datasource": "Unifi",
+      "datasource": {
+        "type": "influxdb",
+        "uid": "PED42A5EF7B8971E2"
+      },
       "fieldConfig": {
         "defaults": {
           "color": {
@@ -968,6 +1042,13 @@
       "pluginVersion": "10.2.1",
       "targets": [
         {
+          "datasource": {
+            "0": "U",
+            "1": "n",
+            "2": "i",
+            "3": "f",
+            "4": "i"
+          },
           "groupBy": [
             {
               "params": ["name"],
@@ -995,7 +1076,10 @@
       "type": "stat"
     },
     {
-      "datasource": "Unifi",
+      "datasource": {
+        "type": "influxdb",
+        "uid": "PED42A5EF7B8971E2"
+      },
       "fieldConfig": {
         "defaults": {
           "color": {
@@ -1056,6 +1140,13 @@
       "pluginVersion": "10.2.1",
       "targets": [
         {
+          "datasource": {
+            "0": "U",
+            "1": "n",
+            "2": "i",
+            "3": "f",
+            "4": "i"
+          },
           "groupBy": [
             {
               "params": ["name"],
@@ -1083,7 +1174,10 @@
       "type": "stat"
     },
     {
-      "datasource": "Unifi",
+      "datasource": {
+        "type": "influxdb",
+        "uid": "PED42A5EF7B8971E2"
+      },
       "fieldConfig": {
         "defaults": {
           "color": {
@@ -1144,6 +1238,13 @@
       "pluginVersion": "10.2.1",
       "targets": [
         {
+          "datasource": {
+            "0": "U",
+            "1": "n",
+            "2": "i",
+            "3": "f",
+            "4": "i"
+          },
           "groupBy": [
             {
               "params": ["name"],
@@ -1171,7 +1272,10 @@
       "type": "stat"
     },
     {
-      "datasource": "Unifi",
+      "datasource": {
+        "type": "influxdb",
+        "uid": "PED42A5EF7B8971E2"
+      },
       "description": "",
       "fieldConfig": {
         "defaults": {
@@ -1237,6 +1341,13 @@
       "pluginVersion": "10.2.1",
       "targets": [
         {
+          "datasource": {
+            "0": "U",
+            "1": "n",
+            "2": "i",
+            "3": "f",
+            "4": "i"
+          },
           "groupBy": [
             {
               "params": ["name"],
@@ -1263,7 +1374,10 @@
       "type": "stat"
     },
     {
-      "datasource": "Unifi",
+      "datasource": {
+        "type": "influxdb",
+        "uid": "PED42A5EF7B8971E2"
+      },
       "description": "",
       "fieldConfig": {
         "defaults": {
@@ -1325,6 +1439,13 @@
       "pluginVersion": "10.2.1",
       "targets": [
         {
+          "datasource": {
+            "0": "U",
+            "1": "n",
+            "2": "i",
+            "3": "f",
+            "4": "i"
+          },
           "groupBy": [
             {
               "params": ["name"],
@@ -1350,7 +1471,10 @@
       "type": "stat"
     },
     {
-      "datasource": "Unifi",
+      "datasource": {
+        "type": "influxdb",
+        "uid": "PED42A5EF7B8971E2"
+      },
       "description": "",
       "fieldConfig": {
         "defaults": {
@@ -1416,6 +1540,13 @@
       "pluginVersion": "10.2.1",
       "targets": [
         {
+          "datasource": {
+            "0": "U",
+            "1": "n",
+            "2": "i",
+            "3": "f",
+            "4": "i"
+          },
           "groupBy": [
             {
               "params": ["name"],
@@ -1442,7 +1573,10 @@
       "type": "stat"
     },
     {
-      "datasource": "Unifi",
+      "datasource": {
+        "type": "influxdb",
+        "uid": "PED42A5EF7B8971E2"
+      },
       "fieldConfig": {
         "defaults": {
           "color": {
@@ -1503,6 +1637,13 @@
       "pluginVersion": "10.2.1",
       "targets": [
         {
+          "datasource": {
+            "0": "U",
+            "1": "n",
+            "2": "i",
+            "3": "f",
+            "4": "i"
+          },
           "groupBy": [
             {
               "params": ["name"],
@@ -1530,7 +1671,10 @@
       "type": "stat"
     },
     {
-      "datasource": "Unifi",
+      "datasource": {
+        "type": "influxdb",
+        "uid": "PED42A5EF7B8971E2"
+      },
       "fieldConfig": {
         "defaults": {
           "color": {
@@ -1591,6 +1735,13 @@
       "pluginVersion": "10.2.1",
       "targets": [
         {
+          "datasource": {
+            "0": "U",
+            "1": "n",
+            "2": "i",
+            "3": "f",
+            "4": "i"
+          },
           "groupBy": [
             {
               "params": ["name"],
@@ -1618,7 +1769,10 @@
       "type": "stat"
     },
     {
-      "datasource": "Unifi",
+      "datasource": {
+        "type": "influxdb",
+        "uid": "PED42A5EF7B8971E2"
+      },
       "fieldConfig": {
         "defaults": {
           "color": {
@@ -1904,6 +2058,13 @@
       "targets": [
         {
           "alias": "$tag_device_name $col",
+          "datasource": {
+            "0": "U",
+            "1": "n",
+            "2": "i",
+            "3": "f",
+            "4": "i"
+          },
           "groupBy": [
             {
               "params": ["name"],
@@ -1990,6 +2151,13 @@
           ]
         },
         {
+          "datasource": {
+            "0": "U",
+            "1": "n",
+            "2": "i",
+            "3": "f",
+            "4": "i"
+          },
           "groupBy": [
             {
               "params": ["purpose"],
@@ -2090,7 +2258,10 @@
       "type": "table"
     },
     {
-      "datasource": "Unifi",
+      "datasource": {
+        "type": "influxdb",
+        "uid": "PED42A5EF7B8971E2"
+      },
       "fieldConfig": {
         "defaults": {
           "color": {
@@ -2237,6 +2408,13 @@
       "targets": [
         {
           "alias": "$tag_name $col",
+          "datasource": {
+            "0": "U",
+            "1": "n",
+            "2": "i",
+            "3": "f",
+            "4": "i"
+          },
           "dsType": "influxdb",
           "groupBy": [
             {
@@ -2288,7 +2466,10 @@
       "type": "timeseries"
     },
     {
-      "datasource": "Unifi",
+      "datasource": {
+        "type": "influxdb",
+        "uid": "PED42A5EF7B8971E2"
+      },
       "description": "Spikes on this graph that are missing from the LAN graph indicate gateway-originated traffic, like a scheduled speed test. Rx is on the negative axis.",
       "fieldConfig": {
         "defaults": {
@@ -2413,6 +2594,13 @@
       "targets": [
         {
           "alias": "$tag_purpose $col",
+          "datasource": {
+            "0": "U",
+            "1": "n",
+            "2": "i",
+            "3": "f",
+            "4": "i"
+          },
           "dsType": "influxdb",
           "groupBy": [
             {
@@ -2471,6 +2659,13 @@
         },
         {
           "alias": "$tag_purpose n $col",
+          "datasource": {
+            "0": "U",
+            "1": "n",
+            "2": "i",
+            "3": "f",
+            "4": "i"
+          },
           "dsType": "influxdb",
           "groupBy": [
             {
@@ -2525,7 +2720,10 @@
       "type": "timeseries"
     },
     {
-      "datasource": "Unifi",
+      "datasource": {
+        "type": "influxdb",
+        "uid": "PED42A5EF7B8971E2"
+      },
       "description": "Spikes on this graph that do not appear on the WAN graph indicate inter-VLAN-routing. Rx is on the negative axis.",
       "fieldConfig": {
         "defaults": {
@@ -2650,6 +2848,13 @@
       "targets": [
         {
           "alias": "$tag_name $col",
+          "datasource": {
+            "0": "U",
+            "1": "n",
+            "2": "i",
+            "3": "f",
+            "4": "i"
+          },
           "dsType": "influxdb",
           "groupBy": [
             {
@@ -2711,7 +2916,10 @@
       "type": "timeseries"
     },
     {
-      "datasource": "Unifi",
+      "datasource": {
+        "type": "influxdb",
+        "uid": "PED42A5EF7B8971E2"
+      },
       "description": "PPS on the WAN interface. Rx is on the negative axis.",
       "fieldConfig": {
         "defaults": {
@@ -2836,6 +3044,13 @@
       "targets": [
         {
           "alias": "$tag_purpose $col",
+          "datasource": {
+            "0": "U",
+            "1": "n",
+            "2": "i",
+            "3": "f",
+            "4": "i"
+          },
           "dsType": "influxdb",
           "groupBy": [
             {
@@ -2901,7 +3116,10 @@
       "type": "timeseries"
     },
     {
-      "datasource": "Unifi",
+      "datasource": {
+        "type": "influxdb",
+        "uid": "PED42A5EF7B8971E2"
+      },
       "description": "PPS on the LAN interface. Rx is on the negative axis.",
       "fieldConfig": {
         "defaults": {
@@ -3026,6 +3244,13 @@
       "targets": [
         {
           "alias": "$tag_name $col",
+          "datasource": {
+            "0": "U",
+            "1": "n",
+            "2": "i",
+            "3": "f",
+            "4": "i"
+          },
           "dsType": "influxdb",
           "groupBy": [
             {
@@ -3091,7 +3316,10 @@
       "type": "timeseries"
     },
     {
-      "datasource": "Unifi",
+      "datasource": {
+        "type": "influxdb",
+        "uid": "PED42A5EF7B8971E2"
+      },
       "description": "",
       "fieldConfig": {
         "defaults": {
@@ -3246,6 +3474,13 @@
       "targets": [
         {
           "alias": "$tag_purpose $col",
+          "datasource": {
+            "0": "U",
+            "1": "n",
+            "2": "i",
+            "3": "f",
+            "4": "i"
+          },
           "dsType": "influxdb",
           "groupBy": [
             {
@@ -3347,7 +3582,10 @@
       "type": "timeseries"
     },
     {
-      "datasource": "Unifi",
+      "datasource": {
+        "type": "influxdb",
+        "uid": "PED42A5EF7B8971E2"
+      },
       "description": "May show problems with your WAN interface. Rx is on the negative axis.",
       "fieldConfig": {
         "defaults": {
@@ -3502,6 +3740,13 @@
       "targets": [
         {
           "alias": "$tag_purpose $col",
+          "datasource": {
+            "0": "U",
+            "1": "n",
+            "2": "i",
+            "3": "f",
+            "4": "i"
+          },
           "dsType": "influxdb",
           "groupBy": [
             {
@@ -3713,6 +3958,13 @@
       "targets": [
         {
           "alias": "$tag_purpose $col",
+          "datasource": {
+            "0": "U",
+            "1": "n",
+            "2": "i",
+            "3": "f",
+            "4": "i"
+          },
           "dsType": "influxdb",
           "groupBy": [
             {
@@ -3773,6 +4025,13 @@
       "panels": [],
       "targets": [
         {
+          "datasource": {
+            "0": "U",
+            "1": "n",
+            "2": "i",
+            "3": "f",
+            "4": "i"
+          },
           "refId": "A"
         }
       ],
@@ -3781,14 +4040,20 @@
     }
   ],
   "refresh": "30s",
-  "schemaVersion": 35,
-  "style": "dark",
+  "schemaVersion": 38,
   "tags": ["unifi", "usg", "unifi-poller"],
   "templating": {
     "list": [
       {
-        "current": {},
-        "datasource": "Unifi",
+        "current": {
+          "selected": false,
+          "text": "All",
+          "value": "$__all"
+        },
+        "datasource": {
+          "type": "influxdb",
+          "uid": "PED42A5EF7B8971E2"
+        },
         "definition": "show tag values from \"usg\" with key=\"source\"",
         "hide": 2,
         "includeAll": true,
@@ -3806,7 +4071,10 @@
       },
       {
         "current": {},
-        "datasource": "Unifi",
+        "datasource": {
+          "type": "influxdb",
+          "uid": "PED42A5EF7B8971E2"
+        },
         "definition": "show tag values from \"usg\" with key=\"site_name\" where source =~ /$Controller$/",
         "hide": 0,
         "includeAll": true,
@@ -3823,8 +4091,15 @@
         "useTags": false
       },
       {
-        "current": {},
-        "datasource": "Unifi",
+        "current": {
+          "selected": false,
+          "text": "All",
+          "value": "$__all"
+        },
+        "datasource": {
+          "type": "influxdb",
+          "uid": "PED42A5EF7B8971E2"
+        },
         "definition": "show tag values from \"usg\" with key=\"name\" where site_name =~ /$Site$/",
         "hide": 2,
         "includeAll": true,
@@ -3853,6 +4128,7 @@
   },
   "timezone": "browser",
   "title": "UniFi: USG Insights",
-  "version": 1,
+  "uid": "WX6RJOMik",
+  "version": 3,
   "weekStart": ""
 }

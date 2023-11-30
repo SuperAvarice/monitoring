@@ -11,16 +11,13 @@
   "gnetId": 10414,
   "graphTooltip": 1,
   "id": null,
-  "iteration": 1647443059975,
   "links": [
     {
       "asDropdown": true,
       "icon": "external link",
       "includeVars": false,
       "keepTime": true,
-      "tags": [
-        "unifi-poller"
-      ],
+      "tags": ["unifi-poller"],
       "title": "UniFi Poller",
       "type": "dashboards"
     },
@@ -59,11 +56,22 @@
       "id": 37,
       "links": [],
       "options": {
+        "code": {
+          "language": "plaintext",
+          "showLineNumbers": false,
+          "showMiniMap": false
+        },
         "content": "Each site contains 5 subsystems: wan, lan, wlan, www, vpn. Each subsystem contains data specific to that system, but every subsystem shares the same fields. \nThis means that most fields you find appear empty. That means the field is probably for a different subsystem.\nThe site metrics tend to contain a lot of data about the local USG.\nNote: The three singlestat panels with thresholds do not have a subsystem selected and they may not be entirely accurate.\n\n",
         "mode": "html"
       },
-      "pluginVersion": "8.4.3",
+      "pluginVersion": "10.2.1",
+      "targets": [
+        {
+          "refId": "A"
+        }
+      ],
       "title": "Information",
+      "transparent": true,
       "type": "text"
     },
     {
@@ -78,6 +86,11 @@
       "id": 4,
       "panels": [],
       "repeat": "site",
+      "targets": [
+        {
+          "refId": "A"
+        }
+      ],
       "title": "Site: $site",
       "type": "row"
     },
@@ -132,18 +145,18 @@
       "links": [],
       "maxDataPoints": 100,
       "options": {
+        "minVizHeight": 75,
+        "minVizWidth": 75,
         "orientation": "horizontal",
         "reduceOptions": {
-          "calcs": [
-            "lastNotNull"
-          ],
+          "calcs": ["lastNotNull"],
           "fields": "",
           "values": false
         },
         "showThresholdLabels": false,
         "showThresholdMarkers": true
       },
-      "pluginVersion": "8.4.3",
+      "pluginVersion": "10.2.1",
       "targets": [
         {
           "groupBy": [],
@@ -155,19 +168,12 @@
           "select": [
             [
               {
-                "params": [
-                  "latency"
-                ],
+                "params": ["latency"],
                 "type": "field"
               }
             ]
           ],
           "tags": [
-            {
-              "key": "site_name",
-              "operator": "=~",
-              "value": "/^$site$/"
-            },
             {
               "condition": "AND",
               "key": "subsystem",
@@ -178,6 +184,7 @@
         }
       ],
       "title": "WWW Latency",
+      "transparent": true,
       "type": "gauge"
     },
     {
@@ -231,18 +238,18 @@
       "links": [],
       "maxDataPoints": 100,
       "options": {
+        "minVizHeight": 75,
+        "minVizWidth": 75,
         "orientation": "horizontal",
         "reduceOptions": {
-          "calcs": [
-            "lastNotNull"
-          ],
+          "calcs": ["lastNotNull"],
           "fields": "",
           "values": false
         },
         "showThresholdLabels": false,
         "showThresholdMarkers": true
       },
-      "pluginVersion": "8.4.3",
+      "pluginVersion": "10.2.1",
       "targets": [
         {
           "groupBy": [],
@@ -254,19 +261,12 @@
           "select": [
             [
               {
-                "params": [
-                  "speedtest_ping"
-                ],
+                "params": ["speedtest_ping"],
                 "type": "field"
               }
             ]
           ],
           "tags": [
-            {
-              "key": "site_name",
-              "operator": "=~",
-              "value": "/^$site$/"
-            },
             {
               "condition": "AND",
               "key": "subsystem",
@@ -277,6 +277,7 @@
         }
       ],
       "title": "Speed Test Ping",
+      "transparent": true,
       "type": "gauge"
     },
     {
@@ -330,18 +331,18 @@
       "links": [],
       "maxDataPoints": 100,
       "options": {
+        "minVizHeight": 75,
+        "minVizWidth": 75,
         "orientation": "horizontal",
         "reduceOptions": {
-          "calcs": [
-            "lastNotNull"
-          ],
+          "calcs": ["lastNotNull"],
           "fields": "",
           "values": false
         },
         "showThresholdLabels": false,
         "showThresholdMarkers": true
       },
-      "pluginVersion": "8.4.3",
+      "pluginVersion": "10.2.1",
       "targets": [
         {
           "groupBy": [],
@@ -353,19 +354,12 @@
           "select": [
             [
               {
-                "params": [
-                  "gw_cpu"
-                ],
+                "params": ["gw_cpu"],
                 "type": "field"
               }
             ]
           ],
           "tags": [
-            {
-              "key": "site_name",
-              "operator": "=~",
-              "value": "/^$site$/"
-            },
             {
               "condition": "AND",
               "key": "subsystem",
@@ -376,6 +370,7 @@
         }
       ],
       "title": "Gateway CPU",
+      "transparent": true,
       "type": "gauge"
     },
     {
@@ -429,18 +424,18 @@
       "links": [],
       "maxDataPoints": 100,
       "options": {
+        "minVizHeight": 75,
+        "minVizWidth": 75,
         "orientation": "horizontal",
         "reduceOptions": {
-          "calcs": [
-            "lastNotNull"
-          ],
+          "calcs": ["lastNotNull"],
           "fields": "",
           "values": false
         },
         "showThresholdLabels": false,
         "showThresholdMarkers": true
       },
-      "pluginVersion": "8.4.3",
+      "pluginVersion": "10.2.1",
       "targets": [
         {
           "groupBy": [],
@@ -452,19 +447,12 @@
           "select": [
             [
               {
-                "params": [
-                  "gw_mem"
-                ],
+                "params": ["gw_mem"],
                 "type": "field"
               }
             ]
           ],
           "tags": [
-            {
-              "key": "site_name",
-              "operator": "=~",
-              "value": "/^$site$/"
-            },
             {
               "condition": "AND",
               "key": "subsystem",
@@ -475,72 +463,169 @@
         }
       ],
       "title": "Gateway Memory",
+      "transparent": true,
       "type": "gauge"
     },
     {
-      "columns": [],
       "datasource": "Unifi",
-      "fontSize": "100%",
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "fixedColor": "rgb(31, 120, 193)",
+            "mode": "fixed"
+          },
+          "mappings": [
+            {
+              "options": {
+                "match": "null",
+                "result": {
+                  "text": "N/A"
+                }
+              },
+              "type": "special"
+            }
+          ],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          },
+          "unit": "none"
+        },
+        "overrides": []
+      },
       "gridPos": {
-        "h": 4,
-        "w": 12,
+        "h": 2,
+        "w": 2,
         "x": 12,
         "y": 4
       },
-      "id": 14,
+      "id": 26,
       "links": [],
-      "scroll": true,
-      "showHeader": true,
-      "sort": {
-        "col": 0,
-        "desc": true
+      "maxDataPoints": 100,
+      "options": {
+        "colorMode": "none",
+        "graphMode": "area",
+        "justifyMode": "auto",
+        "orientation": "horizontal",
+        "reduceOptions": {
+          "calcs": ["max"],
+          "fields": "",
+          "values": false
+        },
+        "textMode": "auto",
+        "wideLayout": true
       },
-      "styles": [
+      "pluginVersion": "10.2.1",
+      "targets": [
         {
-          "alias": "Time",
-          "align": "auto",
-          "dateFormat": "YYYY-MM-DD HH:mm:ss",
-          "pattern": "Time",
-          "type": "hidden"
-        },
-        {
-          "alias": "",
-          "align": "auto",
-          "colors": [
-            "rgba(245, 54, 54, 0.9)",
-            "rgba(237, 129, 40, 0.89)",
-            "rgba(50, 172, 45, 0.97)"
+          "groupBy": [],
+          "measurement": "subsystems",
+          "orderByTime": "ASC",
+          "policy": "default",
+          "refId": "A",
+          "resultFormat": "time_series",
+          "select": [
+            [
+              {
+                "params": ["num_sta"],
+                "type": "field"
+              }
+            ]
           ],
-          "dateFormat": "YYYY-MM-DD HH:mm:ss",
-          "decimals": 2,
-          "mappingType": 1,
-          "pattern": "/Rate$/",
-          "thresholds": [],
-          "type": "number",
-          "unit": "Bps"
-        },
-        {
-          "alias": "",
-          "align": "auto",
-          "colors": [
-            "rgba(245, 54, 54, 0.9)",
-            "rgba(237, 129, 40, 0.89)",
-            "rgba(50, 172, 45, 0.97)"
-          ],
-          "decimals": 2,
-          "pattern": "/xPut/",
-          "thresholds": [],
-          "type": "number",
-          "unit": "MBs"
+          "tags": [
+            {
+              "condition": "AND",
+              "key": "subsystem",
+              "operator": "=",
+              "value": "wan"
+            }
+          ]
         }
       ],
+      "title": "Total Users",
+      "transparent": true,
+      "type": "stat"
+    },
+    {
+      "datasource": "Unifi",
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "custom": {
+            "align": "auto",
+            "cellOptions": {
+              "type": "auto"
+            },
+            "inspect": false
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          }
+        },
+        "overrides": [
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "Time"
+            },
+            "properties": [
+              {
+                "id": "displayName",
+                "value": "Time"
+              },
+              {
+                "id": "custom.align"
+              }
+            ]
+          }
+        ]
+      },
+      "gridPos": {
+        "h": 4,
+        "w": 10,
+        "x": 14,
+        "y": 4
+      },
+      "id": 10,
+      "links": [],
+      "options": {
+        "cellHeight": "sm",
+        "footer": {
+          "countRows": false,
+          "fields": "",
+          "reducer": ["sum"],
+          "show": false
+        },
+        "showHeader": true
+      },
+      "pluginVersion": "10.2.1",
       "targets": [
         {
           "groupBy": [
             {
-              "params": [
-                "desc"
-              ],
+              "params": ["status"],
               "type": "tag"
             }
           ],
@@ -552,9 +637,7 @@
           "select": [
             [
               {
-                "params": [
-                  "rx_bytes-r"
-                ],
+                "params": ["remote_user_num_inactive"],
                 "type": "field"
               },
               {
@@ -562,17 +645,13 @@
                 "type": "last"
               },
               {
-                "params": [
-                  "RxRate"
-                ],
+                "params": ["Inactive"],
                 "type": "alias"
               }
             ],
             [
               {
-                "params": [
-                  "tx_bytes-r"
-                ],
+                "params": ["remote_user_num_active"],
                 "type": "field"
               },
               {
@@ -580,17 +659,13 @@
                 "type": "last"
               },
               {
-                "params": [
-                  "TxRate"
-                ],
+                "params": ["Active"],
                 "type": "alias"
               }
             ],
             [
               {
-                "params": [
-                  "xput_down"
-                ],
+                "params": ["remote_user_rx_bytes"],
                 "type": "field"
               },
               {
@@ -598,17 +673,13 @@
                 "type": "last"
               },
               {
-                "params": [
-                  "xPutRx"
-                ],
+                "params": ["RX"],
                 "type": "alias"
               }
             ],
             [
               {
-                "params": [
-                  "xput_up"
-                ],
+                "params": ["remote_user_tx_bytes"],
                 "type": "field"
               },
               {
@@ -616,31 +687,121 @@
                 "type": "last"
               },
               {
-                "params": [
-                  "xPutTx"
-                ],
+                "params": ["TX"],
                 "type": "alias"
               }
             ]
           ],
           "tags": [
             {
-              "key": "site_name",
-              "operator": "=~",
-              "value": "/^$site$/"
-            },
-            {
               "condition": "AND",
               "key": "subsystem",
               "operator": "=",
-              "value": "www"
+              "value": "vpn"
             }
           ]
         }
       ],
-      "title": "WWW Subsystem",
-      "transform": "table",
-      "type": "table-old"
+      "title": "VPN Subsystem",
+      "transformations": [
+        {
+          "id": "merge",
+          "options": {
+            "reducers": []
+          }
+        }
+      ],
+      "transparent": true,
+      "type": "table"
+    },
+    {
+      "datasource": "Unifi",
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "fixedColor": "rgb(31, 120, 193)",
+            "mode": "fixed"
+          },
+          "mappings": [
+            {
+              "options": {
+                "match": "null",
+                "result": {
+                  "text": "N/A"
+                }
+              },
+              "type": "special"
+            }
+          ],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          },
+          "unit": "none"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 2,
+        "w": 2,
+        "x": 12,
+        "y": 6
+      },
+      "id": 21,
+      "links": [],
+      "maxDataPoints": 100,
+      "options": {
+        "colorMode": "none",
+        "graphMode": "area",
+        "justifyMode": "auto",
+        "orientation": "horizontal",
+        "reduceOptions": {
+          "calcs": ["max"],
+          "fields": "",
+          "values": false
+        },
+        "textMode": "auto",
+        "wideLayout": true
+      },
+      "pluginVersion": "10.2.1",
+      "targets": [
+        {
+          "groupBy": [],
+          "measurement": "subsystems",
+          "orderByTime": "ASC",
+          "policy": "default",
+          "refId": "A",
+          "resultFormat": "time_series",
+          "select": [
+            [
+              {
+                "params": ["num_guest"],
+                "type": "field"
+              }
+            ]
+          ],
+          "tags": [
+            {
+              "condition": "AND",
+              "key": "subsystem",
+              "operator": "=",
+              "value": "wlan"
+            }
+          ]
+        }
+      ],
+      "title": "Guests",
+      "transparent": true,
+      "type": "stat"
     },
     {
       "datasource": "Unifi",
@@ -693,15 +854,14 @@
         "justifyMode": "auto",
         "orientation": "horizontal",
         "reduceOptions": {
-          "calcs": [
-            "max"
-          ],
+          "calcs": ["max"],
           "fields": "",
           "values": false
         },
-        "textMode": "auto"
+        "textMode": "auto",
+        "wideLayout": true
       },
-      "pluginVersion": "8.4.3",
+      "pluginVersion": "10.2.1",
       "targets": [
         {
           "groupBy": [],
@@ -713,19 +873,12 @@
           "select": [
             [
               {
-                "params": [
-                  "num_gw"
-                ],
+                "params": ["num_gw"],
                 "type": "field"
               }
             ]
           ],
           "tags": [
-            {
-              "key": "site_name",
-              "operator": "=~",
-              "value": "/^$site$/"
-            },
             {
               "condition": "AND",
               "key": "subsystem",
@@ -736,6 +889,7 @@
         }
       ],
       "title": "Gateways",
+      "transparent": true,
       "type": "stat"
     },
     {
@@ -789,15 +943,14 @@
         "justifyMode": "auto",
         "orientation": "horizontal",
         "reduceOptions": {
-          "calcs": [
-            "max"
-          ],
+          "calcs": ["max"],
           "fields": "",
           "values": false
         },
-        "textMode": "auto"
+        "textMode": "auto",
+        "wideLayout": true
       },
-      "pluginVersion": "8.4.3",
+      "pluginVersion": "10.2.1",
       "targets": [
         {
           "groupBy": [],
@@ -809,19 +962,12 @@
           "select": [
             [
               {
-                "params": [
-                  "num_sw"
-                ],
+                "params": ["num_sw"],
                 "type": "field"
               }
             ]
           ],
           "tags": [
-            {
-              "key": "site_name",
-              "operator": "=~",
-              "value": "/^$site$/"
-            },
             {
               "condition": "AND",
               "key": "subsystem",
@@ -832,6 +978,7 @@
         }
       ],
       "title": "Switches",
+      "transparent": true,
       "type": "stat"
     },
     {
@@ -885,15 +1032,14 @@
         "justifyMode": "auto",
         "orientation": "horizontal",
         "reduceOptions": {
-          "calcs": [
-            "max"
-          ],
+          "calcs": ["max"],
           "fields": "",
           "values": false
         },
-        "textMode": "auto"
+        "textMode": "auto",
+        "wideLayout": true
       },
-      "pluginVersion": "8.4.3",
+      "pluginVersion": "10.2.1",
       "targets": [
         {
           "groupBy": [],
@@ -905,19 +1051,12 @@
           "select": [
             [
               {
-                "params": [
-                  "num_ap"
-                ],
+                "params": ["num_ap"],
                 "type": "field"
               }
             ]
           ],
           "tags": [
-            {
-              "key": "site_name",
-              "operator": "=~",
-              "value": "/^$site$/"
-            },
             {
               "condition": "AND",
               "key": "subsystem",
@@ -928,6 +1067,7 @@
         }
       ],
       "title": "WAPs",
+      "transparent": true,
       "type": "stat"
     },
     {
@@ -981,15 +1121,14 @@
         "justifyMode": "auto",
         "orientation": "horizontal",
         "reduceOptions": {
-          "calcs": [
-            "lastNotNull"
-          ],
+          "calcs": ["lastNotNull"],
           "fields": "",
           "values": false
         },
-        "textMode": "auto"
+        "textMode": "auto",
+        "wideLayout": true
       },
-      "pluginVersion": "8.4.3",
+      "pluginVersion": "10.2.1",
       "targets": [
         {
           "groupBy": [],
@@ -1001,19 +1140,12 @@
           "select": [
             [
               {
-                "params": [
-                  "num_user"
-                ],
+                "params": ["num_user"],
                 "type": "field"
               }
             ]
           ],
           "tags": [
-            {
-              "key": "site_name",
-              "operator": "=~",
-              "value": "/^$site$/"
-            },
             {
               "condition": "AND",
               "key": "subsystem",
@@ -1024,6 +1156,7 @@
         }
       ],
       "title": "VPN Users",
+      "transparent": true,
       "type": "stat"
     },
     {
@@ -1077,15 +1210,14 @@
         "justifyMode": "auto",
         "orientation": "horizontal",
         "reduceOptions": {
-          "calcs": [
-            "lastNotNull"
-          ],
+          "calcs": ["lastNotNull"],
           "fields": "",
           "values": false
         },
-        "textMode": "auto"
+        "textMode": "auto",
+        "wideLayout": true
       },
-      "pluginVersion": "8.4.3",
+      "pluginVersion": "10.2.1",
       "targets": [
         {
           "groupBy": [],
@@ -1097,19 +1229,12 @@
           "select": [
             [
               {
-                "params": [
-                  "num_user"
-                ],
+                "params": ["num_user"],
                 "type": "field"
               }
             ]
           ],
           "tags": [
-            {
-              "key": "site_name",
-              "operator": "=~",
-              "value": "/^$site$/"
-            },
             {
               "condition": "AND",
               "key": "subsystem",
@@ -1120,6 +1245,7 @@
         }
       ],
       "title": "WLAN Users",
+      "transparent": true,
       "type": "stat"
     },
     {
@@ -1173,15 +1299,14 @@
         "justifyMode": "auto",
         "orientation": "horizontal",
         "reduceOptions": {
-          "calcs": [
-            "lastNotNull"
-          ],
+          "calcs": ["lastNotNull"],
           "fields": "",
           "values": false
         },
-        "textMode": "auto"
+        "textMode": "auto",
+        "wideLayout": true
       },
-      "pluginVersion": "8.4.3",
+      "pluginVersion": "10.2.1",
       "targets": [
         {
           "groupBy": [],
@@ -1193,19 +1318,12 @@
           "select": [
             [
               {
-                "params": [
-                  "num_user"
-                ],
+                "params": ["num_user"],
                 "type": "field"
               }
             ]
           ],
           "tags": [
-            {
-              "key": "site_name",
-              "operator": "=~",
-              "value": "/^$site$/"
-            },
             {
               "condition": "AND",
               "key": "subsystem",
@@ -1216,6 +1334,7 @@
         }
       ],
       "title": "LAN Users",
+      "transparent": true,
       "type": "stat"
     },
     {
@@ -1223,20 +1342,16 @@
       "fieldConfig": {
         "defaults": {
           "color": {
-            "fixedColor": "rgb(31, 120, 193)",
-            "mode": "fixed"
+            "mode": "thresholds"
           },
-          "mappings": [
-            {
-              "options": {
-                "match": "null",
-                "result": {
-                  "text": "N/A"
-                }
-              },
-              "type": "special"
-            }
-          ],
+          "custom": {
+            "align": "auto",
+            "cellOptions": {
+              "type": "auto"
+            },
+            "inspect": false
+          },
+          "mappings": [],
           "thresholds": {
             "mode": "absolute",
             "steps": [
@@ -1249,105 +1364,88 @@
                 "value": 80
               }
             ]
-          },
-          "unit": "none"
+          }
         },
-        "overrides": []
+        "overrides": [
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "Time"
+            },
+            "properties": [
+              {
+                "id": "displayName",
+                "value": "Time"
+              },
+              {
+                "id": "custom.align"
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byRegexp",
+              "options": "/Rate$/"
+            },
+            "properties": [
+              {
+                "id": "unit",
+                "value": "Bps"
+              },
+              {
+                "id": "decimals",
+                "value": 2
+              },
+              {
+                "id": "custom.align"
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byRegexp",
+              "options": "/xPut/"
+            },
+            "properties": [
+              {
+                "id": "unit",
+                "value": "MBs"
+              },
+              {
+                "id": "decimals",
+                "value": 2
+              },
+              {
+                "id": "custom.align"
+              }
+            ]
+          }
+        ]
       },
       "gridPos": {
-        "h": 2,
-        "w": 2,
+        "h": 4,
+        "w": 12,
         "x": 12,
         "y": 8
       },
-      "id": 26,
+      "id": 14,
       "links": [],
-      "maxDataPoints": 100,
       "options": {
-        "colorMode": "none",
-        "graphMode": "area",
-        "justifyMode": "auto",
-        "orientation": "horizontal",
-        "reduceOptions": {
-          "calcs": [
-            "max"
-          ],
+        "cellHeight": "sm",
+        "footer": {
+          "countRows": false,
           "fields": "",
-          "values": false
+          "reducer": ["sum"],
+          "show": false
         },
-        "textMode": "auto"
+        "showHeader": true
       },
-      "pluginVersion": "8.4.3",
-      "targets": [
-        {
-          "groupBy": [],
-          "measurement": "subsystems",
-          "orderByTime": "ASC",
-          "policy": "default",
-          "refId": "A",
-          "resultFormat": "time_series",
-          "select": [
-            [
-              {
-                "params": [
-                  "num_sta"
-                ],
-                "type": "field"
-              }
-            ]
-          ],
-          "tags": [
-            {
-              "key": "site_name",
-              "operator": "=~",
-              "value": "/^$site$/"
-            },
-            {
-              "condition": "AND",
-              "key": "subsystem",
-              "operator": "=",
-              "value": "wan"
-            }
-          ]
-        }
-      ],
-      "title": "Total Users",
-      "type": "stat"
-    },
-    {
-      "columns": [],
-      "datasource": "Unifi",
-      "fontSize": "100%",
-      "gridPos": {
-        "h": 4,
-        "w": 5,
-        "x": 14,
-        "y": 8
-      },
-      "id": 10,
-      "links": [],
-      "scroll": true,
-      "showHeader": true,
-      "sort": {
-        "col": 0,
-        "desc": true
-      },
-      "styles": [
-        {
-          "alias": "Time",
-          "align": "auto",
-          "dateFormat": "YYYY-MM-DD HH:mm:ss",
-          "pattern": "Time",
-          "type": "hidden"
-        }
-      ],
+      "pluginVersion": "10.2.1",
       "targets": [
         {
           "groupBy": [
             {
-              "params": [
-                "status"
-              ],
+              "params": ["desc"],
               "type": "tag"
             }
           ],
@@ -1359,9 +1457,7 @@
           "select": [
             [
               {
-                "params": [
-                  "remote_user_num_inactive"
-                ],
+                "params": ["rx_bytes-r"],
                 "type": "field"
               },
               {
@@ -1369,17 +1465,13 @@
                 "type": "last"
               },
               {
-                "params": [
-                  "Inactive"
-                ],
+                "params": ["RxRate"],
                 "type": "alias"
               }
             ],
             [
               {
-                "params": [
-                  "remote_user_num_active"
-                ],
+                "params": ["tx_bytes-r"],
                 "type": "field"
               },
               {
@@ -1387,17 +1479,13 @@
                 "type": "last"
               },
               {
-                "params": [
-                  "Active"
-                ],
+                "params": ["TxRate"],
                 "type": "alias"
               }
             ],
             [
               {
-                "params": [
-                  "remote_user_rx_bytes"
-                ],
+                "params": ["xput_down"],
                 "type": "field"
               },
               {
@@ -1405,17 +1493,13 @@
                 "type": "last"
               },
               {
-                "params": [
-                  "RX"
-                ],
+                "params": ["xPutRx"],
                 "type": "alias"
               }
             ],
             [
               {
-                "params": [
-                  "remote_user_tx_bytes"
-                ],
+                "params": ["xput_up"],
                 "type": "field"
               },
               {
@@ -1423,204 +1507,32 @@
                 "type": "last"
               },
               {
-                "params": [
-                  "TX"
-                ],
+                "params": ["xPutTx"],
                 "type": "alias"
               }
             ]
           ],
           "tags": [
             {
-              "key": "site_name",
-              "operator": "=~",
-              "value": "/^$site$/"
-            },
-            {
               "condition": "AND",
               "key": "subsystem",
               "operator": "=",
-              "value": "vpn"
+              "value": "www"
             }
           ]
         }
       ],
-      "title": "VPN Subsystem",
-      "transform": "table",
-      "type": "table-old"
-    },
-    {
-      "columns": [],
-      "datasource": "Unifi",
-      "fontSize": "100%",
-      "gridPos": {
-        "h": 4,
-        "w": 5,
-        "x": 19,
-        "y": 8
-      },
-      "id": 11,
-      "links": [],
-      "scroll": true,
-      "showHeader": true,
-      "sort": {
-        "col": 0,
-        "desc": true
-      },
-      "styles": [
+      "title": "WWW Subsystem",
+      "transformations": [
         {
-          "alias": "Time",
-          "align": "auto",
-          "dateFormat": "YYYY-MM-DD HH:mm:ss",
-          "pattern": "Time",
-          "type": "hidden"
-        },
-        {
-          "alias": "LAN IP",
-          "align": "auto",
-          "colors": [
-            "rgba(245, 54, 54, 0.9)",
-            "rgba(237, 129, 40, 0.89)",
-            "rgba(50, 172, 45, 0.97)"
-          ],
-          "decimals": 2,
-          "pattern": "lan_ip",
-          "thresholds": [],
-          "type": "string",
-          "unit": "short"
+          "id": "merge",
+          "options": {
+            "reducers": []
+          }
         }
       ],
-      "targets": [
-        {
-          "groupBy": [
-            {
-              "params": [
-                "status"
-              ],
-              "type": "tag"
-            },
-            {
-              "params": [
-                "lan_ip"
-              ],
-              "type": "tag"
-            }
-          ],
-          "measurement": "subsystems",
-          "orderByTime": "ASC",
-          "policy": "default",
-          "refId": "A",
-          "resultFormat": "table",
-          "select": [
-            [
-              {
-                "params": [
-                  "num_user"
-                ],
-                "type": "field"
-              },
-              {
-                "params": [],
-                "type": "last"
-              },
-              {
-                "params": [
-                  "Users"
-                ],
-                "type": "alias"
-              }
-            ],
-            [
-              {
-                "params": [
-                  "num_iot"
-                ],
-                "type": "field"
-              },
-              {
-                "params": [],
-                "type": "last"
-              },
-              {
-                "params": [
-                  "IoT"
-                ],
-                "type": "alias"
-              }
-            ],
-            [
-              {
-                "params": [
-                  "num_guest"
-                ],
-                "type": "field"
-              },
-              {
-                "params": [],
-                "type": "last"
-              },
-              {
-                "params": [
-                  "Guests"
-                ],
-                "type": "alias"
-              }
-            ],
-            [
-              {
-                "params": [
-                  "num_sw"
-                ],
-                "type": "field"
-              },
-              {
-                "params": [],
-                "type": "last"
-              },
-              {
-                "params": [
-                  "Switches"
-                ],
-                "type": "alias"
-              }
-            ],
-            [
-              {
-                "params": [
-                  "num_adopted"
-                ],
-                "type": "field"
-              },
-              {
-                "params": [],
-                "type": "last"
-              },
-              {
-                "params": [
-                  "Adopted"
-                ],
-                "type": "alias"
-              }
-            ]
-          ],
-          "tags": [
-            {
-              "key": "site_name",
-              "operator": "=~",
-              "value": "/^$site$/"
-            },
-            {
-              "condition": "AND",
-              "key": "subsystem",
-              "operator": "=",
-              "value": "lan"
-            }
-          ]
-        }
-      ],
-      "title": "LAN Subsystem",
-      "transform": "table",
-      "type": "table-old"
+      "transparent": true,
+      "type": "table"
     },
     {
       "datasource": "Unifi",
@@ -1673,15 +1585,14 @@
         "justifyMode": "auto",
         "orientation": "horizontal",
         "reduceOptions": {
-          "calcs": [
-            "lastNotNull"
-          ],
+          "calcs": ["lastNotNull"],
           "fields": "",
           "values": false
         },
-        "textMode": "auto"
+        "textMode": "auto",
+        "wideLayout": true
       },
-      "pluginVersion": "8.4.3",
+      "pluginVersion": "10.2.1",
       "targets": [
         {
           "groupBy": [],
@@ -1693,19 +1604,12 @@
           "select": [
             [
               {
-                "params": [
-                  "drops"
-                ],
+                "params": ["drops"],
                 "type": "field"
               }
             ]
           ],
           "tags": [
-            {
-              "key": "site_name",
-              "operator": "=~",
-              "value": "/^$site$/"
-            },
             {
               "condition": "AND",
               "key": "subsystem",
@@ -1716,6 +1620,7 @@
         }
       ],
       "title": "WWW Drops",
+      "transparent": true,
       "type": "stat"
     },
     {
@@ -1769,15 +1674,14 @@
         "justifyMode": "auto",
         "orientation": "horizontal",
         "reduceOptions": {
-          "calcs": [
-            "max"
-          ],
+          "calcs": ["max"],
           "fields": "",
           "values": false
         },
-        "textMode": "auto"
+        "textMode": "auto",
+        "wideLayout": true
       },
-      "pluginVersion": "8.4.3",
+      "pluginVersion": "10.2.1",
       "targets": [
         {
           "groupBy": [],
@@ -1789,23 +1693,15 @@
           "select": [
             [
               {
-                "params": [
-                  "num_adopted"
-                ],
+                "params": ["num_adopted"],
                 "type": "field"
               }
             ]
-          ],
-          "tags": [
-            {
-              "key": "site_name",
-              "operator": "=~",
-              "value": "/^$site$/"
-            }
           ]
         }
       ],
       "title": "Adopted",
+      "transparent": true,
       "type": "stat"
     },
     {
@@ -1862,15 +1758,14 @@
         "justifyMode": "auto",
         "orientation": "horizontal",
         "reduceOptions": {
-          "calcs": [
-            "max"
-          ],
+          "calcs": ["max"],
           "fields": "",
           "values": false
         },
-        "textMode": "auto"
+        "textMode": "auto",
+        "wideLayout": true
       },
-      "pluginVersion": "8.4.3",
+      "pluginVersion": "10.2.1",
       "targets": [
         {
           "groupBy": [],
@@ -1882,23 +1777,15 @@
           "select": [
             [
               {
-                "params": [
-                  "num_disabled"
-                ],
+                "params": ["num_disabled"],
                 "type": "field"
               }
             ]
-          ],
-          "tags": [
-            {
-              "key": "site_name",
-              "operator": "=~",
-              "value": "/^$site$/"
-            }
           ]
         }
       ],
       "title": "Disabled",
+      "transparent": true,
       "type": "stat"
     },
     {
@@ -1955,15 +1842,14 @@
         "justifyMode": "auto",
         "orientation": "horizontal",
         "reduceOptions": {
-          "calcs": [
-            "max"
-          ],
+          "calcs": ["max"],
           "fields": "",
           "values": false
         },
-        "textMode": "auto"
+        "textMode": "auto",
+        "wideLayout": true
       },
-      "pluginVersion": "8.4.3",
+      "pluginVersion": "10.2.1",
       "targets": [
         {
           "groupBy": [],
@@ -1975,23 +1861,15 @@
           "select": [
             [
               {
-                "params": [
-                  "num_disconnected"
-                ],
+                "params": ["num_disconnected"],
                 "type": "field"
               }
             ]
-          ],
-          "tags": [
-            {
-              "key": "site_name",
-              "operator": "=~",
-              "value": "/^$site$/"
-            }
           ]
         }
       ],
       "title": "Disconnected",
+      "transparent": true,
       "type": "stat"
     },
     {
@@ -2048,15 +1926,14 @@
         "justifyMode": "auto",
         "orientation": "horizontal",
         "reduceOptions": {
-          "calcs": [
-            "max"
-          ],
+          "calcs": ["max"],
           "fields": "",
           "values": false
         },
-        "textMode": "auto"
+        "textMode": "auto",
+        "wideLayout": true
       },
-      "pluginVersion": "8.4.3",
+      "pluginVersion": "10.2.1",
       "targets": [
         {
           "groupBy": [],
@@ -2068,23 +1945,15 @@
           "select": [
             [
               {
-                "params": [
-                  "num_new_alarms"
-                ],
+                "params": ["num_new_alarms"],
                 "type": "field"
               }
             ]
-          ],
-          "tags": [
-            {
-              "key": "site_name",
-              "operator": "=~",
-              "value": "/^$site$/"
-            }
           ]
         }
       ],
       "title": "Alarms",
+      "transparent": true,
       "type": "stat"
     },
     {
@@ -2138,15 +2007,14 @@
         "justifyMode": "auto",
         "orientation": "horizontal",
         "reduceOptions": {
-          "calcs": [
-            "max"
-          ],
+          "calcs": ["max"],
           "fields": "",
           "values": false
         },
-        "textMode": "auto"
+        "textMode": "auto",
+        "wideLayout": true
       },
-      "pluginVersion": "8.4.3",
+      "pluginVersion": "10.2.1",
       "targets": [
         {
           "groupBy": [],
@@ -2158,19 +2026,12 @@
           "select": [
             [
               {
-                "params": [
-                  "num_iot"
-                ],
+                "params": ["num_iot"],
                 "type": "field"
               }
             ]
           ],
           "tags": [
-            {
-              "key": "site_name",
-              "operator": "=~",
-              "value": "/^$site$/"
-            },
             {
               "condition": "AND",
               "key": "subsystem",
@@ -2181,6 +2042,7 @@
         }
       ],
       "title": "WLAN IoT",
+      "transparent": true,
       "type": "stat"
     },
     {
@@ -2188,20 +2050,461 @@
       "fieldConfig": {
         "defaults": {
           "color": {
-            "fixedColor": "rgb(31, 120, 193)",
-            "mode": "fixed"
+            "mode": "thresholds"
           },
-          "mappings": [
-            {
-              "options": {
-                "match": "null",
-                "result": {
-                  "text": "N/A"
-                }
+          "custom": {
+            "align": "auto",
+            "cellOptions": {
+              "type": "auto"
+            },
+            "inspect": false
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
               },
-              "type": "special"
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          }
+        },
+        "overrides": [
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "Time"
+            },
+            "properties": [
+              {
+                "id": "displayName",
+                "value": "Time"
+              },
+              {
+                "id": "custom.align"
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "gw_name"
+            },
+            "properties": [
+              {
+                "id": "displayName",
+                "value": "GW Name"
+              },
+              {
+                "id": "unit",
+                "value": "short"
+              },
+              {
+                "id": "decimals",
+                "value": 2
+              },
+              {
+                "id": "custom.align"
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "wan_ip"
+            },
+            "properties": [
+              {
+                "id": "displayName",
+                "value": "WAN IP"
+              },
+              {
+                "id": "unit",
+                "value": "short"
+              },
+              {
+                "id": "decimals",
+                "value": 2
+              },
+              {
+                "id": "custom.align"
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byRegexp",
+              "options": "/Rate$/"
+            },
+            "properties": [
+              {
+                "id": "unit",
+                "value": "Bps"
+              },
+              {
+                "id": "decimals",
+                "value": 1
+              },
+              {
+                "id": "custom.align"
+              }
+            ]
+          }
+        ]
+      },
+      "gridPos": {
+        "h": 4,
+        "w": 24,
+        "x": 0,
+        "y": 12
+      },
+      "id": 12,
+      "links": [],
+      "options": {
+        "cellHeight": "sm",
+        "footer": {
+          "countRows": false,
+          "fields": "",
+          "reducer": ["sum"],
+          "show": false
+        },
+        "showHeader": true
+      },
+      "pluginVersion": "10.2.1",
+      "targets": [
+        {
+          "groupBy": [
+            {
+              "params": ["status"],
+              "type": "tag"
+            },
+            {
+              "params": ["gw_name"],
+              "type": "tag"
+            },
+            {
+              "params": ["wan_ip"],
+              "type": "tag"
             }
           ],
+          "measurement": "subsystems",
+          "orderByTime": "ASC",
+          "policy": "default",
+          "refId": "A",
+          "resultFormat": "table",
+          "select": [
+            [
+              {
+                "params": ["rx_bytes-r"],
+                "type": "field"
+              },
+              {
+                "params": [],
+                "type": "last"
+              },
+              {
+                "params": ["Rx Rate"],
+                "type": "alias"
+              }
+            ],
+            [
+              {
+                "params": ["tx_bytes-r"],
+                "type": "field"
+              },
+              {
+                "params": [],
+                "type": "last"
+              },
+              {
+                "params": ["Tx Rate"],
+                "type": "alias"
+              }
+            ],
+            [
+              {
+                "params": ["num_new_alarms"],
+                "type": "field"
+              },
+              {
+                "params": [],
+                "type": "last"
+              },
+              {
+                "params": ["Alarms"],
+                "type": "alias"
+              }
+            ]
+          ],
+          "tags": [
+            {
+              "condition": "AND",
+              "key": "subsystem",
+              "operator": "=",
+              "value": "wan"
+            }
+          ]
+        }
+      ],
+      "title": "WAN Subsystem",
+      "transformations": [
+        {
+          "id": "merge",
+          "options": {
+            "reducers": []
+          }
+        }
+      ],
+      "transparent": true,
+      "type": "table"
+    },
+    {
+      "datasource": "Unifi",
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "custom": {
+            "align": "auto",
+            "cellOptions": {
+              "type": "auto"
+            },
+            "inspect": false
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          }
+        },
+        "overrides": [
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "Time"
+            },
+            "properties": [
+              {
+                "id": "displayName",
+                "value": "Time"
+              },
+              {
+                "id": "custom.align"
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "lan_ip"
+            },
+            "properties": [
+              {
+                "id": "displayName",
+                "value": "LAN IP"
+              },
+              {
+                "id": "unit",
+                "value": "short"
+              },
+              {
+                "id": "decimals",
+                "value": 2
+              },
+              {
+                "id": "custom.align"
+              }
+            ]
+          }
+        ]
+      },
+      "gridPos": {
+        "h": 4,
+        "w": 24,
+        "x": 0,
+        "y": 16
+      },
+      "id": 11,
+      "links": [],
+      "options": {
+        "cellHeight": "sm",
+        "footer": {
+          "countRows": false,
+          "fields": "",
+          "reducer": ["sum"],
+          "show": false
+        },
+        "showHeader": true
+      },
+      "pluginVersion": "10.2.1",
+      "targets": [
+        {
+          "groupBy": [
+            {
+              "params": ["status"],
+              "type": "tag"
+            },
+            {
+              "params": ["lan_ip"],
+              "type": "tag"
+            }
+          ],
+          "measurement": "subsystems",
+          "orderByTime": "ASC",
+          "policy": "default",
+          "refId": "A",
+          "resultFormat": "table",
+          "select": [
+            [
+              {
+                "params": ["num_user"],
+                "type": "field"
+              },
+              {
+                "params": [],
+                "type": "last"
+              },
+              {
+                "params": ["Users"],
+                "type": "alias"
+              }
+            ],
+            [
+              {
+                "params": ["num_iot"],
+                "type": "field"
+              },
+              {
+                "params": [],
+                "type": "last"
+              },
+              {
+                "params": ["IoT"],
+                "type": "alias"
+              }
+            ],
+            [
+              {
+                "params": ["num_guest"],
+                "type": "field"
+              },
+              {
+                "params": [],
+                "type": "last"
+              },
+              {
+                "params": ["Guests"],
+                "type": "alias"
+              }
+            ],
+            [
+              {
+                "params": ["num_sw"],
+                "type": "field"
+              },
+              {
+                "params": [],
+                "type": "last"
+              },
+              {
+                "params": ["Switches"],
+                "type": "alias"
+              }
+            ],
+            [
+              {
+                "params": ["num_adopted"],
+                "type": "field"
+              },
+              {
+                "params": [],
+                "type": "last"
+              },
+              {
+                "params": ["Adopted"],
+                "type": "alias"
+              }
+            ]
+          ],
+          "tags": [
+            {
+              "condition": "AND",
+              "key": "subsystem",
+              "operator": "=",
+              "value": "lan"
+            }
+          ]
+        }
+      ],
+      "title": "LAN Subsystem",
+      "transformations": [
+        {
+          "id": "merge",
+          "options": {
+            "reducers": []
+          }
+        }
+      ],
+      "transparent": true,
+      "type": "table"
+    },
+    {
+      "datasource": "Unifi",
+      "description": "Shows data transfer for each subsystem on the site. RX is on the negative axis.",
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "palette-classic"
+          },
+          "custom": {
+            "axisBorderShow": false,
+            "axisCenteredZero": false,
+            "axisColorMode": "text",
+            "axisLabel": "bytes / second",
+            "axisPlacement": "auto",
+            "barAlignment": 0,
+            "drawStyle": "line",
+            "fillOpacity": 0,
+            "gradientMode": "none",
+            "hideFrom": {
+              "legend": false,
+              "tooltip": false,
+              "viz": false
+            },
+            "insertNulls": false,
+            "lineInterpolation": "linear",
+            "lineWidth": 1,
+            "pointSize": 5,
+            "scaleDistribution": {
+              "type": "linear"
+            },
+            "showPoints": "never",
+            "spanNulls": true,
+            "stacking": {
+              "group": "A",
+              "mode": "none"
+            },
+            "thresholdsStyle": {
+              "mode": "off"
+            }
+          },
+          "links": [],
+          "mappings": [],
           "thresholds": {
             "mode": "absolute",
             "steps": [
@@ -2215,326 +2518,59 @@
               }
             ]
           },
-          "unit": "none"
-        },
-        "overrides": []
-      },
-      "gridPos": {
-        "h": 2,
-        "w": 2,
-        "x": 12,
-        "y": 10
-      },
-      "id": 21,
-      "links": [],
-      "maxDataPoints": 100,
-      "options": {
-        "colorMode": "none",
-        "graphMode": "area",
-        "justifyMode": "auto",
-        "orientation": "horizontal",
-        "reduceOptions": {
-          "calcs": [
-            "max"
-          ],
-          "fields": "",
-          "values": false
-        },
-        "textMode": "auto"
-      },
-      "pluginVersion": "8.4.3",
-      "targets": [
-        {
-          "groupBy": [],
-          "measurement": "subsystems",
-          "orderByTime": "ASC",
-          "policy": "default",
-          "refId": "A",
-          "resultFormat": "time_series",
-          "select": [
-            [
-              {
-                "params": [
-                  "num_guest"
-                ],
-                "type": "field"
-              }
-            ]
-          ],
-          "tags": [
-            {
-              "key": "site_name",
-              "operator": "=~",
-              "value": "/^$site$/"
-            },
-            {
-              "condition": "AND",
-              "key": "subsystem",
-              "operator": "=",
-              "value": "wlan"
-            }
-          ]
-        }
-      ],
-      "title": "Guests",
-      "type": "stat"
-    },
-    {
-      "columns": [],
-      "datasource": "Unifi",
-      "fontSize": "100%",
-      "gridPos": {
-        "h": 3,
-        "w": 24,
-        "x": 0,
-        "y": 12
-      },
-      "id": 12,
-      "links": [],
-      "scroll": true,
-      "showHeader": true,
-      "sort": {
-        "col": 0,
-        "desc": true
-      },
-      "styles": [
-        {
-          "alias": "Time",
-          "align": "auto",
-          "dateFormat": "YYYY-MM-DD HH:mm:ss",
-          "pattern": "Time",
-          "type": "hidden"
-        },
-        {
-          "alias": "GW Name",
-          "align": "auto",
-          "colors": [
-            "rgba(245, 54, 54, 0.9)",
-            "rgba(237, 129, 40, 0.89)",
-            "rgba(50, 172, 45, 0.97)"
-          ],
-          "dateFormat": "YYYY-MM-DD HH:mm:ss",
-          "decimals": 2,
-          "mappingType": 1,
-          "pattern": "gw_name",
-          "thresholds": [],
-          "type": "string",
-          "unit": "short"
-        },
-        {
-          "alias": "WAN IP",
-          "align": "auto",
-          "colors": [
-            "rgba(245, 54, 54, 0.9)",
-            "rgba(237, 129, 40, 0.89)",
-            "rgba(50, 172, 45, 0.97)"
-          ],
-          "dateFormat": "YYYY-MM-DD HH:mm:ss",
-          "decimals": 2,
-          "mappingType": 1,
-          "pattern": "wan_ip",
-          "thresholds": [],
-          "type": "string",
-          "unit": "short"
-        },
-        {
-          "alias": "",
-          "align": "auto",
-          "colors": [
-            "rgba(245, 54, 54, 0.9)",
-            "rgba(237, 129, 40, 0.89)",
-            "rgba(50, 172, 45, 0.97)"
-          ],
-          "dateFormat": "YYYY-MM-DD HH:mm:ss",
-          "decimals": 1,
-          "mappingType": 1,
-          "pattern": "/Rate$/",
-          "thresholds": [],
-          "type": "number",
           "unit": "Bps"
-        }
-      ],
-      "targets": [
-        {
-          "groupBy": [
-            {
-              "params": [
-                "status"
-              ],
-              "type": "tag"
+        },
+        "overrides": [
+          {
+            "matcher": {
+              "id": "byRegexp",
+              "options": "/RX$/"
             },
-            {
-              "params": [
-                "gw_name"
-              ],
-              "type": "tag"
-            },
-            {
-              "params": [
-                "wan_ip"
-              ],
-              "type": "tag"
-            }
-          ],
-          "measurement": "subsystems",
-          "orderByTime": "ASC",
-          "policy": "default",
-          "refId": "A",
-          "resultFormat": "table",
-          "select": [
-            [
+            "properties": [
               {
-                "params": [
-                  "rx_bytes-r"
-                ],
-                "type": "field"
-              },
-              {
-                "params": [],
-                "type": "last"
-              },
-              {
-                "params": [
-                  "Rx Rate"
-                ],
-                "type": "alias"
-              }
-            ],
-            [
-              {
-                "params": [
-                  "tx_bytes-r"
-                ],
-                "type": "field"
-              },
-              {
-                "params": [],
-                "type": "last"
-              },
-              {
-                "params": [
-                  "Tx Rate"
-                ],
-                "type": "alias"
-              }
-            ],
-            [
-              {
-                "params": [
-                  "num_new_alarms"
-                ],
-                "type": "field"
-              },
-              {
-                "params": [],
-                "type": "last"
-              },
-              {
-                "params": [
-                  "Alarms"
-                ],
-                "type": "alias"
+                "id": "custom.transform",
+                "value": "negative-Y"
               }
             ]
-          ],
-          "tags": [
-            {
-              "key": "site_name",
-              "operator": "=~",
-              "value": "/^$site$/"
-            },
-            {
-              "condition": "AND",
-              "key": "subsystem",
-              "operator": "=",
-              "value": "wan"
-            }
-          ]
-        }
-      ],
-      "title": "WAN Subsystem",
-      "transform": "table",
-      "type": "table-old"
-    },
-    {
-      "aliasColors": {},
-      "bars": false,
-      "dashLength": 10,
-      "dashes": false,
-      "datasource": "Unifi",
-      "description": "Shows data transfer for each subsystem on the site. RX is on the negative axis.",
-      "fieldConfig": {
-        "defaults": {
-          "links": []
-        },
-        "overrides": []
+          }
+        ]
       },
-      "fill": 0,
-      "fillGradient": 0,
       "gridPos": {
         "h": 8,
         "w": 24,
         "x": 0,
-        "y": 15
+        "y": 20
       },
-      "hiddenSeries": false,
       "id": 15,
-      "legend": {
-        "alignAsTable": true,
-        "avg": false,
-        "current": true,
-        "max": true,
-        "min": false,
-        "rightSide": true,
-        "show": true,
-        "sort": "max",
-        "sortDesc": true,
-        "total": false,
-        "values": true
-      },
-      "lines": true,
-      "linewidth": 1,
       "links": [],
-      "maxPerRow": 2,
-      "nullPointMode": "connected",
       "options": {
-        "alertThreshold": true
-      },
-      "percentage": false,
-      "pluginVersion": "8.4.3",
-      "pointradius": 2,
-      "points": false,
-      "renderer": "flot",
-      "repeatDirection": "h",
-      "seriesOverrides": [
-        {
-          "alias": "/RX$/",
-          "transform": "negative-Y"
+        "legend": {
+          "calcs": ["lastNotNull", "max"],
+          "displayMode": "table",
+          "placement": "right",
+          "showLegend": true
+        },
+        "tooltip": {
+          "mode": "multi",
+          "sort": "desc"
         }
-      ],
-      "spaceLength": 10,
-      "stack": false,
-      "steppedLine": false,
+      },
+      "pluginVersion": "10.2.1",
+      "repeatDirection": "h",
       "targets": [
         {
           "alias": "$tag_subsystem $col",
           "groupBy": [
             {
-              "params": [
-                "$__interval"
-              ],
+              "params": ["$__interval"],
               "type": "time"
             },
             {
-              "params": [
-                "subsystem"
-              ],
+              "params": ["subsystem"],
               "type": "tag"
             },
             {
-              "params": [
-                "null"
-              ],
+              "params": ["null"],
               "type": "fill"
             }
           ],
@@ -2542,15 +2578,13 @@
           "orderByTime": "ASC",
           "policy": "default",
           "query": "SELECT max(\"rx_bytes-r\") AS \"Bytes RX\", max(\"tx_bytes-r\") AS \"Bytes TX\" FROM \"subsystems\" WHERE (\"site_name\" =~ /^$site$/) AND $timeFilter GROUP BY time($__interval), \"subsystem\" fill(null)",
-          "rawQuery": true,
+          "rawQuery": false,
           "refId": "A",
           "resultFormat": "time_series",
           "select": [
             [
               {
-                "params": [
-                  "rx_bytes-r"
-                ],
+                "params": ["rx_bytes-r"],
                 "type": "field"
               },
               {
@@ -2558,17 +2592,13 @@
                 "type": "max"
               },
               {
-                "params": [
-                  "Bytes RX"
-                ],
+                "params": ["Bytes RX"],
                 "type": "alias"
               }
             ],
             [
               {
-                "params": [
-                  "tx_bytes-r"
-                ],
+                "params": ["tx_bytes-r"],
                 "type": "field"
               },
               {
@@ -2576,127 +2606,113 @@
                 "type": "max"
               },
               {
-                "params": [
-                  "Bytes TX"
-                ],
+                "params": ["Bytes TX"],
                 "type": "alias"
               }
             ]
-          ],
-          "tags": [
-            {
-              "key": "site_name",
-              "operator": "=~",
-              "value": "/^$site$/"
-            }
           ]
         }
       ],
-      "thresholds": [],
-      "timeRegions": [],
       "title": "Site $site Data Transfer",
-      "tooltip": {
-        "shared": true,
-        "sort": 2,
-        "value_type": "individual"
-      },
-      "type": "graph",
-      "xaxis": {
-        "mode": "time",
-        "show": true,
-        "values": []
-      },
-      "yaxes": [
-        {
-          "format": "Bps",
-          "label": "bytes / second",
-          "logBase": 1,
-          "show": true
-        },
-        {
-          "format": "short",
-          "logBase": 1,
-          "show": true
-        }
-      ],
-      "yaxis": {
-        "align": false
-      }
+      "transparent": true,
+      "type": "timeseries"
     },
     {
-      "aliasColors": {},
-      "bars": false,
-      "dashLength": 10,
-      "dashes": false,
       "datasource": "Unifi",
-      "decimals": 0,
       "description": "This graphs shows clients connected to the site.",
       "fieldConfig": {
         "defaults": {
-          "links": []
+          "color": {
+            "mode": "palette-classic"
+          },
+          "custom": {
+            "axisBorderShow": false,
+            "axisCenteredZero": false,
+            "axisColorMode": "text",
+            "axisLabel": "",
+            "axisPlacement": "auto",
+            "barAlignment": 0,
+            "drawStyle": "line",
+            "fillOpacity": 0,
+            "gradientMode": "none",
+            "hideFrom": {
+              "legend": false,
+              "tooltip": false,
+              "viz": false
+            },
+            "insertNulls": false,
+            "lineInterpolation": "linear",
+            "lineWidth": 3,
+            "pointSize": 5,
+            "scaleDistribution": {
+              "type": "linear"
+            },
+            "showPoints": "never",
+            "spanNulls": true,
+            "stacking": {
+              "group": "A",
+              "mode": "none"
+            },
+            "thresholdsStyle": {
+              "mode": "off"
+            }
+          },
+          "decimals": 0,
+          "links": [],
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          },
+          "unit": "short"
         },
         "overrides": []
       },
-      "fill": 0,
-      "fillGradient": 0,
       "gridPos": {
         "h": 7,
         "w": 24,
         "x": 0,
-        "y": 23
+        "y": 28
       },
-      "hiddenSeries": false,
       "id": 2,
-      "legend": {
-        "alignAsTable": true,
-        "avg": false,
-        "current": true,
-        "max": true,
-        "min": false,
-        "rightSide": true,
-        "show": true,
-        "sort": "current",
-        "sortDesc": true,
-        "total": false,
-        "values": true
-      },
-      "lines": true,
-      "linewidth": 3,
       "links": [],
-      "nullPointMode": "connected",
       "options": {
-        "alertThreshold": true
+        "legend": {
+          "calcs": ["lastNotNull", "max"],
+          "displayMode": "table",
+          "placement": "right",
+          "showLegend": true
+        },
+        "tooltip": {
+          "mode": "multi",
+          "sort": "desc"
+        }
       },
-      "percentage": false,
-      "pluginVersion": "8.4.3",
-      "pointradius": 2,
-      "points": false,
-      "renderer": "flot",
+      "pluginVersion": "10.2.1",
       "repeatDirection": "h",
-      "seriesOverrides": [],
-      "spaceLength": 10,
-      "stack": false,
-      "steppedLine": false,
       "targets": [
         {
           "alias": "$tag_subsystem $col",
           "groupBy": [
             {
-              "params": [
-                "$__interval"
-              ],
+              "params": ["$__interval"],
               "type": "time"
             },
             {
-              "params": [
-                "subsystem"
-              ],
+              "params": ["subsystem"],
               "type": "tag"
             },
             {
-              "params": [
-                "null"
-              ],
+              "params": ["null"],
               "type": "fill"
             }
           ],
@@ -2708,9 +2724,7 @@
           "select": [
             [
               {
-                "params": [
-                  "num_user"
-                ],
+                "params": ["num_user"],
                 "type": "field"
               },
               {
@@ -2718,17 +2732,13 @@
                 "type": "max"
               },
               {
-                "params": [
-                  "Users"
-                ],
+                "params": ["Users"],
                 "type": "alias"
               }
             ],
             [
               {
-                "params": [
-                  "remote_user_num_active"
-                ],
+                "params": ["remote_user_num_active"],
                 "type": "field"
               },
               {
@@ -2736,17 +2746,13 @@
                 "type": "max"
               },
               {
-                "params": [
-                  "Remote Active"
-                ],
+                "params": ["Remote Active"],
                 "type": "alias"
               }
             ],
             [
               {
-                "params": [
-                  "remote_user_num_inactive"
-                ],
+                "params": ["remote_user_num_inactive"],
                 "type": "field"
               },
               {
@@ -2754,128 +2760,162 @@
                 "type": "max"
               },
               {
-                "params": [
-                  "Remote Inactive"
-                ],
+                "params": ["Remote Inactive"],
                 "type": "alias"
               }
             ]
-          ],
-          "tags": [
-            {
-              "key": "site_name",
-              "operator": "=~",
-              "value": "/^$site$/"
-            }
           ]
         }
       ],
-      "thresholds": [],
-      "timeRegions": [],
       "title": "Site $site Client Counts",
-      "tooltip": {
-        "shared": true,
-        "sort": 2,
-        "value_type": "individual"
-      },
-      "type": "graph",
-      "xaxis": {
-        "mode": "time",
-        "show": true,
-        "values": []
-      },
-      "yaxes": [
-        {
-          "decimals": 0,
-          "format": "short",
-          "logBase": 1,
-          "show": true
-        },
-        {
-          "format": "short",
-          "logBase": 1,
-          "show": true
-        }
-      ],
-      "yaxis": {
-        "align": false
-      }
+      "transparent": true,
+      "type": "timeseries"
     },
     {
-      "aliasColors": {},
-      "bars": false,
-      "dashLength": 10,
-      "dashes": false,
       "datasource": "Unifi",
-      "decimals": 0,
       "description": "This graph only works if DPI is enabled on the controller and DPI collection is enabled in UniFi Poller. Rx is on the negative axis.",
       "fieldConfig": {
         "defaults": {
-          "links": []
+          "color": {
+            "mode": "palette-classic"
+          },
+          "custom": {
+            "axisBorderShow": false,
+            "axisCenteredZero": false,
+            "axisColorMode": "text",
+            "axisLabel": "",
+            "axisPlacement": "auto",
+            "barAlignment": 0,
+            "drawStyle": "line",
+            "fillOpacity": 0,
+            "gradientMode": "none",
+            "hideFrom": {
+              "legend": false,
+              "tooltip": false,
+              "viz": false
+            },
+            "insertNulls": false,
+            "lineInterpolation": "linear",
+            "lineWidth": 3,
+            "pointSize": 5,
+            "scaleDistribution": {
+              "type": "linear"
+            },
+            "showPoints": "never",
+            "spanNulls": true,
+            "stacking": {
+              "group": "A",
+              "mode": "none"
+            },
+            "thresholdsStyle": {
+              "mode": "off"
+            }
+          },
+          "decimals": 0,
+          "links": [],
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          },
+          "unit": "Bps"
         },
-        "overrides": []
+        "overrides": [
+          {
+            "matcher": {
+              "id": "byRegexp",
+              "options": "/Rx$/"
+            },
+            "properties": [
+              {
+                "id": "custom.transform",
+                "value": "negative-Y"
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byValue",
+              "options": {
+                "op": "gte",
+                "reducer": "allIsZero",
+                "value": 0
+              }
+            },
+            "properties": [
+              {
+                "id": "custom.hideFrom",
+                "value": {
+                  "legend": true,
+                  "tooltip": true,
+                  "viz": false
+                }
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byValue",
+              "options": {
+                "op": "gte",
+                "reducer": "allIsNull",
+                "value": 0
+              }
+            },
+            "properties": [
+              {
+                "id": "custom.hideFrom",
+                "value": {
+                  "legend": true,
+                  "tooltip": true,
+                  "viz": false
+                }
+              }
+            ]
+          }
+        ]
       },
-      "fill": 0,
-      "fillGradient": 0,
       "gridPos": {
         "h": 15,
         "w": 24,
         "x": 0,
-        "y": 30
+        "y": 35
       },
-      "hiddenSeries": false,
       "id": 38,
-      "legend": {
-        "alignAsTable": true,
-        "avg": true,
-        "current": false,
-        "hideEmpty": true,
-        "hideZero": true,
-        "max": true,
-        "min": false,
-        "rightSide": true,
-        "show": true,
-        "sort": "current",
-        "sortDesc": true,
-        "total": false,
-        "values": true
-      },
-      "lines": true,
-      "linewidth": 3,
       "links": [],
-      "nullPointMode": "connected",
       "options": {
-        "alertThreshold": true
-      },
-      "percentage": false,
-      "pluginVersion": "8.4.3",
-      "pointradius": 2,
-      "points": false,
-      "renderer": "flot",
-      "repeatDirection": "h",
-      "seriesOverrides": [
-        {
-          "alias": "/Rx$/",
-          "transform": "negative-Y"
+        "legend": {
+          "calcs": ["mean", "max"],
+          "displayMode": "table",
+          "placement": "right",
+          "showLegend": true
+        },
+        "tooltip": {
+          "mode": "multi",
+          "sort": "desc"
         }
-      ],
-      "spaceLength": 10,
-      "stack": false,
-      "steppedLine": false,
+      },
+      "pluginVersion": "10.2.1",
+      "repeatDirection": "h",
       "targets": [
         {
           "alias": "$tag_category $col",
           "groupBy": [
             {
-              "params": [
-                "$__interval"
-              ],
+              "params": ["$__interval"],
               "type": "time"
             },
             {
-              "params": [
-                "category"
-              ],
+              "params": ["category"],
               "type": "tag"
             }
           ],
@@ -2887,9 +2927,7 @@
           "select": [
             [
               {
-                "params": [
-                  "rx_bytes"
-                ],
+                "params": ["rx_bytes"],
                 "type": "field"
               },
               {
@@ -2897,23 +2935,17 @@
                 "type": "sum"
               },
               {
-                "params": [
-                  "1s"
-                ],
+                "params": ["1s"],
                 "type": "non_negative_derivative"
               },
               {
-                "params": [
-                  "Bytes Rx"
-                ],
+                "params": ["Bytes Rx"],
                 "type": "alias"
               }
             ],
             [
               {
-                "params": [
-                  "tx_bytes"
-                ],
+                "params": ["tx_bytes"],
                 "type": "field"
               },
               {
@@ -2921,71 +2953,34 @@
                 "type": "sum"
               },
               {
-                "params": [
-                  "1s"
-                ],
+                "params": ["1s"],
                 "type": "non_negative_derivative"
               },
               {
-                "params": [
-                  "Bytes Tx"
-                ],
+                "params": ["Bytes Tx"],
                 "type": "alias"
               }
             ]
-          ],
-          "tags": [
-            {
-              "key": "site_name",
-              "operator": "=~",
-              "value": "/^$site$/"
-            }
           ]
         }
       ],
-      "thresholds": [],
-      "timeRegions": [],
       "title": "Data Transfer by Category",
-      "tooltip": {
-        "shared": true,
-        "sort": 2,
-        "value_type": "individual"
-      },
-      "type": "graph",
-      "xaxis": {
-        "mode": "time",
-        "show": true,
-        "values": []
-      },
-      "yaxes": [
-        {
-          "decimals": 0,
-          "format": "Bps",
-          "logBase": 1,
-          "show": true
-        },
-        {
-          "format": "short",
-          "logBase": 1,
-          "show": true
-        }
-      ],
-      "yaxis": {
-        "align": false
-      }
+      "transparent": true,
+      "type": "timeseries"
     }
   ],
-  "schemaVersion": 35,
-  "style": "dark",
-  "tags": [
-    "unifi",
-    "unifi-poller"
-  ],
+  "refresh": "",
+  "schemaVersion": 38,
+  "tags": ["unifi", "unifi-poller"],
   "templating": {
     "list": [
       {
         "allValue": ".*",
-        "current": {},
+        "current": {
+          "selected": false,
+          "text": "All",
+          "value": "$__all"
+        },
         "datasource": "Unifi",
         "definition": "show tag values from \"subsystems\" with key=\"source\"",
         "hide": 0,
@@ -3004,7 +2999,11 @@
         "useTags": false
       },
       {
-        "current": {},
+        "current": {
+          "selected": false,
+          "text": "All",
+          "value": "$__all"
+        },
         "datasource": "Unifi",
         "definition": "show tag values from \"subsystems\" with key=\"site_name\" WHERE source =~ /^$Controller$/ ",
         "hide": 2,
@@ -3024,7 +3023,11 @@
         "useTags": false
       },
       {
-        "current": {},
+        "current": {
+          "selected": false,
+          "text": "lan",
+          "value": "lan"
+        },
         "datasource": "Unifi",
         "definition": "show tag values from \"subsystems\" with key=\"subsystem\"",
         "hide": 2,
@@ -3050,30 +3053,11 @@
   },
   "timepicker": {
     "nowDelay": "5s",
-    "refresh_intervals": [
-      "30s",
-      "1m",
-      "5m",
-      "15m",
-      "30m",
-      "1h",
-      "2h"
-    ],
-    "time_options": [
-      "5m",
-      "15m",
-      "1h",
-      "6h",
-      "12h",
-      "24h",
-      "2d",
-      "7d",
-      "30d"
-    ]
+    "refresh_intervals": ["30s", "1m", "5m", "15m", "30m", "1h", "2h"],
+    "time_options": ["5m", "15m", "1h", "6h", "12h", "24h", "2d", "7d", "30d"]
   },
   "timezone": "browser",
   "title": "UniFi: Network Sites",
-  "uid": "5_omrT7Zz",
-  "version": 2,
+  "version": 1,
   "weekStart": ""
 }

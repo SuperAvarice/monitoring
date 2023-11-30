@@ -79,9 +79,7 @@
         "justifyMode": "auto",
         "orientation": "horizontal",
         "reduceOptions": {
-          "calcs": [
-            "lastNotNull"
-          ],
+          "calcs": ["lastNotNull"],
           "fields": "",
           "values": false
         },
@@ -99,9 +97,7 @@
           "select": [
             [
               {
-                "params": [
-                  "System_Up_Time"
-                ],
+                "params": ["System_Up_Time"],
                 "type": "field"
               }
             ]
@@ -175,9 +171,7 @@
         "justifyMode": "auto",
         "orientation": "horizontal",
         "reduceOptions": {
-          "calcs": [
-            "lastNotNull"
-          ],
+          "calcs": ["lastNotNull"],
           "fields": "",
           "values": false
         },
@@ -197,9 +191,7 @@
           "select": [
             [
               {
-                "params": [
-                  "Processes"
-                ],
+                "params": ["Processes"],
                 "type": "field"
               }
             ]
@@ -273,9 +265,7 @@
         "justifyMode": "auto",
         "orientation": "horizontal",
         "reduceOptions": {
-          "calcs": [
-            "lastNotNull"
-          ],
+          "calcs": ["lastNotNull"],
           "fields": "",
           "values": false
         },
@@ -295,9 +285,7 @@
           "select": [
             [
               {
-                "params": [
-                  "Threads"
-                ],
+                "params": ["Threads"],
                 "type": "field"
               },
               {
@@ -377,9 +365,7 @@
       "options": {
         "orientation": "horizontal",
         "reduceOptions": {
-          "calcs": [
-            "lastNotNull"
-          ],
+          "calcs": ["lastNotNull"],
           "fields": "",
           "values": false
         },
@@ -392,15 +378,11 @@
           "dsType": "influxdb",
           "groupBy": [
             {
-              "params": [
-                "$interval"
-              ],
+              "params": ["$interval"],
               "type": "time"
             },
             {
-              "params": [
-                "null"
-              ],
+              "params": ["null"],
               "type": "fill"
             }
           ],
@@ -413,9 +395,7 @@
           "select": [
             [
               {
-                "params": [
-                  "Percent_Processor_Time"
-                ],
+                "params": ["Percent_Processor_Time"],
                 "type": "field"
               },
               {
@@ -487,9 +467,7 @@
         "justifyMode": "auto",
         "orientation": "horizontal",
         "reduceOptions": {
-          "calcs": [
-            "lastNotNull"
-          ],
+          "calcs": ["lastNotNull"],
           "fields": "",
           "values": false
         },
@@ -509,9 +487,7 @@
           "select": [
             [
               {
-                "params": [
-                  "Threads"
-                ],
+                "params": ["Threads"],
                 "type": "field"
               },
               {
@@ -592,9 +568,7 @@
       "options": {
         "orientation": "horizontal",
         "reduceOptions": {
-          "calcs": [
-            "lastNotNull"
-          ],
+          "calcs": ["lastNotNull"],
           "fields": "",
           "values": false
         },
@@ -607,15 +581,11 @@
           "dsType": "influxdb",
           "groupBy": [
             {
-              "params": [
-                "$interval"
-              ],
+              "params": ["$interval"],
               "type": "time"
             },
             {
-              "params": [
-                "null"
-              ],
+              "params": ["null"],
               "type": "fill"
             }
           ],
@@ -626,9 +596,7 @@
           "select": [
             [
               {
-                "params": [
-                  "Available_Bytes"
-                ],
+                "params": ["Available_Bytes"],
                 "type": "field"
               },
               {
@@ -702,9 +670,7 @@
       "options": {
         "orientation": "horizontal",
         "reduceOptions": {
-          "calcs": [
-            "lastNotNull"
-          ],
+          "calcs": ["lastNotNull"],
           "fields": "",
           "values": false
         },
@@ -717,15 +683,11 @@
           "dsType": "influxdb",
           "groupBy": [
             {
-              "params": [
-                "$interval"
-              ],
+              "params": ["$interval"],
               "type": "time"
             },
             {
-              "params": [
-                "null"
-              ],
+              "params": ["null"],
               "type": "fill"
             }
           ],
@@ -738,9 +700,7 @@
           "select": [
             [
               {
-                "params": [
-                  "Percent_Disk_Read_Time"
-                ],
+                "params": ["Percent_Disk_Read_Time"],
                 "type": "field"
               },
               {
@@ -818,9 +778,7 @@
         "justifyMode": "auto",
         "orientation": "horizontal",
         "reduceOptions": {
-          "calcs": [
-            "lastNotNull"
-          ],
+          "calcs": ["lastNotNull"],
           "fields": "",
           "values": false
         },
@@ -840,9 +798,7 @@
           "select": [
             [
               {
-                "params": [
-                  "Threads"
-                ],
+                "params": ["Threads"],
                 "type": "field"
               },
               {
@@ -922,9 +878,7 @@
       "options": {
         "orientation": "horizontal",
         "reduceOptions": {
-          "calcs": [
-            "lastNotNull"
-          ],
+          "calcs": ["lastNotNull"],
           "fields": "",
           "values": false
         },
@@ -937,15 +891,11 @@
           "dsType": "influxdb",
           "groupBy": [
             {
-              "params": [
-                "$interval"
-              ],
+              "params": ["$interval"],
               "type": "time"
             },
             {
-              "params": [
-                "null"
-              ],
+              "params": ["null"],
               "type": "fill"
             }
           ],
@@ -958,9 +908,7 @@
           "select": [
             [
               {
-                "params": [
-                  "Percent_Disk_Read_Time"
-                ],
+                "params": ["Percent_Disk_Read_Time"],
                 "type": "field"
               },
               {
@@ -1038,9 +986,7 @@
         "justifyMode": "auto",
         "orientation": "horizontal",
         "reduceOptions": {
-          "calcs": [
-            "lastNotNull"
-          ],
+          "calcs": ["lastNotNull"],
           "fields": "",
           "values": false
         },
@@ -1060,9 +1006,7 @@
           "select": [
             [
               {
-                "params": [
-                  "Threads"
-                ],
+                "params": ["Threads"],
                 "type": "field"
               },
               {
@@ -1152,15 +1096,11 @@
           "dsType": "influxdb",
           "groupBy": [
             {
-              "params": [
-                "auto"
-              ],
+              "params": ["auto"],
               "type": "time"
             },
             {
-              "params": [
-                "linear"
-              ],
+              "params": ["linear"],
               "type": "fill"
             }
           ],
@@ -1171,9 +1111,7 @@
           "select": [
             [
               {
-                "params": [
-                  "Percent_Privileged_Time"
-                ],
+                "params": ["Percent_Privileged_Time"],
                 "type": "field"
               },
               {
@@ -1181,17 +1119,13 @@
                 "type": "mean"
               },
               {
-                "params": [
-                  "% Priviledged Time"
-                ],
+                "params": ["% Priviledged Time"],
                 "type": "alias"
               }
             ],
             [
               {
-                "params": [
-                  "Percent_User_Time"
-                ],
+                "params": ["Percent_User_Time"],
                 "type": "field"
               },
               {
@@ -1199,17 +1133,13 @@
                 "type": "mean"
               },
               {
-                "params": [
-                  "% User Time"
-                ],
+                "params": ["% User Time"],
                 "type": "alias"
               }
             ],
             [
               {
-                "params": [
-                  "Percent_Interrupt_Time"
-                ],
+                "params": ["Percent_Interrupt_Time"],
                 "type": "field"
               },
               {
@@ -1217,9 +1147,7 @@
                 "type": "mean"
               },
               {
-                "params": [
-                  "% Interrupt Time"
-                ],
+                "params": ["% Interrupt Time"],
                 "type": "alias"
               }
             ]
@@ -1328,15 +1256,11 @@
           "dsType": "influxdb",
           "groupBy": [
             {
-              "params": [
-                "$interval"
-              ],
+              "params": ["$interval"],
               "type": "time"
             },
             {
-              "params": [
-                "null"
-              ],
+              "params": ["null"],
               "type": "fill"
             }
           ],
@@ -1348,9 +1272,7 @@
           "select": [
             [
               {
-                "params": [
-                  "value"
-                ],
+                "params": ["value"],
                 "type": "field"
               },
               {
@@ -1441,15 +1363,11 @@
           "dsType": "influxdb",
           "groupBy": [
             {
-              "params": [
-                "$interval"
-              ],
+              "params": ["$interval"],
               "type": "time"
             },
             {
-              "params": [
-                "null"
-              ],
+              "params": ["null"],
               "type": "fill"
             }
           ],
@@ -1461,9 +1379,7 @@
           "select": [
             [
               {
-                "params": [
-                  "value"
-                ],
+                "params": ["value"],
                 "type": "field"
               },
               {
@@ -1567,15 +1483,11 @@
           "dsType": "influxdb",
           "groupBy": [
             {
-              "params": [
-                "$interval"
-              ],
+              "params": ["$interval"],
               "type": "time"
             },
             {
-              "params": [
-                "null"
-              ],
+              "params": ["null"],
               "type": "fill"
             }
           ],
@@ -1587,9 +1499,7 @@
           "select": [
             [
               {
-                "params": [
-                  "value"
-                ],
+                "params": ["value"],
                 "type": "field"
               },
               {
@@ -1680,15 +1590,11 @@
           "dsType": "influxdb",
           "groupBy": [
             {
-              "params": [
-                "$interval"
-              ],
+              "params": ["$interval"],
               "type": "time"
             },
             {
-              "params": [
-                "null"
-              ],
+              "params": ["null"],
               "type": "fill"
             }
           ],
@@ -1700,9 +1606,7 @@
           "select": [
             [
               {
-                "params": [
-                  "value"
-                ],
+                "params": ["value"],
                 "type": "field"
               },
               {
@@ -1806,15 +1710,11 @@
           "dsType": "influxdb",
           "groupBy": [
             {
-              "params": [
-                "$interval"
-              ],
+              "params": ["$interval"],
               "type": "time"
             },
             {
-              "params": [
-                "linear"
-              ],
+              "params": ["linear"],
               "type": "fill"
             }
           ],
@@ -1827,9 +1727,7 @@
           "select": [
             [
               {
-                "params": [
-                  "Percent_Free_Space"
-                ],
+                "params": ["Percent_Free_Space"],
                 "type": "field"
               },
               {
@@ -1933,15 +1831,11 @@
           "dsType": "influxdb",
           "groupBy": [
             {
-              "params": [
-                "$interval"
-              ],
+              "params": ["$interval"],
               "type": "time"
             },
             {
-              "params": [
-                "null"
-              ],
+              "params": ["null"],
               "type": "fill"
             }
           ],
@@ -1953,9 +1847,7 @@
           "select": [
             [
               {
-                "params": [
-                  "value"
-                ],
+                "params": ["value"],
                 "type": "field"
               },
               {
@@ -2045,15 +1937,11 @@
           "dsType": "influxdb",
           "groupBy": [
             {
-              "params": [
-                "$interval"
-              ],
+              "params": ["$interval"],
               "type": "time"
             },
             {
-              "params": [
-                "linear"
-              ],
+              "params": ["linear"],
               "type": "fill"
             }
           ],
@@ -2066,9 +1954,7 @@
           "select": [
             [
               {
-                "params": [
-                  "Current_Disk_Queue_Length"
-                ],
+                "params": ["Current_Disk_Queue_Length"],
                 "type": "field"
               },
               {
@@ -2185,15 +2071,11 @@
           "dsType": "influxdb",
           "groupBy": [
             {
-              "params": [
-                "$interval"
-              ],
+              "params": ["$interval"],
               "type": "time"
             },
             {
-              "params": [
-                "null"
-              ],
+              "params": ["null"],
               "type": "fill"
             }
           ],
@@ -2205,9 +2087,7 @@
           "select": [
             [
               {
-                "params": [
-                  "value"
-                ],
+                "params": ["value"],
                 "type": "field"
               },
               {
@@ -2297,15 +2177,11 @@
           "dsType": "influxdb",
           "groupBy": [
             {
-              "params": [
-                "$interval"
-              ],
+              "params": ["$interval"],
               "type": "time"
             },
             {
-              "params": [
-                "null"
-              ],
+              "params": ["null"],
               "type": "fill"
             }
           ],
@@ -2317,9 +2193,7 @@
           "select": [
             [
               {
-                "params": [
-                  "value"
-                ],
+                "params": ["value"],
                 "type": "field"
               },
               {
@@ -2426,15 +2300,11 @@
           "dsType": "influxdb",
           "groupBy": [
             {
-              "params": [
-                "$interval"
-              ],
+              "params": ["$interval"],
               "type": "time"
             },
             {
-              "params": [
-                "null"
-              ],
+              "params": ["null"],
               "type": "fill"
             }
           ],
@@ -2446,9 +2316,7 @@
           "select": [
             [
               {
-                "params": [
-                  "value"
-                ],
+                "params": ["value"],
                 "type": "field"
               },
               {
@@ -2543,15 +2411,11 @@
           "dsType": "influxdb",
           "groupBy": [
             {
-              "params": [
-                "$interval"
-              ],
+              "params": ["$interval"],
               "type": "time"
             },
             {
-              "params": [
-                "null"
-              ],
+              "params": ["null"],
               "type": "fill"
             }
           ],
@@ -2563,9 +2427,7 @@
           "select": [
             [
               {
-                "params": [
-                  "value"
-                ],
+                "params": ["value"],
                 "type": "field"
               },
               {
@@ -2660,15 +2522,11 @@
           "dsType": "influxdb",
           "groupBy": [
             {
-              "params": [
-                "$interval"
-              ],
+              "params": ["$interval"],
               "type": "time"
             },
             {
-              "params": [
-                "null"
-              ],
+              "params": ["null"],
               "type": "fill"
             }
           ],
@@ -2680,9 +2538,7 @@
           "select": [
             [
               {
-                "params": [
-                  "value"
-                ],
+                "params": ["value"],
                 "type": "field"
               },
               {
@@ -2777,15 +2633,11 @@
           "dsType": "influxdb",
           "groupBy": [
             {
-              "params": [
-                "$interval"
-              ],
+              "params": ["$interval"],
               "type": "time"
             },
             {
-              "params": [
-                "null"
-              ],
+              "params": ["null"],
               "type": "fill"
             }
           ],
@@ -2797,9 +2649,7 @@
           "select": [
             [
               {
-                "params": [
-                  "value"
-                ],
+                "params": ["value"],
                 "type": "field"
               },
               {
@@ -2894,15 +2744,11 @@
           "dsType": "influxdb",
           "groupBy": [
             {
-              "params": [
-                "$interval"
-              ],
+              "params": ["$interval"],
               "type": "time"
             },
             {
-              "params": [
-                "null"
-              ],
+              "params": ["null"],
               "type": "fill"
             }
           ],
@@ -2914,9 +2760,7 @@
           "select": [
             [
               {
-                "params": [
-                  "value"
-                ],
+                "params": ["value"],
                 "type": "field"
               },
               {
@@ -3065,17 +2909,7 @@
       "2h",
       "1d"
     ],
-    "time_options": [
-      "5m",
-      "15m",
-      "1h",
-      "6h",
-      "12h",
-      "24h",
-      "2d",
-      "7d",
-      "30d"
-    ]
+    "time_options": ["5m", "15m", "1h", "6h", "12h", "24h", "2d", "7d", "30d"]
   },
   "timezone": "browser",
   "title": "Windows: Performance Counters",

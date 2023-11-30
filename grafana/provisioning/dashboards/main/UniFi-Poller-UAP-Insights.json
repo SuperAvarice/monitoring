@@ -11,16 +11,13 @@
   "gnetId": 10415,
   "graphTooltip": 1,
   "id": null,
-  "iteration": 1647443076600,
   "links": [
     {
       "asDropdown": true,
       "icon": "external link",
       "includeVars": false,
       "keepTime": true,
-      "tags": [
-        "unifi-poller"
-      ],
+      "tags": ["unifi-poller"],
       "title": "UniFi Poller",
       "type": "dashboards"
     },
@@ -59,10 +56,15 @@
       "id": 34,
       "links": [],
       "options": {
-        "content": "<br>\n<br>\n<center><b><font size=\"6px\">Unifi UAP</font></b></center>\n",
+        "code": {
+          "language": "plaintext",
+          "showLineNumbers": false,
+          "showMiniMap": false
+        },
+        "content": "<br>\n<center><b><font size=\"6px\">Unifi UAP</font></b></center>\n",
         "mode": "html"
       },
-      "pluginVersion": "8.4.3",
+      "pluginVersion": "10.2.1",
       "transparent": true,
       "type": "text"
     },
@@ -104,15 +106,11 @@
           "alias": "Ch $tag_channel",
           "groupBy": [
             {
-              "params": [
-                "$__interval"
-              ],
+              "params": ["$__interval"],
               "type": "time"
             },
             {
-              "params": [
-                "null"
-              ],
+              "params": ["null"],
               "type": "fill"
             }
           ],
@@ -126,9 +124,7 @@
           "select": [
             [
               {
-                "params": [
-                  "value"
-                ],
+                "params": ["value"],
                 "type": "field"
               },
               {
@@ -185,9 +181,7 @@
           "alias": "$tag_ap_name $tag_radio_proto",
           "groupBy": [
             {
-              "params": [
-                "channel"
-              ],
+              "params": ["channel"],
               "type": "tag"
             }
           ],
@@ -202,9 +196,7 @@
           "select": [
             [
               {
-                "params": [
-                  "hostname"
-                ],
+                "params": ["hostname"],
                 "type": "field"
               },
               {
@@ -266,9 +258,7 @@
           "alias": "$tag_oui",
           "groupBy": [
             {
-              "params": [
-                "channel"
-              ],
+              "params": ["channel"],
               "type": "tag"
             }
           ],
@@ -282,9 +272,7 @@
           "select": [
             [
               {
-                "params": [
-                  "hostname"
-                ],
+                "params": ["hostname"],
                 "type": "field"
               },
               {
@@ -350,23 +338,20 @@
         "justifyMode": "auto",
         "orientation": "horizontal",
         "reduceOptions": {
-          "calcs": [
-            "lastNotNull"
-          ],
+          "calcs": ["lastNotNull"],
           "fields": "",
           "values": false
         },
-        "textMode": "auto"
+        "textMode": "auto",
+        "wideLayout": true
       },
-      "pluginVersion": "8.4.3",
+      "pluginVersion": "10.2.1",
       "targets": [
         {
           "dsType": "influxdb",
           "groupBy": [
             {
-              "params": [
-                "device_name"
-              ],
+              "params": ["device_name"],
               "type": "tag"
             }
           ],
@@ -380,9 +365,7 @@
           "select": [
             [
               {
-                "params": [
-                  "channel"
-                ],
+                "params": ["channel"],
                 "type": "field"
               }
             ]
@@ -464,29 +447,24 @@
         "justifyMode": "auto",
         "orientation": "horizontal",
         "reduceOptions": {
-          "calcs": [
-            "lastNotNull"
-          ],
+          "calcs": ["lastNotNull"],
           "fields": "",
           "values": false
         },
-        "textMode": "auto"
+        "textMode": "auto",
+        "wideLayout": true
       },
-      "pluginVersion": "8.4.3",
+      "pluginVersion": "10.2.1",
       "targets": [
         {
           "dsType": "influxdb",
           "groupBy": [
             {
-              "params": [
-                "device_name"
-              ],
+              "params": ["device_name"],
               "type": "tag"
             },
             {
-              "params": [
-                "is_guest"
-              ],
+              "params": ["is_guest"],
               "type": "tag"
             }
           ],
@@ -500,9 +478,7 @@
           "select": [
             [
               {
-                "params": [
-                  "channel"
-                ],
+                "params": ["channel"],
                 "type": "field"
               }
             ]
@@ -555,6 +531,7 @@
           "locale": "",
           "showDate": false
         },
+        "fontMono": false,
         "mode": "time",
         "refresh": "sec",
         "timeSettings": {
@@ -569,7 +546,7 @@
           "zoneFormat": "offsetAbbv"
         }
       },
-      "pluginVersion": "1.3.0",
+      "pluginVersion": "2.1.3",
       "refreshSettings": {
         "syncWithDashboard": false
       },
@@ -588,11 +565,404 @@
       "type": "grafana-clock-panel"
     },
     {
-      "columns": [],
       "datasource": "Unifi",
-      "editable": true,
-      "error": false,
-      "fontSize": "100%",
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "custom": {
+            "align": "auto",
+            "cellOptions": {
+              "type": "auto"
+            },
+            "inspect": false
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          }
+        },
+        "overrides": [
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "Time"
+            },
+            "properties": [
+              {
+                "id": "unit",
+                "value": "short"
+              },
+              {
+                "id": "decimals",
+                "value": 2
+              },
+              {
+                "id": "custom.align"
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "Uptime"
+            },
+            "properties": [
+              {
+                "id": "unit",
+                "value": "dtdurations"
+              },
+              {
+                "id": "decimals",
+                "value": 2
+              },
+              {
+                "id": "custom.align"
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "name"
+            },
+            "properties": [
+              {
+                "id": "displayName",
+                "value": "Name"
+              },
+              {
+                "id": "unit",
+                "value": "short"
+              },
+              {
+                "id": "decimals",
+                "value": 2
+              },
+              {
+                "id": "custom.align"
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "version"
+            },
+            "properties": [
+              {
+                "id": "displayName",
+                "value": "Version"
+              },
+              {
+                "id": "unit",
+                "value": "short"
+              },
+              {
+                "id": "decimals",
+                "value": 2
+              },
+              {
+                "id": "custom.align"
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "site_name"
+            },
+            "properties": [
+              {
+                "id": "displayName",
+                "value": "Site"
+              },
+              {
+                "id": "unit",
+                "value": "short"
+              },
+              {
+                "id": "decimals",
+                "value": 2
+              },
+              {
+                "id": "custom.align"
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "model"
+            },
+            "properties": [
+              {
+                "id": "displayName",
+                "value": "Model"
+              },
+              {
+                "id": "unit",
+                "value": "short"
+              },
+              {
+                "id": "decimals",
+                "value": 2
+              },
+              {
+                "id": "custom.align"
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "device_ap"
+            },
+            "properties": [
+              {
+                "id": "displayName",
+                "value": "Device MAC"
+              },
+              {
+                "id": "unit",
+                "value": "short"
+              },
+              {
+                "id": "decimals",
+                "value": 2
+              },
+              {
+                "id": "custom.align"
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "serial"
+            },
+            "properties": [
+              {
+                "id": "displayName",
+                "value": "Unifi Serial #"
+              },
+              {
+                "id": "unit",
+                "value": "short"
+              },
+              {
+                "id": "decimals",
+                "value": 2
+              },
+              {
+                "id": "custom.align"
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "site_id"
+            },
+            "properties": [
+              {
+                "id": "displayName",
+                "value": "Site ID"
+              },
+              {
+                "id": "unit",
+                "value": "short"
+              },
+              {
+                "id": "decimals",
+                "value": 2
+              },
+              {
+                "id": "custom.align"
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "Version"
+            },
+            "properties": [
+              {
+                "id": "unit",
+                "value": "short"
+              },
+              {
+                "id": "decimals",
+                "value": 2
+              },
+              {
+                "id": "custom.align"
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "Last Seen"
+            },
+            "properties": [
+              {
+                "id": "unit",
+                "value": "dateTimeAsUS"
+              },
+              {
+                "id": "decimals",
+                "value": 1
+              },
+              {
+                "id": "custom.align"
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "bandsteering_mode"
+            },
+            "properties": [
+              {
+                "id": "displayName",
+                "value": "Bandsteering Mode"
+              },
+              {
+                "id": "unit",
+                "value": "short"
+              },
+              {
+                "id": "decimals",
+                "value": 2
+              },
+              {
+                "id": "custom.align"
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "CPU"
+            },
+            "properties": [
+              {
+                "id": "unit",
+                "value": "percent"
+              },
+              {
+                "id": "decimals",
+                "value": 1
+              },
+              {
+                "id": "custom.align"
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "guest-num_sta"
+            },
+            "properties": [
+              {
+                "id": "displayName",
+                "value": "Guests"
+              },
+              {
+                "id": "unit",
+                "value": "short"
+              },
+              {
+                "id": "custom.align"
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "source"
+            },
+            "properties": [
+              {
+                "id": "displayName",
+                "value": "Controller"
+              },
+              {
+                "id": "unit",
+                "value": "short"
+              },
+              {
+                "id": "decimals",
+                "value": 2
+              },
+              {
+                "id": "custom.align"
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "type"
+            },
+            "properties": [
+              {
+                "id": "displayName",
+                "value": "Type"
+              },
+              {
+                "id": "unit",
+                "value": "short"
+              },
+              {
+                "id": "decimals",
+                "value": 2
+              },
+              {
+                "id": "custom.align"
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "mac"
+            },
+            "properties": [
+              {
+                "id": "displayName",
+                "value": "Device MAC"
+              },
+              {
+                "id": "unit",
+                "value": "short"
+              },
+              {
+                "id": "decimals",
+                "value": 2
+              },
+              {
+                "id": "custom.align"
+              }
+            ]
+          }
+        ]
+      },
       "gridPos": {
         "h": 6,
         "w": 24,
@@ -601,331 +971,53 @@
       },
       "hideTimeOverride": true,
       "id": 1,
-      "isNew": true,
       "links": [],
-      "scroll": false,
-      "showHeader": true,
-      "sort": {
-        "col": 11,
-        "desc": true
+      "options": {
+        "cellHeight": "sm",
+        "footer": {
+          "countRows": false,
+          "fields": "",
+          "reducer": ["sum"],
+          "show": false
+        },
+        "showHeader": true
       },
-      "styles": [
-        {
-          "alias": "",
-          "align": "auto",
-          "colors": [
-            "rgba(245, 54, 54, 0.9)",
-            "rgba(237, 129, 40, 0.89)",
-            "rgba(50, 172, 45, 0.97)"
-          ],
-          "dateFormat": "YYYY-MM-DD HH:mm:ss",
-          "decimals": 2,
-          "pattern": "Time",
-          "thresholds": [],
-          "type": "hidden",
-          "unit": "short"
-        },
-        {
-          "alias": "",
-          "align": "auto",
-          "colors": [
-            "rgba(245, 54, 54, 0.9)",
-            "rgba(237, 129, 40, 0.89)",
-            "rgba(50, 172, 45, 0.97)"
-          ],
-          "dateFormat": "YYYY-MM-DD HH:mm:ss",
-          "decimals": 2,
-          "pattern": "Uptime",
-          "thresholds": [],
-          "type": "number",
-          "unit": "dtdurations"
-        },
-        {
-          "alias": "Name",
-          "align": "auto",
-          "colors": [
-            "rgba(245, 54, 54, 0.9)",
-            "rgba(237, 129, 40, 0.89)",
-            "rgba(50, 172, 45, 0.97)"
-          ],
-          "dateFormat": "YYYY-MM-DD HH:mm:ss",
-          "decimals": 2,
-          "link": false,
-          "linkTargetBlank": true,
-          "linkUrl": "http:",
-          "pattern": "name",
-          "preserveFormat": false,
-          "sanitize": false,
-          "thresholds": [],
-          "type": "string",
-          "unit": "short"
-        },
-        {
-          "alias": "Version",
-          "align": "auto",
-          "colors": [
-            "rgba(245, 54, 54, 0.9)",
-            "rgba(237, 129, 40, 0.89)",
-            "rgba(50, 172, 45, 0.97)"
-          ],
-          "dateFormat": "YYYY-MM-DD HH:mm:ss",
-          "decimals": 2,
-          "pattern": "version",
-          "thresholds": [],
-          "type": "string",
-          "unit": "short"
-        },
-        {
-          "alias": "Site",
-          "align": "auto",
-          "colors": [
-            "rgba(245, 54, 54, 0.9)",
-            "rgba(237, 129, 40, 0.89)",
-            "rgba(50, 172, 45, 0.97)"
-          ],
-          "dateFormat": "YYYY-MM-DD HH:mm:ss",
-          "decimals": 2,
-          "pattern": "site_name",
-          "thresholds": [],
-          "type": "string",
-          "unit": "short"
-        },
-        {
-          "alias": "Model",
-          "align": "auto",
-          "colors": [
-            "rgba(245, 54, 54, 0.9)",
-            "rgba(237, 129, 40, 0.89)",
-            "rgba(50, 172, 45, 0.97)"
-          ],
-          "dateFormat": "YYYY-MM-DD HH:mm:ss",
-          "decimals": 2,
-          "pattern": "model",
-          "thresholds": [],
-          "type": "string",
-          "unit": "short"
-        },
-        {
-          "alias": "Device MAC",
-          "align": "auto",
-          "colors": [
-            "rgba(245, 54, 54, 0.9)",
-            "rgba(237, 129, 40, 0.89)",
-            "rgba(50, 172, 45, 0.97)"
-          ],
-          "dateFormat": "YYYY-MM-DD HH:mm:ss",
-          "decimals": 2,
-          "pattern": "device_ap",
-          "thresholds": [],
-          "type": "string",
-          "unit": "short"
-        },
-        {
-          "alias": "Unifi Serial #",
-          "align": "auto",
-          "colors": [
-            "rgba(245, 54, 54, 0.9)",
-            "rgba(237, 129, 40, 0.89)",
-            "rgba(50, 172, 45, 0.97)"
-          ],
-          "dateFormat": "YYYY-MM-DD HH:mm:ss",
-          "decimals": 2,
-          "pattern": "serial",
-          "thresholds": [],
-          "type": "string",
-          "unit": "short"
-        },
-        {
-          "alias": "Site ID",
-          "align": "auto",
-          "colors": [
-            "rgba(245, 54, 54, 0.9)",
-            "rgba(237, 129, 40, 0.89)",
-            "rgba(50, 172, 45, 0.97)"
-          ],
-          "dateFormat": "YYYY-MM-DD HH:mm:ss",
-          "decimals": 2,
-          "pattern": "site_id",
-          "thresholds": [],
-          "type": "hidden",
-          "unit": "short"
-        },
-        {
-          "alias": "",
-          "align": "auto",
-          "colors": [
-            "rgba(245, 54, 54, 0.9)",
-            "rgba(237, 129, 40, 0.89)",
-            "rgba(50, 172, 45, 0.97)"
-          ],
-          "dateFormat": "YYYY-MM-DD HH:mm:ss",
-          "decimals": 2,
-          "pattern": "Version",
-          "thresholds": [],
-          "type": "string",
-          "unit": "short"
-        },
-        {
-          "alias": "",
-          "align": "auto",
-          "colors": [
-            "rgba(245, 54, 54, 0.9)",
-            "rgba(237, 129, 40, 0.89)",
-            "rgba(50, 172, 45, 0.97)"
-          ],
-          "dateFormat": "YYYY-MM-DD HH:mm:ss",
-          "decimals": 1,
-          "pattern": "Last Seen",
-          "sanitize": true,
-          "thresholds": [],
-          "type": "number",
-          "unit": "dateTimeAsUS"
-        },
-        {
-          "alias": "Bandsteering Mode",
-          "align": "auto",
-          "colors": [
-            "rgba(245, 54, 54, 0.9)",
-            "rgba(237, 129, 40, 0.89)",
-            "rgba(50, 172, 45, 0.97)"
-          ],
-          "dateFormat": "YYYY-MM-DD HH:mm:ss",
-          "decimals": 2,
-          "pattern": "bandsteering_mode",
-          "thresholds": [],
-          "type": "string",
-          "unit": "short"
-        },
-        {
-          "alias": "",
-          "align": "auto",
-          "colors": [
-            "rgba(245, 54, 54, 0.9)",
-            "rgba(237, 129, 40, 0.89)",
-            "rgba(50, 172, 45, 0.97)"
-          ],
-          "dateFormat": "YYYY-MM-DD HH:mm:ss",
-          "decimals": 1,
-          "pattern": "CPU",
-          "thresholds": [],
-          "type": "number",
-          "unit": "percent"
-        },
-        {
-          "alias": "Guests",
-          "align": "auto",
-          "colors": [
-            "rgba(245, 54, 54, 0.9)",
-            "rgba(237, 129, 40, 0.89)",
-            "rgba(50, 172, 45, 0.97)"
-          ],
-          "dateFormat": "YYYY-MM-DD HH:mm:ss",
-          "decimals": 0,
-          "pattern": "guest-num_sta",
-          "thresholds": [],
-          "type": "number",
-          "unit": "short"
-        },
-        {
-          "alias": "Controller",
-          "align": "auto",
-          "colors": [
-            "rgba(245, 54, 54, 0.9)",
-            "rgba(237, 129, 40, 0.89)",
-            "rgba(50, 172, 45, 0.97)"
-          ],
-          "dateFormat": "YYYY-MM-DD HH:mm:ss",
-          "decimals": 2,
-          "mappingType": 1,
-          "pattern": "source",
-          "thresholds": [],
-          "type": "hidden",
-          "unit": "short"
-        },
-        {
-          "alias": "Type",
-          "align": "auto",
-          "colors": [
-            "rgba(245, 54, 54, 0.9)",
-            "rgba(237, 129, 40, 0.89)",
-            "rgba(50, 172, 45, 0.97)"
-          ],
-          "dateFormat": "YYYY-MM-DD HH:mm:ss",
-          "decimals": 2,
-          "mappingType": 1,
-          "pattern": "type",
-          "thresholds": [],
-          "type": "string",
-          "unit": "short"
-        },
-        {
-          "alias": "Device MAC",
-          "align": "auto",
-          "colors": [
-            "rgba(245, 54, 54, 0.9)",
-            "rgba(237, 129, 40, 0.89)",
-            "rgba(50, 172, 45, 0.97)"
-          ],
-          "dateFormat": "YYYY-MM-DD HH:mm:ss",
-          "decimals": 2,
-          "mappingType": 1,
-          "pattern": "mac",
-          "thresholds": [],
-          "type": "string",
-          "unit": "short"
-        }
-      ],
+      "pluginVersion": "10.2.1",
       "targets": [
         {
           "alias": "$col",
           "dsType": "influxdb",
           "groupBy": [
             {
-              "params": [
-                "name"
-              ],
+              "params": ["name"],
               "type": "tag"
             },
             {
-              "params": [
-                "model"
-              ],
+              "params": ["model"],
               "type": "tag"
             },
             {
-              "params": [
-                "serial"
-              ],
+              "params": ["serial"],
               "type": "tag"
             },
             {
-              "params": [
-                "site_name"
-              ],
+              "params": ["site_name"],
               "type": "tag"
             },
             {
-              "params": [
-                "source"
-              ],
+              "params": ["source"],
               "type": "tag"
             },
             {
-              "params": [
-                "type"
-              ],
+              "params": ["type"],
               "type": "tag"
             },
             {
-              "params": [
-                "version"
-              ],
+              "params": ["version"],
               "type": "tag"
             },
             {
-              "params": [
-                "mac"
-              ],
+              "params": ["mac"],
               "type": "tag"
             }
           ],
@@ -937,9 +1029,7 @@
           "select": [
             [
               {
-                "params": [
-                  "ip"
-                ],
+                "params": ["ip"],
                 "type": "field"
               },
               {
@@ -947,17 +1037,13 @@
                 "type": "last"
               },
               {
-                "params": [
-                  "Address"
-                ],
+                "params": ["Address"],
                 "type": "alias"
               }
             ],
             [
               {
-                "params": [
-                  "uptime"
-                ],
+                "params": ["uptime"],
                 "type": "field"
               },
               {
@@ -965,17 +1051,13 @@
                 "type": "last"
               },
               {
-                "params": [
-                  "Uptime"
-                ],
+                "params": ["Uptime"],
                 "type": "alias"
               }
             ],
             [
               {
-                "params": [
-                  "last_seen"
-                ],
+                "params": ["last_seen"],
                 "type": "field"
               },
               {
@@ -983,23 +1065,17 @@
                 "type": "last"
               },
               {
-                "params": [
-                  "*1000"
-                ],
+                "params": ["*1000"],
                 "type": "math"
               },
               {
-                "params": [
-                  "Last Seen"
-                ],
+                "params": ["Last Seen"],
                 "type": "alias"
               }
             ],
             [
               {
-                "params": [
-                  "cpu"
-                ],
+                "params": ["cpu"],
                 "type": "field"
               },
               {
@@ -1007,17 +1083,13 @@
                 "type": "last"
               },
               {
-                "params": [
-                  "CPU"
-                ],
+                "params": ["CPU"],
                 "type": "alias"
               }
             ],
             [
               {
-                "params": [
-                  "user-num_sta"
-                ],
+                "params": ["user-num_sta"],
                 "type": "field"
               },
               {
@@ -1025,17 +1097,13 @@
                 "type": "last"
               },
               {
-                "params": [
-                  "Users"
-                ],
+                "params": ["Users"],
                 "type": "alias"
               }
             ],
             [
               {
-                "params": [
-                  "guest-num_sta"
-                ],
+                "params": ["guest-num_sta"],
                 "type": "field"
               },
               {
@@ -1043,325 +1111,385 @@
                 "type": "last"
               },
               {
-                "params": [
-                  "Guests"
-                ],
+                "params": ["Guests"],
                 "type": "alias"
               }
             ]
-          ],
-          "tags": [
-            {
-              "key": "name",
-              "operator": "=~",
-              "value": "/^$AP$/"
-            },
-            {
-              "condition": "AND",
-              "key": "site_name",
-              "operator": "=~",
-              "value": "/^$Site$/"
-            }
           ]
         }
       ],
       "timeFrom": "5m",
       "title": "UAP Details",
-      "transform": "table",
-      "type": "table-old"
+      "transformations": [
+        {
+          "id": "merge",
+          "options": {
+            "reducers": []
+          }
+        }
+      ],
+      "transparent": true,
+      "type": "table"
     },
     {
-      "columns": [],
       "datasource": "Unifi",
       "description": "The counters in this table represent uptime totals and do not change with the time range selector. ",
-      "editable": true,
-      "error": false,
-      "fontSize": "100%",
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "custom": {
+            "align": "auto",
+            "cellOptions": {
+              "type": "auto"
+            },
+            "inspect": false
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          }
+        },
+        "overrides": [
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "Time"
+            },
+            "properties": [
+              {
+                "id": "unit",
+                "value": "short"
+              },
+              {
+                "id": "decimals",
+                "value": 2
+              },
+              {
+                "id": "custom.align"
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "device_name"
+            },
+            "properties": [
+              {
+                "id": "displayName",
+                "value": "AP Name"
+              },
+              {
+                "id": "unit",
+                "value": "dtdurations"
+              },
+              {
+                "id": "decimals",
+                "value": 2
+              },
+              {
+                "id": "custom.align"
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "radio"
+            },
+            "properties": [
+              {
+                "id": "displayName",
+                "value": "Radio"
+              },
+              {
+                "id": "unit",
+                "value": "short"
+              },
+              {
+                "id": "decimals",
+                "value": 2
+              },
+              {
+                "id": "custom.align"
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "radio_name"
+            },
+            "properties": [
+              {
+                "id": "displayName",
+                "value": "Name"
+              },
+              {
+                "id": "unit",
+                "value": "short"
+              },
+              {
+                "id": "decimals",
+                "value": 2
+              },
+              {
+                "id": "custom.align"
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "essid"
+            },
+            "properties": [
+              {
+                "id": "displayName",
+                "value": "ESSID"
+              },
+              {
+                "id": "unit",
+                "value": "short"
+              },
+              {
+                "id": "decimals",
+                "value": 2
+              },
+              {
+                "id": "custom.align"
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "CCQ"
+            },
+            "properties": [
+              {
+                "id": "unit",
+                "value": "percent"
+              },
+              {
+                "id": "custom.align"
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "name"
+            },
+            "properties": [
+              {
+                "id": "displayName",
+                "value": "VAP"
+              },
+              {
+                "id": "unit",
+                "value": "short"
+              },
+              {
+                "id": "decimals",
+                "value": 2
+              },
+              {
+                "id": "custom.align"
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "bssid"
+            },
+            "properties": [
+              {
+                "id": "displayName",
+                "value": "BSSID"
+              },
+              {
+                "id": "unit",
+                "value": "short"
+              },
+              {
+                "id": "decimals",
+                "value": 2
+              },
+              {
+                "id": "custom.align"
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "site_name"
+            },
+            "properties": [
+              {
+                "id": "displayName",
+                "value": "Site"
+              },
+              {
+                "id": "unit",
+                "value": "short"
+              },
+              {
+                "id": "decimals",
+                "value": 2
+              },
+              {
+                "id": "custom.align"
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "source"
+            },
+            "properties": [
+              {
+                "id": "displayName",
+                "value": "Controller"
+              },
+              {
+                "id": "unit",
+                "value": "short"
+              },
+              {
+                "id": "decimals",
+                "value": 2
+              },
+              {
+                "id": "custom.align"
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byRegexp",
+              "options": "/^Bytes/"
+            },
+            "properties": [
+              {
+                "id": "unit",
+                "value": "decbytes"
+              },
+              {
+                "id": "decimals",
+                "value": 1
+              },
+              {
+                "id": "custom.align"
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byRegexp",
+              "options": "/^[TR]x/"
+            },
+            "properties": [
+              {
+                "id": "unit",
+                "value": "short"
+              },
+              {
+                "id": "custom.align"
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "Avg Client Sig"
+            },
+            "properties": [
+              {
+                "id": "unit",
+                "value": "dBm"
+              },
+              {
+                "id": "custom.align"
+              }
+            ]
+          }
+        ]
+      },
       "gridPos": {
-        "h": 6,
+        "h": 11,
         "w": 24,
         "x": 0,
         "y": 16
       },
       "hideTimeOverride": true,
       "id": 49,
-      "isNew": true,
       "links": [],
-      "scroll": false,
-      "showHeader": true,
-      "sort": {
-        "col": 11,
-        "desc": true
+      "options": {
+        "cellHeight": "sm",
+        "footer": {
+          "countRows": false,
+          "fields": "",
+          "reducer": ["sum"],
+          "show": false
+        },
+        "showHeader": true
       },
-      "styles": [
-        {
-          "alias": "",
-          "align": "auto",
-          "colors": [
-            "rgba(245, 54, 54, 0.9)",
-            "rgba(237, 129, 40, 0.89)",
-            "rgba(50, 172, 45, 0.97)"
-          ],
-          "dateFormat": "YYYY-MM-DD HH:mm:ss",
-          "decimals": 2,
-          "pattern": "Time",
-          "thresholds": [],
-          "type": "hidden",
-          "unit": "short"
-        },
-        {
-          "alias": "AP Name",
-          "align": "auto",
-          "colors": [
-            "rgba(245, 54, 54, 0.9)",
-            "rgba(237, 129, 40, 0.89)",
-            "rgba(50, 172, 45, 0.97)"
-          ],
-          "dateFormat": "YYYY-MM-DD HH:mm:ss",
-          "decimals": 2,
-          "pattern": "device_name",
-          "thresholds": [],
-          "type": "string",
-          "unit": "dtdurations"
-        },
-        {
-          "alias": "Radio",
-          "align": "auto",
-          "colors": [
-            "rgba(245, 54, 54, 0.9)",
-            "rgba(237, 129, 40, 0.89)",
-            "rgba(50, 172, 45, 0.97)"
-          ],
-          "dateFormat": "YYYY-MM-DD HH:mm:ss",
-          "decimals": 2,
-          "link": false,
-          "linkTargetBlank": true,
-          "linkUrl": "http:",
-          "pattern": "radio",
-          "preserveFormat": false,
-          "sanitize": false,
-          "thresholds": [],
-          "type": "string",
-          "unit": "short"
-        },
-        {
-          "alias": "Name",
-          "align": "auto",
-          "colors": [
-            "rgba(245, 54, 54, 0.9)",
-            "rgba(237, 129, 40, 0.89)",
-            "rgba(50, 172, 45, 0.97)"
-          ],
-          "dateFormat": "YYYY-MM-DD HH:mm:ss",
-          "decimals": 2,
-          "mappingType": 1,
-          "pattern": "radio_name",
-          "thresholds": [],
-          "type": "string",
-          "unit": "short"
-        },
-        {
-          "alias": "ESSID",
-          "align": "auto",
-          "colors": [
-            "rgba(245, 54, 54, 0.9)",
-            "rgba(237, 129, 40, 0.89)",
-            "rgba(50, 172, 45, 0.97)"
-          ],
-          "dateFormat": "YYYY-MM-DD HH:mm:ss",
-          "decimals": 2,
-          "mappingType": 1,
-          "pattern": "essid",
-          "thresholds": [],
-          "type": "string",
-          "unit": "short"
-        },
-        {
-          "alias": "",
-          "align": "auto",
-          "colors": [
-            "rgba(245, 54, 54, 0.9)",
-            "rgba(237, 129, 40, 0.89)",
-            "rgba(50, 172, 45, 0.97)"
-          ],
-          "dateFormat": "YYYY-MM-DD HH:mm:ss",
-          "decimals": 0,
-          "mappingType": 1,
-          "pattern": "CCQ",
-          "thresholds": [],
-          "type": "number",
-          "unit": "percent"
-        },
-        {
-          "alias": "VAP",
-          "align": "auto",
-          "colors": [
-            "rgba(245, 54, 54, 0.9)",
-            "rgba(237, 129, 40, 0.89)",
-            "rgba(50, 172, 45, 0.97)"
-          ],
-          "dateFormat": "YYYY-MM-DD HH:mm:ss",
-          "decimals": 2,
-          "mappingType": 1,
-          "pattern": "name",
-          "thresholds": [],
-          "type": "string",
-          "unit": "short"
-        },
-        {
-          "alias": "BSSID",
-          "align": "auto",
-          "colors": [
-            "rgba(245, 54, 54, 0.9)",
-            "rgba(237, 129, 40, 0.89)",
-            "rgba(50, 172, 45, 0.97)"
-          ],
-          "dateFormat": "YYYY-MM-DD HH:mm:ss",
-          "decimals": 2,
-          "mappingType": 1,
-          "pattern": "bssid",
-          "thresholds": [],
-          "type": "string",
-          "unit": "short"
-        },
-        {
-          "alias": "Site",
-          "align": "auto",
-          "colors": [
-            "rgba(245, 54, 54, 0.9)",
-            "rgba(237, 129, 40, 0.89)",
-            "rgba(50, 172, 45, 0.97)"
-          ],
-          "dateFormat": "YYYY-MM-DD HH:mm:ss",
-          "decimals": 2,
-          "mappingType": 1,
-          "pattern": "site_name",
-          "thresholds": [],
-          "type": "string",
-          "unit": "short"
-        },
-        {
-          "alias": "Controller",
-          "align": "auto",
-          "colors": [
-            "rgba(245, 54, 54, 0.9)",
-            "rgba(237, 129, 40, 0.89)",
-            "rgba(50, 172, 45, 0.97)"
-          ],
-          "dateFormat": "YYYY-MM-DD HH:mm:ss",
-          "decimals": 2,
-          "mappingType": 1,
-          "pattern": "source",
-          "thresholds": [],
-          "type": "hidden",
-          "unit": "short"
-        },
-        {
-          "alias": "",
-          "align": "auto",
-          "colors": [
-            "rgba(245, 54, 54, 0.9)",
-            "rgba(237, 129, 40, 0.89)",
-            "rgba(50, 172, 45, 0.97)"
-          ],
-          "dateFormat": "YYYY-MM-DD HH:mm:ss",
-          "decimals": 1,
-          "mappingType": 1,
-          "pattern": "/^Bytes/",
-          "thresholds": [],
-          "type": "number",
-          "unit": "decbytes"
-        },
-        {
-          "alias": "",
-          "align": "auto",
-          "colors": [
-            "rgba(245, 54, 54, 0.9)",
-            "rgba(237, 129, 40, 0.89)",
-            "rgba(50, 172, 45, 0.97)"
-          ],
-          "dateFormat": "YYYY-MM-DD HH:mm:ss",
-          "decimals": 0,
-          "mappingType": 1,
-          "pattern": "/^[TR]x/",
-          "thresholds": [],
-          "type": "number",
-          "unit": "short"
-        },
-        {
-          "alias": "",
-          "align": "auto",
-          "colors": [
-            "rgba(245, 54, 54, 0.9)",
-            "rgba(237, 129, 40, 0.89)",
-            "rgba(50, 172, 45, 0.97)"
-          ],
-          "dateFormat": "YYYY-MM-DD HH:mm:ss",
-          "decimals": 0,
-          "mappingType": 1,
-          "pattern": "Avg Client Sig",
-          "thresholds": [],
-          "type": "number",
-          "unit": "dBm"
-        }
-      ],
+      "pluginVersion": "10.2.1",
       "targets": [
         {
           "alias": "$col",
           "dsType": "influxdb",
           "groupBy": [
             {
-              "params": [
-                "radio"
-              ],
+              "params": ["radio"],
               "type": "tag"
             },
             {
-              "params": [
-                "device_name"
-              ],
+              "params": ["device_name"],
               "type": "tag"
             },
             {
-              "params": [
-                "site_name"
-              ],
+              "params": ["site_name"],
               "type": "tag"
             },
             {
-              "params": [
-                "source"
-              ],
+              "params": ["source"],
               "type": "tag"
             },
             {
-              "params": [
-                "usage"
-              ],
+              "params": ["usage"],
               "type": "tag"
             },
             {
-              "params": [
-                "essid"
-              ],
+              "params": ["essid"],
               "type": "tag"
             },
             {
-              "params": [
-                "radio_name"
-              ],
+              "params": ["radio_name"],
               "type": "tag"
             },
             {
-              "params": [
-                "name"
-              ],
+              "params": ["name"],
               "type": "tag"
             },
             {
-              "params": [
-                "bssid"
-              ],
+              "params": ["bssid"],
               "type": "tag"
             }
           ],
@@ -1373,9 +1501,7 @@
           "select": [
             [
               {
-                "params": [
-                  "channel"
-                ],
+                "params": ["channel"],
                 "type": "field"
               },
               {
@@ -1383,17 +1509,13 @@
                 "type": "last"
               },
               {
-                "params": [
-                  "Channel"
-                ],
+                "params": ["Channel"],
                 "type": "alias"
               }
             ],
             [
               {
-                "params": [
-                  "rx_bytes"
-                ],
+                "params": ["rx_bytes"],
                 "type": "field"
               },
               {
@@ -1401,17 +1523,13 @@
                 "type": "last"
               },
               {
-                "params": [
-                  "Bytes Rx"
-                ],
+                "params": ["Bytes Rx"],
                 "type": "alias"
               }
             ],
             [
               {
-                "params": [
-                  "tx_bytes"
-                ],
+                "params": ["tx_bytes"],
                 "type": "field"
               },
               {
@@ -1419,17 +1537,13 @@
                 "type": "last"
               },
               {
-                "params": [
-                  "Bytes Tx"
-                ],
+                "params": ["Bytes Tx"],
                 "type": "alias"
               }
             ],
             [
               {
-                "params": [
-                  "num_sta"
-                ],
+                "params": ["num_sta"],
                 "type": "field"
               },
               {
@@ -1437,17 +1551,13 @@
                 "type": "last"
               },
               {
-                "params": [
-                  "Clients"
-                ],
+                "params": ["Clients"],
                 "type": "alias"
               }
             ],
             [
               {
-                "params": [
-                  "rx_packets"
-                ],
+                "params": ["rx_packets"],
                 "type": "field"
               },
               {
@@ -1455,17 +1565,13 @@
                 "type": "last"
               },
               {
-                "params": [
-                  "Rx Packets"
-                ],
+                "params": ["Rx Packets"],
                 "type": "alias"
               }
             ],
             [
               {
-                "params": [
-                  "tx_packets"
-                ],
+                "params": ["tx_packets"],
                 "type": "field"
               },
               {
@@ -1473,17 +1579,13 @@
                 "type": "last"
               },
               {
-                "params": [
-                  "Tx Packets"
-                ],
+                "params": ["Tx Packets"],
                 "type": "alias"
               }
             ],
             [
               {
-                "params": [
-                  "ccq"
-                ],
+                "params": ["ccq"],
                 "type": "field"
               },
               {
@@ -1491,23 +1593,17 @@
                 "type": "last"
               },
               {
-                "params": [
-                  "/10"
-                ],
+                "params": ["/10"],
                 "type": "math"
               },
               {
-                "params": [
-                  "CCQ"
-                ],
+                "params": ["CCQ"],
                 "type": "alias"
               }
             ],
             [
               {
-                "params": [
-                  "avg_client_signal"
-                ],
+                "params": ["avg_client_signal"],
                 "type": "field"
               },
               {
@@ -1515,17 +1611,13 @@
                 "type": "last"
               },
               {
-                "params": [
-                  "Avg Client Sig"
-                ],
+                "params": ["Avg Client Sig"],
                 "type": "alias"
               }
             ],
             [
               {
-                "params": [
-                  "rx_dropped"
-                ],
+                "params": ["rx_dropped"],
                 "type": "field"
               },
               {
@@ -1533,17 +1625,13 @@
                 "type": "last"
               },
               {
-                "params": [
-                  "Rx Drops"
-                ],
+                "params": ["Rx Drops"],
                 "type": "alias"
               }
             ],
             [
               {
-                "params": [
-                  "tx_dropped"
-                ],
+                "params": ["tx_dropped"],
                 "type": "field"
               },
               {
@@ -1551,91 +1639,114 @@
                 "type": "last"
               },
               {
-                "params": [
-                  "Tx Drops"
-                ],
+                "params": ["Tx Drops"],
                 "type": "alias"
               }
             ]
-          ],
-          "tags": [
-            {
-              "key": "site_name",
-              "operator": "=~",
-              "value": "/^$Site$/"
-            },
-            {
-              "condition": "AND",
-              "key": "device_name",
-              "operator": "=~",
-              "value": "/^$AP$/"
-            }
           ]
         }
       ],
       "timeFrom": "5m",
       "title": "Networks / UAP",
-      "transform": "table",
-      "type": "table-old"
+      "transformations": [
+        {
+          "id": "merge",
+          "options": {
+            "reducers": []
+          }
+        }
+      ],
+      "transparent": true,
+      "type": "table"
     },
     {
-      "aliasColors": {},
-      "bars": false,
-      "dashLength": 10,
-      "dashes": false,
       "datasource": "Unifi",
       "description": "",
       "fieldConfig": {
         "defaults": {
-          "links": []
+          "color": {
+            "mode": "palette-classic"
+          },
+          "custom": {
+            "axisBorderShow": false,
+            "axisCenteredZero": false,
+            "axisColorMode": "text",
+            "axisLabel": "",
+            "axisPlacement": "auto",
+            "barAlignment": 0,
+            "drawStyle": "line",
+            "fillOpacity": 10,
+            "gradientMode": "none",
+            "hideFrom": {
+              "legend": false,
+              "tooltip": false,
+              "viz": false
+            },
+            "insertNulls": false,
+            "lineInterpolation": "linear",
+            "lineWidth": 1,
+            "pointSize": 5,
+            "scaleDistribution": {
+              "type": "linear"
+            },
+            "showPoints": "never",
+            "spanNulls": false,
+            "stacking": {
+              "group": "A",
+              "mode": "none"
+            },
+            "thresholdsStyle": {
+              "mode": "off"
+            }
+          },
+          "links": [],
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          },
+          "unit": "percent"
         },
         "overrides": []
       },
-      "fill": 1,
-      "fillGradient": 0,
       "gridPos": {
         "h": 7,
         "w": 12,
         "x": 0,
-        "y": 22
+        "y": 27
       },
-      "hiddenSeries": false,
       "hideTimeOverride": true,
       "id": 30,
       "interval": "",
-      "legend": {
-        "avg": false,
-        "current": false,
-        "max": true,
-        "min": false,
-        "show": true,
-        "total": false,
-        "values": true
-      },
-      "lines": true,
-      "linewidth": 1,
       "links": [],
-      "nullPointMode": "null",
       "options": {
-        "alertThreshold": true
+        "legend": {
+          "calcs": ["max"],
+          "displayMode": "list",
+          "placement": "bottom",
+          "showLegend": true
+        },
+        "tooltip": {
+          "mode": "multi",
+          "sort": "none"
+        }
       },
-      "percentage": false,
-      "pluginVersion": "8.4.3",
-      "pointradius": 2,
-      "points": false,
-      "renderer": "flot",
-      "seriesOverrides": [],
-      "spaceLength": 10,
-      "stack": false,
-      "steppedLine": false,
+      "pluginVersion": "10.2.1",
       "targets": [
         {
           "alias": "$tag_name",
           "groupBy": [
             {
-              "params": [
-                "name"
-              ],
+              "params": ["name"],
               "type": "tag"
             }
           ],
@@ -1647,119 +1758,106 @@
           "select": [
             [
               {
-                "params": [
-                  "cpu"
-                ],
+                "params": ["cpu"],
                 "type": "field"
               }
             ]
-          ],
-          "tags": [
-            {
-              "key": "name",
-              "operator": "=~",
-              "value": "/^$AP$/"
-            },
-            {
-              "condition": "AND",
-              "key": "site_name",
-              "operator": "=~",
-              "value": "/^$Site$/"
-            }
           ]
         }
       ],
-      "thresholds": [],
       "timeFrom": "1h",
-      "timeRegions": [],
       "title": "UAP CPU Usage",
-      "tooltip": {
-        "shared": true,
-        "sort": 0,
-        "value_type": "individual"
-      },
       "transparent": true,
-      "type": "graph",
-      "xaxis": {
-        "mode": "time",
-        "show": true,
-        "values": []
-      },
-      "yaxes": [
-        {
-          "format": "percent",
-          "label": "",
-          "logBase": 1,
-          "show": true
-        },
-        {
-          "format": "short",
-          "logBase": 1,
-          "show": true
-        }
-      ],
-      "yaxis": {
-        "align": false
-      }
+      "type": "timeseries"
     },
     {
-      "aliasColors": {},
-      "bars": false,
-      "dashLength": 10,
-      "dashes": false,
       "datasource": "Unifi",
       "description": "",
       "fieldConfig": {
         "defaults": {
-          "links": []
+          "color": {
+            "mode": "palette-classic"
+          },
+          "custom": {
+            "axisBorderShow": false,
+            "axisCenteredZero": false,
+            "axisColorMode": "text",
+            "axisLabel": "",
+            "axisPlacement": "auto",
+            "barAlignment": 0,
+            "drawStyle": "line",
+            "fillOpacity": 10,
+            "gradientMode": "none",
+            "hideFrom": {
+              "legend": false,
+              "tooltip": false,
+              "viz": false
+            },
+            "insertNulls": false,
+            "lineInterpolation": "linear",
+            "lineWidth": 1,
+            "pointSize": 5,
+            "scaleDistribution": {
+              "type": "linear"
+            },
+            "showPoints": "never",
+            "spanNulls": false,
+            "stacking": {
+              "group": "A",
+              "mode": "none"
+            },
+            "thresholdsStyle": {
+              "mode": "off"
+            }
+          },
+          "links": [],
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          },
+          "unit": "percent"
         },
         "overrides": []
       },
-      "fill": 1,
-      "fillGradient": 0,
       "gridPos": {
         "h": 7,
         "w": 12,
         "x": 12,
-        "y": 22
+        "y": 27
       },
-      "hiddenSeries": false,
       "hideTimeOverride": true,
       "id": 47,
       "interval": "",
-      "legend": {
-        "avg": false,
-        "current": false,
-        "max": true,
-        "min": false,
-        "show": true,
-        "total": false,
-        "values": true
-      },
-      "lines": true,
-      "linewidth": 1,
       "links": [],
-      "nullPointMode": "null",
       "options": {
-        "alertThreshold": true
+        "legend": {
+          "calcs": ["max"],
+          "displayMode": "list",
+          "placement": "bottom",
+          "showLegend": true
+        },
+        "tooltip": {
+          "mode": "multi",
+          "sort": "none"
+        }
       },
-      "percentage": false,
-      "pluginVersion": "8.4.3",
-      "pointradius": 2,
-      "points": false,
-      "renderer": "flot",
-      "seriesOverrides": [],
-      "spaceLength": 10,
-      "stack": false,
-      "steppedLine": false,
+      "pluginVersion": "10.2.1",
       "targets": [
         {
           "alias": "$tag_name",
           "groupBy": [
             {
-              "params": [
-                "name"
-              ],
+              "params": ["name"],
               "type": "tag"
             }
           ],
@@ -1773,129 +1871,125 @@
           "select": [
             [
               {
-                "params": [
-                  "mem"
-                ],
+                "params": ["mem"],
                 "type": "field"
               }
             ]
-          ],
-          "tags": [
-            {
-              "key": "name",
-              "operator": "=~",
-              "value": "/^$AP$/"
-            },
-            {
-              "condition": "AND",
-              "key": "site_name",
-              "operator": "=~",
-              "value": "/^$Site$/"
-            }
           ]
         }
       ],
-      "thresholds": [],
       "timeFrom": "1h",
-      "timeRegions": [],
       "title": "UAP Memory Usage",
-      "tooltip": {
-        "shared": true,
-        "sort": 0,
-        "value_type": "individual"
-      },
       "transparent": true,
-      "type": "graph",
-      "xaxis": {
-        "mode": "time",
-        "show": true,
-        "values": []
-      },
-      "yaxes": [
-        {
-          "format": "percent",
-          "label": "",
-          "logBase": 1,
-          "show": true
-        },
-        {
-          "format": "short",
-          "logBase": 1,
-          "show": true
-        }
-      ],
-      "yaxis": {
-        "align": false
-      }
+      "type": "timeseries"
     },
     {
-      "aliasColors": {},
-      "bars": false,
-      "dashLength": 10,
-      "dashes": false,
       "datasource": "Unifi",
-      "editable": true,
-      "error": false,
       "fieldConfig": {
         "defaults": {
-          "links": []
+          "color": {
+            "mode": "palette-classic"
+          },
+          "custom": {
+            "axisBorderShow": false,
+            "axisCenteredZero": false,
+            "axisColorMode": "text",
+            "axisLabel": "",
+            "axisPlacement": "auto",
+            "barAlignment": 0,
+            "drawStyle": "line",
+            "fillOpacity": 10,
+            "gradientMode": "none",
+            "hideFrom": {
+              "legend": false,
+              "tooltip": false,
+              "viz": false
+            },
+            "insertNulls": false,
+            "lineInterpolation": "linear",
+            "lineWidth": 1,
+            "pointSize": 5,
+            "scaleDistribution": {
+              "type": "linear"
+            },
+            "showPoints": "never",
+            "spanNulls": true,
+            "stacking": {
+              "group": "A",
+              "mode": "none"
+            },
+            "thresholdsStyle": {
+              "mode": "off"
+            }
+          },
+          "links": [],
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          },
+          "unit": "none"
         },
-        "overrides": []
+        "overrides": [
+          {
+            "matcher": {
+              "id": "byRegexp",
+              "options": "/Load 15$/"
+            },
+            "properties": [
+              {
+                "id": "custom.fillOpacity",
+                "value": 0
+              },
+              {
+                "id": "custom.drawStyle",
+                "value": "line"
+              },
+              {
+                "id": "custom.lineWidth",
+                "value": 6
+              }
+            ]
+          }
+        ]
       },
-      "fill": 1,
-      "fillGradient": 0,
       "gridPos": {
         "h": 7,
         "w": 12,
         "x": 0,
-        "y": 29
+        "y": 34
       },
-      "hiddenSeries": false,
       "id": 3,
-      "isNew": true,
-      "legend": {
-        "alignAsTable": true,
-        "avg": false,
-        "current": true,
-        "max": true,
-        "min": false,
-        "show": true,
-        "sortDesc": true,
-        "total": false,
-        "values": true
-      },
-      "lines": true,
-      "linewidth": 1,
       "links": [],
-      "nullPointMode": "connected",
       "options": {
-        "alertThreshold": true
-      },
-      "percentage": false,
-      "pluginVersion": "8.4.3",
-      "pointradius": 5,
-      "points": false,
-      "renderer": "flot",
-      "seriesOverrides": [
-        {
-          "alias": "/Load 15$/",
-          "fill": 0,
-          "lines": true,
-          "linewidth": 6
+        "legend": {
+          "calcs": ["lastNotNull", "max"],
+          "displayMode": "table",
+          "placement": "right",
+          "showLegend": true
+        },
+        "tooltip": {
+          "mode": "multi",
+          "sort": "none"
         }
-      ],
-      "spaceLength": 10,
-      "stack": false,
-      "steppedLine": false,
+      },
+      "pluginVersion": "10.2.1",
       "targets": [
         {
           "alias": "$tag_name $col",
           "dsType": "influxdb",
           "groupBy": [
             {
-              "params": [
-                "name"
-              ],
+              "params": ["name"],
               "type": "tag"
             }
           ],
@@ -1907,165 +2001,172 @@
           "select": [
             [
               {
-                "params": [
-                  "loadavg_1"
-                ],
+                "params": ["loadavg_1"],
                 "type": "field"
               },
               {
-                "params": [
-                  "Avg Load 1"
-                ],
+                "params": ["Avg Load 1"],
                 "type": "alias"
               }
             ],
             [
               {
-                "params": [
-                  "loadavg_5"
-                ],
+                "params": ["loadavg_5"],
                 "type": "field"
               },
               {
-                "params": [
-                  "Avg Load 5"
-                ],
+                "params": ["Avg Load 5"],
                 "type": "alias"
               }
             ],
             [
               {
-                "params": [
-                  "loadavg_15"
-                ],
+                "params": ["loadavg_15"],
                 "type": "field"
               },
               {
-                "params": [
-                  "Avg Load 15"
-                ],
+                "params": ["Avg Load 15"],
                 "type": "alias"
               }
             ]
-          ],
-          "tags": [
-            {
-              "key": "name",
-              "operator": "=~",
-              "value": "/^$AP$/"
-            },
-            {
-              "condition": "AND",
-              "key": "site_name",
-              "operator": "=~",
-              "value": "/^$Site$/"
-            }
           ]
         }
       ],
-      "thresholds": [],
-      "timeRegions": [],
       "title": "UAP Load Average",
-      "tooltip": {
-        "msResolution": false,
-        "shared": true,
-        "sort": 0,
-        "value_type": "cumulative"
-      },
-      "type": "graph",
-      "xaxis": {
-        "mode": "time",
-        "show": true,
-        "values": []
-      },
-      "yaxes": [
-        {
-          "format": "none",
-          "logBase": 1,
-          "show": true
-        },
-        {
-          "format": "short",
-          "logBase": 1,
-          "show": false
-        }
-      ],
-      "yaxis": {
-        "align": false
-      }
+      "transparent": true,
+      "type": "timeseries"
     },
     {
-      "aliasColors": {},
-      "bars": false,
-      "dashLength": 10,
-      "dashes": false,
       "datasource": "Unifi",
-      "decimals": 0,
-      "editable": true,
-      "error": false,
       "fieldConfig": {
         "defaults": {
-          "links": []
+          "color": {
+            "mode": "palette-classic"
+          },
+          "custom": {
+            "axisBorderShow": false,
+            "axisCenteredZero": false,
+            "axisColorMode": "text",
+            "axisLabel": "",
+            "axisPlacement": "auto",
+            "barAlignment": 0,
+            "drawStyle": "line",
+            "fillOpacity": 0,
+            "gradientMode": "none",
+            "hideFrom": {
+              "legend": false,
+              "tooltip": false,
+              "viz": false
+            },
+            "insertNulls": false,
+            "lineInterpolation": "stepAfter",
+            "lineWidth": 3,
+            "pointSize": 5,
+            "scaleDistribution": {
+              "type": "linear"
+            },
+            "showPoints": "never",
+            "spanNulls": true,
+            "stacking": {
+              "group": "A",
+              "mode": "none"
+            },
+            "thresholdsStyle": {
+              "mode": "off"
+            }
+          },
+          "links": [],
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          },
+          "unit": "none"
         },
-        "overrides": []
+        "overrides": [
+          {
+            "matcher": {
+              "id": "byValue",
+              "options": {
+                "op": "gte",
+                "reducer": "allIsZero",
+                "value": 0
+              }
+            },
+            "properties": [
+              {
+                "id": "custom.hideFrom",
+                "value": {
+                  "legend": true,
+                  "tooltip": true,
+                  "viz": false
+                }
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byValue",
+              "options": {
+                "op": "gte",
+                "reducer": "allIsNull",
+                "value": 0
+              }
+            },
+            "properties": [
+              {
+                "id": "custom.hideFrom",
+                "value": {
+                  "legend": true,
+                  "tooltip": true,
+                  "viz": false
+                }
+              }
+            ]
+          }
+        ]
       },
-      "fill": 0,
-      "fillGradient": 0,
       "gridPos": {
         "h": 7,
         "w": 12,
         "x": 12,
-        "y": 29
+        "y": 34
       },
-      "hiddenSeries": false,
       "id": 46,
-      "isNew": true,
-      "legend": {
-        "alignAsTable": true,
-        "avg": false,
-        "current": true,
-        "hideEmpty": true,
-        "hideZero": true,
-        "max": true,
-        "min": true,
-        "rightSide": true,
-        "show": true,
-        "sort": "current",
-        "sortDesc": true,
-        "total": false,
-        "values": true
-      },
-      "lines": true,
-      "linewidth": 3,
       "links": [],
-      "nullPointMode": "connected",
       "options": {
-        "alertThreshold": true
+        "legend": {
+          "calcs": ["lastNotNull", "max", "min"],
+          "displayMode": "table",
+          "placement": "bottom",
+          "showLegend": true
+        },
+        "tooltip": {
+          "mode": "multi",
+          "sort": "desc"
+        }
       },
-      "percentage": false,
-      "pluginVersion": "8.4.3",
-      "pointradius": 5,
-      "points": false,
-      "renderer": "flot",
-      "seriesOverrides": [],
-      "spaceLength": 10,
-      "stack": false,
-      "steppedLine": true,
+      "pluginVersion": "10.2.1",
       "targets": [
         {
           "alias": "$tag_device_name Total",
           "dsType": "influxdb",
           "groupBy": [
             {
-              "params": [
-                "$__interval"
-              ],
+              "params": ["$__interval"],
               "type": "time"
             },
             {
-              "params": [
-                "device_name"
-              ],
+              "params": ["device_name"],
               "type": "tag"
             }
           ],
@@ -2079,9 +2180,7 @@
           "select": [
             [
               {
-                "params": [
-                  "num_sta"
-                ],
+                "params": ["num_sta"],
                 "type": "field"
               },
               {
@@ -2089,131 +2188,120 @@
                 "type": "max"
               }
             ]
-          ],
-          "tags": [
-            {
-              "key": "site_name",
-              "operator": "=~",
-              "value": "/^$Site$/"
-            },
-            {
-              "condition": "AND",
-              "key": "device_name",
-              "operator": "=~",
-              "value": "/^$AP$/"
-            }
           ]
         }
       ],
-      "thresholds": [],
-      "timeRegions": [],
       "title": "Clients / UAP",
-      "tooltip": {
-        "msResolution": false,
-        "shared": true,
-        "sort": 2,
-        "value_type": "individual"
-      },
-      "type": "graph",
-      "xaxis": {
-        "mode": "time",
-        "show": true,
-        "values": []
-      },
-      "yaxes": [
-        {
-          "format": "none",
-          "label": "",
-          "logBase": 1,
-          "show": true
-        },
-        {
-          "format": "short",
-          "logBase": 1,
-          "show": false
-        }
-      ],
-      "yaxis": {
-        "align": false
-      }
+      "transparent": true,
+      "type": "timeseries"
     },
     {
-      "aliasColors": {},
-      "bars": false,
-      "dashLength": 10,
-      "dashes": false,
       "datasource": "Unifi",
       "description": "Devices TX / RX bytes per second grouped by OUI. RX on negative axis.",
       "fieldConfig": {
         "defaults": {
-          "links": []
+          "color": {
+            "mode": "palette-classic"
+          },
+          "custom": {
+            "axisBorderShow": false,
+            "axisCenteredZero": false,
+            "axisColorMode": "text",
+            "axisLabel": "",
+            "axisPlacement": "auto",
+            "barAlignment": 0,
+            "drawStyle": "line",
+            "fillOpacity": 10,
+            "gradientMode": "none",
+            "hideFrom": {
+              "legend": false,
+              "tooltip": false,
+              "viz": false
+            },
+            "insertNulls": false,
+            "lineInterpolation": "linear",
+            "lineWidth": 1,
+            "pointSize": 5,
+            "scaleDistribution": {
+              "type": "linear"
+            },
+            "showPoints": "never",
+            "spanNulls": true,
+            "stacking": {
+              "group": "A",
+              "mode": "none"
+            },
+            "thresholdsStyle": {
+              "mode": "off"
+            }
+          },
+          "links": [],
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          },
+          "unit": "bps"
         },
-        "overrides": []
+        "overrides": [
+          {
+            "matcher": {
+              "id": "byRegexp",
+              "options": "/Rx$/"
+            },
+            "properties": [
+              {
+                "id": "custom.transform",
+                "value": "negative-Y"
+              }
+            ]
+          }
+        ]
       },
-      "fill": 1,
-      "fillGradient": 0,
       "gridPos": {
         "h": 8,
         "w": 12,
         "x": 0,
-        "y": 36
+        "y": 41
       },
-      "hiddenSeries": false,
       "id": 42,
-      "legend": {
-        "alignAsTable": true,
-        "avg": true,
-        "current": true,
-        "max": true,
-        "min": false,
-        "rightSide": true,
-        "show": true,
-        "sort": "current",
-        "sortDesc": true,
-        "total": false,
-        "values": true
-      },
-      "lines": true,
-      "linewidth": 1,
       "links": [],
-      "nullPointMode": "connected",
       "options": {
-        "alertThreshold": true
-      },
-      "percentage": false,
-      "pluginVersion": "8.4.3",
-      "pointradius": 5,
-      "points": false,
-      "renderer": "flot",
-      "seriesOverrides": [
-        {
-          "alias": "/Rx$/",
-          "transform": "negative-Y"
+        "legend": {
+          "calcs": ["mean", "lastNotNull", "max"],
+          "displayMode": "table",
+          "placement": "right",
+          "showLegend": true
+        },
+        "tooltip": {
+          "mode": "multi",
+          "sort": "desc"
         }
-      ],
-      "spaceLength": 10,
-      "stack": false,
-      "steppedLine": false,
+      },
+      "pluginVersion": "10.2.1",
       "targets": [
         {
           "alias": "$tag_oui $col",
           "groupBy": [
             {
-              "params": [
-                "$__interval"
-              ],
+              "params": ["$__interval"],
               "type": "time"
             },
             {
-              "params": [
-                "oui"
-              ],
+              "params": ["oui"],
               "type": "tag"
             },
             {
-              "params": [
-                "none"
-              ],
+              "params": ["none"],
               "type": "fill"
             }
           ],
@@ -2228,9 +2316,7 @@
           "select": [
             [
               {
-                "params": [
-                  "tx_bytes_r"
-                ],
+                "params": ["tx_bytes_r"],
                 "type": "field"
               },
               {
@@ -2238,17 +2324,13 @@
                 "type": "sum"
               },
               {
-                "params": [
-                  "Tx"
-                ],
+                "params": ["Tx"],
                 "type": "alias"
               }
             ],
             [
               {
-                "params": [
-                  "rx_bytes_r"
-                ],
+                "params": ["rx_bytes_r"],
                 "type": "field"
               },
               {
@@ -2256,129 +2338,148 @@
                 "type": "sum"
               },
               {
-                "params": [
-                  "Rx"
-                ],
+                "params": ["Rx"],
                 "type": "alias"
               }
             ]
-          ],
-          "tags": [
-            {
-              "key": "site_name",
-              "operator": "=~",
-              "value": "/^$Site$/"
-            },
-            {
-              "condition": "AND",
-              "key": "ap_name",
-              "operator": "=~",
-              "value": "/^$AP$/"
-            }
           ]
         }
       ],
-      "thresholds": [],
-      "timeRegions": [],
       "title": "Wireless Traffic / Vendor",
-      "tooltip": {
-        "shared": true,
-        "sort": 2,
-        "value_type": "individual"
-      },
       "transparent": true,
-      "type": "graph",
-      "xaxis": {
-        "mode": "time",
-        "show": true,
-        "values": []
-      },
-      "yaxes": [
-        {
-          "format": "bps",
-          "logBase": 1,
-          "show": true
-        },
-        {
-          "format": "short",
-          "logBase": 1,
-          "show": false
-        }
-      ],
-      "yaxis": {
-        "align": false
-      }
+      "type": "timeseries"
     },
     {
-      "aliasColors": {},
-      "bars": false,
-      "dashLength": 10,
-      "dashes": false,
       "datasource": "Unifi",
-      "decimals": 0,
-      "editable": true,
-      "error": false,
       "fieldConfig": {
         "defaults": {
-          "links": []
+          "color": {
+            "mode": "palette-classic"
+          },
+          "custom": {
+            "axisBorderShow": false,
+            "axisCenteredZero": false,
+            "axisColorMode": "text",
+            "axisLabel": "",
+            "axisPlacement": "auto",
+            "barAlignment": 0,
+            "drawStyle": "line",
+            "fillOpacity": 20,
+            "gradientMode": "none",
+            "hideFrom": {
+              "legend": false,
+              "tooltip": false,
+              "viz": false
+            },
+            "insertNulls": false,
+            "lineInterpolation": "linear",
+            "lineWidth": 1,
+            "pointSize": 5,
+            "scaleDistribution": {
+              "type": "linear"
+            },
+            "showPoints": "never",
+            "spanNulls": true,
+            "stacking": {
+              "group": "A",
+              "mode": "normal"
+            },
+            "thresholdsStyle": {
+              "mode": "off"
+            }
+          },
+          "links": [],
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          },
+          "unit": "none"
         },
-        "overrides": []
+        "overrides": [
+          {
+            "matcher": {
+              "id": "byValue",
+              "options": {
+                "op": "gte",
+                "reducer": "allIsZero",
+                "value": 0
+              }
+            },
+            "properties": [
+              {
+                "id": "custom.hideFrom",
+                "value": {
+                  "legend": true,
+                  "tooltip": true,
+                  "viz": false
+                }
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byValue",
+              "options": {
+                "op": "gte",
+                "reducer": "allIsNull",
+                "value": 0
+              }
+            },
+            "properties": [
+              {
+                "id": "custom.hideFrom",
+                "value": {
+                  "legend": true,
+                  "tooltip": true,
+                  "viz": false
+                }
+              }
+            ]
+          }
+        ]
       },
-      "fill": 2,
-      "fillGradient": 0,
       "gridPos": {
         "h": 8,
         "w": 12,
         "x": 12,
-        "y": 36
+        "y": 41
       },
-      "hiddenSeries": false,
       "id": 19,
-      "isNew": true,
-      "legend": {
-        "alignAsTable": true,
-        "avg": false,
-        "current": true,
-        "hideEmpty": true,
-        "hideZero": true,
-        "max": true,
-        "min": true,
-        "rightSide": true,
-        "show": true,
-        "total": false,
-        "values": true
-      },
-      "lines": true,
-      "linewidth": 1,
       "links": [],
-      "nullPointMode": "connected",
       "options": {
-        "alertThreshold": true
+        "legend": {
+          "calcs": ["lastNotNull", "max", "min"],
+          "displayMode": "table",
+          "placement": "bottom",
+          "showLegend": true
+        },
+        "tooltip": {
+          "mode": "multi",
+          "sort": "desc"
+        }
       },
-      "percentage": false,
-      "pluginVersion": "8.4.3",
-      "pointradius": 5,
-      "points": false,
-      "renderer": "flot",
-      "seriesOverrides": [],
-      "spaceLength": 10,
-      "stack": true,
-      "steppedLine": false,
+      "pluginVersion": "10.2.1",
       "targets": [
         {
           "alias": "$tag_device_name 5GHz $col",
           "dsType": "influxdb",
           "groupBy": [
             {
-              "params": [
-                "$__interval"
-              ],
+              "params": ["$__interval"],
               "type": "time"
             },
             {
-              "params": [
-                "device_name"
-              ],
+              "params": ["device_name"],
               "type": "tag"
             }
           ],
@@ -2390,9 +2491,7 @@
           "select": [
             [
               {
-                "params": [
-                  "user-num_sta"
-                ],
+                "params": ["user-num_sta"],
                 "type": "field"
               },
               {
@@ -2400,17 +2499,13 @@
                 "type": "max"
               },
               {
-                "params": [
-                  "Users"
-                ],
+                "params": ["Users"],
                 "type": "alias"
               }
             ],
             [
               {
-                "params": [
-                  "guest-num_sta"
-                ],
+                "params": ["guest-num_sta"],
                 "type": "field"
               },
               {
@@ -2418,31 +2513,10 @@
                 "type": "max"
               },
               {
-                "params": [
-                  "Guests"
-                ],
+                "params": ["Guests"],
                 "type": "alias"
               }
             ]
-          ],
-          "tags": [
-            {
-              "key": "device_name",
-              "operator": "=~",
-              "value": "/^$AP$/"
-            },
-            {
-              "condition": "AND",
-              "key": "radio",
-              "operator": "=",
-              "value": "na"
-            },
-            {
-              "condition": "AND",
-              "key": "site_name",
-              "operator": "=~",
-              "value": "/^$Site$/"
-            }
           ]
         },
         {
@@ -2450,15 +2524,11 @@
           "dsType": "influxdb",
           "groupBy": [
             {
-              "params": [
-                "$__interval"
-              ],
+              "params": ["$__interval"],
               "type": "time"
             },
             {
-              "params": [
-                "device_name"
-              ],
+              "params": ["device_name"],
               "type": "tag"
             }
           ],
@@ -2470,9 +2540,7 @@
           "select": [
             [
               {
-                "params": [
-                  "guest-num_sta"
-                ],
+                "params": ["guest-num_sta"],
                 "type": "field"
               },
               {
@@ -2480,17 +2548,13 @@
                 "type": "max"
               },
               {
-                "params": [
-                  "Guests"
-                ],
+                "params": ["Guests"],
                 "type": "alias"
               }
             ],
             [
               {
-                "params": [
-                  "user-num_sta"
-                ],
+                "params": ["user-num_sta"],
                 "type": "field"
               },
               {
@@ -2498,9 +2562,7 @@
                 "type": "max"
               },
               {
-                "params": [
-                  "Users"
-                ],
+                "params": ["Users"],
                 "type": "alias"
               }
             ]
@@ -2526,106 +2588,120 @@
           ]
         }
       ],
-      "thresholds": [],
-      "timeRegions": [],
       "title": "Users & Guests / UAP band",
-      "tooltip": {
-        "msResolution": false,
-        "shared": true,
-        "sort": 2,
-        "value_type": "individual"
-      },
       "transparent": true,
-      "type": "graph",
-      "xaxis": {
-        "mode": "time",
-        "show": true,
-        "values": []
-      },
-      "yaxes": [
-        {
-          "format": "none",
-          "label": "",
-          "logBase": 1,
-          "show": true
-        },
-        {
-          "format": "short",
-          "logBase": 1,
-          "show": false
-        }
-      ],
-      "yaxis": {
-        "align": false
-      }
+      "type": "timeseries"
     },
     {
-      "aliasColors": {},
-      "bars": false,
-      "dashLength": 10,
-      "dashes": false,
       "datasource": "Unifi",
       "fieldConfig": {
         "defaults": {
-          "links": []
+          "color": {
+            "mode": "palette-classic"
+          },
+          "custom": {
+            "axisBorderShow": false,
+            "axisCenteredZero": false,
+            "axisColorMode": "text",
+            "axisLabel": "Client Signal - Average",
+            "axisPlacement": "auto",
+            "barAlignment": 0,
+            "drawStyle": "line",
+            "fillOpacity": 0,
+            "gradientMode": "none",
+            "hideFrom": {
+              "legend": false,
+              "tooltip": false,
+              "viz": false
+            },
+            "insertNulls": false,
+            "lineInterpolation": "linear",
+            "lineWidth": 1,
+            "pointSize": 5,
+            "scaleDistribution": {
+              "type": "linear"
+            },
+            "showPoints": "never",
+            "spanNulls": true,
+            "stacking": {
+              "group": "A",
+              "mode": "none"
+            },
+            "thresholdsStyle": {
+              "mode": "off"
+            }
+          },
+          "links": [],
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          },
+          "unit": "dBm"
         },
-        "overrides": []
+        "overrides": [
+          {
+            "matcher": {
+              "id": "byValue",
+              "options": {
+                "op": "gte",
+                "reducer": "allIsNull",
+                "value": 0
+              }
+            },
+            "properties": [
+              {
+                "id": "custom.hideFrom",
+                "value": {
+                  "legend": true,
+                  "tooltip": true,
+                  "viz": false
+                }
+              }
+            ]
+          }
+        ]
       },
-      "fill": 0,
-      "fillGradient": 0,
       "gridPos": {
         "h": 8,
         "w": 12,
         "x": 0,
-        "y": 44
+        "y": 49
       },
-      "hiddenSeries": false,
       "id": 50,
-      "legend": {
-        "alignAsTable": true,
-        "avg": false,
-        "current": true,
-        "hideEmpty": true,
-        "hideZero": false,
-        "max": true,
-        "min": true,
-        "rightSide": true,
-        "show": true,
-        "sort": "current",
-        "sortDesc": true,
-        "total": false,
-        "values": true
-      },
-      "lines": true,
-      "linewidth": 1,
       "links": [],
-      "nullPointMode": "connected",
       "options": {
-        "alertThreshold": true
+        "legend": {
+          "calcs": ["lastNotNull", "max", "min"],
+          "displayMode": "table",
+          "placement": "bottom",
+          "showLegend": true
+        },
+        "tooltip": {
+          "mode": "multi",
+          "sort": "desc"
+        }
       },
-      "percentage": false,
-      "pluginVersion": "8.4.3",
-      "pointradius": 5,
-      "points": false,
-      "renderer": "flot",
-      "seriesOverrides": [],
-      "spaceLength": 10,
-      "stack": false,
-      "steppedLine": false,
+      "pluginVersion": "10.2.1",
       "targets": [
         {
           "alias": "$tag_ap_name",
           "groupBy": [
             {
-              "params": [
-                "$__interval"
-              ],
+              "params": ["$__interval"],
               "type": "time"
             },
             {
-              "params": [
-                "ap_name"
-              ],
+              "params": ["ap_name"],
               "type": "tag"
             }
           ],
@@ -2639,9 +2715,7 @@
           "select": [
             [
               {
-                "params": [
-                  "signal"
-                ],
+                "params": ["signal"],
                 "type": "field"
               },
               {
@@ -2649,120 +2723,102 @@
                 "type": "mean"
               }
             ]
-          ],
-          "tags": [
-            {
-              "key": "site_name",
-              "operator": "=~",
-              "value": "/^$Site$/"
-            },
-            {
-              "condition": "AND",
-              "key": "ap_name",
-              "operator": "=~",
-              "value": "/^$AP$/"
-            }
           ]
         }
       ],
-      "thresholds": [],
-      "timeRegions": [],
       "title": "Average Client Signal",
-      "tooltip": {
-        "shared": true,
-        "sort": 2,
-        "value_type": "individual"
-      },
-      "type": "graph",
-      "xaxis": {
-        "mode": "time",
-        "show": true,
-        "values": []
-      },
-      "yaxes": [
-        {
-          "format": "dBm",
-          "label": "Client Signal - Average",
-          "logBase": 1,
-          "show": true
-        },
-        {
-          "format": "short",
-          "logBase": 1,
-          "show": false
-        }
-      ],
-      "yaxis": {
-        "align": false
-      }
+      "transparent": true,
+      "type": "timeseries"
     },
     {
-      "aliasColors": {},
-      "bars": false,
-      "dashLength": 10,
-      "dashes": false,
       "datasource": "Unifi",
       "fieldConfig": {
         "defaults": {
-          "links": []
+          "color": {
+            "mode": "palette-classic"
+          },
+          "custom": {
+            "axisBorderShow": false,
+            "axisCenteredZero": false,
+            "axisColorMode": "text",
+            "axisLabel": "Rssi",
+            "axisPlacement": "auto",
+            "barAlignment": 0,
+            "drawStyle": "line",
+            "fillOpacity": 0,
+            "gradientMode": "none",
+            "hideFrom": {
+              "legend": false,
+              "tooltip": false,
+              "viz": false
+            },
+            "insertNulls": false,
+            "lineInterpolation": "linear",
+            "lineWidth": 1,
+            "pointSize": 5,
+            "scaleDistribution": {
+              "type": "linear"
+            },
+            "showPoints": "never",
+            "spanNulls": true,
+            "stacking": {
+              "group": "A",
+              "mode": "none"
+            },
+            "thresholdsStyle": {
+              "mode": "off"
+            }
+          },
+          "links": [],
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          },
+          "unit": "dBm"
         },
         "overrides": []
       },
-      "fill": 0,
-      "fillGradient": 0,
       "gridPos": {
         "h": 8,
         "w": 12,
         "x": 12,
-        "y": 44
+        "y": 49
       },
-      "hiddenSeries": false,
       "id": 44,
-      "legend": {
-        "alignAsTable": true,
-        "avg": false,
-        "current": true,
-        "hideEmpty": false,
-        "hideZero": false,
-        "max": true,
-        "min": true,
-        "rightSide": true,
-        "show": true,
-        "sort": "current",
-        "sortDesc": true,
-        "total": false,
-        "values": true
-      },
-      "lines": true,
-      "linewidth": 1,
       "links": [],
-      "nullPointMode": "connected",
       "options": {
-        "alertThreshold": true
+        "legend": {
+          "calcs": ["lastNotNull", "max", "min"],
+          "displayMode": "table",
+          "placement": "bottom",
+          "showLegend": true
+        },
+        "tooltip": {
+          "mode": "multi",
+          "sort": "desc"
+        }
       },
-      "percentage": false,
-      "pluginVersion": "8.4.3",
-      "pointradius": 5,
-      "points": false,
-      "renderer": "flot",
-      "seriesOverrides": [],
-      "spaceLength": 10,
-      "stack": false,
-      "steppedLine": false,
+      "pluginVersion": "10.2.1",
       "targets": [
         {
           "alias": "$tag_ap_name",
           "groupBy": [
             {
-              "params": [
-                "$__interval"
-              ],
+              "params": ["$__interval"],
               "type": "time"
             },
             {
-              "params": [
-                "ap_name"
-              ],
+              "params": ["ap_name"],
               "type": "tag"
             }
           ],
@@ -2776,9 +2832,7 @@
           "select": [
             [
               {
-                "params": [
-                  "rssi"
-                ],
+                "params": ["rssi"],
                 "type": "field"
               },
               {
@@ -2786,125 +2840,107 @@
                 "type": "mean"
               }
             ]
-          ],
-          "tags": [
-            {
-              "key": "site_name",
-              "operator": "=~",
-              "value": "/^$Site$/"
-            },
-            {
-              "condition": "AND",
-              "key": "ap_name",
-              "operator": "=~",
-              "value": "/^$AP$/"
-            }
           ]
         }
       ],
-      "thresholds": [],
-      "timeRegions": [],
       "title": "Average AP RSSI",
-      "tooltip": {
-        "shared": true,
-        "sort": 2,
-        "value_type": "individual"
-      },
-      "type": "graph",
-      "xaxis": {
-        "mode": "time",
-        "show": true,
-        "values": []
-      },
-      "yaxes": [
-        {
-          "format": "dBm",
-          "label": "Rssi",
-          "logBase": 1,
-          "show": true
-        },
-        {
-          "format": "short",
-          "logBase": 1,
-          "show": false
-        }
-      ],
-      "yaxis": {
-        "align": false
-      }
+      "transparent": true,
+      "type": "timeseries"
     },
     {
-      "aliasColors": {},
-      "bars": false,
-      "dashLength": 10,
-      "dashes": false,
       "datasource": "Unifi",
-      "editable": true,
-      "error": false,
       "fieldConfig": {
         "defaults": {
-          "links": []
+          "color": {
+            "mode": "palette-classic"
+          },
+          "custom": {
+            "axisBorderShow": false,
+            "axisCenteredZero": false,
+            "axisColorMode": "text",
+            "axisLabel": "",
+            "axisPlacement": "auto",
+            "barAlignment": 0,
+            "drawStyle": "line",
+            "fillOpacity": 10,
+            "gradientMode": "none",
+            "hideFrom": {
+              "legend": false,
+              "tooltip": false,
+              "viz": false
+            },
+            "insertNulls": false,
+            "lineInterpolation": "linear",
+            "lineWidth": 1,
+            "pointSize": 5,
+            "scaleDistribution": {
+              "type": "linear"
+            },
+            "showPoints": "never",
+            "spanNulls": true,
+            "stacking": {
+              "group": "A",
+              "mode": "none"
+            },
+            "thresholdsStyle": {
+              "mode": "off"
+            }
+          },
+          "links": [],
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          },
+          "unit": "percent"
         },
         "overrides": []
       },
-      "fill": 1,
-      "fillGradient": 0,
       "gridPos": {
         "h": 8,
         "w": 12,
         "x": 0,
-        "y": 52
+        "y": 57
       },
-      "hiddenSeries": false,
       "id": 18,
-      "isNew": true,
-      "legend": {
-        "alignAsTable": true,
-        "avg": false,
-        "current": true,
-        "max": true,
-        "min": true,
-        "show": true,
-        "total": false,
-        "values": true
-      },
-      "lines": true,
-      "linewidth": 1,
       "links": [],
-      "nullPointMode": "connected",
       "options": {
-        "alertThreshold": true
+        "legend": {
+          "calcs": ["lastNotNull", "max", "min"],
+          "displayMode": "table",
+          "placement": "bottom",
+          "showLegend": true
+        },
+        "tooltip": {
+          "mode": "multi",
+          "sort": "none"
+        }
       },
-      "percentage": false,
-      "pluginVersion": "8.4.3",
-      "pointradius": 5,
-      "points": false,
-      "renderer": "flot",
-      "seriesOverrides": [],
-      "spaceLength": 10,
-      "stack": false,
-      "steppedLine": false,
+      "pluginVersion": "10.2.1",
       "targets": [
         {
           "alias": "$tag_device_name",
           "dsType": "influxdb",
           "groupBy": [
             {
-              "params": [
-                "$__interval"
-              ],
+              "params": ["$__interval"],
               "type": "time"
             },
             {
-              "params": [
-                "device_name"
-              ],
+              "params": ["device_name"],
               "type": "tag"
             },
             {
-              "params": [
-                "null"
-              ],
+              "params": ["null"],
               "type": "fill"
             }
           ],
@@ -2916,9 +2952,7 @@
           "select": [
             [
               {
-                "params": [
-                  "ccq"
-                ],
+                "params": ["ccq"],
                 "type": "field"
               },
               {
@@ -2926,25 +2960,12 @@
                 "type": "mean"
               },
               {
-                "params": [
-                  " / 10"
-                ],
+                "params": [" / 10"],
                 "type": "math"
               }
             ]
           ],
           "tags": [
-            {
-              "key": "device_name",
-              "operator": "=~",
-              "value": "/^$AP$/"
-            },
-            {
-              "condition": "AND",
-              "key": "site_name",
-              "operator": "=~",
-              "value": "/^$Site$/"
-            },
             {
               "condition": "AND",
               "key": "radio",
@@ -2954,110 +2975,104 @@
           ]
         }
       ],
-      "thresholds": [],
-      "timeRegions": [],
       "title": "5 GHz Client Connection Quality",
-      "tooltip": {
-        "msResolution": false,
-        "shared": true,
-        "sort": 0,
-        "value_type": "cumulative"
-      },
       "transparent": true,
-      "type": "graph",
-      "xaxis": {
-        "mode": "time",
-        "show": true,
-        "values": []
-      },
-      "yaxes": [
-        {
-          "format": "percent",
-          "logBase": 1,
-          "show": true
-        },
-        {
-          "format": "short",
-          "logBase": 1,
-          "show": false
-        }
-      ],
-      "yaxis": {
-        "align": false
-      }
+      "type": "timeseries"
     },
     {
-      "aliasColors": {},
-      "bars": false,
-      "dashLength": 10,
-      "dashes": false,
       "datasource": "Unifi",
-      "editable": true,
-      "error": false,
       "fieldConfig": {
         "defaults": {
-          "links": []
+          "color": {
+            "mode": "palette-classic"
+          },
+          "custom": {
+            "axisBorderShow": false,
+            "axisCenteredZero": false,
+            "axisColorMode": "text",
+            "axisLabel": "",
+            "axisPlacement": "auto",
+            "barAlignment": 0,
+            "drawStyle": "line",
+            "fillOpacity": 10,
+            "gradientMode": "none",
+            "hideFrom": {
+              "legend": false,
+              "tooltip": false,
+              "viz": false
+            },
+            "insertNulls": false,
+            "lineInterpolation": "linear",
+            "lineWidth": 1,
+            "pointSize": 5,
+            "scaleDistribution": {
+              "type": "linear"
+            },
+            "showPoints": "never",
+            "spanNulls": true,
+            "stacking": {
+              "group": "A",
+              "mode": "none"
+            },
+            "thresholdsStyle": {
+              "mode": "off"
+            }
+          },
+          "links": [],
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          },
+          "unit": "percent"
         },
         "overrides": []
       },
-      "fill": 1,
-      "fillGradient": 0,
       "gridPos": {
         "h": 8,
         "w": 12,
         "x": 12,
-        "y": 52
+        "y": 57
       },
-      "hiddenSeries": false,
       "id": 51,
-      "isNew": true,
-      "legend": {
-        "alignAsTable": true,
-        "avg": false,
-        "current": true,
-        "max": true,
-        "min": true,
-        "show": true,
-        "total": false,
-        "values": true
-      },
-      "lines": true,
-      "linewidth": 1,
       "links": [],
-      "nullPointMode": "connected",
       "options": {
-        "alertThreshold": true
+        "legend": {
+          "calcs": ["lastNotNull", "max", "min"],
+          "displayMode": "table",
+          "placement": "bottom",
+          "showLegend": true
+        },
+        "tooltip": {
+          "mode": "multi",
+          "sort": "none"
+        }
       },
-      "percentage": false,
-      "pluginVersion": "8.4.3",
-      "pointradius": 5,
-      "points": false,
-      "renderer": "flot",
-      "seriesOverrides": [],
-      "spaceLength": 10,
-      "stack": false,
-      "steppedLine": false,
+      "pluginVersion": "10.2.1",
       "targets": [
         {
           "alias": "$tag_device_name",
           "dsType": "influxdb",
           "groupBy": [
             {
-              "params": [
-                "$__interval"
-              ],
+              "params": ["$__interval"],
               "type": "time"
             },
             {
-              "params": [
-                "device_name"
-              ],
+              "params": ["device_name"],
               "type": "tag"
             },
             {
-              "params": [
-                "null"
-              ],
+              "params": ["null"],
               "type": "fill"
             }
           ],
@@ -3069,9 +3084,7 @@
           "select": [
             [
               {
-                "params": [
-                  "ccq"
-                ],
+                "params": ["ccq"],
                 "type": "field"
               },
               {
@@ -3079,25 +3092,12 @@
                 "type": "mean"
               },
               {
-                "params": [
-                  " / 10"
-                ],
+                "params": [" / 10"],
                 "type": "math"
               }
             ]
           ],
           "tags": [
-            {
-              "key": "device_name",
-              "operator": "=~",
-              "value": "/^$AP$/"
-            },
-            {
-              "condition": "AND",
-              "key": "site_name",
-              "operator": "=~",
-              "value": "/^$Site$/"
-            },
             {
               "condition": "AND",
               "key": "radio",
@@ -3107,113 +3107,106 @@
           ]
         }
       ],
-      "thresholds": [],
-      "timeRegions": [],
       "title": "2.4 GHz Client Connection Quality",
-      "tooltip": {
-        "msResolution": false,
-        "shared": true,
-        "sort": 0,
-        "value_type": "cumulative"
-      },
       "transparent": true,
-      "type": "graph",
-      "xaxis": {
-        "mode": "time",
-        "show": true,
-        "values": []
-      },
-      "yaxes": [
-        {
-          "format": "percent",
-          "logBase": 1,
-          "show": true
-        },
-        {
-          "format": "short",
-          "logBase": 1,
-          "show": false
-        }
-      ],
-      "yaxis": {
-        "align": false
-      }
+      "type": "timeseries"
     },
     {
-      "aliasColors": {},
-      "bars": false,
-      "dashLength": 10,
-      "dashes": false,
       "datasource": "Unifi",
-      "editable": true,
-      "error": false,
       "fieldConfig": {
         "defaults": {
-          "links": []
+          "color": {
+            "mode": "palette-classic"
+          },
+          "custom": {
+            "axisBorderShow": false,
+            "axisCenteredZero": false,
+            "axisColorMode": "text",
+            "axisLabel": "",
+            "axisPlacement": "auto",
+            "barAlignment": 0,
+            "drawStyle": "line",
+            "fillOpacity": 0,
+            "gradientMode": "none",
+            "hideFrom": {
+              "legend": false,
+              "tooltip": false,
+              "viz": false
+            },
+            "insertNulls": false,
+            "lineInterpolation": "linear",
+            "lineWidth": 3,
+            "pointSize": 5,
+            "scaleDistribution": {
+              "type": "linear"
+            },
+            "showPoints": "never",
+            "spanNulls": true,
+            "stacking": {
+              "group": "A",
+              "mode": "none"
+            },
+            "thresholdsStyle": {
+              "mode": "off"
+            }
+          },
+          "decimals": 1,
+          "links": [],
+          "mappings": [],
+          "min": 0,
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          },
+          "unit": "percent"
         },
         "overrides": []
       },
-      "fill": 0,
-      "fillGradient": 0,
       "gridPos": {
         "h": 8,
         "w": 12,
         "x": 0,
-        "y": 60
+        "y": 65
       },
-      "hiddenSeries": false,
       "id": 8,
-      "isNew": true,
-      "legend": {
-        "alignAsTable": true,
-        "avg": false,
-        "current": true,
-        "max": true,
-        "min": false,
-        "rightSide": true,
-        "show": true,
-        "sort": "max",
-        "sortDesc": true,
-        "total": false,
-        "values": true
-      },
-      "lines": true,
-      "linewidth": 3,
       "links": [],
-      "nullPointMode": "connected",
       "options": {
-        "alertThreshold": true
+        "legend": {
+          "calcs": ["lastNotNull", "max"],
+          "displayMode": "table",
+          "placement": "right",
+          "showLegend": true
+        },
+        "tooltip": {
+          "mode": "multi",
+          "sort": "desc"
+        }
       },
-      "percentage": false,
-      "pluginVersion": "8.4.3",
-      "pointradius": 5,
-      "points": false,
-      "renderer": "flot",
-      "seriesOverrides": [],
-      "spaceLength": 10,
-      "stack": false,
-      "steppedLine": false,
+      "pluginVersion": "10.2.1",
       "targets": [
         {
           "alias": "$tag_device_name $col",
           "dsType": "influxdb",
           "groupBy": [
             {
-              "params": [
-                "$__interval"
-              ],
+              "params": ["$__interval"],
               "type": "time"
             },
             {
-              "params": [
-                "device_name"
-              ],
+              "params": ["device_name"],
               "type": "tag"
             },
             {
-              "params": [
-                "null"
-              ],
+              "params": ["null"],
               "type": "fill"
             }
           ],
@@ -3225,9 +3218,7 @@
           "select": [
             [
               {
-                "params": [
-                  "cu_self_rx"
-                ],
+                "params": ["cu_self_rx"],
                 "type": "field"
               },
               {
@@ -3235,17 +3226,13 @@
                 "type": "mean"
               },
               {
-                "params": [
-                  "Rx"
-                ],
+                "params": ["Rx"],
                 "type": "alias"
               }
             ],
             [
               {
-                "params": [
-                  "cu_self_tx"
-                ],
+                "params": ["cu_self_tx"],
                 "type": "field"
               },
               {
@@ -3253,17 +3240,13 @@
                 "type": "mean"
               },
               {
-                "params": [
-                  "Tx"
-                ],
+                "params": ["Tx"],
                 "type": "alias"
               }
             ],
             [
               {
-                "params": [
-                  "cu_total"
-                ],
+                "params": ["cu_total"],
                 "type": "field"
               },
               {
@@ -3271,141 +3254,120 @@
                 "type": "mean"
               },
               {
-                "params": [
-                  "Total"
-                ],
+                "params": ["Total"],
                 "type": "alias"
               }
             ]
           ],
           "tags": [
             {
-              "key": "device_name",
-              "operator": "=~",
-              "value": "/^$AP$/"
-            },
-            {
               "condition": "AND",
               "key": "radio",
               "operator": "=",
               "value": "na"
-            },
-            {
-              "condition": "AND",
-              "key": "site_name",
-              "operator": "=~",
-              "value": "/^$Site$/"
             }
           ]
         }
       ],
-      "thresholds": [],
-      "timeRegions": [],
       "title": "5 GHz Channel Utilization",
-      "tooltip": {
-        "msResolution": false,
-        "shared": true,
-        "sort": 2,
-        "value_type": "cumulative"
-      },
-      "type": "graph",
-      "xaxis": {
-        "mode": "time",
-        "show": true,
-        "values": []
-      },
-      "yaxes": [
-        {
-          "decimals": 1,
-          "format": "percent",
-          "logBase": 1,
-          "min": "0",
-          "show": true
-        },
-        {
-          "format": "short",
-          "logBase": 1,
-          "show": false
-        }
-      ],
-      "yaxis": {
-        "align": false
-      }
+      "transparent": true,
+      "type": "timeseries"
     },
     {
-      "aliasColors": {},
-      "bars": false,
-      "dashLength": 10,
-      "dashes": false,
       "datasource": "Unifi",
       "description": "Displays 2.4GHz usage.",
-      "editable": true,
-      "error": false,
       "fieldConfig": {
         "defaults": {
-          "links": []
+          "color": {
+            "mode": "palette-classic"
+          },
+          "custom": {
+            "axisBorderShow": false,
+            "axisCenteredZero": false,
+            "axisColorMode": "text",
+            "axisLabel": "",
+            "axisPlacement": "auto",
+            "barAlignment": 0,
+            "drawStyle": "line",
+            "fillOpacity": 0,
+            "gradientMode": "none",
+            "hideFrom": {
+              "legend": false,
+              "tooltip": false,
+              "viz": false
+            },
+            "insertNulls": false,
+            "lineInterpolation": "linear",
+            "lineWidth": 3,
+            "pointSize": 5,
+            "scaleDistribution": {
+              "type": "linear"
+            },
+            "showPoints": "never",
+            "spanNulls": true,
+            "stacking": {
+              "group": "A",
+              "mode": "none"
+            },
+            "thresholdsStyle": {
+              "mode": "off"
+            }
+          },
+          "links": [],
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          },
+          "unit": "percent"
         },
         "overrides": []
       },
-      "fill": 0,
-      "fillGradient": 0,
       "gridPos": {
         "h": 8,
         "w": 12,
         "x": 12,
-        "y": 60
+        "y": 65
       },
-      "hiddenSeries": false,
       "id": 27,
-      "isNew": true,
-      "legend": {
-        "alignAsTable": true,
-        "avg": false,
-        "current": true,
-        "max": true,
-        "min": false,
-        "rightSide": true,
-        "show": true,
-        "total": false,
-        "values": true
-      },
-      "lines": true,
-      "linewidth": 3,
       "links": [],
-      "nullPointMode": "connected",
       "options": {
-        "alertThreshold": true
+        "legend": {
+          "calcs": ["lastNotNull", "max"],
+          "displayMode": "table",
+          "placement": "right",
+          "showLegend": true
+        },
+        "tooltip": {
+          "mode": "multi",
+          "sort": "desc"
+        }
       },
-      "percentage": false,
-      "pluginVersion": "8.4.3",
-      "pointradius": 5,
-      "points": false,
-      "renderer": "flot",
-      "seriesOverrides": [],
-      "spaceLength": 10,
-      "stack": false,
-      "steppedLine": false,
+      "pluginVersion": "10.2.1",
       "targets": [
         {
           "alias": "$tag_device_name $col",
           "dsType": "influxdb",
           "groupBy": [
             {
-              "params": [
-                "$__interval"
-              ],
+              "params": ["$__interval"],
               "type": "time"
             },
             {
-              "params": [
-                "device_name"
-              ],
+              "params": ["device_name"],
               "type": "tag"
             },
             {
-              "params": [
-                "null"
-              ],
+              "params": ["null"],
               "type": "fill"
             }
           ],
@@ -3417,9 +3379,7 @@
           "select": [
             [
               {
-                "params": [
-                  "cu_self_rx"
-                ],
+                "params": ["cu_self_rx"],
                 "type": "field"
               },
               {
@@ -3427,17 +3387,13 @@
                 "type": "mean"
               },
               {
-                "params": [
-                  "Rx"
-                ],
+                "params": ["Rx"],
                 "type": "alias"
               }
             ],
             [
               {
-                "params": [
-                  "cu_self_tx"
-                ],
+                "params": ["cu_self_tx"],
                 "type": "field"
               },
               {
@@ -3445,17 +3401,13 @@
                 "type": "mean"
               },
               {
-                "params": [
-                  "Tx"
-                ],
+                "params": ["Tx"],
                 "type": "alias"
               }
             ],
             [
               {
-                "params": [
-                  "cu_total"
-                ],
+                "params": ["cu_total"],
                 "type": "field"
               },
               {
@@ -3463,147 +3415,134 @@
                 "type": "mean"
               },
               {
-                "params": [
-                  "Total"
-                ],
+                "params": ["Total"],
                 "type": "alias"
               }
             ]
           ],
           "tags": [
             {
-              "key": "device_name",
-              "operator": "=~",
-              "value": "/^$AP$/"
-            },
-            {
               "condition": "AND",
               "key": "radio",
               "operator": "=",
               "value": "ng"
-            },
-            {
-              "condition": "AND",
-              "key": "site_name",
-              "operator": "=~",
-              "value": "/^$Site$/"
             }
           ]
         }
       ],
-      "thresholds": [],
-      "timeRegions": [],
       "title": "2.4GHz Channel Utilization",
-      "tooltip": {
-        "msResolution": false,
-        "shared": true,
-        "sort": 2,
-        "value_type": "cumulative"
-      },
-      "type": "graph",
-      "xaxis": {
-        "mode": "time",
-        "show": true,
-        "values": []
-      },
-      "yaxes": [
-        {
-          "format": "percent",
-          "logBase": 1,
-          "show": true
-        },
-        {
-          "format": "short",
-          "logBase": 1,
-          "show": false
-        }
-      ],
-      "yaxis": {
-        "align": false
-      }
+      "transparent": true,
+      "type": "timeseries"
     },
     {
-      "aliasColors": {},
-      "bars": false,
-      "dashLength": 10,
-      "dashes": false,
       "datasource": "Unifi",
       "description": "RX is on the negative Axis.",
-      "editable": true,
-      "error": false,
       "fieldConfig": {
         "defaults": {
-          "links": []
+          "color": {
+            "mode": "palette-classic"
+          },
+          "custom": {
+            "axisBorderShow": false,
+            "axisCenteredZero": false,
+            "axisColorMode": "text",
+            "axisLabel": "",
+            "axisPlacement": "auto",
+            "barAlignment": 0,
+            "drawStyle": "line",
+            "fillOpacity": 10,
+            "gradientMode": "none",
+            "hideFrom": {
+              "legend": false,
+              "tooltip": false,
+              "viz": false
+            },
+            "insertNulls": false,
+            "lineInterpolation": "linear",
+            "lineWidth": 1,
+            "pointSize": 5,
+            "scaleDistribution": {
+              "type": "linear"
+            },
+            "showPoints": "never",
+            "spanNulls": true,
+            "stacking": {
+              "group": "A",
+              "mode": "none"
+            },
+            "thresholdsStyle": {
+              "mode": "off"
+            }
+          },
+          "links": [],
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          },
+          "unit": "bps"
         },
-        "overrides": []
+        "overrides": [
+          {
+            "matcher": {
+              "id": "byRegexp",
+              "options": "/Rx$/"
+            },
+            "properties": [
+              {
+                "id": "custom.transform",
+                "value": "negative-Y"
+              }
+            ]
+          }
+        ]
       },
-      "fill": 1,
-      "fillGradient": 0,
       "gridPos": {
         "h": 7,
         "w": 12,
         "x": 0,
-        "y": 68
+        "y": 73
       },
-      "hiddenSeries": false,
       "id": 20,
       "interval": "",
-      "isNew": true,
-      "legend": {
-        "alignAsTable": true,
-        "avg": false,
-        "current": true,
-        "max": true,
-        "min": false,
-        "rightSide": true,
-        "show": true,
-        "sort": "current",
-        "sortDesc": true,
-        "total": false,
-        "values": true
-      },
-      "lines": true,
-      "linewidth": 1,
       "links": [],
-      "nullPointMode": "connected",
       "options": {
-        "alertThreshold": true
-      },
-      "percentage": false,
-      "pluginVersion": "8.4.3",
-      "pointradius": 5,
-      "points": false,
-      "renderer": "flot",
-      "seriesOverrides": [
-        {
-          "alias": "/Rx$/",
-          "transform": "negative-Y"
+        "legend": {
+          "calcs": ["lastNotNull", "max"],
+          "displayMode": "table",
+          "placement": "right",
+          "showLegend": true
+        },
+        "tooltip": {
+          "mode": "multi",
+          "sort": "desc"
         }
-      ],
-      "spaceLength": 10,
-      "stack": false,
-      "steppedLine": false,
+      },
+      "pluginVersion": "10.2.1",
       "targets": [
         {
           "alias": "$tag_device_name $col",
           "dsType": "influxdb",
           "groupBy": [
             {
-              "params": [
-                "$__interval"
-              ],
+              "params": ["$__interval"],
               "type": "time"
             },
             {
-              "params": [
-                "device_name"
-              ],
+              "params": ["device_name"],
               "type": "tag"
             },
             {
-              "params": [
-                "null"
-              ],
+              "params": ["null"],
               "type": "fill"
             }
           ],
@@ -3615,9 +3554,7 @@
           "select": [
             [
               {
-                "params": [
-                  "rx_bytes"
-                ],
+                "params": ["rx_bytes"],
                 "type": "field"
               },
               {
@@ -3625,23 +3562,17 @@
                 "type": "mean"
               },
               {
-                "params": [
-                  "1s"
-                ],
+                "params": ["1s"],
                 "type": "non_negative_derivative"
               },
               {
-                "params": [
-                  "Rx"
-                ],
+                "params": ["Rx"],
                 "type": "alias"
               }
             ],
             [
               {
-                "params": [
-                  "tx_bytes"
-                ],
+                "params": ["tx_bytes"],
                 "type": "field"
               },
               {
@@ -3649,31 +3580,16 @@
                 "type": "mean"
               },
               {
-                "params": [
-                  "1s"
-                ],
+                "params": ["1s"],
                 "type": "non_negative_derivative"
               },
               {
-                "params": [
-                  "Tx"
-                ],
+                "params": ["Tx"],
                 "type": "alias"
               }
             ]
           ],
           "tags": [
-            {
-              "key": "site_name",
-              "operator": "=~",
-              "value": "/^$Site$/"
-            },
-            {
-              "condition": "AND",
-              "key": "device_name",
-              "operator": "=~",
-              "value": "/^$AP$/"
-            },
             {
               "condition": "AND",
               "key": "radio",
@@ -3683,113 +3599,114 @@
           ]
         }
       ],
-      "thresholds": [],
-      "timeRegions": [],
       "title": "5 GHz Traffic",
-      "tooltip": {
-        "msResolution": false,
-        "shared": true,
-        "sort": 2,
-        "value_type": "cumulative"
-      },
       "transparent": true,
-      "type": "graph",
-      "xaxis": {
-        "mode": "time",
-        "show": true,
-        "values": []
-      },
-      "yaxes": [
-        {
-          "format": "bps",
-          "logBase": 1,
-          "show": true
-        },
-        {
-          "format": "pps",
-          "logBase": 1,
-          "show": false
-        }
-      ],
-      "yaxis": {
-        "align": false
-      }
+      "type": "timeseries"
     },
     {
-      "aliasColors": {},
-      "bars": false,
-      "dashLength": 10,
-      "dashes": false,
       "datasource": "Unifi",
       "description": "RX is on the negative Axis.",
-      "editable": true,
-      "error": false,
       "fieldConfig": {
         "defaults": {
-          "links": []
+          "color": {
+            "mode": "palette-classic"
+          },
+          "custom": {
+            "axisBorderShow": false,
+            "axisCenteredZero": false,
+            "axisColorMode": "text",
+            "axisLabel": "",
+            "axisPlacement": "auto",
+            "barAlignment": 0,
+            "drawStyle": "line",
+            "fillOpacity": 10,
+            "gradientMode": "none",
+            "hideFrom": {
+              "legend": false,
+              "tooltip": false,
+              "viz": false
+            },
+            "insertNulls": false,
+            "lineInterpolation": "linear",
+            "lineWidth": 1,
+            "pointSize": 5,
+            "scaleDistribution": {
+              "type": "linear"
+            },
+            "showPoints": "never",
+            "spanNulls": true,
+            "stacking": {
+              "group": "A",
+              "mode": "none"
+            },
+            "thresholdsStyle": {
+              "mode": "off"
+            }
+          },
+          "links": [],
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          },
+          "unit": "bps"
         },
-        "overrides": []
+        "overrides": [
+          {
+            "matcher": {
+              "id": "byRegexp",
+              "options": "/Rx$/"
+            },
+            "properties": [
+              {
+                "id": "custom.transform",
+                "value": "negative-Y"
+              }
+            ]
+          }
+        ]
       },
-      "fill": 1,
-      "fillGradient": 0,
       "gridPos": {
         "h": 7,
         "w": 12,
         "x": 12,
-        "y": 68
+        "y": 73
       },
-      "hiddenSeries": false,
       "id": 24,
-      "isNew": true,
-      "legend": {
-        "alignAsTable": true,
-        "avg": false,
-        "current": true,
-        "max": true,
-        "min": false,
-        "rightSide": true,
-        "show": true,
-        "sort": "current",
-        "sortDesc": true,
-        "total": false,
-        "values": true
-      },
-      "lines": true,
-      "linewidth": 1,
       "links": [],
-      "nullPointMode": "connected",
       "options": {
-        "alertThreshold": true
-      },
-      "percentage": false,
-      "pluginVersion": "8.4.3",
-      "pointradius": 5,
-      "points": false,
-      "renderer": "flot",
-      "seriesOverrides": [
-        {
-          "alias": "/Rx$/",
-          "transform": "negative-Y"
+        "legend": {
+          "calcs": ["lastNotNull", "max"],
+          "displayMode": "table",
+          "placement": "right",
+          "showLegend": true
+        },
+        "tooltip": {
+          "mode": "multi",
+          "sort": "desc"
         }
-      ],
-      "spaceLength": 10,
-      "stack": false,
-      "steppedLine": false,
+      },
+      "pluginVersion": "10.2.1",
       "targets": [
         {
           "alias": "$tag_device_name $col",
           "dsType": "influxdb",
           "groupBy": [
             {
-              "params": [
-                "$__interval"
-              ],
+              "params": ["$__interval"],
               "type": "time"
             },
             {
-              "params": [
-                "device_name"
-              ],
+              "params": ["device_name"],
               "type": "tag"
             }
           ],
@@ -3801,9 +3718,7 @@
           "select": [
             [
               {
-                "params": [
-                  "rx_bytes"
-                ],
+                "params": ["rx_bytes"],
                 "type": "field"
               },
               {
@@ -3811,23 +3726,17 @@
                 "type": "mean"
               },
               {
-                "params": [
-                  "1s"
-                ],
+                "params": ["1s"],
                 "type": "non_negative_derivative"
               },
               {
-                "params": [
-                  "Rx"
-                ],
+                "params": ["Rx"],
                 "type": "alias"
               }
             ],
             [
               {
-                "params": [
-                  "tx_bytes"
-                ],
+                "params": ["tx_bytes"],
                 "type": "field"
               },
               {
@@ -3835,152 +3744,138 @@
                 "type": "mean"
               },
               {
-                "params": [
-                  "1s"
-                ],
+                "params": ["1s"],
                 "type": "non_negative_derivative"
               },
               {
-                "params": [
-                  "Tx"
-                ],
+                "params": ["Tx"],
                 "type": "alias"
               }
             ]
           ],
           "tags": [
             {
-              "key": "site_name",
-              "operator": "=~",
-              "value": "/^$Site$/"
-            },
-            {
               "condition": "AND",
               "key": "radio",
               "operator": "=",
               "value": "ng"
-            },
-            {
-              "condition": "AND",
-              "key": "device_name",
-              "operator": "=~",
-              "value": "/^$AP$/"
             }
           ]
         }
       ],
-      "thresholds": [],
-      "timeRegions": [],
       "title": "2.4GHz Traffic",
-      "tooltip": {
-        "msResolution": false,
-        "shared": true,
-        "sort": 2,
-        "value_type": "cumulative"
-      },
       "transparent": true,
-      "type": "graph",
-      "xaxis": {
-        "mode": "time",
-        "show": true,
-        "values": []
-      },
-      "yaxes": [
-        {
-          "format": "bps",
-          "logBase": 1,
-          "show": true
-        },
-        {
-          "format": "pps",
-          "logBase": 1,
-          "show": false
-        }
-      ],
-      "yaxis": {
-        "align": false
-      }
+      "type": "timeseries"
     },
     {
-      "aliasColors": {},
-      "bars": false,
-      "dashLength": 10,
-      "dashes": false,
       "datasource": "Unifi",
-      "decimals": 0,
       "description": "PPS on the na band. In is on the negative Axis.",
-      "editable": true,
-      "error": false,
       "fieldConfig": {
         "defaults": {
-          "links": []
+          "color": {
+            "mode": "palette-classic"
+          },
+          "custom": {
+            "axisBorderShow": false,
+            "axisCenteredZero": false,
+            "axisColorMode": "text",
+            "axisLabel": "",
+            "axisPlacement": "auto",
+            "barAlignment": 0,
+            "drawStyle": "line",
+            "fillOpacity": 10,
+            "gradientMode": "none",
+            "hideFrom": {
+              "legend": false,
+              "tooltip": false,
+              "viz": false
+            },
+            "insertNulls": false,
+            "lineInterpolation": "linear",
+            "lineWidth": 1,
+            "pointSize": 5,
+            "scaleDistribution": {
+              "type": "linear"
+            },
+            "showPoints": "never",
+            "spanNulls": true,
+            "stacking": {
+              "group": "A",
+              "mode": "none"
+            },
+            "thresholdsStyle": {
+              "mode": "off"
+            }
+          },
+          "decimals": 1,
+          "links": [],
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          },
+          "unit": "pps"
         },
-        "overrides": []
+        "overrides": [
+          {
+            "matcher": {
+              "id": "byRegexp",
+              "options": "/Rx$/"
+            },
+            "properties": [
+              {
+                "id": "custom.transform",
+                "value": "negative-Y"
+              }
+            ]
+          }
+        ]
       },
-      "fill": 1,
-      "fillGradient": 0,
       "gridPos": {
         "h": 7,
         "w": 12,
         "x": 0,
-        "y": 75
+        "y": 80
       },
-      "hiddenSeries": false,
       "id": 22,
-      "isNew": true,
-      "legend": {
-        "alignAsTable": true,
-        "avg": false,
-        "current": true,
-        "max": true,
-        "min": false,
-        "rightSide": true,
-        "show": true,
-        "total": false,
-        "values": true
-      },
-      "lines": true,
-      "linewidth": 1,
       "links": [],
-      "nullPointMode": "connected",
       "options": {
-        "alertThreshold": true
-      },
-      "percentage": false,
-      "pluginVersion": "8.4.3",
-      "pointradius": 5,
-      "points": false,
-      "renderer": "flot",
-      "seriesOverrides": [
-        {
-          "alias": "/Rx$/",
-          "transform": "negative-Y"
+        "legend": {
+          "calcs": ["lastNotNull", "max"],
+          "displayMode": "table",
+          "placement": "right",
+          "showLegend": true
+        },
+        "tooltip": {
+          "mode": "multi",
+          "sort": "desc"
         }
-      ],
-      "spaceLength": 10,
-      "stack": false,
-      "steppedLine": false,
+      },
+      "pluginVersion": "10.2.1",
       "targets": [
         {
           "alias": "$tag_device_name $col",
           "dsType": "influxdb",
           "groupBy": [
             {
-              "params": [
-                "$__interval"
-              ],
+              "params": ["$__interval"],
               "type": "time"
             },
             {
-              "params": [
-                "device_name"
-              ],
+              "params": ["device_name"],
               "type": "tag"
             },
             {
-              "params": [
-                "null"
-              ],
+              "params": ["null"],
               "type": "fill"
             }
           ],
@@ -3992,9 +3887,7 @@
           "select": [
             [
               {
-                "params": [
-                  "rx_packets"
-                ],
+                "params": ["rx_packets"],
                 "type": "field"
               },
               {
@@ -4002,23 +3895,17 @@
                 "type": "sum"
               },
               {
-                "params": [
-                  "1s"
-                ],
+                "params": ["1s"],
                 "type": "non_negative_derivative"
               },
               {
-                "params": [
-                  "Rx"
-                ],
+                "params": ["Rx"],
                 "type": "alias"
               }
             ],
             [
               {
-                "params": [
-                  "tx_packets"
-                ],
+                "params": ["tx_packets"],
                 "type": "field"
               },
               {
@@ -4026,154 +3913,138 @@
                 "type": "sum"
               },
               {
-                "params": [
-                  "1s"
-                ],
+                "params": ["1s"],
                 "type": "non_negative_derivative"
               },
               {
-                "params": [
-                  "Tx"
-                ],
+                "params": ["Tx"],
                 "type": "alias"
               }
             ]
           ],
           "tags": [
-            {
-              "key": "device_name",
-              "operator": "=~",
-              "value": "/^$AP$/"
-            },
             {
               "condition": "AND",
               "key": "radio",
               "operator": "=",
               "value": "na"
-            },
-            {
-              "condition": "AND",
-              "key": "site_name",
-              "operator": "=~",
-              "value": "/^$Site$/"
             }
           ]
         }
       ],
-      "thresholds": [],
-      "timeRegions": [],
       "title": "5 GHz Packets",
-      "tooltip": {
-        "msResolution": false,
-        "shared": true,
-        "sort": 2,
-        "value_type": "cumulative"
-      },
-      "type": "graph",
-      "xaxis": {
-        "mode": "time",
-        "show": true,
-        "values": []
-      },
-      "yaxes": [
-        {
-          "decimals": 1,
-          "format": "pps",
-          "logBase": 1,
-          "show": true
-        },
-        {
-          "format": "pps",
-          "logBase": 1,
-          "show": false
-        }
-      ],
-      "yaxis": {
-        "align": false
-      }
+      "transparent": true,
+      "type": "timeseries"
     },
     {
-      "aliasColors": {},
-      "bars": false,
-      "dashLength": 10,
-      "dashes": false,
       "datasource": "Unifi",
-      "decimals": 0,
       "description": "PPS on the ng band calculated in 30 second buckets. In is on the negative Axis.",
-      "editable": true,
-      "error": false,
       "fieldConfig": {
         "defaults": {
-          "links": []
+          "color": {
+            "mode": "palette-classic"
+          },
+          "custom": {
+            "axisBorderShow": false,
+            "axisCenteredZero": false,
+            "axisColorMode": "text",
+            "axisLabel": "",
+            "axisPlacement": "auto",
+            "barAlignment": 0,
+            "drawStyle": "line",
+            "fillOpacity": 10,
+            "gradientMode": "none",
+            "hideFrom": {
+              "legend": false,
+              "tooltip": false,
+              "viz": false
+            },
+            "insertNulls": false,
+            "lineInterpolation": "linear",
+            "lineWidth": 1,
+            "pointSize": 5,
+            "scaleDistribution": {
+              "type": "linear"
+            },
+            "showPoints": "never",
+            "spanNulls": true,
+            "stacking": {
+              "group": "A",
+              "mode": "none"
+            },
+            "thresholdsStyle": {
+              "mode": "off"
+            }
+          },
+          "decimals": 1,
+          "links": [],
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          },
+          "unit": "pps"
         },
-        "overrides": []
+        "overrides": [
+          {
+            "matcher": {
+              "id": "byRegexp",
+              "options": "/Rx$/"
+            },
+            "properties": [
+              {
+                "id": "custom.transform",
+                "value": "negative-Y"
+              }
+            ]
+          }
+        ]
       },
-      "fill": 1,
-      "fillGradient": 0,
       "gridPos": {
         "h": 7,
         "w": 12,
         "x": 12,
-        "y": 75
+        "y": 80
       },
-      "hiddenSeries": false,
       "id": 25,
-      "isNew": true,
-      "legend": {
-        "alignAsTable": true,
-        "avg": false,
-        "current": true,
-        "max": true,
-        "min": false,
-        "rightSide": true,
-        "show": true,
-        "sort": "max",
-        "sortDesc": true,
-        "total": false,
-        "values": true
-      },
-      "lines": true,
-      "linewidth": 1,
       "links": [],
-      "nullPointMode": "connected",
       "options": {
-        "alertThreshold": true
-      },
-      "percentage": false,
-      "pluginVersion": "8.4.3",
-      "pointradius": 5,
-      "points": false,
-      "renderer": "flot",
-      "seriesOverrides": [
-        {
-          "alias": "/Rx$/",
-          "transform": "negative-Y"
+        "legend": {
+          "calcs": ["lastNotNull", "max"],
+          "displayMode": "table",
+          "placement": "right",
+          "showLegend": true
+        },
+        "tooltip": {
+          "mode": "multi",
+          "sort": "desc"
         }
-      ],
-      "spaceLength": 10,
-      "stack": false,
-      "steppedLine": false,
+      },
+      "pluginVersion": "10.2.1",
       "targets": [
         {
           "alias": "$tag_device_name $col",
           "dsType": "influxdb",
           "groupBy": [
             {
-              "params": [
-                "$__interval"
-              ],
+              "params": ["$__interval"],
               "type": "time"
             },
             {
-              "params": [
-                "device_name"
-              ],
+              "params": ["device_name"],
               "type": "tag"
             },
             {
-              "params": [
-                "null"
-              ],
+              "params": ["null"],
               "type": "fill"
             }
           ],
@@ -4185,9 +4056,7 @@
           "select": [
             [
               {
-                "params": [
-                  "rx_packets"
-                ],
+                "params": ["rx_packets"],
                 "type": "field"
               },
               {
@@ -4195,23 +4064,17 @@
                 "type": "sum"
               },
               {
-                "params": [
-                  "1s"
-                ],
+                "params": ["1s"],
                 "type": "non_negative_derivative"
               },
               {
-                "params": [
-                  "Rx"
-                ],
+                "params": ["Rx"],
                 "type": "alias"
               }
             ],
             [
               {
-                "params": [
-                  "tx_packets"
-                ],
+                "params": ["tx_packets"],
                 "type": "field"
               },
               {
@@ -4219,161 +4082,143 @@
                 "type": "sum"
               },
               {
-                "params": [
-                  "1s"
-                ],
+                "params": ["1s"],
                 "type": "non_negative_derivative"
               },
               {
-                "params": [
-                  "Tx"
-                ],
+                "params": ["Tx"],
                 "type": "alias"
               }
             ]
           ],
           "tags": [
             {
-              "key": "device_name",
-              "operator": "=~",
-              "value": "/^$AP$/"
-            },
-            {
               "condition": "AND",
               "key": "radio",
               "operator": "=",
               "value": "ng"
-            },
-            {
-              "condition": "AND",
-              "key": "site_name",
-              "operator": "=~",
-              "value": "/^$Site$/"
             }
           ]
         }
       ],
-      "thresholds": [],
-      "timeRegions": [],
       "title": "2.4GHz Packets",
-      "tooltip": {
-        "msResolution": false,
-        "shared": true,
-        "sort": 2,
-        "value_type": "cumulative"
-      },
-      "type": "graph",
-      "xaxis": {
-        "mode": "time",
-        "show": true,
-        "values": []
-      },
-      "yaxes": [
-        {
-          "decimals": 1,
-          "format": "pps",
-          "logBase": 1,
-          "show": true
-        },
-        {
-          "format": "pps",
-          "logBase": 1,
-          "show": false
-        }
-      ],
-      "yaxis": {
-        "align": false
-      }
+      "transparent": true,
+      "type": "timeseries"
     },
     {
-      "aliasColors": {},
-      "bars": false,
-      "dashLength": 10,
-      "dashes": false,
       "datasource": "Unifi",
-      "decimals": 0,
       "description": "Visualize packet errors (several types)  per second in the 5GHz band.",
-      "editable": true,
-      "error": false,
       "fieldConfig": {
         "defaults": {
-          "links": []
+          "color": {
+            "mode": "palette-classic"
+          },
+          "custom": {
+            "axisBorderShow": false,
+            "axisCenteredZero": false,
+            "axisColorMode": "text",
+            "axisLabel": "",
+            "axisPlacement": "auto",
+            "barAlignment": 0,
+            "drawStyle": "line",
+            "fillOpacity": 10,
+            "gradientMode": "none",
+            "hideFrom": {
+              "legend": false,
+              "tooltip": false,
+              "viz": false
+            },
+            "insertNulls": false,
+            "lineInterpolation": "linear",
+            "lineWidth": 1,
+            "pointSize": 5,
+            "scaleDistribution": {
+              "type": "linear"
+            },
+            "showPoints": "never",
+            "spanNulls": true,
+            "stacking": {
+              "group": "A",
+              "mode": "none"
+            },
+            "thresholdsStyle": {
+              "mode": "off"
+            }
+          },
+          "decimals": 1,
+          "links": [],
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          },
+          "unit": "pps"
         },
-        "overrides": []
+        "overrides": [
+          {
+            "matcher": {
+              "id": "byRegexp",
+              "options": "/Rx$/"
+            },
+            "properties": [
+              {
+                "id": "custom.transform",
+                "value": "negative-Y"
+              }
+            ]
+          }
+        ]
       },
-      "fill": 1,
-      "fillGradient": 0,
       "gridPos": {
         "h": 7,
         "w": 12,
         "x": 0,
-        "y": 82
+        "y": 87
       },
-      "hiddenSeries": false,
       "id": 21,
       "interval": "",
-      "isNew": true,
-      "legend": {
-        "alignAsTable": true,
-        "avg": false,
-        "current": true,
-        "max": true,
-        "min": false,
-        "rightSide": true,
-        "show": true,
-        "sort": "max",
-        "sortDesc": true,
-        "total": false,
-        "values": true
-      },
-      "lines": true,
-      "linewidth": 1,
       "links": [],
-      "nullPointMode": "connected",
       "options": {
-        "alertThreshold": true
-      },
-      "percentage": false,
-      "pluginVersion": "8.4.3",
-      "pointradius": 5,
-      "points": false,
-      "renderer": "flot",
-      "seriesOverrides": [
-        {
-          "alias": "/Rx$/",
-          "transform": "negative-Y"
+        "legend": {
+          "calcs": ["lastNotNull", "max"],
+          "displayMode": "table",
+          "placement": "right",
+          "showLegend": true
+        },
+        "tooltip": {
+          "mode": "multi",
+          "sort": "desc"
         }
-      ],
-      "spaceLength": 10,
-      "stack": false,
-      "steppedLine": false,
+      },
+      "pluginVersion": "10.2.1",
       "targets": [
         {
           "alias": "$tag_device_name $col",
           "dsType": "influxdb",
           "groupBy": [
             {
-              "params": [
-                "$__interval"
-              ],
+              "params": ["$__interval"],
               "type": "time"
             },
             {
-              "params": [
-                "radio"
-              ],
+              "params": ["radio"],
               "type": "tag"
             },
             {
-              "params": [
-                "device_name"
-              ],
+              "params": ["device_name"],
               "type": "tag"
             },
             {
-              "params": [
-                "null"
-              ],
+              "params": ["null"],
               "type": "fill"
             }
           ],
@@ -4385,9 +4230,7 @@
           "select": [
             [
               {
-                "params": [
-                  "rx_dropped"
-                ],
+                "params": ["rx_dropped"],
                 "type": "field"
               },
               {
@@ -4395,23 +4238,17 @@
                 "type": "sum"
               },
               {
-                "params": [
-                  "1s"
-                ],
+                "params": ["1s"],
                 "type": "non_negative_derivative"
               },
               {
-                "params": [
-                  "Drops Rx"
-                ],
+                "params": ["Drops Rx"],
                 "type": "alias"
               }
             ],
             [
               {
-                "params": [
-                  "tx_dropped"
-                ],
+                "params": ["tx_dropped"],
                 "type": "field"
               },
               {
@@ -4419,23 +4256,17 @@
                 "type": "sum"
               },
               {
-                "params": [
-                  "1s"
-                ],
+                "params": ["1s"],
                 "type": "non_negative_derivative"
               },
               {
-                "params": [
-                  "Drops Tx"
-                ],
+                "params": ["Drops Tx"],
                 "type": "alias"
               }
             ],
             [
               {
-                "params": [
-                  "rx_dropped"
-                ],
+                "params": ["rx_dropped"],
                 "type": "field"
               },
               {
@@ -4443,23 +4274,17 @@
                 "type": "sum"
               },
               {
-                "params": [
-                  "1s"
-                ],
+                "params": ["1s"],
                 "type": "non_negative_derivative"
               },
               {
-                "params": [
-                  "Errors Rx"
-                ],
+                "params": ["Errors Rx"],
                 "type": "alias"
               }
             ],
             [
               {
-                "params": [
-                  "tx_errors"
-                ],
+                "params": ["tx_errors"],
                 "type": "field"
               },
               {
@@ -4467,23 +4292,17 @@
                 "type": "sum"
               },
               {
-                "params": [
-                  "1s"
-                ],
+                "params": ["1s"],
                 "type": "non_negative_derivative"
               },
               {
-                "params": [
-                  "Errors Tx"
-                ],
+                "params": ["Errors Tx"],
                 "type": "alias"
               }
             ],
             [
               {
-                "params": [
-                  "rx_crypts"
-                ],
+                "params": ["rx_crypts"],
                 "type": "field"
               },
               {
@@ -4491,23 +4310,17 @@
                 "type": "sum"
               },
               {
-                "params": [
-                  "1s"
-                ],
+                "params": ["1s"],
                 "type": "non_negative_derivative"
               },
               {
-                "params": [
-                  "Crypts Rx"
-                ],
+                "params": ["Crypts Rx"],
                 "type": "alias"
               }
             ],
             [
               {
-                "params": [
-                  "rx_frags"
-                ],
+                "params": ["rx_frags"],
                 "type": "field"
               },
               {
@@ -4515,23 +4328,17 @@
                 "type": "sum"
               },
               {
-                "params": [
-                  "1s"
-                ],
+                "params": ["1s"],
                 "type": "non_negative_derivative"
               },
               {
-                "params": [
-                  "Frags Rx"
-                ],
+                "params": ["Frags Rx"],
                 "type": "alias"
               }
             ],
             [
               {
-                "params": [
-                  "tx_retries"
-                ],
+                "params": ["tx_retries"],
                 "type": "field"
               },
               {
@@ -4539,23 +4346,17 @@
                 "type": "sum"
               },
               {
-                "params": [
-                  "1s"
-                ],
+                "params": ["1s"],
                 "type": "non_negative_derivative"
               },
               {
-                "params": [
-                  "Retries Tx"
-                ],
+                "params": ["Retries Tx"],
                 "type": "alias"
               }
             ],
             [
               {
-                "params": [
-                  "rx_nwids"
-                ],
+                "params": ["rx_nwids"],
                 "type": "field"
               },
               {
@@ -4563,156 +4364,138 @@
                 "type": "sum"
               },
               {
-                "params": [
-                  "1s"
-                ],
+                "params": ["1s"],
                 "type": "non_negative_derivative"
               },
               {
-                "params": [
-                  "Nwids Rx"
-                ],
+                "params": ["Nwids Rx"],
                 "type": "alias"
               }
             ]
           ],
           "tags": [
-            {
-              "key": "device_name",
-              "operator": "=~",
-              "value": "/^$AP$/"
-            },
             {
               "condition": "AND",
               "key": "radio",
               "operator": "=",
               "value": "na"
-            },
-            {
-              "condition": "AND",
-              "key": "site_name",
-              "operator": "=~",
-              "value": "/^$Site$/"
             }
           ]
         }
       ],
-      "thresholds": [],
-      "timeRegions": [],
       "title": "5GHz Drops/Errors",
-      "tooltip": {
-        "msResolution": false,
-        "shared": true,
-        "sort": 2,
-        "value_type": "cumulative"
-      },
       "transparent": true,
-      "type": "graph",
-      "xaxis": {
-        "mode": "time",
-        "show": true,
-        "values": []
-      },
-      "yaxes": [
-        {
-          "decimals": 1,
-          "format": "pps",
-          "label": "",
-          "logBase": 1,
-          "show": true
-        },
-        {
-          "format": "short",
-          "logBase": 1,
-          "show": false
-        }
-      ],
-      "yaxis": {
-        "align": false
-      }
+      "type": "timeseries"
     },
     {
-      "aliasColors": {},
-      "bars": false,
-      "dashLength": 10,
-      "dashes": false,
       "datasource": "Unifi",
-      "decimals": 0,
       "description": "In is on the negative axis.",
-      "editable": true,
-      "error": false,
       "fieldConfig": {
         "defaults": {
-          "links": []
+          "color": {
+            "mode": "palette-classic"
+          },
+          "custom": {
+            "axisBorderShow": false,
+            "axisCenteredZero": false,
+            "axisColorMode": "text",
+            "axisLabel": "",
+            "axisPlacement": "auto",
+            "barAlignment": 0,
+            "drawStyle": "line",
+            "fillOpacity": 10,
+            "gradientMode": "none",
+            "hideFrom": {
+              "legend": false,
+              "tooltip": false,
+              "viz": false
+            },
+            "insertNulls": false,
+            "lineInterpolation": "linear",
+            "lineWidth": 1,
+            "pointSize": 5,
+            "scaleDistribution": {
+              "type": "linear"
+            },
+            "showPoints": "never",
+            "spanNulls": true,
+            "stacking": {
+              "group": "A",
+              "mode": "none"
+            },
+            "thresholdsStyle": {
+              "mode": "off"
+            }
+          },
+          "decimals": 1,
+          "links": [],
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          },
+          "unit": "pps"
         },
-        "overrides": []
+        "overrides": [
+          {
+            "matcher": {
+              "id": "byRegexp",
+              "options": "/Rx$/"
+            },
+            "properties": [
+              {
+                "id": "custom.transform",
+                "value": "negative-Y"
+              }
+            ]
+          }
+        ]
       },
-      "fill": 1,
-      "fillGradient": 0,
       "gridPos": {
         "h": 7,
         "w": 12,
         "x": 12,
-        "y": 82
+        "y": 87
       },
-      "hiddenSeries": false,
       "id": 26,
-      "isNew": true,
-      "legend": {
-        "alignAsTable": true,
-        "avg": false,
-        "current": true,
-        "max": true,
-        "min": false,
-        "rightSide": true,
-        "show": true,
-        "sort": "max",
-        "sortDesc": true,
-        "total": false,
-        "values": true
-      },
-      "lines": true,
-      "linewidth": 1,
       "links": [],
-      "nullPointMode": "connected",
       "options": {
-        "alertThreshold": true
-      },
-      "percentage": false,
-      "pluginVersion": "8.4.3",
-      "pointradius": 5,
-      "points": false,
-      "renderer": "flot",
-      "seriesOverrides": [
-        {
-          "alias": "/Rx$/",
-          "transform": "negative-Y"
+        "legend": {
+          "calcs": ["lastNotNull", "max"],
+          "displayMode": "table",
+          "placement": "right",
+          "showLegend": true
+        },
+        "tooltip": {
+          "mode": "multi",
+          "sort": "none"
         }
-      ],
-      "spaceLength": 10,
-      "stack": false,
-      "steppedLine": false,
+      },
+      "pluginVersion": "10.2.1",
       "targets": [
         {
           "alias": "$tag_device_name $col",
           "dsType": "influxdb",
           "groupBy": [
             {
-              "params": [
-                "$__interval"
-              ],
+              "params": ["$__interval"],
               "type": "time"
             },
             {
-              "params": [
-                "device_name"
-              ],
+              "params": ["device_name"],
               "type": "tag"
             },
             {
-              "params": [
-                "null"
-              ],
+              "params": ["null"],
               "type": "fill"
             }
           ],
@@ -4724,9 +4507,7 @@
           "select": [
             [
               {
-                "params": [
-                  "rx_dropped"
-                ],
+                "params": ["rx_dropped"],
                 "type": "field"
               },
               {
@@ -4734,23 +4515,17 @@
                 "type": "sum"
               },
               {
-                "params": [
-                  "1s"
-                ],
+                "params": ["1s"],
                 "type": "non_negative_derivative"
               },
               {
-                "params": [
-                  "Drops Rx"
-                ],
+                "params": ["Drops Rx"],
                 "type": "alias"
               }
             ],
             [
               {
-                "params": [
-                  "tx_dropped"
-                ],
+                "params": ["tx_dropped"],
                 "type": "field"
               },
               {
@@ -4758,23 +4533,17 @@
                 "type": "sum"
               },
               {
-                "params": [
-                  "1s"
-                ],
+                "params": ["1s"],
                 "type": "non_negative_derivative"
               },
               {
-                "params": [
-                  "Drops Tx"
-                ],
+                "params": ["Drops Tx"],
                 "type": "alias"
               }
             ],
             [
               {
-                "params": [
-                  "rx_errors"
-                ],
+                "params": ["rx_errors"],
                 "type": "field"
               },
               {
@@ -4782,23 +4551,17 @@
                 "type": "sum"
               },
               {
-                "params": [
-                  "1s"
-                ],
+                "params": ["1s"],
                 "type": "non_negative_derivative"
               },
               {
-                "params": [
-                  "Errors Rx"
-                ],
+                "params": ["Errors Rx"],
                 "type": "alias"
               }
             ],
             [
               {
-                "params": [
-                  "tx_errors"
-                ],
+                "params": ["tx_errors"],
                 "type": "field"
               },
               {
@@ -4806,23 +4569,17 @@
                 "type": "sum"
               },
               {
-                "params": [
-                  "1s"
-                ],
+                "params": ["1s"],
                 "type": "non_negative_derivative"
               },
               {
-                "params": [
-                  "Errors Rx"
-                ],
+                "params": ["Errors Rx"],
                 "type": "alias"
               }
             ],
             [
               {
-                "params": [
-                  "rx_crypts"
-                ],
+                "params": ["rx_crypts"],
                 "type": "field"
               },
               {
@@ -4830,23 +4587,17 @@
                 "type": "sum"
               },
               {
-                "params": [
-                  "1s"
-                ],
+                "params": ["1s"],
                 "type": "non_negative_derivative"
               },
               {
-                "params": [
-                  "Crypts Rx"
-                ],
+                "params": ["Crypts Rx"],
                 "type": "alias"
               }
             ],
             [
               {
-                "params": [
-                  "rx_frags"
-                ],
+                "params": ["rx_frags"],
                 "type": "field"
               },
               {
@@ -4854,23 +4605,17 @@
                 "type": "sum"
               },
               {
-                "params": [
-                  "1s"
-                ],
+                "params": ["1s"],
                 "type": "non_negative_derivative"
               },
               {
-                "params": [
-                  "Frags Rx"
-                ],
+                "params": ["Frags Rx"],
                 "type": "alias"
               }
             ],
             [
               {
-                "params": [
-                  "tx_retries"
-                ],
+                "params": ["tx_retries"],
                 "type": "field"
               },
               {
@@ -4878,23 +4623,17 @@
                 "type": "sum"
               },
               {
-                "params": [
-                  "1s"
-                ],
+                "params": ["1s"],
                 "type": "non_negative_derivative"
               },
               {
-                "params": [
-                  "Retries Tx"
-                ],
+                "params": ["Retries Tx"],
                 "type": "alias"
               }
             ],
             [
               {
-                "params": [
-                  "rx_nwids"
-                ],
+                "params": ["rx_nwids"],
                 "type": "field"
               },
               {
@@ -4902,87 +4641,42 @@
                 "type": "sum"
               },
               {
-                "params": [
-                  "1s"
-                ],
+                "params": ["1s"],
                 "type": "non_negative_derivative"
               },
               {
-                "params": [
-                  "Nwids Rx"
-                ],
+                "params": ["Nwids Rx"],
                 "type": "alias"
               }
             ]
           ],
           "tags": [
             {
-              "key": "device_name",
-              "operator": "=~",
-              "value": "/^$AP$/"
-            },
-            {
               "condition": "AND",
               "key": "radio",
               "operator": "=",
               "value": "ng"
-            },
-            {
-              "condition": "AND",
-              "key": "site_name",
-              "operator": "=~",
-              "value": "/^$Site$/"
             }
           ]
         }
       ],
-      "thresholds": [],
-      "timeRegions": [],
       "title": "2.4GHz Drops/Errors",
-      "tooltip": {
-        "msResolution": false,
-        "shared": true,
-        "sort": 0,
-        "value_type": "cumulative"
-      },
       "transparent": true,
-      "type": "graph",
-      "xaxis": {
-        "mode": "time",
-        "show": true,
-        "values": []
-      },
-      "yaxes": [
-        {
-          "decimals": 1,
-          "format": "pps",
-          "logBase": 1,
-          "show": true
-        },
-        {
-          "format": "short",
-          "logBase": 1,
-          "show": false
-        }
-      ],
-      "yaxis": {
-        "align": false
-      }
+      "type": "timeseries"
     }
   ],
   "refresh": "30s",
-  "schemaVersion": 35,
-  "style": "dark",
-  "tags": [
-    "unifi",
-    "uap",
-    "unifi-poller"
-  ],
+  "schemaVersion": 38,
+  "tags": ["unifi", "uap", "unifi-poller"],
   "templating": {
     "list": [
       {
         "allValue": ".*",
-        "current": {},
+        "current": {
+          "selected": false,
+          "text": "All",
+          "value": "$__all"
+        },
         "datasource": "Unifi",
         "definition": "show tag values from \"uap\" with key=\"source\"",
         "hide": 2,
@@ -5000,7 +4694,11 @@
         "useTags": false
       },
       {
-        "current": {},
+        "current": {
+          "selected": false,
+          "text": "All",
+          "value": "$__all"
+        },
         "datasource": "Unifi",
         "definition": "show tag values from \"uap\" with key=\"site_name\" where source =~ /$Controller$/",
         "hide": 0,
@@ -5018,7 +4716,11 @@
         "useTags": false
       },
       {
-        "current": {},
+        "current": {
+          "selected": false,
+          "text": "All",
+          "value": "$__all"
+        },
         "datasource": "Unifi",
         "definition": "show tag values from \"uap\" with key=\"name\"  where site_name =~ /$Site$/",
         "hide": 0,
@@ -5043,30 +4745,11 @@
   },
   "timepicker": {
     "nowDelay": "5s",
-    "refresh_intervals": [
-      "30s",
-      "1m",
-      "5m",
-      "15m",
-      "30m",
-      "1h",
-      "2h"
-    ],
-    "time_options": [
-      "5m",
-      "15m",
-      "1h",
-      "6h",
-      "12h",
-      "24h",
-      "2d",
-      "7d",
-      "30d"
-    ]
+    "refresh_intervals": ["30s", "1m", "5m", "15m", "30m", "1h", "2h"],
+    "time_options": ["5m", "15m", "1h", "6h", "12h", "24h", "2d", "7d", "30d"]
   },
   "timezone": "browser",
   "title": "UniFi: UAP Insights",
-  "uid": "8nQ_RPZiz",
-  "version": 2,
+  "version": 1,
   "weekStart": ""
 }

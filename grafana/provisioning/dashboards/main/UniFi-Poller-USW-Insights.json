@@ -11,16 +11,13 @@
   "gnetId": 10417,
   "graphTooltip": 1,
   "id": null,
-  "iteration": 1647443108015,
   "links": [
     {
       "asDropdown": true,
       "icon": "external link",
       "includeVars": false,
       "keepTime": true,
-      "tags": [
-        "unifi-poller"
-      ],
+      "tags": ["unifi-poller"],
       "title": "UniFi Poller",
       "type": "dashboards"
     },
@@ -59,15 +56,354 @@
       },
       "id": 137,
       "panels": [],
+      "targets": [
+        {
+          "refId": "A"
+        }
+      ],
       "title": "Aggregate Graphs",
       "type": "row"
     },
     {
-      "columns": [],
       "datasource": "Unifi",
-      "editable": true,
-      "error": false,
-      "fontSize": "100%",
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "custom": {
+            "align": "auto",
+            "cellOptions": {
+              "type": "auto"
+            },
+            "inspect": false
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          }
+        },
+        "overrides": [
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "Time"
+            },
+            "properties": [
+              {
+                "id": "unit",
+                "value": "short"
+              },
+              {
+                "id": "decimals",
+                "value": 2
+              },
+              {
+                "id": "custom.align"
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "name"
+            },
+            "properties": [
+              {
+                "id": "displayName",
+                "value": "Name"
+              },
+              {
+                "id": "unit",
+                "value": "short"
+              },
+              {
+                "id": "decimals",
+                "value": 2
+              },
+              {
+                "id": "custom.align"
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "model"
+            },
+            "properties": [
+              {
+                "id": "displayName",
+                "value": "Model"
+              },
+              {
+                "id": "unit",
+                "value": "short"
+              },
+              {
+                "id": "decimals",
+                "value": 2
+              },
+              {
+                "id": "custom.align"
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "mac"
+            },
+            "properties": [
+              {
+                "id": "displayName",
+                "value": "Device MAC"
+              },
+              {
+                "id": "unit",
+                "value": "short"
+              },
+              {
+                "id": "decimals",
+                "value": 2
+              },
+              {
+                "id": "custom.align"
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "serial"
+            },
+            "properties": [
+              {
+                "id": "displayName",
+                "value": "Unifi Serial #"
+              },
+              {
+                "id": "unit",
+                "value": "short"
+              },
+              {
+                "id": "decimals",
+                "value": 2
+              },
+              {
+                "id": "custom.align"
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "Version"
+            },
+            "properties": [
+              {
+                "id": "unit",
+                "value": "short"
+              },
+              {
+                "id": "decimals",
+                "value": 2
+              },
+              {
+                "id": "custom.align"
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "Uptime"
+            },
+            "properties": [
+              {
+                "id": "unit",
+                "value": "s"
+              },
+              {
+                "id": "decimals",
+                "value": 2
+              },
+              {
+                "id": "custom.cellOptions",
+                "value": {
+                  "type": "color-text"
+                }
+              },
+              {
+                "id": "custom.align"
+              },
+              {
+                "id": "thresholds",
+                "value": {
+                  "mode": "absolute",
+                  "steps": [
+                    {
+                      "color": "#CA95E5",
+                      "value": null
+                    },
+                    {
+                      "color": "#B877D9",
+                      "value": null
+                    }
+                  ]
+                }
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "site_name"
+            },
+            "properties": [
+              {
+                "id": "displayName",
+                "value": "Site"
+              },
+              {
+                "id": "unit",
+                "value": "short"
+              },
+              {
+                "id": "decimals",
+                "value": 2
+              },
+              {
+                "id": "custom.align"
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "version"
+            },
+            "properties": [
+              {
+                "id": "displayName",
+                "value": "Version"
+              },
+              {
+                "id": "unit",
+                "value": "percent"
+              },
+              {
+                "id": "decimals",
+                "value": 1
+              },
+              {
+                "id": "custom.cellOptions",
+                "value": {
+                  "type": "color-text"
+                }
+              },
+              {
+                "id": "custom.align"
+              },
+              {
+                "id": "thresholds",
+                "value": {
+                  "mode": "absolute",
+                  "steps": [
+                    {
+                      "color": "rgba(50, 172, 45, 0.97)",
+                      "value": null
+                    },
+                    {
+                      "color": "rgba(237, 129, 40, 0.89)",
+                      "value": 50
+                    },
+                    {
+                      "color": "rgba(245, 54, 54, 0.9)",
+                      "value": 80
+                    }
+                  ]
+                }
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "source"
+            },
+            "properties": [
+              {
+                "id": "displayName",
+                "value": "Controller"
+              },
+              {
+                "id": "unit",
+                "value": "short"
+              },
+              {
+                "id": "decimals",
+                "value": 2
+              },
+              {
+                "id": "custom.align"
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byRegexp",
+              "options": "/Bytes/"
+            },
+            "properties": [
+              {
+                "id": "unit",
+                "value": "decbytes"
+              },
+              {
+                "id": "decimals",
+                "value": 2
+              },
+              {
+                "id": "custom.align"
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "type"
+            },
+            "properties": [
+              {
+                "id": "displayName",
+                "value": "Type"
+              },
+              {
+                "id": "unit",
+                "value": "short"
+              },
+              {
+                "id": "decimals",
+                "value": 2
+              },
+              {
+                "id": "custom.align"
+              }
+            ]
+          }
+        ]
+      },
       "gridPos": {
         "h": 6,
         "w": 24,
@@ -75,262 +411,54 @@
         "y": 1
       },
       "id": 1857,
-      "isNew": true,
       "links": [],
-      "scroll": false,
-      "showHeader": true,
-      "sort": {
-        "col": 11,
-        "desc": true
+      "options": {
+        "cellHeight": "sm",
+        "footer": {
+          "countRows": false,
+          "fields": "",
+          "reducer": ["sum"],
+          "show": false
+        },
+        "showHeader": true
       },
-      "styles": [
-        {
-          "alias": "",
-          "align": "auto",
-          "colors": [
-            "rgba(245, 54, 54, 0.9)",
-            "rgba(237, 129, 40, 0.89)",
-            "rgba(50, 172, 45, 0.97)"
-          ],
-          "dateFormat": "YYYY-MM-DD HH:mm:ss",
-          "decimals": 2,
-          "pattern": "Time",
-          "thresholds": [],
-          "type": "hidden",
-          "unit": "short"
-        },
-        {
-          "alias": "Name",
-          "align": "auto",
-          "colors": [
-            "rgba(245, 54, 54, 0.9)",
-            "rgba(237, 129, 40, 0.89)",
-            "rgba(50, 172, 45, 0.97)"
-          ],
-          "dateFormat": "YYYY-MM-DD HH:mm:ss",
-          "decimals": 2,
-          "link": false,
-          "linkTargetBlank": true,
-          "linkUrl": "http:",
-          "pattern": "name",
-          "preserveFormat": false,
-          "sanitize": false,
-          "thresholds": [],
-          "type": "string",
-          "unit": "short"
-        },
-        {
-          "alias": "Model",
-          "align": "auto",
-          "colors": [
-            "rgba(245, 54, 54, 0.9)",
-            "rgba(237, 129, 40, 0.89)",
-            "rgba(50, 172, 45, 0.97)"
-          ],
-          "dateFormat": "YYYY-MM-DD HH:mm:ss",
-          "decimals": 2,
-          "pattern": "model",
-          "thresholds": [],
-          "type": "string",
-          "unit": "short"
-        },
-        {
-          "alias": "Device MAC",
-          "align": "auto",
-          "colors": [
-            "rgba(245, 54, 54, 0.9)",
-            "rgba(237, 129, 40, 0.89)",
-            "rgba(50, 172, 45, 0.97)"
-          ],
-          "dateFormat": "YYYY-MM-DD HH:mm:ss",
-          "decimals": 2,
-          "pattern": "mac",
-          "thresholds": [],
-          "type": "string",
-          "unit": "short"
-        },
-        {
-          "alias": "Unifi Serial #",
-          "align": "auto",
-          "colors": [
-            "rgba(245, 54, 54, 0.9)",
-            "rgba(237, 129, 40, 0.89)",
-            "rgba(50, 172, 45, 0.97)"
-          ],
-          "dateFormat": "YYYY-MM-DD HH:mm:ss",
-          "decimals": 2,
-          "pattern": "serial",
-          "thresholds": [],
-          "type": "string",
-          "unit": "short"
-        },
-        {
-          "alias": "",
-          "align": "auto",
-          "colors": [
-            "rgba(245, 54, 54, 0.9)",
-            "rgba(237, 129, 40, 0.89)",
-            "rgba(50, 172, 45, 0.97)"
-          ],
-          "dateFormat": "YYYY-MM-DD HH:mm:ss",
-          "decimals": 2,
-          "pattern": "Version",
-          "thresholds": [],
-          "type": "string",
-          "unit": "short"
-        },
-        {
-          "alias": "",
-          "align": "auto",
-          "colorMode": "value",
-          "colors": [
-            "#CA95E5",
-            "#B877D9",
-            "#A352CC"
-          ],
-          "dateFormat": "YYYY-MM-DD HH:mm:ss",
-          "decimals": 2,
-          "pattern": "Uptime",
-          "thresholds": [
-            ""
-          ],
-          "type": "number",
-          "unit": "s"
-        },
-        {
-          "alias": "Site",
-          "align": "auto",
-          "colors": [
-            "rgba(245, 54, 54, 0.9)",
-            "rgba(237, 129, 40, 0.89)",
-            "rgba(50, 172, 45, 0.97)"
-          ],
-          "dateFormat": "YYYY-MM-DD HH:mm:ss",
-          "decimals": 2,
-          "pattern": "site_name",
-          "thresholds": [],
-          "type": "string",
-          "unit": "short"
-        },
-        {
-          "alias": "Version",
-          "align": "auto",
-          "colorMode": "value",
-          "colors": [
-            "rgba(50, 172, 45, 0.97)",
-            "rgba(237, 129, 40, 0.89)",
-            "rgba(245, 54, 54, 0.9)"
-          ],
-          "dateFormat": "YYYY-MM-DD HH:mm:ss",
-          "decimals": 1,
-          "pattern": "version",
-          "thresholds": [
-            "50",
-            "80"
-          ],
-          "type": "string",
-          "unit": "percent"
-        },
-        {
-          "alias": "Controller",
-          "align": "auto",
-          "colors": [
-            "rgba(245, 54, 54, 0.9)",
-            "rgba(237, 129, 40, 0.89)",
-            "rgba(50, 172, 45, 0.97)"
-          ],
-          "dateFormat": "YYYY-MM-DD HH:mm:ss",
-          "decimals": 2,
-          "mappingType": 1,
-          "pattern": "source",
-          "thresholds": [],
-          "type": "string",
-          "unit": "short"
-        },
-        {
-          "alias": "",
-          "align": "auto",
-          "colors": [
-            "rgba(245, 54, 54, 0.9)",
-            "rgba(237, 129, 40, 0.89)",
-            "rgba(50, 172, 45, 0.97)"
-          ],
-          "dateFormat": "YYYY-MM-DD HH:mm:ss",
-          "decimals": 2,
-          "mappingType": 1,
-          "pattern": "/Bytes/",
-          "thresholds": [],
-          "type": "number",
-          "unit": "decbytes"
-        },
-        {
-          "alias": "Type",
-          "align": "auto",
-          "colors": [
-            "rgba(245, 54, 54, 0.9)",
-            "rgba(237, 129, 40, 0.89)",
-            "rgba(50, 172, 45, 0.97)"
-          ],
-          "dateFormat": "YYYY-MM-DD HH:mm:ss",
-          "decimals": 2,
-          "mappingType": 1,
-          "pattern": "type",
-          "thresholds": [],
-          "type": "string",
-          "unit": "short"
-        }
-      ],
+      "pluginVersion": "10.2.1",
       "targets": [
         {
           "alias": "$col",
+
           "dsType": "influxdb",
           "groupBy": [
             {
-              "params": [
-                "name"
-              ],
+              "params": ["name"],
               "type": "tag"
             },
             {
-              "params": [
-                "model"
-              ],
+              "params": ["model"],
               "type": "tag"
             },
             {
-              "params": [
-                "serial"
-              ],
+              "params": ["serial"],
               "type": "tag"
             },
             {
-              "params": [
-                "site_name"
-              ],
+              "params": ["site_name"],
               "type": "tag"
             },
             {
-              "params": [
-                "mac"
-              ],
+              "params": ["mac"],
               "type": "tag"
             },
             {
-              "params": [
-                "version"
-              ],
+              "params": ["version"],
               "type": "tag"
             },
             {
-              "params": [
-                "source"
-              ],
+              "params": ["source"],
               "type": "tag"
             },
             {
-              "params": [
-                "type"
-              ],
+              "params": ["type"],
               "type": "tag"
             }
           ],
@@ -342,9 +470,7 @@
           "select": [
             [
               {
-                "params": [
-                  "uptime"
-                ],
+                "params": ["uptime"],
                 "type": "field"
               },
               {
@@ -352,17 +478,13 @@
                 "type": "last"
               },
               {
-                "params": [
-                  "Uptime"
-                ],
+                "params": ["Uptime"],
                 "type": "alias"
               }
             ],
             [
               {
-                "params": [
-                  "rx_bytes"
-                ],
+                "params": ["rx_bytes"],
                 "type": "field"
               },
               {
@@ -370,17 +492,13 @@
                 "type": "last"
               },
               {
-                "params": [
-                  "Rx Bytes"
-                ],
+                "params": ["Rx Bytes"],
                 "type": "alias"
               }
             ],
             [
               {
-                "params": [
-                  "tx_bytes"
-                ],
+                "params": ["tx_bytes"],
                 "type": "field"
               },
               {
@@ -388,9 +506,7 @@
                 "type": "last"
               },
               {
-                "params": [
-                  "Tx Bytes"
-                ],
+                "params": ["Tx Bytes"],
                 "type": "alias"
               }
             ]
@@ -400,89 +516,202 @@
       ],
       "timeFrom": "1h",
       "title": "USW Details",
-      "transform": "table",
+      "transformations": [
+        {
+          "id": "merge",
+          "options": {
+            "reducers": []
+          }
+        }
+      ],
       "transparent": true,
-      "type": "table-old"
+      "type": "table"
     },
     {
-      "aliasColors": {
-        "switch Temperature C": "dark-green",
-        "switch Temperature F": "dark-purple"
-      },
-      "bars": false,
-      "dashLength": 10,
-      "dashes": false,
       "datasource": "Unifi",
-      "decimals": 1,
       "fieldConfig": {
         "defaults": {
-          "links": []
+          "color": {
+            "mode": "palette-classic"
+          },
+          "custom": {
+            "axisBorderShow": false,
+            "axisCenteredZero": false,
+            "axisColorMode": "text",
+            "axisLabel": "Celcius",
+            "axisPlacement": "hidden",
+            "barAlignment": 0,
+            "drawStyle": "line",
+            "fillOpacity": 10,
+            "gradientMode": "none",
+            "hideFrom": {
+              "legend": false,
+              "tooltip": false,
+              "viz": false
+            },
+            "insertNulls": false,
+            "lineInterpolation": "linear",
+            "lineWidth": 1,
+            "pointSize": 5,
+            "scaleDistribution": {
+              "type": "linear"
+            },
+            "showPoints": "never",
+            "spanNulls": true,
+            "stacking": {
+              "group": "A",
+              "mode": "none"
+            },
+            "thresholdsStyle": {
+              "mode": "off"
+            }
+          },
+          "decimals": 1,
+          "links": [],
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          },
+          "unit": "celsius"
         },
-        "overrides": []
+        "overrides": [
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "switch Temperature C"
+            },
+            "properties": [
+              {
+                "id": "color",
+                "value": {
+                  "fixedColor": "dark-green",
+                  "mode": "fixed"
+                }
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "switch Temperature F"
+            },
+            "properties": [
+              {
+                "id": "color",
+                "value": {
+                  "fixedColor": "dark-purple",
+                  "mode": "fixed"
+                }
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byRegexp",
+              "options": "/F$/"
+            },
+            "properties": [
+              {
+                "id": "unit",
+                "value": "fahrenheit"
+              },
+              {
+                "id": "custom.axisPlacement",
+                "value": "auto"
+              },
+              {
+                "id": "custom.axisLabel",
+                "value": "Farenheit"
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byValue",
+              "options": {
+                "op": "gte",
+                "reducer": "allIsZero",
+                "value": 0
+              }
+            },
+            "properties": [
+              {
+                "id": "custom.hideFrom",
+                "value": {
+                  "legend": true,
+                  "tooltip": true,
+                  "viz": false
+                }
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byValue",
+              "options": {
+                "op": "gte",
+                "reducer": "allIsNull",
+                "value": 0
+              }
+            },
+            "properties": [
+              {
+                "id": "custom.hideFrom",
+                "value": {
+                  "legend": true,
+                  "tooltip": true,
+                  "viz": false
+                }
+              }
+            ]
+          }
+        ]
       },
-      "fill": 1,
-      "fillGradient": 0,
       "gridPos": {
         "h": 10,
         "w": 17,
         "x": 0,
         "y": 7
       },
-      "hiddenSeries": false,
       "id": 1149,
-      "legend": {
-        "alignAsTable": true,
-        "avg": false,
-        "current": true,
-        "hideEmpty": true,
-        "hideZero": true,
-        "max": true,
-        "min": false,
-        "show": true,
-        "total": false,
-        "values": true
-      },
-      "lines": true,
-      "linewidth": 1,
       "links": [],
-      "nullPointMode": "connected",
       "options": {
-        "alertThreshold": true
-      },
-      "percentage": false,
-      "pluginVersion": "8.4.3",
-      "pointradius": 2,
-      "points": false,
-      "renderer": "flot",
-      "seriesOverrides": [
-        {
-          "alias": "/F$/",
-          "yaxis": 2
+        "legend": {
+          "calcs": ["lastNotNull", "max"],
+          "displayMode": "table",
+          "placement": "bottom",
+          "showLegend": true
+        },
+        "tooltip": {
+          "mode": "multi",
+          "sort": "none"
         }
-      ],
-      "spaceLength": 10,
-      "stack": false,
-      "steppedLine": false,
+      },
+      "pluginVersion": "10.2.1",
       "targets": [
         {
           "alias": "$tag_name Temperature C",
           "groupBy": [
             {
-              "params": [
-                "$__interval"
-              ],
+              "params": ["$__interval"],
               "type": "time"
             },
             {
-              "params": [
-                "name"
-              ],
+              "params": ["name"],
               "type": "tag"
             },
             {
-              "params": [
-                "null"
-              ],
+              "params": ["null"],
               "type": "fill"
             }
           ],
@@ -495,9 +724,7 @@
           "select": [
             [
               {
-                "params": [
-                  "general_temperature"
-                ],
+                "params": ["general_temperature"],
                 "type": "field"
               },
               {
@@ -505,40 +732,21 @@
                 "type": "mean"
               }
             ]
-          ],
-          "tags": [
-            {
-              "key": "site_name",
-              "operator": "=~",
-              "value": "/^$Site$/"
-            },
-            {
-              "condition": "AND",
-              "key": "name",
-              "operator": "=~",
-              "value": "/^$Switch$/"
-            }
           ]
         },
         {
           "alias": "$tag_name $col F",
           "groupBy": [
             {
-              "params": [
-                "$__interval"
-              ],
+              "params": ["$__interval"],
               "type": "time"
             },
             {
-              "params": [
-                "name"
-              ],
+              "params": ["name"],
               "type": "tag"
             },
             {
-              "params": [
-                "null"
-              ],
+              "params": ["null"],
               "type": "fill"
             }
           ],
@@ -551,9 +759,7 @@
           "select": [
             [
               {
-                "params": [
-                  "general_temperature"
-                ],
+                "params": ["general_temperature"],
                 "type": "field"
               },
               {
@@ -561,52 +767,29 @@
                 "type": "mean"
               },
               {
-                "params": [
-                  "*9/5+32"
-                ],
+                "params": ["*9/5+32"],
                 "type": "math"
               },
               {
-                "params": [
-                  "General Temp"
-                ],
+                "params": ["General Temp"],
                 "type": "alias"
               }
             ]
-          ],
-          "tags": [
-            {
-              "key": "site_name",
-              "operator": "=~",
-              "value": "/^$Site$/"
-            },
-            {
-              "condition": "AND",
-              "key": "name",
-              "operator": "=~",
-              "value": "/^$Switch$/"
-            }
           ]
         },
         {
           "alias": "$tag_name $col F",
           "groupBy": [
             {
-              "params": [
-                "$__interval"
-              ],
+              "params": ["$__interval"],
               "type": "time"
             },
             {
-              "params": [
-                "name"
-              ],
+              "params": ["name"],
               "type": "tag"
             },
             {
-              "params": [
-                "null"
-              ],
+              "params": ["null"],
               "type": "fill"
             }
           ],
@@ -618,9 +801,7 @@
           "select": [
             [
               {
-                "params": [
-                  "temp_Local"
-                ],
+                "params": ["temp_Local"],
                 "type": "field"
               },
               {
@@ -628,23 +809,17 @@
                 "type": "mean"
               },
               {
-                "params": [
-                  "*9/5+32"
-                ],
+                "params": ["*9/5+32"],
                 "type": "math"
               },
               {
-                "params": [
-                  "Local Temp"
-                ],
+                "params": ["Local Temp"],
                 "type": "alias"
               }
             ],
             [
               {
-                "params": [
-                  "temp_PHY"
-                ],
+                "params": ["temp_PHY"],
                 "type": "field"
               },
               {
@@ -652,23 +827,17 @@
                 "type": "mean"
               },
               {
-                "params": [
-                  "*9/5+32"
-                ],
+                "params": ["*9/5+32"],
                 "type": "math"
               },
               {
-                "params": [
-                  "Physical Temp"
-                ],
+                "params": ["Physical Temp"],
                 "type": "alias"
               }
             ],
             [
               {
-                "params": [
-                  "temp_CPU"
-                ],
+                "params": ["temp_CPU"],
                 "type": "field"
               },
               {
@@ -676,52 +845,29 @@
                 "type": "mean"
               },
               {
-                "params": [
-                  "*9/5+32"
-                ],
+                "params": ["*9/5+32"],
                 "type": "math"
               },
               {
-                "params": [
-                  "CPU Temp"
-                ],
+                "params": ["CPU Temp"],
                 "type": "alias"
               }
             ]
-          ],
-          "tags": [
-            {
-              "key": "site_name",
-              "operator": "=~",
-              "value": "/^$Site$/"
-            },
-            {
-              "condition": "AND",
-              "key": "name",
-              "operator": "=~",
-              "value": "/^$Switch$/"
-            }
           ]
         },
         {
           "alias": "$tag_name $col C",
           "groupBy": [
             {
-              "params": [
-                "$__interval"
-              ],
+              "params": ["$__interval"],
               "type": "time"
             },
             {
-              "params": [
-                "name"
-              ],
+              "params": ["name"],
               "type": "tag"
             },
             {
-              "params": [
-                "null"
-              ],
+              "params": ["null"],
               "type": "fill"
             }
           ],
@@ -734,9 +880,7 @@
           "select": [
             [
               {
-                "params": [
-                  "temp_Local"
-                ],
+                "params": ["temp_Local"],
                 "type": "field"
               },
               {
@@ -744,17 +888,13 @@
                 "type": "mean"
               },
               {
-                "params": [
-                  "Local Temp"
-                ],
+                "params": ["Local Temp"],
                 "type": "alias"
               }
             ],
             [
               {
-                "params": [
-                  "temp_PHY"
-                ],
+                "params": ["temp_PHY"],
                 "type": "field"
               },
               {
@@ -762,17 +902,13 @@
                 "type": "mean"
               },
               {
-                "params": [
-                  "Physical Temp"
-                ],
+                "params": ["Physical Temp"],
                 "type": "alias"
               }
             ],
             [
               {
-                "params": [
-                  "temp_CPU"
-                ],
+                "params": ["temp_CPU"],
                 "type": "field"
               },
               {
@@ -780,134 +916,127 @@
                 "type": "mean"
               },
               {
-                "params": [
-                  "CPU Temp"
-                ],
+                "params": ["CPU Temp"],
                 "type": "alias"
               }
             ]
-          ],
-          "tags": [
-            {
-              "key": "site_name",
-              "operator": "=~",
-              "value": "/^$Site$/"
-            },
-            {
-              "condition": "AND",
-              "key": "name",
-              "operator": "=~",
-              "value": "/^$Switch$/"
-            }
           ]
         }
       ],
-      "thresholds": [],
-      "timeRegions": [],
       "title": "Switch Tmperature",
-      "tooltip": {
-        "shared": true,
-        "sort": 0,
-        "value_type": "individual"
-      },
-      "type": "graph",
-      "xaxis": {
-        "mode": "time",
-        "show": true,
-        "values": []
-      },
-      "yaxes": [
-        {
-          "$$hashKey": "object:1189",
-          "decimals": 1,
-          "format": "celsius",
-          "label": "Celcius",
-          "logBase": 1,
-          "show": false
-        },
-        {
-          "$$hashKey": "object:1190",
-          "format": "fahrenheit",
-          "label": "Farenheit",
-          "logBase": 1,
-          "show": true
-        }
-      ],
-      "yaxis": {
-        "align": false
-      }
+      "transparent": true,
+      "type": "timeseries"
     },
     {
-      "aliasColors": {
-        "switch Total": "dark-purple"
-      },
-      "bars": false,
-      "dashLength": 10,
-      "dashes": false,
       "datasource": "Unifi",
-      "decimals": 0,
       "fieldConfig": {
         "defaults": {
-          "links": []
+          "color": {
+            "mode": "palette-classic"
+          },
+          "custom": {
+            "axisBorderShow": false,
+            "axisCenteredZero": false,
+            "axisColorMode": "text",
+            "axisLabel": "",
+            "axisPlacement": "auto",
+            "barAlignment": 0,
+            "drawStyle": "line",
+            "fillOpacity": 10,
+            "gradientMode": "none",
+            "hideFrom": {
+              "legend": false,
+              "tooltip": false,
+              "viz": false
+            },
+            "insertNulls": false,
+            "lineInterpolation": "linear",
+            "lineWidth": 1,
+            "pointSize": 5,
+            "scaleDistribution": {
+              "type": "linear"
+            },
+            "showPoints": "never",
+            "spanNulls": true,
+            "stacking": {
+              "group": "A",
+              "mode": "none"
+            },
+            "thresholdsStyle": {
+              "mode": "off"
+            }
+          },
+          "decimals": 0,
+          "links": [],
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          },
+          "unit": "percent"
         },
-        "overrides": []
+        "overrides": [
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "switch Total"
+            },
+            "properties": [
+              {
+                "id": "color",
+                "value": {
+                  "fixedColor": "dark-purple",
+                  "mode": "fixed"
+                }
+              }
+            ]
+          }
+        ]
       },
-      "fill": 1,
-      "fillGradient": 0,
       "gridPos": {
         "h": 10,
         "w": 7,
         "x": 17,
         "y": 7
       },
-      "hiddenSeries": false,
       "id": 1170,
-      "legend": {
-        "alignAsTable": true,
-        "avg": false,
-        "current": true,
-        "max": true,
-        "min": false,
-        "show": true,
-        "total": false,
-        "values": true
-      },
-      "lines": true,
-      "linewidth": 1,
       "links": [],
-      "nullPointMode": "connected",
       "options": {
-        "alertThreshold": true
+        "legend": {
+          "calcs": ["lastNotNull", "max"],
+          "displayMode": "table",
+          "placement": "bottom",
+          "showLegend": true
+        },
+        "tooltip": {
+          "mode": "multi",
+          "sort": "none"
+        }
       },
-      "percentage": false,
-      "pluginVersion": "8.4.3",
-      "pointradius": 2,
-      "points": false,
-      "renderer": "flot",
-      "seriesOverrides": [],
-      "spaceLength": 10,
-      "stack": false,
-      "steppedLine": false,
+      "pluginVersion": "10.2.1",
       "targets": [
         {
           "alias": "$tag_name $col",
           "groupBy": [
             {
-              "params": [
-                "$__interval"
-              ],
+              "params": ["$__interval"],
               "type": "time"
             },
             {
-              "params": [
-                "name"
-              ],
+              "params": ["name"],
               "type": "tag"
             },
             {
-              "params": [
-                "null"
-              ],
+              "params": ["null"],
               "type": "fill"
             }
           ],
@@ -919,9 +1048,7 @@
           "select": [
             [
               {
-                "params": [
-                  "mem"
-                ],
+                "params": ["mem"],
                 "type": "field"
               },
               {
@@ -929,46 +1056,25 @@
                 "type": "mean"
               },
               {
-                "params": [
-                  "Total"
-                ],
+                "params": ["Total"],
                 "type": "alias"
               }
             ]
-          ],
-          "tags": [
-            {
-              "key": "site_name",
-              "operator": "=~",
-              "value": "/^$Site$/"
-            },
-            {
-              "condition": "AND",
-              "key": "name",
-              "operator": "=~",
-              "value": "/^$Switch$/"
-            }
           ]
         },
         {
           "alias": "$tag_name $col",
           "groupBy": [
             {
-              "params": [
-                "$__interval"
-              ],
+              "params": ["$__interval"],
               "type": "time"
             },
             {
-              "params": [
-                "name"
-              ],
+              "params": ["name"],
               "type": "tag"
             },
             {
-              "params": [
-                "null"
-              ],
+              "params": ["null"],
               "type": "fill"
             }
           ],
@@ -980,9 +1086,7 @@
           "select": [
             [
               {
-                "params": [
-                  "mem"
-                ],
+                "params": ["mem"],
                 "type": "field"
               },
               {
@@ -990,46 +1094,25 @@
                 "type": "mean"
               },
               {
-                "params": [
-                  "Total"
-                ],
+                "params": ["Total"],
                 "type": "alias"
               }
             ]
-          ],
-          "tags": [
-            {
-              "key": "site_name",
-              "operator": "=~",
-              "value": "/^$Site$/"
-            },
-            {
-              "condition": "AND",
-              "key": "name",
-              "operator": "=~",
-              "value": "/^$Switch$/"
-            }
           ]
         },
         {
           "alias": "$tag_name $col",
           "groupBy": [
             {
-              "params": [
-                "$__interval"
-              ],
+              "params": ["$__interval"],
               "type": "time"
             },
             {
-              "params": [
-                "name"
-              ],
+              "params": ["name"],
               "type": "tag"
             },
             {
-              "params": [
-                "null"
-              ],
+              "params": ["null"],
               "type": "fill"
             }
           ],
@@ -1041,9 +1124,7 @@
           "select": [
             [
               {
-                "params": [
-                  "mem"
-                ],
+                "params": ["mem"],
                 "type": "field"
               },
               {
@@ -1051,147 +1132,218 @@
                 "type": "mean"
               },
               {
-                "params": [
-                  "Total"
-                ],
+                "params": ["Total"],
                 "type": "alias"
               }
             ]
-          ],
-          "tags": [
-            {
-              "key": "site_name",
-              "operator": "=~",
-              "value": "/^$Site$/"
-            },
-            {
-              "condition": "AND",
-              "key": "name",
-              "operator": "=~",
-              "value": "/^$Switch$/"
-            }
           ]
         }
       ],
-      "thresholds": [],
-      "timeRegions": [],
       "title": "Switch Memory",
-      "tooltip": {
-        "shared": true,
-        "sort": 0,
-        "value_type": "individual"
-      },
-      "type": "graph",
-      "xaxis": {
-        "mode": "time",
-        "show": true,
-        "values": []
-      },
-      "yaxes": [
-        {
-          "$$hashKey": "object:1330",
-          "decimals": 0,
-          "format": "percent",
-          "label": "",
-          "logBase": 1,
-          "show": true
-        },
-        {
-          "$$hashKey": "object:1331",
-          "format": "short",
-          "logBase": 1,
-          "show": false
-        }
-      ],
-      "yaxis": {
-        "align": false
-      }
+      "transparent": true,
+      "type": "timeseries"
     },
     {
-      "aliasColors": {
-        "switch Load 1": "dark-green",
-        "switch Load 15": "dark-purple",
-        "switch Load 5": "dark-blue",
-        "switch load 1": "red",
-        "switch load 5": "blue"
-      },
-      "bars": false,
-      "dashLength": 10,
-      "dashes": false,
       "datasource": "Unifi",
       "fieldConfig": {
         "defaults": {
-          "links": []
+          "color": {
+            "mode": "palette-classic"
+          },
+          "custom": {
+            "axisBorderShow": false,
+            "axisCenteredZero": false,
+            "axisColorMode": "text",
+            "axisLabel": "",
+            "axisPlacement": "auto",
+            "barAlignment": 0,
+            "drawStyle": "line",
+            "fillOpacity": 10,
+            "gradientMode": "none",
+            "hideFrom": {
+              "legend": false,
+              "tooltip": false,
+              "viz": false
+            },
+            "insertNulls": false,
+            "lineInterpolation": "linear",
+            "lineWidth": 1,
+            "pointSize": 5,
+            "scaleDistribution": {
+              "type": "linear"
+            },
+            "showPoints": "never",
+            "spanNulls": true,
+            "stacking": {
+              "group": "A",
+              "mode": "none"
+            },
+            "thresholdsStyle": {
+              "mode": "off"
+            }
+          },
+          "links": [],
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          },
+          "unit": "short"
         },
-        "overrides": []
+        "overrides": [
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "switch Load 1"
+            },
+            "properties": [
+              {
+                "id": "color",
+                "value": {
+                  "fixedColor": "dark-green",
+                  "mode": "fixed"
+                }
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "switch Load 15"
+            },
+            "properties": [
+              {
+                "id": "color",
+                "value": {
+                  "fixedColor": "dark-purple",
+                  "mode": "fixed"
+                }
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "switch Load 5"
+            },
+            "properties": [
+              {
+                "id": "color",
+                "value": {
+                  "fixedColor": "dark-blue",
+                  "mode": "fixed"
+                }
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "switch load 1"
+            },
+            "properties": [
+              {
+                "id": "color",
+                "value": {
+                  "fixedColor": "red",
+                  "mode": "fixed"
+                }
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "switch load 5"
+            },
+            "properties": [
+              {
+                "id": "color",
+                "value": {
+                  "fixedColor": "blue",
+                  "mode": "fixed"
+                }
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byRegexp",
+              "options": "/Load 15$/"
+            },
+            "properties": [
+              {
+                "id": "custom.fillOpacity",
+                "value": 0
+              },
+              {
+                "id": "custom.lineWidth",
+                "value": 6
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byRegexp",
+              "options": "/Load 5$/"
+            },
+            "properties": [
+              {
+                "id": "custom.fillOpacity",
+                "value": 0
+              },
+              {
+                "id": "custom.lineWidth",
+                "value": 4
+              }
+            ]
+          }
+        ]
       },
-      "fill": 1,
-      "fillGradient": 0,
       "gridPos": {
         "h": 11,
         "w": 17,
         "x": 0,
         "y": 17
       },
-      "hiddenSeries": false,
       "id": 1150,
-      "legend": {
-        "alignAsTable": true,
-        "avg": false,
-        "current": true,
-        "max": true,
-        "min": false,
-        "show": true,
-        "total": false,
-        "values": true
-      },
-      "lines": true,
-      "linewidth": 1,
       "links": [],
-      "nullPointMode": "connected",
       "options": {
-        "alertThreshold": true
-      },
-      "percentage": false,
-      "pluginVersion": "8.4.3",
-      "pointradius": 2,
-      "points": false,
-      "renderer": "flot",
-      "seriesOverrides": [
-        {
-          "alias": "/Load 15$/",
-          "fill": 0,
-          "linewidth": 6
+        "legend": {
+          "calcs": ["lastNotNull", "max"],
+          "displayMode": "table",
+          "placement": "bottom",
+          "showLegend": true
         },
-        {
-          "alias": "/Load 5$/",
-          "fill": 0,
-          "linewidth": 4
+        "tooltip": {
+          "mode": "multi",
+          "sort": "none"
         }
-      ],
-      "spaceLength": 10,
-      "stack": false,
-      "steppedLine": false,
+      },
+      "pluginVersion": "10.2.1",
       "targets": [
         {
           "alias": "$tag_name $col",
           "groupBy": [
             {
-              "params": [
-                "$__interval"
-              ],
+              "params": ["$__interval"],
               "type": "time"
             },
             {
-              "params": [
-                "name"
-              ],
+              "params": ["name"],
               "type": "tag"
             },
             {
-              "params": [
-                "null"
-              ],
+              "params": ["null"],
               "type": "fill"
             }
           ],
@@ -1203,9 +1355,7 @@
           "select": [
             [
               {
-                "params": [
-                  "loadavg_1"
-                ],
+                "params": ["loadavg_1"],
                 "type": "field"
               },
               {
@@ -1213,17 +1363,13 @@
                 "type": "mean"
               },
               {
-                "params": [
-                  "Load 1"
-                ],
+                "params": ["Load 1"],
                 "type": "alias"
               }
             ],
             [
               {
-                "params": [
-                  "loadavg_15"
-                ],
+                "params": ["loadavg_15"],
                 "type": "field"
               },
               {
@@ -1231,46 +1377,25 @@
                 "type": "mean"
               },
               {
-                "params": [
-                  "Load 15"
-                ],
+                "params": ["Load 15"],
                 "type": "alias"
               }
             ]
-          ],
-          "tags": [
-            {
-              "key": "site_name",
-              "operator": "=~",
-              "value": "/^$Site$/"
-            },
-            {
-              "condition": "AND",
-              "key": "name",
-              "operator": "=~",
-              "value": "/^$Switch$/"
-            }
           ]
         },
         {
           "alias": "$tag_name $col",
           "groupBy": [
             {
-              "params": [
-                "$__interval"
-              ],
+              "params": ["$__interval"],
               "type": "time"
             },
             {
-              "params": [
-                "name"
-              ],
+              "params": ["name"],
               "type": "tag"
             },
             {
-              "params": [
-                "null"
-              ],
+              "params": ["null"],
               "type": "fill"
             }
           ],
@@ -1282,9 +1407,7 @@
           "select": [
             [
               {
-                "params": [
-                  "loadavg_15"
-                ],
+                "params": ["loadavg_15"],
                 "type": "field"
               },
               {
@@ -1292,46 +1415,25 @@
                 "type": "mean"
               },
               {
-                "params": [
-                  "Load 15"
-                ],
+                "params": ["Load 15"],
                 "type": "alias"
               }
             ]
-          ],
-          "tags": [
-            {
-              "key": "site_name",
-              "operator": "=~",
-              "value": "/^$Site$/"
-            },
-            {
-              "condition": "AND",
-              "key": "name",
-              "operator": "=~",
-              "value": "/^$Switch$/"
-            }
           ]
         },
         {
           "alias": "$tag_name $col",
           "groupBy": [
             {
-              "params": [
-                "$__interval"
-              ],
+              "params": ["$__interval"],
               "type": "time"
             },
             {
-              "params": [
-                "name"
-              ],
+              "params": ["name"],
               "type": "tag"
             },
             {
-              "params": [
-                "null"
-              ],
+              "params": ["null"],
               "type": "fill"
             }
           ],
@@ -1343,9 +1445,7 @@
           "select": [
             [
               {
-                "params": [
-                  "loadavg_15"
-                ],
+                "params": ["loadavg_15"],
                 "type": "field"
               },
               {
@@ -1353,130 +1453,126 @@
                 "type": "mean"
               },
               {
-                "params": [
-                  "Load 15"
-                ],
+                "params": ["Load 15"],
                 "type": "alias"
               }
             ]
-          ],
-          "tags": [
-            {
-              "key": "site_name",
-              "operator": "=~",
-              "value": "/^$Site$/"
-            },
-            {
-              "condition": "AND",
-              "key": "name",
-              "operator": "=~",
-              "value": "/^$Switch$/"
-            }
           ]
         }
       ],
-      "thresholds": [],
-      "timeRegions": [],
       "title": "Switch Load Average",
-      "tooltip": {
-        "shared": true,
-        "sort": 0,
-        "value_type": "individual"
-      },
-      "type": "graph",
-      "xaxis": {
-        "mode": "time",
-        "show": true,
-        "values": []
-      },
-      "yaxes": [
-        {
-          "$$hashKey": "object:355",
-          "format": "short",
-          "logBase": 1,
-          "show": true
-        },
-        {
-          "$$hashKey": "object:356",
-          "format": "short",
-          "logBase": 1,
-          "show": false
-        }
-      ],
-      "yaxis": {
-        "align": false
-      }
+      "transparent": true,
+      "type": "timeseries"
     },
     {
-      "aliasColors": {
-        "switch CPU %": "dark-purple"
-      },
-      "bars": false,
-      "dashLength": 10,
-      "dashes": false,
       "datasource": "Unifi",
       "fieldConfig": {
         "defaults": {
-          "links": []
+          "color": {
+            "mode": "palette-classic"
+          },
+          "custom": {
+            "axisBorderShow": false,
+            "axisCenteredZero": false,
+            "axisColorMode": "text",
+            "axisLabel": "CPU %",
+            "axisPlacement": "auto",
+            "barAlignment": 0,
+            "drawStyle": "line",
+            "fillOpacity": 10,
+            "gradientMode": "none",
+            "hideFrom": {
+              "legend": false,
+              "tooltip": false,
+              "viz": false
+            },
+            "insertNulls": false,
+            "lineInterpolation": "linear",
+            "lineWidth": 1,
+            "pointSize": 5,
+            "scaleDistribution": {
+              "type": "linear"
+            },
+            "showPoints": "never",
+            "spanNulls": true,
+            "stacking": {
+              "group": "A",
+              "mode": "none"
+            },
+            "thresholdsStyle": {
+              "mode": "off"
+            }
+          },
+          "links": [],
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          },
+          "unit": "percent"
         },
-        "overrides": []
+        "overrides": [
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "switch CPU %"
+            },
+            "properties": [
+              {
+                "id": "color",
+                "value": {
+                  "fixedColor": "dark-purple",
+                  "mode": "fixed"
+                }
+              }
+            ]
+          }
+        ]
       },
-      "fill": 1,
-      "fillGradient": 0,
       "gridPos": {
         "h": 11,
         "w": 7,
         "x": 17,
         "y": 17
       },
-      "hiddenSeries": false,
       "id": 1169,
-      "legend": {
-        "alignAsTable": true,
-        "avg": false,
-        "current": true,
-        "max": true,
-        "min": false,
-        "show": true,
-        "total": false,
-        "values": true
-      },
-      "lines": true,
-      "linewidth": 1,
       "links": [],
-      "nullPointMode": "connected",
       "options": {
-        "alertThreshold": true
+        "legend": {
+          "calcs": ["lastNotNull", "max"],
+          "displayMode": "table",
+          "placement": "bottom",
+          "showLegend": true
+        },
+        "tooltip": {
+          "mode": "multi",
+          "sort": "none"
+        }
       },
-      "percentage": false,
-      "pluginVersion": "8.4.3",
-      "pointradius": 2,
-      "points": false,
-      "renderer": "flot",
-      "seriesOverrides": [],
-      "spaceLength": 10,
-      "stack": false,
-      "steppedLine": false,
+      "pluginVersion": "10.2.1",
       "targets": [
         {
           "alias": "$tag_name $col",
           "groupBy": [
             {
-              "params": [
-                "$__interval"
-              ],
+              "params": ["$__interval"],
               "type": "time"
             },
             {
-              "params": [
-                "name"
-              ],
+              "params": ["name"],
               "type": "tag"
             },
             {
-              "params": [
-                "null"
-              ],
+              "params": ["null"],
               "type": "fill"
             }
           ],
@@ -1488,9 +1584,7 @@
           "select": [
             [
               {
-                "params": [
-                  "cpu"
-                ],
+                "params": ["cpu"],
                 "type": "field"
               },
               {
@@ -1498,46 +1592,25 @@
                 "type": "mean"
               },
               {
-                "params": [
-                  "CPU %"
-                ],
+                "params": ["CPU %"],
                 "type": "alias"
               }
             ]
-          ],
-          "tags": [
-            {
-              "key": "site_name",
-              "operator": "=~",
-              "value": "/^$Site$/"
-            },
-            {
-              "condition": "AND",
-              "key": "name",
-              "operator": "=~",
-              "value": "/^$Switch$/"
-            }
           ]
         },
         {
           "alias": "$tag_name $col",
           "groupBy": [
             {
-              "params": [
-                "$__interval"
-              ],
+              "params": ["$__interval"],
               "type": "time"
             },
             {
-              "params": [
-                "name"
-              ],
+              "params": ["name"],
               "type": "tag"
             },
             {
-              "params": [
-                "null"
-              ],
+              "params": ["null"],
               "type": "fill"
             }
           ],
@@ -1549,9 +1622,7 @@
           "select": [
             [
               {
-                "params": [
-                  "cpu"
-                ],
+                "params": ["cpu"],
                 "type": "field"
               },
               {
@@ -1559,46 +1630,25 @@
                 "type": "mean"
               },
               {
-                "params": [
-                  "CPU %"
-                ],
+                "params": ["CPU %"],
                 "type": "alias"
               }
             ]
-          ],
-          "tags": [
-            {
-              "key": "site_name",
-              "operator": "=~",
-              "value": "/^$Site$/"
-            },
-            {
-              "condition": "AND",
-              "key": "name",
-              "operator": "=~",
-              "value": "/^$Switch$/"
-            }
           ]
         },
         {
           "alias": "$tag_name $col",
           "groupBy": [
             {
-              "params": [
-                "$__interval"
-              ],
+              "params": ["$__interval"],
               "type": "time"
             },
             {
-              "params": [
-                "name"
-              ],
+              "params": ["name"],
               "type": "tag"
             },
             {
-              "params": [
-                "null"
-              ],
+              "params": ["null"],
               "type": "fill"
             }
           ],
@@ -1610,9 +1660,7 @@
           "select": [
             [
               {
-                "params": [
-                  "cpu"
-                ],
+                "params": ["cpu"],
                 "type": "field"
               },
               {
@@ -1620,138 +1668,144 @@
                 "type": "mean"
               },
               {
-                "params": [
-                  "CPU %"
-                ],
+                "params": ["CPU %"],
                 "type": "alias"
               }
             ]
-          ],
-          "tags": [
-            {
-              "key": "site_name",
-              "operator": "=~",
-              "value": "/^$Site$/"
-            },
-            {
-              "condition": "AND",
-              "key": "name",
-              "operator": "=~",
-              "value": "/^$Switch$/"
-            }
           ]
         }
       ],
-      "thresholds": [],
-      "timeRegions": [],
       "title": "Switch CPU Usage",
-      "tooltip": {
-        "shared": true,
-        "sort": 0,
-        "value_type": "individual"
-      },
-      "type": "graph",
-      "xaxis": {
-        "mode": "time",
-        "show": true,
-        "values": []
-      },
-      "yaxes": [
-        {
-          "$$hashKey": "object:1812",
-          "format": "percent",
-          "label": "CPU %",
-          "logBase": 1,
-          "show": true
-        },
-        {
-          "$$hashKey": "object:1813",
-          "format": "short",
-          "logBase": 1,
-          "show": false
-        }
-      ],
-      "yaxis": {
-        "align": false
-      }
+      "transparent": true,
+      "type": "timeseries"
     },
     {
-      "aliasColors": {},
-      "bars": false,
-      "dashLength": 10,
-      "dashes": false,
       "datasource": "Unifi",
       "description": "Shows data transferred for ports: Selected Switch ports. Rx is on the negative axis.",
       "fieldConfig": {
         "defaults": {
-          "links": []
+          "color": {
+            "mode": "palette-classic"
+          },
+          "custom": {
+            "axisBorderShow": false,
+            "axisCenteredZero": false,
+            "axisColorMode": "text",
+            "axisLabel": "Bytes Per Second",
+            "axisPlacement": "auto",
+            "barAlignment": 0,
+            "drawStyle": "line",
+            "fillOpacity": 10,
+            "gradientMode": "none",
+            "hideFrom": {
+              "legend": false,
+              "tooltip": false,
+              "viz": false
+            },
+            "insertNulls": false,
+            "lineInterpolation": "linear",
+            "lineWidth": 1,
+            "pointSize": 5,
+            "scaleDistribution": {
+              "type": "linear"
+            },
+            "showPoints": "never",
+            "spanNulls": false,
+            "stacking": {
+              "group": "A",
+              "mode": "none"
+            },
+            "thresholdsStyle": {
+              "mode": "off"
+            }
+          },
+          "links": [],
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          },
+          "unit": "Bps"
         },
-        "overrides": []
+        "overrides": [
+          {
+            "matcher": {
+              "id": "byRegexp",
+              "options": "/Rx$/"
+            },
+            "properties": [
+              {
+                "id": "custom.transform",
+                "value": "negative-Y"
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byValue",
+              "options": {
+                "op": "gte",
+                "reducer": "allIsNull",
+                "value": 0
+              }
+            },
+            "properties": [
+              {
+                "id": "custom.hideFrom",
+                "value": {
+                  "legend": true,
+                  "tooltip": true,
+                  "viz": false
+                }
+              }
+            ]
+          }
+        ]
       },
-      "fill": 1,
-      "fillGradient": 0,
       "gridPos": {
         "h": 17,
         "w": 24,
         "x": 0,
         "y": 28
       },
-      "hiddenSeries": false,
       "id": 135,
-      "legend": {
-        "alignAsTable": true,
-        "avg": false,
-        "current": true,
-        "hideEmpty": true,
-        "hideZero": false,
-        "max": true,
-        "min": false,
-        "rightSide": true,
-        "show": true,
-        "total": true,
-        "values": true
-      },
-      "lines": true,
-      "linewidth": 1,
       "links": [],
-      "nullPointMode": "null",
       "options": {
-        "alertThreshold": true
-      },
-      "percentage": false,
-      "pluginVersion": "8.4.3",
-      "pointradius": 2,
-      "points": false,
-      "renderer": "flot",
-      "seriesOverrides": [
-        {
-          "alias": "/Rx$/",
-          "transform": "negative-Y"
+        "legend": {
+          "calcs": ["lastNotNull", "max", "sum"],
+          "displayMode": "table",
+          "placement": "right",
+          "showLegend": true
+        },
+        "tooltip": {
+          "mode": "multi",
+          "sort": "none"
         }
-      ],
-      "spaceLength": 10,
-      "stack": false,
-      "steppedLine": false,
+      },
+      "pluginVersion": "10.2.1",
       "targets": [
         {
           "alias": "$tag_port_id $tag_name $col",
           "groupBy": [
             {
-              "params": [
-                "$__interval"
-              ],
+              "params": ["$__interval"],
               "type": "time"
             },
             {
-              "params": [
-                "name"
-              ],
+              "params": ["name"],
               "type": "tag"
             },
             {
-              "params": [
-                "port_id"
-              ],
+              "params": ["port_id"],
               "type": "tag"
             }
           ],
@@ -1763,9 +1817,7 @@
           "select": [
             [
               {
-                "params": [
-                  "rx_bytes"
-                ],
+                "params": ["rx_bytes"],
                 "type": "field"
               },
               {
@@ -1773,23 +1825,17 @@
                 "type": "mean"
               },
               {
-                "params": [
-                  "1s"
-                ],
+                "params": ["1s"],
                 "type": "non_negative_derivative"
               },
               {
-                "params": [
-                  "Rx"
-                ],
+                "params": ["Rx"],
                 "type": "alias"
               }
             ],
             [
               {
-                "params": [
-                  "tx_bytes"
-                ],
+                "params": ["tx_bytes"],
                 "type": "field"
               },
               {
@@ -1797,73 +1843,20 @@
                 "type": "mean"
               },
               {
-                "params": [
-                  "1s"
-                ],
+                "params": ["1s"],
                 "type": "non_negative_derivative"
               },
               {
-                "params": [
-                  "Tx"
-                ],
+                "params": ["Tx"],
                 "type": "alias"
               }
             ]
-          ],
-          "tags": [
-            {
-              "key": "site_name",
-              "operator": "=~",
-              "value": "/^$Site$/"
-            },
-            {
-              "condition": "AND",
-              "key": "device_name",
-              "operator": "=~",
-              "value": "/^$Switch$/"
-            },
-            {
-              "condition": "AND",
-              "key": "port_id",
-              "operator": "=~",
-              "value": "/^$Port$/"
-            }
           ]
         }
       ],
-      "thresholds": [],
-      "timeRegions": [],
       "title": "Data Transfer",
-      "tooltip": {
-        "shared": true,
-        "sort": 0,
-        "value_type": "individual"
-      },
       "transparent": true,
-      "type": "graph",
-      "xaxis": {
-        "mode": "time",
-        "show": true,
-        "values": []
-      },
-      "yaxes": [
-        {
-          "$$hashKey": "object:2225",
-          "format": "Bps",
-          "label": "Bytes Per Second",
-          "logBase": 1,
-          "show": true
-        },
-        {
-          "$$hashKey": "object:2226",
-          "format": "short",
-          "logBase": 1,
-          "show": false
-        }
-      ],
-      "yaxis": {
-        "align": false
-      }
+      "type": "timeseries"
     },
     {
       "columns": [],
@@ -2077,45 +2070,31 @@
           "alias": "$tag_device_name $col",
           "groupBy": [
             {
-              "params": [
-                "name"
-              ],
+              "params": ["name"],
               "type": "tag"
             },
             {
-              "params": [
-                "media"
-              ],
+              "params": ["media"],
               "type": "tag"
             },
             {
-              "params": [
-                "poe_mode"
-              ],
+              "params": ["poe_mode"],
               "type": "tag"
             },
             {
-              "params": [
-                "device_name"
-              ],
+              "params": ["device_name"],
               "type": "tag"
             },
             {
-              "params": [
-                "flowctrl_rx"
-              ],
+              "params": ["flowctrl_rx"],
               "type": "tag"
             },
             {
-              "params": [
-                "flowctrl_tx"
-              ],
+              "params": ["flowctrl_tx"],
               "type": "tag"
             },
             {
-              "params": [
-                "port_idx"
-              ],
+              "params": ["port_idx"],
               "type": "tag"
             }
           ],
@@ -2127,9 +2106,7 @@
           "select": [
             [
               {
-                "params": [
-                  "poe_current"
-                ],
+                "params": ["poe_current"],
                 "type": "field"
               },
               {
@@ -2137,17 +2114,13 @@
                 "type": "last"
               },
               {
-                "params": [
-                  "Amps"
-                ],
+                "params": ["Amps"],
                 "type": "alias"
               }
             ],
             [
               {
-                "params": [
-                  "poe_voltage"
-                ],
+                "params": ["poe_voltage"],
                 "type": "field"
               },
               {
@@ -2155,17 +2128,13 @@
                 "type": "last"
               },
               {
-                "params": [
-                  "Volts"
-                ],
+                "params": ["Volts"],
                 "type": "alias"
               }
             ],
             [
               {
-                "params": [
-                  "speed"
-                ],
+                "params": ["speed"],
                 "type": "field"
               },
               {
@@ -2173,17 +2142,13 @@
                 "type": "last"
               },
               {
-                "params": [
-                  "Speed"
-                ],
+                "params": ["Speed"],
                 "type": "alias"
               }
             ],
             [
               {
-                "params": [
-                  "poe_power"
-                ],
+                "params": ["poe_power"],
                 "type": "field"
               },
               {
@@ -2191,17 +2156,13 @@
                 "type": "last"
               },
               {
-                "params": [
-                  "Watts"
-                ],
+                "params": ["Watts"],
                 "type": "alias"
               }
             ],
             [
               {
-                "params": [
-                  "rx_errors"
-                ],
+                "params": ["rx_errors"],
                 "type": "field"
               },
               {
@@ -2209,17 +2170,13 @@
                 "type": "last"
               },
               {
-                "params": [
-                  "Rx Errors"
-                ],
+                "params": ["Rx Errors"],
                 "type": "alias"
               }
             ],
             [
               {
-                "params": [
-                  "tx_errors"
-                ],
+                "params": ["tx_errors"],
                 "type": "field"
               },
               {
@@ -2227,17 +2184,13 @@
                 "type": "last"
               },
               {
-                "params": [
-                  "Tx Errors"
-                ],
+                "params": ["Tx Errors"],
                 "type": "alias"
               }
             ],
             [
               {
-                "params": [
-                  "tx_dropped"
-                ],
+                "params": ["tx_dropped"],
                 "type": "field"
               },
               {
@@ -2245,17 +2198,13 @@
                 "type": "last"
               },
               {
-                "params": [
-                  "Tx Drops"
-                ],
+                "params": ["Tx Drops"],
                 "type": "alias"
               }
             ],
             [
               {
-                "params": [
-                  "rx_dropped"
-                ],
+                "params": ["rx_dropped"],
                 "type": "field"
               },
               {
@@ -2263,17 +2212,13 @@
                 "type": "last"
               },
               {
-                "params": [
-                  "Rx Drops"
-                ],
+                "params": ["Rx Drops"],
                 "type": "alias"
               }
             ],
             [
               {
-                "params": [
-                  "tx_broadcast"
-                ],
+                "params": ["tx_broadcast"],
                 "type": "field"
               },
               {
@@ -2281,17 +2226,13 @@
                 "type": "last"
               },
               {
-                "params": [
-                  "Tx Broadcast"
-                ],
+                "params": ["Tx Broadcast"],
                 "type": "alias"
               }
             ],
             [
               {
-                "params": [
-                  "rx_broadcast"
-                ],
+                "params": ["rx_broadcast"],
                 "type": "field"
               },
               {
@@ -2299,17 +2240,13 @@
                 "type": "last"
               },
               {
-                "params": [
-                  "Rx Broadcast"
-                ],
+                "params": ["Rx Broadcast"],
                 "type": "alias"
               }
             ],
             [
               {
-                "params": [
-                  "rx_packets"
-                ],
+                "params": ["rx_packets"],
                 "type": "field"
               },
               {
@@ -2317,17 +2254,13 @@
                 "type": "last"
               },
               {
-                "params": [
-                  "Rx Packets"
-                ],
+                "params": ["Rx Packets"],
                 "type": "alias"
               }
             ],
             [
               {
-                "params": [
-                  "tx_packets"
-                ],
+                "params": ["tx_packets"],
                 "type": "field"
               },
               {
@@ -2335,17 +2268,13 @@
                 "type": "last"
               },
               {
-                "params": [
-                  "Tx Packets"
-                ],
+                "params": ["Tx Packets"],
                 "type": "alias"
               }
             ],
             [
               {
-                "params": [
-                  "rx_bytes"
-                ],
+                "params": ["rx_bytes"],
                 "type": "field"
               },
               {
@@ -2353,17 +2282,13 @@
                 "type": "last"
               },
               {
-                "params": [
-                  "Bytes Rx"
-                ],
+                "params": ["Bytes Rx"],
                 "type": "alias"
               }
             ],
             [
               {
-                "params": [
-                  "tx_bytes"
-                ],
+                "params": ["tx_bytes"],
                 "type": "field"
               },
               {
@@ -2371,9 +2296,7 @@
                 "type": "last"
               },
               {
-                "params": [
-                  "Bytes Tx"
-                ],
+                "params": ["Bytes Tx"],
                 "type": "alias"
               }
             ]
@@ -2568,15 +2491,11 @@
               "alias": "$tag_device_name $col",
               "groupBy": [
                 {
-                  "params": [
-                    "name"
-                  ],
+                  "params": ["name"],
                   "type": "tag"
                 },
                 {
-                  "params": [
-                    "device_name"
-                  ],
+                  "params": ["device_name"],
                   "type": "tag"
                 }
               ],
@@ -2588,9 +2507,7 @@
               "select": [
                 [
                   {
-                    "params": [
-                      "speed"
-                    ],
+                    "params": ["speed"],
                     "type": "field"
                   },
                   {
@@ -2598,17 +2515,13 @@
                     "type": "last"
                   },
                   {
-                    "params": [
-                      "Speed"
-                    ],
+                    "params": ["Speed"],
                     "type": "alias"
                   }
                 ],
                 [
                   {
-                    "params": [
-                      "poe_voltage"
-                    ],
+                    "params": ["poe_voltage"],
                     "type": "field"
                   },
                   {
@@ -2616,17 +2529,13 @@
                     "type": "last"
                   },
                   {
-                    "params": [
-                      "Volts"
-                    ],
+                    "params": ["Volts"],
                     "type": "alias"
                   }
                 ],
                 [
                   {
-                    "params": [
-                      "poe_power"
-                    ],
+                    "params": ["poe_power"],
                     "type": "field"
                   },
                   {
@@ -2634,17 +2543,13 @@
                     "type": "last"
                   },
                   {
-                    "params": [
-                      "Watts"
-                    ],
+                    "params": ["Watts"],
                     "type": "alias"
                   }
                 ],
                 [
                   {
-                    "params": [
-                      "rx_dropped"
-                    ],
+                    "params": ["rx_dropped"],
                     "type": "field"
                   },
                   {
@@ -2652,17 +2557,13 @@
                     "type": "spread"
                   },
                   {
-                    "params": [
-                      "Rx Drops"
-                    ],
+                    "params": ["Rx Drops"],
                     "type": "alias"
                   }
                 ],
                 [
                   {
-                    "params": [
-                      "tx_dropped"
-                    ],
+                    "params": ["tx_dropped"],
                     "type": "field"
                   },
                   {
@@ -2670,17 +2571,13 @@
                     "type": "spread"
                   },
                   {
-                    "params": [
-                      "Tx Drops"
-                    ],
+                    "params": ["Tx Drops"],
                     "type": "alias"
                   }
                 ],
                 [
                   {
-                    "params": [
-                      "rx_errors"
-                    ],
+                    "params": ["rx_errors"],
                     "type": "field"
                   },
                   {
@@ -2688,17 +2585,13 @@
                     "type": "spread"
                   },
                   {
-                    "params": [
-                      "Rx Errors"
-                    ],
+                    "params": ["Rx Errors"],
                     "type": "alias"
                   }
                 ],
                 [
                   {
-                    "params": [
-                      "tx_errors"
-                    ],
+                    "params": ["tx_errors"],
                     "type": "field"
                   },
                   {
@@ -2706,17 +2599,13 @@
                     "type": "spread"
                   },
                   {
-                    "params": [
-                      "Tx Errors"
-                    ],
+                    "params": ["Tx Errors"],
                     "type": "alias"
                   }
                 ],
                 [
                   {
-                    "params": [
-                      "rx_bytes"
-                    ],
+                    "params": ["rx_bytes"],
                     "type": "field"
                   },
                   {
@@ -2724,17 +2613,13 @@
                     "type": "spread"
                   },
                   {
-                    "params": [
-                      "Bytes Rx"
-                    ],
+                    "params": ["Bytes Rx"],
                     "type": "alias"
                   }
                 ],
                 [
                   {
-                    "params": [
-                      "tx_bytes"
-                    ],
+                    "params": ["tx_bytes"],
                     "type": "field"
                   },
                   {
@@ -2742,17 +2627,13 @@
                     "type": "spread"
                   },
                   {
-                    "params": [
-                      "Bytes Tx"
-                    ],
+                    "params": ["Bytes Tx"],
                     "type": "alias"
                   }
                 ],
                 [
                   {
-                    "params": [
-                      "tx_packets"
-                    ],
+                    "params": ["tx_packets"],
                     "type": "field"
                   },
                   {
@@ -2760,17 +2641,13 @@
                     "type": "spread"
                   },
                   {
-                    "params": [
-                      "Tx Packets"
-                    ],
+                    "params": ["Tx Packets"],
                     "type": "alias"
                   }
                 ],
                 [
                   {
-                    "params": [
-                      "rx_packets"
-                    ],
+                    "params": ["rx_packets"],
                     "type": "field"
                   },
                   {
@@ -2778,17 +2655,13 @@
                     "type": "spread"
                   },
                   {
-                    "params": [
-                      "Rx Packets"
-                    ],
+                    "params": ["Rx Packets"],
                     "type": "alias"
                   }
                 ],
                 [
                   {
-                    "params": [
-                      "rx_broadcast"
-                    ],
+                    "params": ["rx_broadcast"],
                     "type": "field"
                   },
                   {
@@ -2796,17 +2669,13 @@
                     "type": "spread"
                   },
                   {
-                    "params": [
-                      "Rx Broadcast"
-                    ],
+                    "params": ["Rx Broadcast"],
                     "type": "alias"
                   }
                 ],
                 [
                   {
-                    "params": [
-                      "rx_multicast"
-                    ],
+                    "params": ["rx_multicast"],
                     "type": "field"
                   },
                   {
@@ -2814,17 +2683,13 @@
                     "type": "spread"
                   },
                   {
-                    "params": [
-                      "Rx Multicast"
-                    ],
+                    "params": ["Rx Multicast"],
                     "type": "alias"
                   }
                 ],
                 [
                   {
-                    "params": [
-                      "poe_current"
-                    ],
+                    "params": ["poe_current"],
                     "type": "field"
                   },
                   {
@@ -2832,9 +2697,7 @@
                     "type": "last"
                   },
                   {
-                    "params": [
-                      "Amps"
-                    ],
+                    "params": ["Amps"],
                     "type": "alias"
                   }
                 ]
@@ -2926,21 +2789,15 @@
               "alias": "$Port ($tag_name) $col",
               "groupBy": [
                 {
-                  "params": [
-                    "$__interval"
-                  ],
+                  "params": ["$__interval"],
                   "type": "time"
                 },
                 {
-                  "params": [
-                    "name"
-                  ],
+                  "params": ["name"],
                   "type": "tag"
                 },
                 {
-                  "params": [
-                    "null"
-                  ],
+                  "params": ["null"],
                   "type": "fill"
                 }
               ],
@@ -2952,9 +2809,7 @@
               "select": [
                 [
                   {
-                    "params": [
-                      "rx_bytes"
-                    ],
+                    "params": ["rx_bytes"],
                     "type": "field"
                   },
                   {
@@ -2962,23 +2817,17 @@
                     "type": "sum"
                   },
                   {
-                    "params": [
-                      "1s"
-                    ],
+                    "params": ["1s"],
                     "type": "non_negative_derivative"
                   },
                   {
-                    "params": [
-                      "Bytes Rx"
-                    ],
+                    "params": ["Bytes Rx"],
                     "type": "alias"
                   }
                 ],
                 [
                   {
-                    "params": [
-                      "tx_bytes"
-                    ],
+                    "params": ["tx_bytes"],
                     "type": "field"
                   },
                   {
@@ -2986,15 +2835,11 @@
                     "type": "sum"
                   },
                   {
-                    "params": [
-                      "1s"
-                    ],
+                    "params": ["1s"],
                     "type": "non_negative_derivative"
                   },
                   {
-                    "params": [
-                      "Bytes Tx"
-                    ],
+                    "params": ["Bytes Tx"],
                     "type": "alias"
                   }
                 ]
@@ -3110,21 +2955,15 @@
               "alias": "$Port ($tag_name) $col",
               "groupBy": [
                 {
-                  "params": [
-                    "$__interval"
-                  ],
+                  "params": ["$__interval"],
                   "type": "time"
                 },
                 {
-                  "params": [
-                    "name"
-                  ],
+                  "params": ["name"],
                   "type": "tag"
                 },
                 {
-                  "params": [
-                    "null"
-                  ],
+                  "params": ["null"],
                   "type": "fill"
                 }
               ],
@@ -3136,9 +2975,7 @@
               "select": [
                 [
                   {
-                    "params": [
-                      "rx_broadcast"
-                    ],
+                    "params": ["rx_broadcast"],
                     "type": "field"
                   },
                   {
@@ -3146,23 +2983,17 @@
                     "type": "sum"
                   },
                   {
-                    "params": [
-                      "1s"
-                    ],
+                    "params": ["1s"],
                     "type": "non_negative_derivative"
                   },
                   {
-                    "params": [
-                      "Broadcast Rx"
-                    ],
+                    "params": ["Broadcast Rx"],
                     "type": "alias"
                   }
                 ],
                 [
                   {
-                    "params": [
-                      "tx_broadcast"
-                    ],
+                    "params": ["tx_broadcast"],
                     "type": "field"
                   },
                   {
@@ -3170,23 +3001,17 @@
                     "type": "sum"
                   },
                   {
-                    "params": [
-                      "1s"
-                    ],
+                    "params": ["1s"],
                     "type": "non_negative_derivative"
                   },
                   {
-                    "params": [
-                      "Broadcast Tx"
-                    ],
+                    "params": ["Broadcast Tx"],
                     "type": "alias"
                   }
                 ],
                 [
                   {
-                    "params": [
-                      "tx_multicast"
-                    ],
+                    "params": ["tx_multicast"],
                     "type": "field"
                   },
                   {
@@ -3194,15 +3019,11 @@
                     "type": "sum"
                   },
                   {
-                    "params": [
-                      "1s"
-                    ],
+                    "params": ["1s"],
                     "type": "non_negative_derivative"
                   },
                   {
-                    "params": [
-                      "Multicast Tx"
-                    ],
+                    "params": ["Multicast Tx"],
                     "type": "alias"
                   }
                 ]
@@ -3317,23 +3138,18 @@
           "targets": [
             {
               "alias": "$Port ($tag_name) $col",
+
               "groupBy": [
                 {
-                  "params": [
-                    "1s"
-                  ],
+                  "params": ["1s"],
                   "type": "time"
                 },
                 {
-                  "params": [
-                    "name"
-                  ],
+                  "params": ["name"],
                   "type": "tag"
                 },
                 {
-                  "params": [
-                    "null"
-                  ],
+                  "params": ["null"],
                   "type": "fill"
                 }
               ],
@@ -3345,9 +3161,7 @@
               "select": [
                 [
                   {
-                    "params": [
-                      "rx_dropped"
-                    ],
+                    "params": ["rx_dropped"],
                     "type": "field"
                   },
                   {
@@ -3355,23 +3169,17 @@
                     "type": "sum"
                   },
                   {
-                    "params": [
-                      "30s"
-                    ],
+                    "params": ["30s"],
                     "type": "non_negative_derivative"
                   },
                   {
-                    "params": [
-                      "Drops RX"
-                    ],
+                    "params": ["Drops RX"],
                     "type": "alias"
                   }
                 ],
                 [
                   {
-                    "params": [
-                      "rx_errors"
-                    ],
+                    "params": ["rx_errors"],
                     "type": "field"
                   },
                   {
@@ -3379,23 +3187,17 @@
                     "type": "sum"
                   },
                   {
-                    "params": [
-                      "30s"
-                    ],
+                    "params": ["30s"],
                     "type": "non_negative_derivative"
                   },
                   {
-                    "params": [
-                      "Errors RX"
-                    ],
+                    "params": ["Errors RX"],
                     "type": "alias"
                   }
                 ],
                 [
                   {
-                    "params": [
-                      "tx_errors"
-                    ],
+                    "params": ["tx_errors"],
                     "type": "field"
                   },
                   {
@@ -3403,23 +3205,17 @@
                     "type": "sum"
                   },
                   {
-                    "params": [
-                      "30s"
-                    ],
+                    "params": ["30s"],
                     "type": "non_negative_derivative"
                   },
                   {
-                    "params": [
-                      "Errors TX"
-                    ],
+                    "params": ["Errors TX"],
                     "type": "alias"
                   }
                 ],
                 [
                   {
-                    "params": [
-                      "tx_dropped"
-                    ],
+                    "params": ["tx_dropped"],
                     "type": "field"
                   },
                   {
@@ -3427,15 +3223,11 @@
                     "type": "sum"
                   },
                   {
-                    "params": [
-                      "40s"
-                    ],
+                    "params": ["40s"],
                     "type": "non_negative_derivative"
                   },
                   {
-                    "params": [
-                      "Drops TX"
-                    ],
+                    "params": ["Drops TX"],
                     "type": "alias"
                   }
                 ]
@@ -3552,21 +3344,15 @@
               "alias": "$Port ($tag_name) $col",
               "groupBy": [
                 {
-                  "params": [
-                    "$__interval"
-                  ],
+                  "params": ["$__interval"],
                   "type": "time"
                 },
                 {
-                  "params": [
-                    "name"
-                  ],
+                  "params": ["name"],
                   "type": "tag"
                 },
                 {
-                  "params": [
-                    "null"
-                  ],
+                  "params": ["null"],
                   "type": "fill"
                 }
               ],
@@ -3578,9 +3364,7 @@
               "select": [
                 [
                   {
-                    "params": [
-                      "tx_packets"
-                    ],
+                    "params": ["tx_packets"],
                     "type": "field"
                   },
                   {
@@ -3588,23 +3372,17 @@
                     "type": "mean"
                   },
                   {
-                    "params": [
-                      "1s"
-                    ],
+                    "params": ["1s"],
                     "type": "non_negative_derivative"
                   },
                   {
-                    "params": [
-                      "Rx"
-                    ],
+                    "params": ["Rx"],
                     "type": "alias"
                   }
                 ],
                 [
                   {
-                    "params": [
-                      "rx_packets"
-                    ],
+                    "params": ["rx_packets"],
                     "type": "field"
                   },
                   {
@@ -3612,15 +3390,11 @@
                     "type": "mean"
                   },
                   {
-                    "params": [
-                      "1s"
-                    ],
+                    "params": ["1s"],
                     "type": "non_negative_derivative"
                   },
                   {
-                    "params": [
-                      "Tx"
-                    ],
+                    "params": ["Tx"],
                     "type": "alias"
                   }
                 ]
@@ -3731,15 +3505,11 @@
               "alias": "$Port $col",
               "groupBy": [
                 {
-                  "params": [
-                    "$__interval"
-                  ],
+                  "params": ["$__interval"],
                   "type": "time"
                 },
                 {
-                  "params": [
-                    "null"
-                  ],
+                  "params": ["null"],
                   "type": "fill"
                 }
               ],
@@ -3751,9 +3521,7 @@
               "select": [
                 [
                   {
-                    "params": [
-                      "poe_power"
-                    ],
+                    "params": ["poe_power"],
                     "type": "field"
                   },
                   {
@@ -3761,9 +3529,7 @@
                     "type": "last"
                   },
                   {
-                    "params": [
-                      "Current"
-                    ],
+                    "params": ["Current"],
                     "type": "alias"
                   }
                 ]
@@ -3875,15 +3641,11 @@
               "alias": "$Port $col",
               "groupBy": [
                 {
-                  "params": [
-                    "$__interval"
-                  ],
+                  "params": ["$__interval"],
                   "type": "time"
                 },
                 {
-                  "params": [
-                    "null"
-                  ],
+                  "params": ["null"],
                   "type": "fill"
                 }
               ],
@@ -3895,9 +3657,7 @@
               "select": [
                 [
                   {
-                    "params": [
-                      "poe_voltage"
-                    ],
+                    "params": ["poe_voltage"],
                     "type": "field"
                   },
                   {
@@ -3905,9 +3665,7 @@
                     "type": "last"
                   },
                   {
-                    "params": [
-                      "Voltage"
-                    ],
+                    "params": ["Voltage"],
                     "type": "alias"
                   }
                 ]
@@ -4019,15 +3777,11 @@
               "alias": "$Port $col",
               "groupBy": [
                 {
-                  "params": [
-                    "$__interval"
-                  ],
+                  "params": ["$__interval"],
                   "type": "time"
                 },
                 {
-                  "params": [
-                    "null"
-                  ],
+                  "params": ["null"],
                   "type": "fill"
                 }
               ],
@@ -4039,9 +3793,7 @@
               "select": [
                 [
                   {
-                    "params": [
-                      "poe_current"
-                    ],
+                    "params": ["poe_current"],
                     "type": "field"
                   },
                   {
@@ -4049,9 +3801,7 @@
                     "type": "last"
                   },
                   {
-                    "params": [
-                      "Current"
-                    ],
+                    "params": ["Current"],
                     "type": "alias"
                   }
                 ]
@@ -4111,6 +3861,11 @@
         }
       ],
       "repeat": "Port",
+      "targets": [
+        {
+          "refId": "A"
+        }
+      ],
       "title": "Switch $Port",
       "type": "row"
     }
@@ -4118,11 +3873,7 @@
   "refresh": false,
   "schemaVersion": 35,
   "style": "dark",
-  "tags": [
-    "unifi",
-    "usw",
-    "unifi-poller"
-  ],
+  "tags": ["unifi", "usw", "unifi-poller"],
   "templating": {
     "list": [
       {
@@ -4171,9 +3922,7 @@
           "selected": true,
           "tags": [],
           "text": "All",
-          "value": [
-            "$__all"
-          ]
+          "value": ["$__all"]
         },
         "hide": 0,
         "includeAll": true,
@@ -4254,30 +4003,11 @@
   },
   "timepicker": {
     "nowDelay": "5s",
-    "refresh_intervals": [
-      "30s",
-      "1m",
-      "5m",
-      "15m",
-      "30m",
-      "1h",
-      "2h"
-    ],
-    "time_options": [
-      "5m",
-      "15m",
-      "1h",
-      "6h",
-      "12h",
-      "24h",
-      "2d",
-      "7d",
-      "30d"
-    ]
+    "refresh_intervals": ["30s", "1m", "5m", "15m", "30m", "1h", "2h"],
+    "time_options": ["5m", "15m", "1h", "6h", "12h", "24h", "2d", "7d", "30d"]
   },
   "timezone": "browser",
   "title": "UniFi: USW Insights",
-  "uid": "HIKZ98GZz",
-  "version": 2,
+  "version": 1,
   "weekStart": ""
 }
