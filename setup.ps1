@@ -1,6 +1,0 @@
-$BASE_DIR = "C:\Users\James\AppData\Local\Monitoring"
-$TELEGRAF_VER = "1.21.4"
-$LIBRE_HARDWARE_VER = "0.8.9"
-Write-Host "Base Directory == $BASE_DIR"
-Write-Host "Telegraf Version == $TELEGRAF_VER"
-Write-Host "Libre Hardware Version == $LIBRE_HARDWARE_VER"

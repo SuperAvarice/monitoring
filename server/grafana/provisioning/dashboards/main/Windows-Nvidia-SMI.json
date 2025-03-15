@@ -1,0 +1,2598 @@
+{
+  "__inputs": [],
+  "__elements": [],
+  "__requires": [],
+  "annotations": {
+    "list": []
+  },
+  "description": "Nvidia Graphics cards",
+  "editable": true,
+  "fiscalYearStartMonth": 0,
+  "gnetId": 11900,
+  "graphTooltip": 1,
+  "id": null,
+  "iteration": 1647607252156,
+  "links": [],
+  "liveNow": false,
+  "panels": [
+    {
+      "collapsed": false,
+      "gridPos": {
+        "h": 1,
+        "w": 24,
+        "x": 0,
+        "y": 0
+      },
+      "id": 26,
+      "panels": [],
+      "repeat": "GPU",
+      "title": "Current-Overview $GPU",
+      "type": "row"
+    },
+    {
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "mappings": [
+            {
+              "options": {
+                "match": "null",
+                "result": {
+                  "text": "N/A"
+                }
+              },
+              "type": "special"
+            }
+          ],
+          "max": 100,
+          "min": 0,
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "#299c46",
+                "value": null
+              },
+              {
+                "color": "rgba(237, 129, 40, 0.89)",
+                "value": 60
+              },
+              {
+                "color": "#d44a3a",
+                "value": 90
+              }
+            ]
+          },
+          "unit": "percent"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 6,
+        "w": 3,
+        "x": 0,
+        "y": 1
+      },
+      "id": 22,
+      "links": [],
+      "maxDataPoints": 100,
+      "options": {
+        "orientation": "horizontal",
+        "reduceOptions": {
+          "calcs": ["lastNotNull"],
+          "fields": "",
+          "values": false
+        },
+        "showThresholdLabels": false,
+        "showThresholdMarkers": true
+      },
+      "pluginVersion": "8.4.3",
+      "targets": [
+        {
+          "datasource": "Telegraf",
+          "groupBy": [
+            {
+              "params": ["$__interval"],
+              "type": "time"
+            },
+            {
+              "params": ["null"],
+              "type": "fill"
+            }
+          ],
+          "measurement": "nvidia_smi",
+          "orderByTime": "ASC",
+          "policy": "default",
+          "refId": "A",
+          "resultFormat": "time_series",
+          "select": [
+            [
+              {
+                "params": ["utilization_gpu"],
+                "type": "field"
+              },
+              {
+                "params": [],
+                "type": "distinct"
+              }
+            ]
+          ],
+          "tags": [
+            {
+              "key": "host",
+              "operator": "=~",
+              "value": "/^$hostname$/"
+            },
+            {
+              "condition": "AND",
+              "key": "name",
+              "operator": "=~",
+              "value": "/^$GPU$/"
+            }
+          ]
+        }
+      ],
+      "title": "GPU Utilization",
+      "type": "gauge"
+    },
+    {
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "mappings": [
+            {
+              "options": {
+                "match": "null",
+                "result": {
+                  "text": "N/A"
+                }
+              },
+              "type": "special"
+            }
+          ],
+          "max": 100,
+          "min": 0,
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "#299c46",
+                "value": null
+              },
+              {
+                "color": "rgba(237, 129, 40, 0.89)",
+                "value": 60
+              },
+              {
+                "color": "#d44a3a",
+                "value": 90
+              }
+            ]
+          },
+          "unit": "percent"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 6,
+        "w": 3,
+        "x": 3,
+        "y": 1
+      },
+      "id": 27,
+      "links": [],
+      "maxDataPoints": 100,
+      "options": {
+        "orientation": "horizontal",
+        "reduceOptions": {
+          "calcs": ["lastNotNull"],
+          "fields": "",
+          "values": false
+        },
+        "showThresholdLabels": false,
+        "showThresholdMarkers": true
+      },
+      "pluginVersion": "8.4.3",
+      "targets": [
+        {
+          "datasource": "Telegraf",
+          "groupBy": [
+            {
+              "params": ["$__interval"],
+              "type": "time"
+            },
+            {
+              "params": ["null"],
+              "type": "fill"
+            }
+          ],
+          "measurement": "nvidia_smi",
+          "orderByTime": "ASC",
+          "policy": "default",
+          "refId": "A",
+          "resultFormat": "time_series",
+          "select": [
+            [
+              {
+                "params": ["utilization_memory"],
+                "type": "field"
+              },
+              {
+                "params": [],
+                "type": "distinct"
+              }
+            ]
+          ],
+          "tags": [
+            {
+              "key": "host",
+              "operator": "=~",
+              "value": "/^$hostname$/"
+            },
+            {
+              "condition": "AND",
+              "key": "name",
+              "operator": "=~",
+              "value": "/^$GPU$/"
+            }
+          ]
+        }
+      ],
+      "title": "GPU-Memory Utilization",
+      "type": "gauge"
+    },
+    {
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "mappings": [
+            {
+              "options": {
+                "match": "null",
+                "result": {
+                  "text": "N/A"
+                }
+              },
+              "type": "special"
+            }
+          ],
+          "max": 100,
+          "min": 0,
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "#299c46",
+                "value": null
+              },
+              {
+                "color": "rgba(237, 129, 40, 0.89)",
+                "value": 65
+              },
+              {
+                "color": "#d44a3a",
+                "value": 85
+              }
+            ]
+          },
+          "unit": "celsius"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 6,
+        "w": 3,
+        "x": 6,
+        "y": 1
+      },
+      "id": 28,
+      "links": [],
+      "maxDataPoints": 100,
+      "options": {
+        "orientation": "horizontal",
+        "reduceOptions": {
+          "calcs": ["lastNotNull"],
+          "fields": "",
+          "values": false
+        },
+        "showThresholdLabels": false,
+        "showThresholdMarkers": true
+      },
+      "pluginVersion": "8.4.3",
+      "targets": [
+        {
+          "datasource": "Telegraf",
+          "groupBy": [
+            {
+              "params": ["$__interval"],
+              "type": "time"
+            },
+            {
+              "params": ["null"],
+              "type": "fill"
+            }
+          ],
+          "measurement": "nvidia_smi",
+          "orderByTime": "ASC",
+          "policy": "default",
+          "refId": "A",
+          "resultFormat": "time_series",
+          "select": [
+            [
+              {
+                "params": ["temperature_gpu"],
+                "type": "field"
+              },
+              {
+                "params": [],
+                "type": "distinct"
+              }
+            ]
+          ],
+          "tags": [
+            {
+              "key": "host",
+              "operator": "=~",
+              "value": "/^$hostname$/"
+            },
+            {
+              "condition": "AND",
+              "key": "name",
+              "operator": "=~",
+              "value": "/^$GPU$/"
+            }
+          ]
+        }
+      ],
+      "title": "GPU-Temprature",
+      "type": "gauge"
+    },
+    {
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "mappings": [
+            {
+              "options": {
+                "match": "null",
+                "result": {
+                  "text": "N/A"
+                }
+              },
+              "type": "special"
+            }
+          ],
+          "max": 100,
+          "min": 0,
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "#299c46",
+                "value": null
+              },
+              {
+                "color": "rgba(237, 129, 40, 0.89)",
+                "value": 60
+              },
+              {
+                "color": "#d44a3a",
+                "value": 90
+              }
+            ]
+          },
+          "unit": "percent"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 6,
+        "w": 3,
+        "x": 9,
+        "y": 1
+      },
+      "id": 29,
+      "links": [],
+      "maxDataPoints": 100,
+      "options": {
+        "orientation": "horizontal",
+        "reduceOptions": {
+          "calcs": ["lastNotNull"],
+          "fields": "",
+          "values": false
+        },
+        "showThresholdLabels": false,
+        "showThresholdMarkers": true
+      },
+      "pluginVersion": "8.4.3",
+      "targets": [
+        {
+          "datasource": "Telegraf",
+          "groupBy": [
+            {
+              "params": ["$__interval"],
+              "type": "time"
+            },
+            {
+              "params": ["null"],
+              "type": "fill"
+            }
+          ],
+          "measurement": "nvidia_smi",
+          "orderByTime": "ASC",
+          "policy": "default",
+          "refId": "A",
+          "resultFormat": "time_series",
+          "select": [
+            [
+              {
+                "params": ["fan_speed"],
+                "type": "field"
+              },
+              {
+                "params": [],
+                "type": "distinct"
+              }
+            ]
+          ],
+          "tags": [
+            {
+              "key": "host",
+              "operator": "=~",
+              "value": "/^$hostname$/"
+            },
+            {
+              "condition": "AND",
+              "key": "name",
+              "operator": "=~",
+              "value": "/^$GPU$/"
+            }
+          ]
+        }
+      ],
+      "title": "Fan Speed",
+      "type": "gauge"
+    },
+    {
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "fixedColor": "rgb(31, 120, 193)",
+            "mode": "fixed"
+          },
+          "mappings": [
+            {
+              "options": {
+                "match": "null",
+                "result": {
+                  "text": "N/A"
+                }
+              },
+              "type": "special"
+            }
+          ],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "#299c46",
+                "value": null
+              },
+              {
+                "color": "rgba(237, 129, 40, 0.89)",
+                "value": 60
+              },
+              {
+                "color": "#d44a3a",
+                "value": 90
+              }
+            ]
+          },
+          "unit": "MHs"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 2,
+        "w": 2,
+        "x": 12,
+        "y": 1
+      },
+      "id": 30,
+      "links": [],
+      "maxDataPoints": 100,
+      "options": {
+        "colorMode": "none",
+        "graphMode": "area",
+        "justifyMode": "auto",
+        "orientation": "horizontal",
+        "reduceOptions": {
+          "calcs": ["lastNotNull"],
+          "fields": "",
+          "values": false
+        },
+        "textMode": "auto"
+      },
+      "pluginVersion": "8.4.3",
+      "targets": [
+        {
+          "datasource": "Telegraf",
+          "groupBy": [
+            {
+              "params": ["$__interval"],
+              "type": "time"
+            },
+            {
+              "params": ["null"],
+              "type": "fill"
+            }
+          ],
+          "measurement": "nvidia_smi",
+          "orderByTime": "ASC",
+          "policy": "default",
+          "refId": "A",
+          "resultFormat": "time_series",
+          "select": [
+            [
+              {
+                "params": ["clocks_current_graphics"],
+                "type": "field"
+              },
+              {
+                "params": [],
+                "type": "distinct"
+              }
+            ]
+          ],
+          "tags": [
+            {
+              "key": "host",
+              "operator": "=~",
+              "value": "/^$hostname$/"
+            },
+            {
+              "condition": "AND",
+              "key": "name",
+              "operator": "=~",
+              "value": "/^$GPU$/"
+            }
+          ]
+        }
+      ],
+      "title": "GPU-Clocks",
+      "type": "stat"
+    },
+    {
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "mappings": [
+            {
+              "options": {
+                "match": "null",
+                "result": {
+                  "text": "N/A"
+                }
+              },
+              "type": "special"
+            }
+          ],
+          "max": 155,
+          "min": 0,
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "#299c46",
+                "value": null
+              },
+              {
+                "color": "rgba(237, 129, 40, 0.89)",
+                "value": 80
+              },
+              {
+                "color": "#d44a3a",
+                "value": 130
+              }
+            ]
+          },
+          "unit": "watt"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 6,
+        "w": 3,
+        "x": 14,
+        "y": 1
+      },
+      "id": 32,
+      "links": [],
+      "maxDataPoints": 100,
+      "options": {
+        "orientation": "horizontal",
+        "reduceOptions": {
+          "calcs": ["lastNotNull"],
+          "fields": "",
+          "values": false
+        },
+        "showThresholdLabels": false,
+        "showThresholdMarkers": true
+      },
+      "pluginVersion": "8.4.3",
+      "targets": [
+        {
+          "datasource": "Telegraf",
+          "groupBy": [
+            {
+              "params": ["$__interval"],
+              "type": "time"
+            },
+            {
+              "params": ["null"],
+              "type": "fill"
+            }
+          ],
+          "measurement": "nvidia_smi",
+          "orderByTime": "ASC",
+          "policy": "default",
+          "refId": "A",
+          "resultFormat": "time_series",
+          "select": [
+            [
+              {
+                "params": ["power_draw"],
+                "type": "field"
+              },
+              {
+                "params": [],
+                "type": "distinct"
+              }
+            ]
+          ],
+          "tags": [
+            {
+              "key": "host",
+              "operator": "=~",
+              "value": "/^$hostname$/"
+            },
+            {
+              "condition": "AND",
+              "key": "name",
+              "operator": "=~",
+              "value": "/^$GPU$/"
+            }
+          ]
+        }
+      ],
+      "title": "GPU-Power-Draw",
+      "type": "gauge"
+    },
+    {
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "mappings": [
+            {
+              "options": {
+                "match": "null",
+                "result": {
+                  "text": "N/A"
+                }
+              },
+              "type": "special"
+            }
+          ],
+          "max": 8000000000,
+          "min": 0,
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "#299c46",
+                "value": null
+              },
+              {
+                "color": "rgba(237, 129, 40, 0.89)",
+                "value": 5000000000
+              },
+              {
+                "color": "#d44a3a",
+                "value": 7000000000
+              }
+            ]
+          },
+          "unit": "decmbytes"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 6,
+        "w": 3,
+        "x": 17,
+        "y": 1
+      },
+      "id": 33,
+      "links": [],
+      "maxDataPoints": 100,
+      "options": {
+        "orientation": "horizontal",
+        "reduceOptions": {
+          "calcs": ["lastNotNull"],
+          "fields": "",
+          "values": false
+        },
+        "showThresholdLabels": false,
+        "showThresholdMarkers": true
+      },
+      "pluginVersion": "8.4.3",
+      "targets": [
+        {
+          "datasource": "Telegraf",
+          "groupBy": [
+            {
+              "params": ["$__interval"],
+              "type": "time"
+            },
+            {
+              "params": ["null"],
+              "type": "fill"
+            }
+          ],
+          "measurement": "nvidia_smi",
+          "orderByTime": "ASC",
+          "policy": "default",
+          "refId": "A",
+          "resultFormat": "time_series",
+          "select": [
+            [
+              {
+                "params": ["memory_used"],
+                "type": "field"
+              },
+              {
+                "params": [],
+                "type": "distinct"
+              }
+            ]
+          ],
+          "tags": [
+            {
+              "key": "host",
+              "operator": "=~",
+              "value": "/^$hostname$/"
+            },
+            {
+              "condition": "AND",
+              "key": "name",
+              "operator": "=~",
+              "value": "/^$GPU$/"
+            }
+          ]
+        }
+      ],
+      "title": "GPU-Memory USED",
+      "type": "gauge"
+    },
+    {
+      "datasource": "Telegraf",
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "mappings": [
+            {
+              "options": {
+                "match": "null",
+                "result": {
+                  "text": "N/A"
+                }
+              },
+              "type": "special"
+            }
+          ],
+          "max": 100,
+          "min": 0,
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "rgba(0, 230, 255, 0.97)",
+                "value": null
+              },
+              {
+                "color": "rgba(0, 146, 255, 0.89)",
+                "value": 70
+              },
+              {
+                "color": "#052b51",
+                "value": 90
+              }
+            ]
+          },
+          "unit": "percent"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 6,
+        "w": 2,
+        "x": 20,
+        "y": 1
+      },
+      "id": 35,
+      "links": [],
+      "maxDataPoints": 100,
+      "options": {
+        "orientation": "horizontal",
+        "reduceOptions": {
+          "calcs": ["lastNotNull"],
+          "fields": "",
+          "values": false
+        },
+        "showThresholdLabels": false,
+        "showThresholdMarkers": true
+      },
+      "pluginVersion": "8.4.3",
+      "targets": [
+        {
+          "dsType": "influxdb",
+          "groupBy": [
+            {
+              "params": ["$interval"],
+              "type": "time"
+            },
+            {
+              "params": ["null"],
+              "type": "fill"
+            }
+          ],
+          "measurement": "win_cpu",
+          "orderByTime": "ASC",
+          "policy": "default",
+          "query": "SELECT mean(\"Percent_Free_Space\") FROM \"win_disk\" WHERE \"host\" =~ /^$hostname$/ AND \"instance\" = 'C:' AND $timeFilter GROUP BY time($interval) fill(null)",
+          "rawQuery": false,
+          "refId": "A",
+          "resultFormat": "time_series",
+          "select": [
+            [
+              {
+                "params": ["Percent_Processor_Time"],
+                "type": "field"
+              },
+              {
+                "params": [],
+                "type": "mean"
+              }
+            ]
+          ],
+          "tags": [
+            {
+              "key": "host",
+              "operator": "=~",
+              "value": "/^$hostname$/"
+            }
+          ]
+        }
+      ],
+      "title": "CPU Usage",
+      "type": "gauge"
+    },
+    {
+      "datasource": "Telegraf",
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "decimals": 1,
+          "mappings": [
+            {
+              "options": {
+                "match": "null",
+                "result": {
+                  "text": "N/A"
+                }
+              },
+              "type": "special"
+            }
+          ],
+          "max": 16000000000,
+          "min": 0,
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "rgba(245, 54, 54, 0.9)",
+                "value": null
+              },
+              {
+                "color": "rgba(0, 110, 255, 0.89)",
+                "value": 1000000000
+              },
+              {
+                "color": "rgba(0, 254, 255, 0.97)",
+                "value": 2000000000
+              }
+            ]
+          },
+          "unit": "decbytes"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 6,
+        "w": 2,
+        "x": 22,
+        "y": 1
+      },
+      "id": 37,
+      "links": [],
+      "maxDataPoints": 100,
+      "options": {
+        "orientation": "horizontal",
+        "reduceOptions": {
+          "calcs": ["lastNotNull"],
+          "fields": "",
+          "values": false
+        },
+        "showThresholdLabels": false,
+        "showThresholdMarkers": true
+      },
+      "pluginVersion": "8.4.3",
+      "targets": [
+        {
+          "dsType": "influxdb",
+          "groupBy": [
+            {
+              "params": ["$interval"],
+              "type": "time"
+            },
+            {
+              "params": ["null"],
+              "type": "fill"
+            }
+          ],
+          "measurement": "win_mem",
+          "orderByTime": "ASC",
+          "policy": "default",
+          "refId": "A",
+          "resultFormat": "time_series",
+          "select": [
+            [
+              {
+                "params": ["Available_Bytes"],
+                "type": "field"
+              },
+              {
+                "params": [],
+                "type": "mean"
+              }
+            ]
+          ],
+          "tags": [
+            {
+              "key": "host",
+              "operator": "=~",
+              "value": "/^$hostname$/"
+            }
+          ]
+        }
+      ],
+      "title": "Memory Free",
+      "type": "gauge"
+    },
+    {
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "fixedColor": "rgb(31, 120, 193)",
+            "mode": "fixed"
+          },
+          "mappings": [
+            {
+              "options": {
+                "match": "null",
+                "result": {
+                  "text": "N/A"
+                }
+              },
+              "type": "special"
+            }
+          ],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "#299c46",
+                "value": null
+              },
+              {
+                "color": "rgba(237, 129, 40, 0.89)",
+                "value": 60
+              },
+              {
+                "color": "#d44a3a",
+                "value": 90
+              }
+            ]
+          },
+          "unit": "MHs"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 2,
+        "w": 2,
+        "x": 12,
+        "y": 3
+      },
+      "id": 31,
+      "links": [],
+      "maxDataPoints": 100,
+      "options": {
+        "colorMode": "none",
+        "graphMode": "area",
+        "justifyMode": "auto",
+        "orientation": "horizontal",
+        "reduceOptions": {
+          "calcs": ["lastNotNull"],
+          "fields": "",
+          "values": false
+        },
+        "textMode": "auto"
+      },
+      "pluginVersion": "8.4.3",
+      "targets": [
+        {
+          "datasource": "Telegraf",
+          "groupBy": [
+            {
+              "params": ["$__interval"],
+              "type": "time"
+            },
+            {
+              "params": ["null"],
+              "type": "fill"
+            }
+          ],
+          "measurement": "nvidia_smi",
+          "orderByTime": "ASC",
+          "policy": "default",
+          "refId": "A",
+          "resultFormat": "time_series",
+          "select": [
+            [
+              {
+                "params": ["clocks_current_memory"],
+                "type": "field"
+              },
+              {
+                "params": [],
+                "type": "distinct"
+              }
+            ]
+          ],
+          "tags": [
+            {
+              "key": "host",
+              "operator": "=~",
+              "value": "/^$hostname$/"
+            },
+            {
+              "condition": "AND",
+              "key": "name",
+              "operator": "=~",
+              "value": "/^$GPU$/"
+            }
+          ]
+        }
+      ],
+      "title": "GPU-Memory-Clocks",
+      "type": "stat"
+    },
+    {
+      "description": "",
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              }
+            ]
+          },
+          "unit": "string"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 2,
+        "w": 2,
+        "x": 12,
+        "y": 5
+      },
+      "id": 39,
+      "options": {
+        "colorMode": "value",
+        "graphMode": "none",
+        "justifyMode": "auto",
+        "orientation": "auto",
+        "reduceOptions": {
+          "calcs": ["lastNotNull"],
+          "fields": "/^nvidia_smi\\.driver_version$/",
+          "values": false
+        },
+        "textMode": "auto"
+      },
+      "pluginVersion": "8.4.3",
+      "targets": [
+        {
+          "datasource": "Telegraf",
+          "groupBy": [],
+          "measurement": "nvidia_smi",
+          "orderByTime": "ASC",
+          "policy": "default",
+          "refId": "A",
+          "resultFormat": "time_series",
+          "select": [
+            [
+              {
+                "params": ["driver_version"],
+                "type": "field"
+              }
+            ]
+          ],
+          "tags": [
+            {
+              "key": "host",
+              "operator": "=~",
+              "value": "/^$hostname$/"
+            },
+            {
+              "condition": "AND",
+              "key": "name",
+              "operator": "=~",
+              "value": "/^$GPU$/"
+            }
+          ]
+        }
+      ],
+      "title": "Driver Version",
+      "type": "stat"
+    },
+    {
+      "collapsed": false,
+      "gridPos": {
+        "h": 1,
+        "w": 24,
+        "x": 0,
+        "y": 7
+      },
+      "id": 24,
+      "panels": [],
+      "repeat": "GPU",
+      "title": "Graphs $GPU",
+      "type": "row"
+    },
+    {
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "palette-classic"
+          },
+          "custom": {
+            "axisLabel": "",
+            "axisPlacement": "auto",
+            "barAlignment": 0,
+            "drawStyle": "line",
+            "fillOpacity": 10,
+            "gradientMode": "none",
+            "hideFrom": {
+              "legend": false,
+              "tooltip": false,
+              "viz": false
+            },
+            "lineInterpolation": "linear",
+            "lineWidth": 1,
+            "pointSize": 5,
+            "scaleDistribution": {
+              "type": "linear"
+            },
+            "showPoints": "never",
+            "spanNulls": true,
+            "stacking": {
+              "group": "A",
+              "mode": "none"
+            },
+            "thresholdsStyle": {
+              "mode": "off"
+            }
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          },
+          "unit": "percent"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 7,
+        "w": 12,
+        "x": 0,
+        "y": 8
+      },
+      "id": 10,
+      "links": [],
+      "options": {
+        "legend": {
+          "calcs": [],
+          "displayMode": "list",
+          "placement": "bottom"
+        },
+        "tooltip": {
+          "mode": "multi",
+          "sort": "none"
+        }
+      },
+      "pluginVersion": "8.4.3",
+      "targets": [
+        {
+          "alias": "GPU Utilization for $GPU on $hostname",
+          "groupBy": [
+            {
+              "params": ["$__interval"],
+              "type": "time"
+            },
+            {
+              "params": ["null"],
+              "type": "fill"
+            }
+          ],
+          "measurement": "nvidia_smi",
+          "orderByTime": "ASC",
+          "policy": "default",
+          "refId": "A",
+          "resultFormat": "time_series",
+          "select": [
+            [
+              {
+                "params": ["utilization_gpu"],
+                "type": "field"
+              },
+              {
+                "params": [],
+                "type": "distinct"
+              }
+            ]
+          ],
+          "tags": [
+            {
+              "key": "host",
+              "operator": "=~",
+              "value": "/^$hostname$/"
+            },
+            {
+              "condition": "AND",
+              "key": "name",
+              "operator": "=~",
+              "value": "/^$GPU$/"
+            }
+          ]
+        }
+      ],
+      "title": "GPU Utilization",
+      "type": "timeseries"
+    },
+    {
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "palette-classic"
+          },
+          "custom": {
+            "axisLabel": "",
+            "axisPlacement": "auto",
+            "barAlignment": 0,
+            "drawStyle": "line",
+            "fillOpacity": 10,
+            "gradientMode": "none",
+            "hideFrom": {
+              "legend": false,
+              "tooltip": false,
+              "viz": false
+            },
+            "lineInterpolation": "linear",
+            "lineWidth": 1,
+            "pointSize": 5,
+            "scaleDistribution": {
+              "type": "linear"
+            },
+            "showPoints": "never",
+            "spanNulls": true,
+            "stacking": {
+              "group": "A",
+              "mode": "none"
+            },
+            "thresholdsStyle": {
+              "mode": "off"
+            }
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          },
+          "unit": "percent"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 7,
+        "w": 12,
+        "x": 12,
+        "y": 8
+      },
+      "id": 8,
+      "links": [],
+      "options": {
+        "legend": {
+          "calcs": [],
+          "displayMode": "list",
+          "placement": "bottom"
+        },
+        "tooltip": {
+          "mode": "multi",
+          "sort": "none"
+        }
+      },
+      "pluginVersion": "8.4.3",
+      "targets": [
+        {
+          "alias": "Memory Utilization for $GPU on $hostname",
+          "groupBy": [
+            {
+              "params": ["$__interval"],
+              "type": "time"
+            },
+            {
+              "params": ["null"],
+              "type": "fill"
+            }
+          ],
+          "measurement": "nvidia_smi",
+          "orderByTime": "ASC",
+          "policy": "default",
+          "refId": "A",
+          "resultFormat": "time_series",
+          "select": [
+            [
+              {
+                "params": ["utilization_memory"],
+                "type": "field"
+              },
+              {
+                "params": [],
+                "type": "distinct"
+              }
+            ]
+          ],
+          "tags": [
+            {
+              "key": "host",
+              "operator": "=~",
+              "value": "/^$hostname$/"
+            },
+            {
+              "condition": "AND",
+              "key": "name",
+              "operator": "=~",
+              "value": "/^$GPU$/"
+            }
+          ]
+        }
+      ],
+      "title": "Memory Utilization",
+      "type": "timeseries"
+    },
+    {
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "palette-classic"
+          },
+          "custom": {
+            "axisLabel": "",
+            "axisPlacement": "auto",
+            "barAlignment": 0,
+            "drawStyle": "line",
+            "fillOpacity": 10,
+            "gradientMode": "none",
+            "hideFrom": {
+              "legend": false,
+              "tooltip": false,
+              "viz": false
+            },
+            "lineInterpolation": "linear",
+            "lineWidth": 1,
+            "pointSize": 5,
+            "scaleDistribution": {
+              "type": "linear"
+            },
+            "showPoints": "never",
+            "spanNulls": true,
+            "stacking": {
+              "group": "A",
+              "mode": "none"
+            },
+            "thresholdsStyle": {
+              "mode": "off"
+            }
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          },
+          "unit": "MHs"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 7,
+        "w": 12,
+        "x": 0,
+        "y": 15
+      },
+      "id": 2,
+      "links": [],
+      "options": {
+        "legend": {
+          "calcs": [],
+          "displayMode": "list",
+          "placement": "bottom"
+        },
+        "tooltip": {
+          "mode": "multi",
+          "sort": "none"
+        }
+      },
+      "pluginVersion": "8.4.3",
+      "targets": [
+        {
+          "alias": "GPU_Clocks for  $GPU on $hostname",
+          "groupBy": [
+            {
+              "params": ["$__interval"],
+              "type": "time"
+            },
+            {
+              "params": ["null"],
+              "type": "fill"
+            }
+          ],
+          "measurement": "nvidia_smi",
+          "orderByTime": "ASC",
+          "policy": "default",
+          "refId": "A",
+          "resultFormat": "time_series",
+          "select": [
+            [
+              {
+                "params": ["clocks_current_graphics"],
+                "type": "field"
+              },
+              {
+                "params": [],
+                "type": "distinct"
+              }
+            ]
+          ],
+          "tags": [
+            {
+              "key": "host",
+              "operator": "=~",
+              "value": "/^$hostname$/"
+            },
+            {
+              "condition": "AND",
+              "key": "name",
+              "operator": "=~",
+              "value": "/^$GPU$/"
+            }
+          ]
+        }
+      ],
+      "title": "GPU_Clocks",
+      "type": "timeseries"
+    },
+    {
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "palette-classic"
+          },
+          "custom": {
+            "axisLabel": "",
+            "axisPlacement": "auto",
+            "barAlignment": 0,
+            "drawStyle": "line",
+            "fillOpacity": 10,
+            "gradientMode": "none",
+            "hideFrom": {
+              "legend": false,
+              "tooltip": false,
+              "viz": false
+            },
+            "lineInterpolation": "linear",
+            "lineWidth": 1,
+            "pointSize": 5,
+            "scaleDistribution": {
+              "type": "linear"
+            },
+            "showPoints": "never",
+            "spanNulls": true,
+            "stacking": {
+              "group": "A",
+              "mode": "none"
+            },
+            "thresholdsStyle": {
+              "mode": "off"
+            }
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          },
+          "unit": "MHs"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 7,
+        "w": 12,
+        "x": 12,
+        "y": 15
+      },
+      "id": 4,
+      "links": [],
+      "options": {
+        "legend": {
+          "calcs": [],
+          "displayMode": "list",
+          "placement": "bottom"
+        },
+        "tooltip": {
+          "mode": "multi",
+          "sort": "none"
+        }
+      },
+      "pluginVersion": "8.4.3",
+      "targets": [
+        {
+          "alias": "Memory_Clocks for  $GPU on $hostname",
+          "groupBy": [
+            {
+              "params": ["$__interval"],
+              "type": "time"
+            },
+            {
+              "params": ["null"],
+              "type": "fill"
+            }
+          ],
+          "measurement": "nvidia_smi",
+          "orderByTime": "ASC",
+          "policy": "default",
+          "refId": "A",
+          "resultFormat": "time_series",
+          "select": [
+            [
+              {
+                "params": ["clocks_current_memory"],
+                "type": "field"
+              },
+              {
+                "params": [],
+                "type": "distinct"
+              }
+            ]
+          ],
+          "tags": [
+            {
+              "key": "host",
+              "operator": "=~",
+              "value": "/^$hostname$/"
+            },
+            {
+              "condition": "AND",
+              "key": "name",
+              "operator": "=~",
+              "value": "/^$GPU$/"
+            }
+          ]
+        }
+      ],
+      "title": "Memory_Clocks",
+      "type": "timeseries"
+    },
+    {
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "palette-classic"
+          },
+          "custom": {
+            "axisLabel": "",
+            "axisPlacement": "auto",
+            "barAlignment": 0,
+            "drawStyle": "line",
+            "fillOpacity": 10,
+            "gradientMode": "none",
+            "hideFrom": {
+              "legend": false,
+              "tooltip": false,
+              "viz": false
+            },
+            "lineInterpolation": "linear",
+            "lineWidth": 1,
+            "pointSize": 5,
+            "scaleDistribution": {
+              "type": "linear"
+            },
+            "showPoints": "never",
+            "spanNulls": true,
+            "stacking": {
+              "group": "A",
+              "mode": "none"
+            },
+            "thresholdsStyle": {
+              "mode": "off"
+            }
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          },
+          "unit": "Hs"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 7,
+        "w": 12,
+        "x": 0,
+        "y": 22
+      },
+      "id": 14,
+      "links": [],
+      "options": {
+        "legend": {
+          "calcs": [],
+          "displayMode": "list",
+          "placement": "bottom"
+        },
+        "tooltip": {
+          "mode": "multi",
+          "sort": "none"
+        }
+      },
+      "pluginVersion": "8.4.3",
+      "targets": [
+        {
+          "alias": "Clocks_current_sm",
+          "groupBy": [
+            {
+              "params": ["$__interval"],
+              "type": "time"
+            },
+            {
+              "params": ["null"],
+              "type": "fill"
+            }
+          ],
+          "measurement": "nvidia_smi",
+          "orderByTime": "ASC",
+          "policy": "default",
+          "refId": "A",
+          "resultFormat": "time_series",
+          "select": [
+            [
+              {
+                "params": ["clocks_current_sm"],
+                "type": "field"
+              },
+              {
+                "params": [],
+                "type": "distinct"
+              }
+            ]
+          ],
+          "tags": [
+            {
+              "key": "host",
+              "operator": "=~",
+              "value": "/^$hostname$/"
+            },
+            {
+              "condition": "AND",
+              "key": "name",
+              "operator": "=~",
+              "value": "/^$GPU$/"
+            }
+          ]
+        },
+        {
+          "alias": "Clocks_current_Video",
+          "groupBy": [
+            {
+              "params": ["$__interval"],
+              "type": "time"
+            },
+            {
+              "params": ["null"],
+              "type": "fill"
+            }
+          ],
+          "measurement": "nvidia_smi",
+          "orderByTime": "ASC",
+          "policy": "default",
+          "refId": "B",
+          "resultFormat": "time_series",
+          "select": [
+            [
+              {
+                "params": ["clocks_current_video"],
+                "type": "field"
+              },
+              {
+                "params": [],
+                "type": "distinct"
+              }
+            ]
+          ],
+          "tags": [
+            {
+              "key": "host",
+              "operator": "=~",
+              "value": "/^$hostname$/"
+            },
+            {
+              "condition": "AND",
+              "key": "name",
+              "operator": "=~",
+              "value": "/^$GPU$/"
+            }
+          ]
+        }
+      ],
+      "title": "Other Clocks",
+      "type": "timeseries"
+    },
+    {
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "palette-classic"
+          },
+          "custom": {
+            "axisLabel": "",
+            "axisPlacement": "auto",
+            "barAlignment": 0,
+            "drawStyle": "line",
+            "fillOpacity": 10,
+            "gradientMode": "none",
+            "hideFrom": {
+              "legend": false,
+              "tooltip": false,
+              "viz": false
+            },
+            "lineInterpolation": "linear",
+            "lineWidth": 1,
+            "pointSize": 5,
+            "scaleDistribution": {
+              "type": "linear"
+            },
+            "showPoints": "never",
+            "spanNulls": true,
+            "stacking": {
+              "group": "A",
+              "mode": "none"
+            },
+            "thresholdsStyle": {
+              "mode": "off"
+            }
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          },
+          "unit": "decmbytes"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 7,
+        "w": 12,
+        "x": 12,
+        "y": 22
+      },
+      "id": 18,
+      "links": [],
+      "options": {
+        "legend": {
+          "calcs": [],
+          "displayMode": "list",
+          "placement": "bottom"
+        },
+        "tooltip": {
+          "mode": "multi",
+          "sort": "none"
+        }
+      },
+      "pluginVersion": "8.4.3",
+      "targets": [
+        {
+          "alias": "-TOTAL",
+          "groupBy": [
+            {
+              "params": ["$__interval"],
+              "type": "time"
+            },
+            {
+              "params": ["null"],
+              "type": "fill"
+            }
+          ],
+          "measurement": "nvidia_smi",
+          "orderByTime": "ASC",
+          "policy": "default",
+          "refId": "A",
+          "resultFormat": "time_series",
+          "select": [
+            [
+              {
+                "params": ["memory_total"],
+                "type": "field"
+              },
+              {
+                "params": [],
+                "type": "distinct"
+              }
+            ]
+          ],
+          "tags": [
+            {
+              "key": "host",
+              "operator": "=~",
+              "value": "/^$hostname$/"
+            },
+            {
+              "condition": "AND",
+              "key": "name",
+              "operator": "=~",
+              "value": "/^$GPU$/"
+            }
+          ]
+        },
+        {
+          "alias": "-USED",
+          "groupBy": [
+            {
+              "params": ["$__interval"],
+              "type": "time"
+            },
+            {
+              "params": ["null"],
+              "type": "fill"
+            }
+          ],
+          "measurement": "nvidia_smi",
+          "orderByTime": "ASC",
+          "policy": "default",
+          "refId": "B",
+          "resultFormat": "time_series",
+          "select": [
+            [
+              {
+                "params": ["memory_used"],
+                "type": "field"
+              },
+              {
+                "params": [],
+                "type": "distinct"
+              }
+            ]
+          ],
+          "tags": [
+            {
+              "key": "host",
+              "operator": "=~",
+              "value": "/^$hostname$/"
+            },
+            {
+              "condition": "AND",
+              "key": "name",
+              "operator": "=~",
+              "value": "/^$GPU$/"
+            }
+          ]
+        }
+      ],
+      "title": "Memory Size",
+      "type": "timeseries"
+    },
+    {
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "palette-classic"
+          },
+          "custom": {
+            "axisLabel": "",
+            "axisPlacement": "auto",
+            "barAlignment": 0,
+            "drawStyle": "line",
+            "fillOpacity": 10,
+            "gradientMode": "none",
+            "hideFrom": {
+              "legend": false,
+              "tooltip": false,
+              "viz": false
+            },
+            "lineInterpolation": "linear",
+            "lineWidth": 1,
+            "pointSize": 5,
+            "scaleDistribution": {
+              "type": "linear"
+            },
+            "showPoints": "never",
+            "spanNulls": true,
+            "stacking": {
+              "group": "A",
+              "mode": "none"
+            },
+            "thresholdsStyle": {
+              "mode": "off"
+            }
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          },
+          "unit": "percent"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 8,
+        "w": 12,
+        "x": 0,
+        "y": 29
+      },
+      "id": 6,
+      "links": [],
+      "options": {
+        "legend": {
+          "calcs": [],
+          "displayMode": "list",
+          "placement": "bottom"
+        },
+        "tooltip": {
+          "mode": "multi",
+          "sort": "none"
+        }
+      },
+      "pluginVersion": "8.4.3",
+      "targets": [
+        {
+          "alias": "Fan Speed % for  $GPU on $hostname",
+          "groupBy": [
+            {
+              "params": ["$__interval"],
+              "type": "time"
+            },
+            {
+              "params": ["null"],
+              "type": "fill"
+            }
+          ],
+          "measurement": "nvidia_smi",
+          "orderByTime": "ASC",
+          "policy": "default",
+          "refId": "A",
+          "resultFormat": "time_series",
+          "select": [
+            [
+              {
+                "params": ["fan_speed"],
+                "type": "field"
+              },
+              {
+                "params": [],
+                "type": "distinct"
+              }
+            ]
+          ],
+          "tags": [
+            {
+              "key": "host",
+              "operator": "=~",
+              "value": "/^$hostname$/"
+            },
+            {
+              "condition": "AND",
+              "key": "name",
+              "operator": "=~",
+              "value": "/^$GPU$/"
+            }
+          ]
+        }
+      ],
+      "title": "Fan Speed %",
+      "type": "timeseries"
+    },
+    {
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "palette-classic"
+          },
+          "custom": {
+            "axisLabel": "",
+            "axisPlacement": "auto",
+            "barAlignment": 0,
+            "drawStyle": "line",
+            "fillOpacity": 10,
+            "gradientMode": "none",
+            "hideFrom": {
+              "legend": false,
+              "tooltip": false,
+              "viz": false
+            },
+            "lineInterpolation": "linear",
+            "lineWidth": 1,
+            "pointSize": 5,
+            "scaleDistribution": {
+              "type": "linear"
+            },
+            "showPoints": "never",
+            "spanNulls": true,
+            "stacking": {
+              "group": "A",
+              "mode": "none"
+            },
+            "thresholdsStyle": {
+              "mode": "off"
+            }
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          },
+          "unit": "celsius"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 8,
+        "w": 12,
+        "x": 12,
+        "y": 29
+      },
+      "id": 16,
+      "links": [],
+      "options": {
+        "legend": {
+          "calcs": [],
+          "displayMode": "list",
+          "placement": "bottom"
+        },
+        "tooltip": {
+          "mode": "multi",
+          "sort": "none"
+        }
+      },
+      "pluginVersion": "8.4.3",
+      "targets": [
+        {
+          "alias": "GPU Temperature for  $GPU on $hostname",
+          "groupBy": [
+            {
+              "params": ["$__interval"],
+              "type": "time"
+            },
+            {
+              "params": ["null"],
+              "type": "fill"
+            }
+          ],
+          "measurement": "nvidia_smi",
+          "orderByTime": "ASC",
+          "policy": "default",
+          "refId": "A",
+          "resultFormat": "time_series",
+          "select": [
+            [
+              {
+                "params": ["temperature_gpu"],
+                "type": "field"
+              },
+              {
+                "params": [],
+                "type": "distinct"
+              }
+            ]
+          ],
+          "tags": [
+            {
+              "key": "host",
+              "operator": "=~",
+              "value": "/^$hostname$/"
+            },
+            {
+              "condition": "AND",
+              "key": "name",
+              "operator": "=~",
+              "value": "/^$GPU$/"
+            }
+          ]
+        }
+      ],
+      "title": "GPU Temperature",
+      "type": "timeseries"
+    },
+    {
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "palette-classic"
+          },
+          "custom": {
+            "axisLabel": "",
+            "axisPlacement": "auto",
+            "barAlignment": 0,
+            "drawStyle": "line",
+            "fillOpacity": 10,
+            "gradientMode": "none",
+            "hideFrom": {
+              "legend": false,
+              "tooltip": false,
+              "viz": false
+            },
+            "lineInterpolation": "linear",
+            "lineWidth": 1,
+            "pointSize": 5,
+            "scaleDistribution": {
+              "type": "linear"
+            },
+            "showPoints": "never",
+            "spanNulls": true,
+            "stacking": {
+              "group": "A",
+              "mode": "none"
+            },
+            "thresholdsStyle": {
+              "mode": "off"
+            }
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          },
+          "unit": "short"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 9,
+        "w": 12,
+        "x": 0,
+        "y": 37
+      },
+      "id": 20,
+      "links": [],
+      "options": {
+        "legend": {
+          "calcs": [],
+          "displayMode": "list",
+          "placement": "bottom"
+        },
+        "tooltip": {
+          "mode": "multi",
+          "sort": "none"
+        }
+      },
+      "pluginVersion": "8.4.3",
+      "targets": [
+        {
+          "alias": "PCI-GEN",
+          "groupBy": [
+            {
+              "params": ["$__interval"],
+              "type": "time"
+            },
+            {
+              "params": ["null"],
+              "type": "fill"
+            }
+          ],
+          "measurement": "nvidia_smi",
+          "orderByTime": "ASC",
+          "policy": "default",
+          "refId": "A",
+          "resultFormat": "time_series",
+          "select": [
+            [
+              {
+                "params": ["pcie_link_gen_current"],
+                "type": "field"
+              },
+              {
+                "params": [],
+                "type": "distinct"
+              }
+            ]
+          ],
+          "tags": [
+            {
+              "key": "host",
+              "operator": "=~",
+              "value": "/^$hostname$/"
+            },
+            {
+              "condition": "AND",
+              "key": "name",
+              "operator": "=~",
+              "value": "/^$GPU$/"
+            }
+          ]
+        },
+        {
+          "alias": "PCI-WIDTH",
+          "groupBy": [
+            {
+              "params": ["$__interval"],
+              "type": "time"
+            },
+            {
+              "params": ["null"],
+              "type": "fill"
+            }
+          ],
+          "measurement": "nvidia_smi",
+          "orderByTime": "ASC",
+          "policy": "default",
+          "refId": "B",
+          "resultFormat": "time_series",
+          "select": [
+            [
+              {
+                "params": ["pcie_link_width_current"],
+                "type": "field"
+              },
+              {
+                "params": [],
+                "type": "distinct"
+              }
+            ]
+          ],
+          "tags": [
+            {
+              "key": "host",
+              "operator": "=~",
+              "value": "/^$hostname$/"
+            },
+            {
+              "condition": "AND",
+              "key": "name",
+              "operator": "=~",
+              "value": "/^$GPU$/"
+            }
+          ]
+        }
+      ],
+      "title": "PCI Generation/Width",
+      "type": "timeseries"
+    },
+    {
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "palette-classic"
+          },
+          "custom": {
+            "axisLabel": "",
+            "axisPlacement": "auto",
+            "barAlignment": 0,
+            "drawStyle": "line",
+            "fillOpacity": 10,
+            "gradientMode": "none",
+            "hideFrom": {
+              "legend": false,
+              "tooltip": false,
+              "viz": false
+            },
+            "lineInterpolation": "linear",
+            "lineWidth": 1,
+            "pointSize": 5,
+            "scaleDistribution": {
+              "type": "linear"
+            },
+            "showPoints": "never",
+            "spanNulls": true,
+            "stacking": {
+              "group": "A",
+              "mode": "none"
+            },
+            "thresholdsStyle": {
+              "mode": "off"
+            }
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          },
+          "unit": "watt"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 9,
+        "w": 12,
+        "x": 12,
+        "y": 37
+      },
+      "id": 12,
+      "links": [],
+      "options": {
+        "legend": {
+          "calcs": [],
+          "displayMode": "list",
+          "placement": "bottom"
+        },
+        "tooltip": {
+          "mode": "multi",
+          "sort": "none"
+        }
+      },
+      "pluginVersion": "8.4.3",
+      "targets": [
+        {
+          "alias": "Power Draw for $GPU on $hostname",
+          "groupBy": [
+            {
+              "params": ["$__interval"],
+              "type": "time"
+            },
+            {
+              "params": ["null"],
+              "type": "fill"
+            }
+          ],
+          "measurement": "nvidia_smi",
+          "orderByTime": "ASC",
+          "policy": "default",
+          "refId": "A",
+          "resultFormat": "time_series",
+          "select": [
+            [
+              {
+                "params": ["power_draw"],
+                "type": "field"
+              },
+              {
+                "params": [],
+                "type": "distinct"
+              }
+            ]
+          ],
+          "tags": [
+            {
+              "key": "host",
+              "operator": "=~",
+              "value": "/^$hostname$/"
+            },
+            {
+              "condition": "AND",
+              "key": "name",
+              "operator": "=~",
+              "value": "/^$GPU$/"
+            }
+          ]
+        }
+      ],
+      "title": "Power Draw",
+      "type": "timeseries"
+    }
+  ],
+  "refresh": "10s",
+  "schemaVersion": 35,
+  "style": "dark",
+  "tags": [],
+  "templating": {
+    "list": [
+      {
+        "current": {},
+        "datasource": "Telegraf",
+        "definition": "SHOW TAG VALUES FROM \"win_system\" WITH KEY = \"host\"",
+        "hide": 0,
+        "includeAll": false,
+        "label": "Hostname",
+        "multi": false,
+        "name": "hostname",
+        "options": [],
+        "query": "SHOW TAG VALUES FROM \"win_system\" WITH KEY = \"host\"",
+        "refresh": 1,
+        "regex": "",
+        "skipUrlSync": false,
+        "sort": 0,
+        "tagValuesQuery": "",
+        "tagsQuery": "",
+        "type": "query",
+        "useTags": false
+      },
+      {
+        "current": {},
+        "datasource": "Telegraf",
+        "definition": "SHOW TAG VALUES FROM \"nvidia_smi\" WITH KEY = \"name\" WHERE host =~ /$hostname/",
+        "hide": 0,
+        "includeAll": false,
+        "label": "GPU",
+        "multi": false,
+        "name": "GPU",
+        "options": [],
+        "query": "SHOW TAG VALUES FROM \"nvidia_smi\" WITH KEY = \"name\" WHERE host =~ /$hostname/",
+        "refresh": 1,
+        "regex": "",
+        "skipUrlSync": false,
+        "sort": 0,
+        "tagValuesQuery": "",
+        "tagsQuery": "",
+        "type": "query",
+        "useTags": false
+      }
+    ]
+  },
+  "time": {
+    "from": "now-3h",
+    "to": "now"
+  },
+  "timepicker": {
+    "refresh_intervals": [
+      "5s",
+      "10s",
+      "30s",
+      "1m",
+      "5m",
+      "15m",
+      "30m",
+      "1h",
+      "2h",
+      "1d"
+    ],
+    "time_options": ["5m", "15m", "1h", "6h", "12h", "24h", "2d", "7d", "30d"]
+  },
+  "timezone": "",
+  "title": "Windows: Nvidia SMI",
+  "version": 1,
+  "weekStart": ""
+}

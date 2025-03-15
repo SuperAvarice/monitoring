@@ -1,0 +1,6850 @@
+{
+  "__inputs": [],
+  "__elements": [],
+  "__requires": [],
+  "annotations": {
+    "list": []
+  },
+  "editable": true,
+  "fiscalYearStartMonth": 0,
+  "graphTooltip": 1,
+  "id": null,
+  "links": [],
+  "liveNow": false,
+  "panels": [
+    {
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "decimals": 1,
+          "mappings": [
+            {
+              "options": {
+                "match": "null",
+                "result": {
+                  "text": "N/A"
+                }
+              },
+              "type": "special"
+            }
+          ],
+          "max": 100,
+          "min": 0,
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "#299c46",
+                "value": null
+              },
+              {
+                "color": "rgba(237, 129, 40, 0.89)",
+                "value": 70
+              },
+              {
+                "color": "#d44a3a",
+                "value": 90
+              }
+            ]
+          },
+          "unit": "percent"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 6,
+        "w": 3,
+        "x": 0,
+        "y": 0
+      },
+      "id": 21,
+      "links": [],
+      "maxDataPoints": 100,
+      "options": {
+        "orientation": "horizontal",
+        "reduceOptions": {
+          "calcs": ["lastNotNull"],
+          "fields": "",
+          "values": false
+        },
+        "showThresholdLabels": false,
+        "showThresholdMarkers": true
+      },
+      "pluginVersion": "8.4.3",
+      "targets": [
+        {
+          "datasource": "Telegraf",
+          "groupBy": [
+            {
+              "params": ["$__interval"],
+              "type": "time"
+            },
+            {
+              "params": ["null"],
+              "type": "fill"
+            }
+          ],
+          "measurement": "lhm",
+          "orderByTime": "ASC",
+          "policy": "default",
+          "refId": "A",
+          "resultFormat": "time_series",
+          "select": [
+            [
+              {
+                "params": ["value"],
+                "type": "field"
+              },
+              {
+                "params": [],
+                "type": "distinct"
+              }
+            ]
+          ],
+          "tags": [
+            {
+              "key": "host",
+              "operator": "=~",
+              "value": "/^$host$/"
+            },
+            {
+              "condition": "AND",
+              "key": "hardware_name",
+              "operator": "=~",
+              "value": "/^$cpu$/"
+            },
+            {
+              "condition": "AND",
+              "key": "type",
+              "operator": "=",
+              "value": "Load"
+            },
+            {
+              "condition": "AND",
+              "key": "name",
+              "operator": "=",
+              "value": "CPU Total"
+            }
+          ]
+        }
+      ],
+      "title": "Cpu Utiliziation",
+      "type": "gauge"
+    },
+    {
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "mappings": [
+            {
+              "options": {
+                "match": "null",
+                "result": {
+                  "text": "N/A"
+                }
+              },
+              "type": "special"
+            }
+          ],
+          "max": 1600,
+          "min": 0,
+          "thresholds": {
+            "mode": "percentage",
+            "steps": [
+              {
+                "color": "#299c46",
+                "value": null
+              },
+              {
+                "color": "rgba(237, 129, 40, 0.89)",
+                "value": 80
+              },
+              {
+                "color": "#d44a3a",
+                "value": 90
+              }
+            ]
+          },
+          "unit": "rotrpm"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 6,
+        "w": 3,
+        "x": 3,
+        "y": 0
+      },
+      "id": 31,
+      "links": [],
+      "maxDataPoints": 100,
+      "options": {
+        "orientation": "horizontal",
+        "reduceOptions": {
+          "calcs": ["lastNotNull"],
+          "fields": "",
+          "values": false
+        },
+        "showThresholdLabels": false,
+        "showThresholdMarkers": true
+      },
+      "pluginVersion": "8.4.3",
+      "targets": [
+        {
+          "datasource": "Telegraf",
+          "groupBy": [
+            {
+              "params": ["$__interval"],
+              "type": "time"
+            },
+            {
+              "params": ["null"],
+              "type": "fill"
+            }
+          ],
+          "measurement": "lhm",
+          "orderByTime": "ASC",
+          "policy": "default",
+          "refId": "A",
+          "resultFormat": "time_series",
+          "select": [
+            [
+              {
+                "params": ["value"],
+                "type": "field"
+              },
+              {
+                "params": [],
+                "type": "distinct"
+              }
+            ]
+          ],
+          "tags": [
+            {
+              "key": "host",
+              "operator": "=~",
+              "value": "/^$host$/"
+            },
+            {
+              "condition": "AND",
+              "key": "hardware_name",
+              "operator": "=~",
+              "value": "/^$chipset$/"
+            },
+            {
+              "condition": "AND",
+              "key": "type",
+              "operator": "=",
+              "value": "Fan"
+            },
+            {
+              "condition": "AND",
+              "key": "name",
+              "operator": "=",
+              "value": "Fan #1"
+            }
+          ]
+        }
+      ],
+      "title": "CPU Fan",
+      "type": "gauge"
+    },
+    {
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "mappings": [
+            {
+              "options": {
+                "match": "null",
+                "result": {
+                  "text": "N/A"
+                }
+              },
+              "type": "special"
+            }
+          ],
+          "max": 1600,
+          "min": 0,
+          "thresholds": {
+            "mode": "percentage",
+            "steps": [
+              {
+                "color": "#299c46",
+                "value": null
+              },
+              {
+                "color": "rgba(237, 129, 40, 0.89)",
+                "value": 80
+              },
+              {
+                "color": "#d44a3a",
+                "value": 90
+              }
+            ]
+          },
+          "unit": "rotrpm"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 6,
+        "w": 3,
+        "x": 6,
+        "y": 0
+      },
+      "id": 32,
+      "links": [],
+      "maxDataPoints": 100,
+      "options": {
+        "orientation": "horizontal",
+        "reduceOptions": {
+          "calcs": ["lastNotNull"],
+          "fields": "",
+          "values": false
+        },
+        "showThresholdLabels": false,
+        "showThresholdMarkers": true
+      },
+      "pluginVersion": "8.4.3",
+      "targets": [
+        {
+          "datasource": "Telegraf",
+          "groupBy": [
+            {
+              "params": ["$__interval"],
+              "type": "time"
+            },
+            {
+              "params": ["null"],
+              "type": "fill"
+            }
+          ],
+          "measurement": "lhm",
+          "orderByTime": "ASC",
+          "policy": "default",
+          "refId": "A",
+          "resultFormat": "time_series",
+          "select": [
+            [
+              {
+                "params": ["value"],
+                "type": "field"
+              },
+              {
+                "params": [],
+                "type": "distinct"
+              }
+            ]
+          ],
+          "tags": [
+            {
+              "key": "host",
+              "operator": "=~",
+              "value": "/^$host$/"
+            },
+            {
+              "condition": "AND",
+              "key": "hardware_name",
+              "operator": "=~",
+              "value": "/^$chipset$/"
+            },
+            {
+              "condition": "AND",
+              "key": "type",
+              "operator": "=",
+              "value": "Fan"
+            },
+            {
+              "condition": "AND",
+              "key": "name",
+              "operator": "=",
+              "value": "Fan #2"
+            }
+          ]
+        }
+      ],
+      "title": "System Fan",
+      "type": "gauge"
+    },
+    {
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "mappings": [
+            {
+              "options": {
+                "match": "null",
+                "result": {
+                  "text": "N/A"
+                }
+              },
+              "type": "special"
+            }
+          ],
+          "max": 8000,
+          "min": 0,
+          "thresholds": {
+            "mode": "percentage",
+            "steps": [
+              {
+                "color": "#299c46",
+                "value": null
+              },
+              {
+                "color": "rgba(237, 129, 40, 0.89)",
+                "value": 80
+              },
+              {
+                "color": "#d44a3a",
+                "value": 90
+              }
+            ]
+          },
+          "unit": "rotrpm"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 6,
+        "w": 3,
+        "x": 9,
+        "y": 0
+      },
+      "id": 33,
+      "links": [],
+      "maxDataPoints": 100,
+      "options": {
+        "orientation": "horizontal",
+        "reduceOptions": {
+          "calcs": ["lastNotNull"],
+          "fields": "",
+          "values": false
+        },
+        "showThresholdLabels": false,
+        "showThresholdMarkers": true
+      },
+      "pluginVersion": "8.4.3",
+      "targets": [
+        {
+          "datasource": "Telegraf",
+          "groupBy": [
+            {
+              "params": ["$__interval"],
+              "type": "time"
+            },
+            {
+              "params": ["null"],
+              "type": "fill"
+            }
+          ],
+          "measurement": "lhm",
+          "orderByTime": "ASC",
+          "policy": "default",
+          "refId": "A",
+          "resultFormat": "time_series",
+          "select": [
+            [
+              {
+                "params": ["value"],
+                "type": "field"
+              },
+              {
+                "params": [],
+                "type": "distinct"
+              }
+            ]
+          ],
+          "tags": [
+            {
+              "key": "host",
+              "operator": "=~",
+              "value": "/^$host$/"
+            },
+            {
+              "condition": "AND",
+              "key": "hardware_name",
+              "operator": "=~",
+              "value": "/^$chipset$/"
+            },
+            {
+              "condition": "AND",
+              "key": "type",
+              "operator": "=",
+              "value": "Fan"
+            },
+            {
+              "condition": "AND",
+              "key": "name",
+              "operator": "=",
+              "value": "Fan #3"
+            }
+          ]
+        }
+      ],
+      "title": "PCH Fan",
+      "type": "gauge"
+    },
+    {
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "decimals": 1,
+          "mappings": [
+            {
+              "options": {
+                "match": "null",
+                "result": {
+                  "text": "N/A"
+                }
+              },
+              "type": "special"
+            }
+          ],
+          "max": 100,
+          "min": 0,
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "#299c46",
+                "value": null
+              },
+              {
+                "color": "rgba(237, 129, 40, 0.89)",
+                "value": 70
+              },
+              {
+                "color": "#d44a3a",
+                "value": 90
+              }
+            ]
+          },
+          "unit": "percent"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 6,
+        "w": 3,
+        "x": 12,
+        "y": 0
+      },
+      "id": 23,
+      "links": [],
+      "maxDataPoints": 100,
+      "options": {
+        "orientation": "horizontal",
+        "reduceOptions": {
+          "calcs": ["lastNotNull"],
+          "fields": "",
+          "values": false
+        },
+        "showThresholdLabels": false,
+        "showThresholdMarkers": true
+      },
+      "pluginVersion": "8.4.3",
+      "targets": [
+        {
+          "datasource": "Telegraf",
+          "groupBy": [
+            {
+              "params": ["$__interval"],
+              "type": "time"
+            },
+            {
+              "params": ["null"],
+              "type": "fill"
+            }
+          ],
+          "measurement": "lhm",
+          "orderByTime": "ASC",
+          "policy": "default",
+          "refId": "A",
+          "resultFormat": "time_series",
+          "select": [
+            [
+              {
+                "params": ["value"],
+                "type": "field"
+              },
+              {
+                "params": [],
+                "type": "distinct"
+              }
+            ]
+          ],
+          "tags": [
+            {
+              "condition": "AND",
+              "key": "host",
+              "operator": "=~",
+              "value": "/^$host$/"
+            },
+            {
+              "condition": "AND",
+              "key": "hardware_name",
+              "operator": "=~",
+              "value": "/^$gpu$/"
+            },
+            {
+              "condition": "AND",
+              "key": "type",
+              "operator": "=",
+              "value": "Load"
+            },
+            {
+              "condition": "AND",
+              "key": "name",
+              "operator": "=",
+              "value": "GPU Core"
+            }
+          ]
+        }
+      ],
+      "title": "GPU Utilisation",
+      "type": "gauge"
+    },
+    {
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "decimals": 2,
+          "mappings": [
+            {
+              "options": {
+                "match": "null",
+                "result": {
+                  "text": "N/A"
+                }
+              },
+              "type": "special"
+            }
+          ],
+          "max": 32,
+          "min": 0,
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "#299c46",
+                "value": null
+              },
+              {
+                "color": "rgba(237, 129, 40, 0.89)",
+                "value": 25
+              },
+              {
+                "color": "#d44a3a",
+                "value": 30
+              }
+            ]
+          },
+          "unit": "decgbytes"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 6,
+        "w": 3,
+        "x": 15,
+        "y": 0
+      },
+      "id": 25,
+      "links": [],
+      "maxDataPoints": 100,
+      "options": {
+        "orientation": "horizontal",
+        "reduceOptions": {
+          "calcs": ["lastNotNull"],
+          "fields": "",
+          "values": false
+        },
+        "showThresholdLabels": false,
+        "showThresholdMarkers": true
+      },
+      "pluginVersion": "8.4.3",
+      "targets": [
+        {
+          "alias": "Ram Used",
+          "datasource": "Telegraf",
+          "groupBy": [
+            {
+              "params": ["$__interval"],
+              "type": "time"
+            },
+            {
+              "params": ["null"],
+              "type": "fill"
+            }
+          ],
+          "measurement": "lhm",
+          "orderByTime": "ASC",
+          "policy": "default",
+          "refId": "A",
+          "resultFormat": "time_series",
+          "select": [
+            [
+              {
+                "params": ["value"],
+                "type": "field"
+              },
+              {
+                "params": [],
+                "type": "distinct"
+              }
+            ]
+          ],
+          "tags": [
+            {
+              "key": "host",
+              "operator": "=~",
+              "value": "/^$host$/"
+            },
+            {
+              "condition": "AND",
+              "key": "type",
+              "operator": "=",
+              "value": "Data"
+            },
+            {
+              "condition": "AND",
+              "key": "name",
+              "operator": "=",
+              "value": "Memory Used"
+            }
+          ]
+        }
+      ],
+      "title": "RAM Used",
+      "type": "gauge"
+    },
+    {
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "decimals": 1,
+          "mappings": [
+            {
+              "options": {
+                "match": "null",
+                "result": {
+                  "text": "N/A"
+                }
+              },
+              "type": "special"
+            }
+          ],
+          "max": 100,
+          "min": 0,
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "#299c46",
+                "value": null
+              },
+              {
+                "color": "rgba(237, 129, 40, 0.89)",
+                "value": 70
+              },
+              {
+                "color": "#d44a3a",
+                "value": 90
+              }
+            ]
+          },
+          "unit": "percent"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 6,
+        "w": 3,
+        "x": 18,
+        "y": 0
+      },
+      "id": 27,
+      "links": [],
+      "maxDataPoints": 100,
+      "options": {
+        "orientation": "horizontal",
+        "reduceOptions": {
+          "calcs": ["lastNotNull"],
+          "fields": "",
+          "values": false
+        },
+        "showThresholdLabels": false,
+        "showThresholdMarkers": true
+      },
+      "pluginVersion": "8.4.3",
+      "targets": [
+        {
+          "datasource": "Telegraf",
+          "groupBy": [
+            {
+              "params": ["$__interval"],
+              "type": "time"
+            },
+            {
+              "params": ["previous"],
+              "type": "fill"
+            }
+          ],
+          "measurement": "lhm",
+          "orderByTime": "ASC",
+          "policy": "default",
+          "refId": "A",
+          "resultFormat": "time_series",
+          "select": [
+            [
+              {
+                "params": ["value"],
+                "type": "field"
+              },
+              {
+                "params": [],
+                "type": "distinct"
+              }
+            ]
+          ],
+          "tags": [
+            {
+              "key": "host",
+              "operator": "=~",
+              "value": "/^$host$/"
+            },
+            {
+              "condition": "AND",
+              "key": "hardware_name",
+              "operator": "=~",
+              "value": "/^$disk$/"
+            },
+            {
+              "condition": "AND",
+              "key": "type",
+              "operator": "=",
+              "value": "Load"
+            },
+            {
+              "condition": "AND",
+              "key": "name",
+              "operator": "=",
+              "value": "Used Space"
+            }
+          ]
+        }
+      ],
+      "title": "Mass Storage Used Space",
+      "type": "gauge"
+    },
+    {
+      "collapsed": false,
+      "gridPos": {
+        "h": 1,
+        "w": 24,
+        "x": 0,
+        "y": 6
+      },
+      "id": 37,
+      "panels": [],
+      "title": "System Overview Combined",
+      "type": "row"
+    },
+    {
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "palette-classic"
+          },
+          "custom": {
+            "axisLabel": "",
+            "axisPlacement": "auto",
+            "barAlignment": 0,
+            "drawStyle": "line",
+            "fillOpacity": 10,
+            "gradientMode": "opacity",
+            "hideFrom": {
+              "legend": false,
+              "tooltip": false,
+              "viz": false
+            },
+            "lineInterpolation": "smooth",
+            "lineWidth": 1,
+            "pointSize": 5,
+            "scaleDistribution": {
+              "type": "linear"
+            },
+            "showPoints": "never",
+            "spanNulls": false,
+            "stacking": {
+              "group": "A",
+              "mode": "none"
+            },
+            "thresholdsStyle": {
+              "mode": "off"
+            }
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              }
+            ]
+          },
+          "unit": "celsius"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 9,
+        "w": 12,
+        "x": 0,
+        "y": 7
+      },
+      "id": 2,
+      "interval": "$interval",
+      "links": [],
+      "options": {
+        "legend": {
+          "calcs": ["mean", "max", "min"],
+          "displayMode": "table",
+          "placement": "right"
+        },
+        "tooltip": {
+          "mode": "multi",
+          "sort": "none"
+        }
+      },
+      "pluginVersion": "8.4.3",
+      "targets": [
+        {
+          "alias": "CPU (Tctl/Tdie)",
+          "datasource": "Telegraf",
+          "groupBy": [
+            {
+              "params": ["$__interval"],
+              "type": "time"
+            },
+            {
+              "params": ["null"],
+              "type": "fill"
+            }
+          ],
+          "hide": false,
+          "measurement": "lhm",
+          "orderByTime": "ASC",
+          "policy": "default",
+          "refId": "A",
+          "resultFormat": "time_series",
+          "select": [
+            [
+              {
+                "params": ["value"],
+                "type": "field"
+              },
+              {
+                "params": [],
+                "type": "mean"
+              }
+            ]
+          ],
+          "tags": [
+            {
+              "key": "host",
+              "operator": "=~",
+              "value": "/^$host$/"
+            },
+            {
+              "condition": "AND",
+              "key": "hardware_name",
+              "operator": "=~",
+              "value": "/^$cpu$/"
+            },
+            {
+              "condition": "AND",
+              "key": "type",
+              "operator": "=",
+              "value": "Temperature"
+            },
+            {
+              "condition": "AND",
+              "key": "name",
+              "operator": "=",
+              "value": "Core (Tctl/Tdie)"
+            }
+          ]
+        },
+        {
+          "alias": "CPU (Tdie)",
+          "datasource": "Telegraf",
+          "groupBy": [
+            {
+              "params": ["$__interval"],
+              "type": "time"
+            },
+            {
+              "params": ["null"],
+              "type": "fill"
+            }
+          ],
+          "measurement": "lhm",
+          "orderByTime": "ASC",
+          "policy": "default",
+          "refId": "H",
+          "resultFormat": "time_series",
+          "select": [
+            [
+              {
+                "params": ["value"],
+                "type": "field"
+              },
+              {
+                "params": [],
+                "type": "mean"
+              }
+            ]
+          ],
+          "tags": [
+            {
+              "key": "host",
+              "operator": "=~",
+              "value": "/^$host$/"
+            },
+            {
+              "condition": "AND",
+              "key": "hardware_name",
+              "operator": "=~",
+              "value": "/^$cpu$/"
+            },
+            {
+              "condition": "AND",
+              "key": "type",
+              "operator": "=",
+              "value": "Temperature"
+            },
+            {
+              "condition": "AND",
+              "key": "name",
+              "operator": "=",
+              "value": "CCD1 (Tdie)"
+            }
+          ]
+        },
+        {
+          "alias": "System",
+          "datasource": "Telegraf",
+          "groupBy": [
+            {
+              "params": ["$__interval"],
+              "type": "time"
+            },
+            {
+              "params": ["null"],
+              "type": "fill"
+            }
+          ],
+          "hide": false,
+          "measurement": "lhm",
+          "orderByTime": "ASC",
+          "policy": "default",
+          "refId": "B",
+          "resultFormat": "time_series",
+          "select": [
+            [
+              {
+                "params": ["value"],
+                "type": "field"
+              },
+              {
+                "params": [],
+                "type": "mean"
+              }
+            ]
+          ],
+          "tags": [
+            {
+              "key": "host",
+              "operator": "=~",
+              "value": "/^$host$/"
+            },
+            {
+              "condition": "AND",
+              "key": "hardware_name",
+              "operator": "=~",
+              "value": "/^$chipset$/"
+            },
+            {
+              "condition": "AND",
+              "key": "type",
+              "operator": "=",
+              "value": "Temperature"
+            },
+            {
+              "condition": "AND",
+              "key": "name",
+              "operator": "=",
+              "value": "Temperature #1"
+            }
+          ]
+        },
+        {
+          "alias": "CPU (ITE)",
+          "datasource": "Telegraf",
+          "groupBy": [
+            {
+              "params": ["$__interval"],
+              "type": "time"
+            },
+            {
+              "params": ["null"],
+              "type": "fill"
+            }
+          ],
+          "hide": false,
+          "measurement": "lhm",
+          "orderByTime": "ASC",
+          "policy": "default",
+          "refId": "C",
+          "resultFormat": "time_series",
+          "select": [
+            [
+              {
+                "params": ["value"],
+                "type": "field"
+              },
+              {
+                "params": [],
+                "type": "mean"
+              }
+            ]
+          ],
+          "tags": [
+            {
+              "key": "host",
+              "operator": "=~",
+              "value": "/^$host$/"
+            },
+            {
+              "condition": "AND",
+              "key": "hardware_name",
+              "operator": "=~",
+              "value": "/^$chipset$/"
+            },
+            {
+              "condition": "AND",
+              "key": "type",
+              "operator": "=",
+              "value": "Temperature"
+            },
+            {
+              "condition": "AND",
+              "key": "name",
+              "operator": "=",
+              "value": "Temperature #3"
+            }
+          ]
+        },
+        {
+          "alias": "VRM MOS",
+          "datasource": "Telegraf",
+          "groupBy": [
+            {
+              "params": ["$__interval"],
+              "type": "time"
+            },
+            {
+              "params": ["null"],
+              "type": "fill"
+            }
+          ],
+          "hide": false,
+          "measurement": "lhm",
+          "orderByTime": "ASC",
+          "policy": "default",
+          "refId": "E",
+          "resultFormat": "time_series",
+          "select": [
+            [
+              {
+                "params": ["value"],
+                "type": "field"
+              },
+              {
+                "params": [],
+                "type": "mean"
+              }
+            ]
+          ],
+          "tags": [
+            {
+              "key": "host",
+              "operator": "=~",
+              "value": "/^$host$/"
+            },
+            {
+              "condition": "AND",
+              "key": "hardware_name",
+              "operator": "=~",
+              "value": "/^$chipset$/"
+            },
+            {
+              "condition": "AND",
+              "key": "type",
+              "operator": "=",
+              "value": "Temperature"
+            },
+            {
+              "condition": "AND",
+              "key": "name",
+              "operator": "=",
+              "value": "Temperature #5"
+            }
+          ]
+        },
+        {
+          "alias": "Chipset",
+          "datasource": "Telegraf",
+          "groupBy": [
+            {
+              "params": ["$__interval"],
+              "type": "time"
+            },
+            {
+              "params": ["null"],
+              "type": "fill"
+            }
+          ],
+          "hide": false,
+          "measurement": "lhm",
+          "orderByTime": "ASC",
+          "policy": "default",
+          "refId": "F",
+          "resultFormat": "time_series",
+          "select": [
+            [
+              {
+                "params": ["value"],
+                "type": "field"
+              },
+              {
+                "params": [],
+                "type": "mean"
+              }
+            ]
+          ],
+          "tags": [
+            {
+              "key": "host",
+              "operator": "=~",
+              "value": "/^$host$/"
+            },
+            {
+              "condition": "AND",
+              "key": "hardware_name",
+              "operator": "=~",
+              "value": "/^$chipset$/"
+            },
+            {
+              "condition": "AND",
+              "key": "type",
+              "operator": "=",
+              "value": "Temperature"
+            },
+            {
+              "condition": "AND",
+              "key": "name",
+              "operator": "=",
+              "value": "Temperature #6"
+            }
+          ]
+        },
+        {
+          "alias": "Ambient",
+          "datasource": "Telegraf",
+          "groupBy": [
+            {
+              "params": ["$__interval"],
+              "type": "time"
+            },
+            {
+              "params": ["null"],
+              "type": "fill"
+            }
+          ],
+          "hide": false,
+          "measurement": "lhm",
+          "orderByTime": "ASC",
+          "policy": "default",
+          "refId": "D",
+          "resultFormat": "time_series",
+          "select": [
+            [
+              {
+                "params": ["value"],
+                "type": "field"
+              },
+              {
+                "params": [],
+                "type": "mean"
+              }
+            ]
+          ],
+          "tags": [
+            {
+              "key": "host",
+              "operator": "=~",
+              "value": "/^$host$/"
+            },
+            {
+              "condition": "AND",
+              "key": "hardware_name",
+              "operator": "=~",
+              "value": "/^$chipset$/"
+            },
+            {
+              "condition": "AND",
+              "key": "type",
+              "operator": "=",
+              "value": "Temperature"
+            },
+            {
+              "condition": "AND",
+              "key": "name",
+              "operator": "=",
+              "value": "Temperature #4"
+            }
+          ]
+        },
+        {
+          "alias": "GPU (Core)",
+          "datasource": "Telegraf",
+          "groupBy": [
+            {
+              "params": ["$__interval"],
+              "type": "time"
+            },
+            {
+              "params": ["null"],
+              "type": "fill"
+            }
+          ],
+          "hide": false,
+          "measurement": "lhm",
+          "orderByTime": "ASC",
+          "policy": "default",
+          "refId": "G",
+          "resultFormat": "time_series",
+          "select": [
+            [
+              {
+                "params": ["value"],
+                "type": "field"
+              },
+              {
+                "params": [],
+                "type": "mean"
+              }
+            ]
+          ],
+          "tags": [
+            {
+              "key": "host",
+              "operator": "=~",
+              "value": "/^$host$/"
+            },
+            {
+              "condition": "AND",
+              "key": "hardware_name",
+              "operator": "=~",
+              "value": "/^$gpu$/"
+            },
+            {
+              "condition": "AND",
+              "key": "type",
+              "operator": "=",
+              "value": "Temperature"
+            },
+            {
+              "condition": "AND",
+              "key": "name",
+              "operator": "=",
+              "value": "GPU Core"
+            }
+          ]
+        },
+        {
+          "alias": "GPU (Hot Spot)",
+          "datasource": "Telegraf",
+          "groupBy": [
+            {
+              "params": ["$__interval"],
+              "type": "time"
+            },
+            {
+              "params": ["null"],
+              "type": "fill"
+            }
+          ],
+          "hide": false,
+          "measurement": "lhm",
+          "orderByTime": "ASC",
+          "policy": "default",
+          "refId": "I",
+          "resultFormat": "time_series",
+          "select": [
+            [
+              {
+                "params": ["value"],
+                "type": "field"
+              },
+              {
+                "params": [],
+                "type": "mean"
+              }
+            ]
+          ],
+          "tags": [
+            {
+              "key": "host",
+              "operator": "=~",
+              "value": "/^$host$/"
+            },
+            {
+              "condition": "AND",
+              "key": "hardware_name",
+              "operator": "=~",
+              "value": "/^$gpu$/"
+            },
+            {
+              "condition": "AND",
+              "key": "type",
+              "operator": "=",
+              "value": "Temperature"
+            },
+            {
+              "condition": "AND",
+              "key": "name",
+              "operator": "=",
+              "value": "GPU Hot Spot"
+            }
+          ]
+        },
+        {
+          "alias": "HD (Temp 1)",
+          "datasource": "Telegraf",
+          "groupBy": [
+            {
+              "params": ["$__interval"],
+              "type": "time"
+            },
+            {
+              "params": ["null"],
+              "type": "fill"
+            }
+          ],
+          "hide": false,
+          "measurement": "lhm",
+          "orderByTime": "ASC",
+          "policy": "default",
+          "refId": "J",
+          "resultFormat": "time_series",
+          "select": [
+            [
+              {
+                "params": ["value"],
+                "type": "field"
+              },
+              {
+                "params": [],
+                "type": "mean"
+              }
+            ]
+          ],
+          "tags": [
+            {
+              "key": "host",
+              "operator": "=~",
+              "value": "/^$host$/"
+            },
+            {
+              "condition": "AND",
+              "key": "hardware_name",
+              "operator": "=~",
+              "value": "/^$disk$/"
+            },
+            {
+              "condition": "AND",
+              "key": "type",
+              "operator": "=",
+              "value": "Temperature"
+            },
+            {
+              "condition": "AND",
+              "key": "name",
+              "operator": "=",
+              "value": "Temperature 1"
+            }
+          ]
+        },
+        {
+          "alias": "HD (Temp 2)",
+          "datasource": "Telegraf",
+          "groupBy": [
+            {
+              "params": ["$__interval"],
+              "type": "time"
+            },
+            {
+              "params": ["null"],
+              "type": "fill"
+            }
+          ],
+          "hide": false,
+          "measurement": "lhm",
+          "orderByTime": "ASC",
+          "policy": "default",
+          "refId": "L",
+          "resultFormat": "time_series",
+          "select": [
+            [
+              {
+                "params": ["value"],
+                "type": "field"
+              },
+              {
+                "params": [],
+                "type": "mean"
+              }
+            ]
+          ],
+          "tags": [
+            {
+              "key": "host",
+              "operator": "=~",
+              "value": "/^$host$/"
+            },
+            {
+              "condition": "AND",
+              "key": "hardware_name",
+              "operator": "=~",
+              "value": "/^$disk$/"
+            },
+            {
+              "condition": "AND",
+              "key": "type",
+              "operator": "=",
+              "value": "Temperature"
+            },
+            {
+              "condition": "AND",
+              "key": "name",
+              "operator": "=",
+              "value": "Temperature 2"
+            }
+          ]
+        }
+      ],
+      "title": "Temperatures",
+      "type": "timeseries"
+    },
+    {
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "palette-classic"
+          },
+          "custom": {
+            "axisLabel": "",
+            "axisPlacement": "auto",
+            "barAlignment": 0,
+            "drawStyle": "line",
+            "fillOpacity": 10,
+            "gradientMode": "opacity",
+            "hideFrom": {
+              "legend": false,
+              "tooltip": false,
+              "viz": false
+            },
+            "lineInterpolation": "smooth",
+            "lineWidth": 1,
+            "pointSize": 5,
+            "scaleDistribution": {
+              "type": "linear"
+            },
+            "showPoints": "never",
+            "spanNulls": false,
+            "stacking": {
+              "group": "A",
+              "mode": "none"
+            },
+            "thresholdsStyle": {
+              "mode": "off"
+            }
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              }
+            ]
+          },
+          "unit": "rotrpm"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 9,
+        "w": 12,
+        "x": 12,
+        "y": 7
+      },
+      "id": 15,
+      "interval": "$interval",
+      "links": [],
+      "options": {
+        "legend": {
+          "calcs": ["mean", "max", "min"],
+          "displayMode": "table",
+          "placement": "right"
+        },
+        "tooltip": {
+          "mode": "multi",
+          "sort": "none"
+        }
+      },
+      "pluginVersion": "8.4.3",
+      "targets": [
+        {
+          "alias": "CPU Fan",
+          "datasource": "Telegraf",
+          "groupBy": [
+            {
+              "params": ["$__interval"],
+              "type": "time"
+            },
+            {
+              "params": ["null"],
+              "type": "fill"
+            }
+          ],
+          "measurement": "lhm",
+          "orderByTime": "ASC",
+          "policy": "default",
+          "refId": "A",
+          "resultFormat": "time_series",
+          "select": [
+            [
+              {
+                "params": ["value"],
+                "type": "field"
+              },
+              {
+                "params": [],
+                "type": "mean"
+              }
+            ]
+          ],
+          "tags": [
+            {
+              "key": "host",
+              "operator": "=~",
+              "value": "/^$host$/"
+            },
+            {
+              "condition": "AND",
+              "key": "hardware_name",
+              "operator": "=~",
+              "value": "/^$chipset$/"
+            },
+            {
+              "condition": "AND",
+              "key": "type",
+              "operator": "=",
+              "value": "Fan"
+            },
+            {
+              "condition": "AND",
+              "key": "name",
+              "operator": "=",
+              "value": "Fan #1"
+            }
+          ]
+        },
+        {
+          "alias": "System Fan",
+          "datasource": "Telegraf",
+          "groupBy": [
+            {
+              "params": ["$__interval"],
+              "type": "time"
+            },
+            {
+              "params": ["null"],
+              "type": "fill"
+            }
+          ],
+          "hide": false,
+          "measurement": "lhm",
+          "orderByTime": "ASC",
+          "policy": "default",
+          "refId": "B",
+          "resultFormat": "time_series",
+          "select": [
+            [
+              {
+                "params": ["value"],
+                "type": "field"
+              },
+              {
+                "params": [],
+                "type": "mean"
+              }
+            ]
+          ],
+          "tags": [
+            {
+              "key": "host",
+              "operator": "=~",
+              "value": "/^$host$/"
+            },
+            {
+              "condition": "AND",
+              "key": "hardware_name",
+              "operator": "=~",
+              "value": "/^$chipset$/"
+            },
+            {
+              "condition": "AND",
+              "key": "type",
+              "operator": "=",
+              "value": "Fan"
+            },
+            {
+              "condition": "AND",
+              "key": "name",
+              "operator": "=",
+              "value": "Fan #2"
+            }
+          ]
+        },
+        {
+          "alias": "PCH Fan",
+          "datasource": "Telegraf",
+          "groupBy": [
+            {
+              "params": ["$__interval"],
+              "type": "time"
+            },
+            {
+              "params": ["null"],
+              "type": "fill"
+            }
+          ],
+          "hide": false,
+          "measurement": "lhm",
+          "orderByTime": "ASC",
+          "policy": "default",
+          "refId": "C",
+          "resultFormat": "time_series",
+          "select": [
+            [
+              {
+                "params": ["value"],
+                "type": "field"
+              },
+              {
+                "params": [],
+                "type": "mean"
+              }
+            ]
+          ],
+          "tags": [
+            {
+              "key": "host",
+              "operator": "=~",
+              "value": "/^$host$/"
+            },
+            {
+              "condition": "AND",
+              "key": "hardware_name",
+              "operator": "=~",
+              "value": "/^$chipset$/"
+            },
+            {
+              "condition": "AND",
+              "key": "type",
+              "operator": "=",
+              "value": "Fan"
+            },
+            {
+              "condition": "AND",
+              "key": "name",
+              "operator": "=",
+              "value": "Fan #3"
+            }
+          ]
+        },
+        {
+          "alias": "GPU Fan 1",
+          "datasource": "Telegraf",
+          "groupBy": [
+            {
+              "params": ["$__interval"],
+              "type": "time"
+            },
+            {
+              "params": ["null"],
+              "type": "fill"
+            }
+          ],
+          "hide": false,
+          "measurement": "lhm",
+          "orderByTime": "ASC",
+          "policy": "default",
+          "refId": "E",
+          "resultFormat": "time_series",
+          "select": [
+            [
+              {
+                "params": ["value"],
+                "type": "field"
+              },
+              {
+                "params": [],
+                "type": "mean"
+              }
+            ]
+          ],
+          "tags": [
+            {
+              "key": "host",
+              "operator": "=~",
+              "value": "/^$host$/"
+            },
+            {
+              "condition": "AND",
+              "key": "hardware_name",
+              "operator": "=~",
+              "value": "/^$gpu$/"
+            },
+            {
+              "condition": "AND",
+              "key": "type",
+              "operator": "=",
+              "value": "Fan"
+            },
+            {
+              "condition": "AND",
+              "key": "name",
+              "operator": "=",
+              "value": "GPU Fan 1"
+            }
+          ]
+        },
+        {
+          "alias": "GPU Fan 2",
+          "datasource": "Telegraf",
+          "groupBy": [
+            {
+              "params": ["$__interval"],
+              "type": "time"
+            },
+            {
+              "params": ["null"],
+              "type": "fill"
+            }
+          ],
+          "hide": false,
+          "measurement": "lhm",
+          "orderByTime": "ASC",
+          "policy": "default",
+          "refId": "D",
+          "resultFormat": "time_series",
+          "select": [
+            [
+              {
+                "params": ["value"],
+                "type": "field"
+              },
+              {
+                "params": [],
+                "type": "mean"
+              }
+            ]
+          ],
+          "tags": [
+            {
+              "key": "host",
+              "operator": "=~",
+              "value": "/^$host$/"
+            },
+            {
+              "condition": "AND",
+              "key": "hardware_name",
+              "operator": "=~",
+              "value": "/^$gpu$/"
+            },
+            {
+              "condition": "AND",
+              "key": "type",
+              "operator": "=",
+              "value": "Fan"
+            },
+            {
+              "condition": "AND",
+              "key": "name",
+              "operator": "=",
+              "value": "GPU Fan 2"
+            }
+          ]
+        }
+      ],
+      "title": "Fans",
+      "type": "timeseries"
+    },
+    {
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "palette-classic"
+          },
+          "custom": {
+            "axisLabel": "",
+            "axisPlacement": "auto",
+            "barAlignment": 0,
+            "drawStyle": "line",
+            "fillOpacity": 10,
+            "gradientMode": "opacity",
+            "hideFrom": {
+              "legend": false,
+              "tooltip": false,
+              "viz": false
+            },
+            "lineInterpolation": "smooth",
+            "lineWidth": 1,
+            "pointSize": 5,
+            "scaleDistribution": {
+              "type": "linear"
+            },
+            "showPoints": "never",
+            "spanNulls": false,
+            "stacking": {
+              "group": "A",
+              "mode": "none"
+            },
+            "thresholdsStyle": {
+              "mode": "off"
+            }
+          },
+          "decimals": 3,
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              }
+            ]
+          },
+          "unit": "volt"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 9,
+        "w": 12,
+        "x": 0,
+        "y": 16
+      },
+      "id": 19,
+      "interval": "$interval",
+      "links": [],
+      "options": {
+        "legend": {
+          "calcs": ["mean", "max", "min"],
+          "displayMode": "table",
+          "placement": "right"
+        },
+        "tooltip": {
+          "mode": "multi",
+          "sort": "none"
+        }
+      },
+      "pluginVersion": "8.4.3",
+      "targets": [
+        {
+          "alias": "Core (SVI2 TFN)",
+          "datasource": "Telegraf",
+          "groupBy": [
+            {
+              "params": ["$__interval"],
+              "type": "time"
+            },
+            {
+              "params": ["null"],
+              "type": "fill"
+            }
+          ],
+          "measurement": "lhm",
+          "orderByTime": "ASC",
+          "policy": "default",
+          "refId": "A",
+          "resultFormat": "time_series",
+          "select": [
+            [
+              {
+                "params": ["value"],
+                "type": "field"
+              },
+              {
+                "params": [],
+                "type": "mean"
+              }
+            ]
+          ],
+          "tags": [
+            {
+              "key": "host",
+              "operator": "=~",
+              "value": "/^$host$/"
+            },
+            {
+              "condition": "AND",
+              "key": "hardware_name",
+              "operator": "=~",
+              "value": "/^$cpu$/"
+            },
+            {
+              "condition": "AND",
+              "key": "type",
+              "operator": "=",
+              "value": "Voltage"
+            },
+            {
+              "condition": "AND",
+              "key": "name",
+              "operator": "=",
+              "value": "Core (SVI2 TFN)"
+            }
+          ]
+        },
+        {
+          "alias": "SoC (SVI2 TFN)",
+          "datasource": "Telegraf",
+          "groupBy": [
+            {
+              "params": ["$__interval"],
+              "type": "time"
+            },
+            {
+              "params": ["null"],
+              "type": "fill"
+            }
+          ],
+          "hide": false,
+          "measurement": "lhm",
+          "orderByTime": "ASC",
+          "policy": "default",
+          "refId": "B",
+          "resultFormat": "time_series",
+          "select": [
+            [
+              {
+                "params": ["value"],
+                "type": "field"
+              },
+              {
+                "params": [],
+                "type": "mean"
+              }
+            ]
+          ],
+          "tags": [
+            {
+              "key": "host",
+              "operator": "=~",
+              "value": "/^$host$/"
+            },
+            {
+              "condition": "AND",
+              "key": "hardware_name",
+              "operator": "=~",
+              "value": "/^$cpu$/"
+            },
+            {
+              "condition": "AND",
+              "key": "type",
+              "operator": "=",
+              "value": "Voltage"
+            },
+            {
+              "condition": "AND",
+              "key": "name",
+              "operator": "=",
+              "value": "SoC (SVI2 TFN)"
+            }
+          ]
+        },
+        {
+          "alias": "Core #1 VID",
+          "datasource": "Telegraf",
+          "groupBy": [
+            {
+              "params": ["$__interval"],
+              "type": "time"
+            },
+            {
+              "params": ["null"],
+              "type": "fill"
+            }
+          ],
+          "hide": false,
+          "measurement": "lhm",
+          "orderByTime": "ASC",
+          "policy": "default",
+          "refId": "C",
+          "resultFormat": "time_series",
+          "select": [
+            [
+              {
+                "params": ["value"],
+                "type": "field"
+              },
+              {
+                "params": [],
+                "type": "mean"
+              }
+            ]
+          ],
+          "tags": [
+            {
+              "key": "host",
+              "operator": "=~",
+              "value": "/^$host$/"
+            },
+            {
+              "condition": "AND",
+              "key": "hardware_name",
+              "operator": "=~",
+              "value": "/^$cpu$/"
+            },
+            {
+              "condition": "AND",
+              "key": "type",
+              "operator": "=",
+              "value": "Voltage"
+            },
+            {
+              "condition": "AND",
+              "key": "name",
+              "operator": "=",
+              "value": "Core #1 VID"
+            }
+          ]
+        },
+        {
+          "alias": "Core #2 VID",
+          "datasource": "Telegraf",
+          "groupBy": [
+            {
+              "params": ["$__interval"],
+              "type": "time"
+            },
+            {
+              "params": ["null"],
+              "type": "fill"
+            }
+          ],
+          "hide": false,
+          "measurement": "lhm",
+          "orderByTime": "ASC",
+          "policy": "default",
+          "refId": "D",
+          "resultFormat": "time_series",
+          "select": [
+            [
+              {
+                "params": ["value"],
+                "type": "field"
+              },
+              {
+                "params": [],
+                "type": "mean"
+              }
+            ]
+          ],
+          "tags": [
+            {
+              "key": "host",
+              "operator": "=~",
+              "value": "/^$host$/"
+            },
+            {
+              "condition": "AND",
+              "key": "hardware_name",
+              "operator": "=~",
+              "value": "/^$cpu$/"
+            },
+            {
+              "condition": "AND",
+              "key": "type",
+              "operator": "=",
+              "value": "Voltage"
+            },
+            {
+              "condition": "AND",
+              "key": "name",
+              "operator": "=",
+              "value": "Core #2 VID"
+            }
+          ]
+        },
+        {
+          "alias": "Core #3 VID",
+          "datasource": "Telegraf",
+          "groupBy": [
+            {
+              "params": ["$__interval"],
+              "type": "time"
+            },
+            {
+              "params": ["null"],
+              "type": "fill"
+            }
+          ],
+          "hide": false,
+          "measurement": "lhm",
+          "orderByTime": "ASC",
+          "policy": "default",
+          "refId": "E",
+          "resultFormat": "time_series",
+          "select": [
+            [
+              {
+                "params": ["value"],
+                "type": "field"
+              },
+              {
+                "params": [],
+                "type": "mean"
+              }
+            ]
+          ],
+          "tags": [
+            {
+              "key": "host",
+              "operator": "=~",
+              "value": "/^$host$/"
+            },
+            {
+              "condition": "AND",
+              "key": "hardware_name",
+              "operator": "=~",
+              "value": "/^$cpu$/"
+            },
+            {
+              "condition": "AND",
+              "key": "type",
+              "operator": "=",
+              "value": "Voltage"
+            },
+            {
+              "condition": "AND",
+              "key": "name",
+              "operator": "=",
+              "value": "Core #3 VID"
+            }
+          ]
+        },
+        {
+          "alias": "Core #4 VID",
+          "datasource": "Telegraf",
+          "groupBy": [
+            {
+              "params": ["$__interval"],
+              "type": "time"
+            },
+            {
+              "params": ["null"],
+              "type": "fill"
+            }
+          ],
+          "hide": false,
+          "measurement": "lhm",
+          "orderByTime": "ASC",
+          "policy": "default",
+          "refId": "F",
+          "resultFormat": "time_series",
+          "select": [
+            [
+              {
+                "params": ["value"],
+                "type": "field"
+              },
+              {
+                "params": [],
+                "type": "mean"
+              }
+            ]
+          ],
+          "tags": [
+            {
+              "key": "host",
+              "operator": "=~",
+              "value": "/^$host$/"
+            },
+            {
+              "condition": "AND",
+              "key": "hardware_name",
+              "operator": "=~",
+              "value": "/^$cpu$/"
+            },
+            {
+              "condition": "AND",
+              "key": "type",
+              "operator": "=",
+              "value": "Voltage"
+            },
+            {
+              "condition": "AND",
+              "key": "name",
+              "operator": "=",
+              "value": "Core #4 VID"
+            }
+          ]
+        },
+        {
+          "alias": "Core #5 VID",
+          "datasource": "Telegraf",
+          "groupBy": [
+            {
+              "params": ["$__interval"],
+              "type": "time"
+            },
+            {
+              "params": ["null"],
+              "type": "fill"
+            }
+          ],
+          "hide": false,
+          "measurement": "lhm",
+          "orderByTime": "ASC",
+          "policy": "default",
+          "refId": "G",
+          "resultFormat": "time_series",
+          "select": [
+            [
+              {
+                "params": ["value"],
+                "type": "field"
+              },
+              {
+                "params": [],
+                "type": "mean"
+              }
+            ]
+          ],
+          "tags": [
+            {
+              "key": "host",
+              "operator": "=~",
+              "value": "/^$host$/"
+            },
+            {
+              "condition": "AND",
+              "key": "hardware_name",
+              "operator": "=~",
+              "value": "/^$cpu$/"
+            },
+            {
+              "condition": "AND",
+              "key": "type",
+              "operator": "=",
+              "value": "Voltage"
+            },
+            {
+              "condition": "AND",
+              "key": "name",
+              "operator": "=",
+              "value": "Core #5 VID"
+            }
+          ]
+        },
+        {
+          "alias": "Core #6 VID",
+          "datasource": "Telegraf",
+          "groupBy": [
+            {
+              "params": ["$__interval"],
+              "type": "time"
+            },
+            {
+              "params": ["null"],
+              "type": "fill"
+            }
+          ],
+          "hide": false,
+          "measurement": "lhm",
+          "orderByTime": "ASC",
+          "policy": "default",
+          "refId": "H",
+          "resultFormat": "time_series",
+          "select": [
+            [
+              {
+                "params": ["value"],
+                "type": "field"
+              },
+              {
+                "params": [],
+                "type": "mean"
+              }
+            ]
+          ],
+          "tags": [
+            {
+              "key": "host",
+              "operator": "=~",
+              "value": "/^$host$/"
+            },
+            {
+              "condition": "AND",
+              "key": "hardware_name",
+              "operator": "=~",
+              "value": "/^$cpu$/"
+            },
+            {
+              "condition": "AND",
+              "key": "type",
+              "operator": "=",
+              "value": "Voltage"
+            },
+            {
+              "condition": "AND",
+              "key": "name",
+              "operator": "=",
+              "value": "Core #6 VID"
+            }
+          ]
+        },
+        {
+          "alias": "Core #7 VID",
+          "datasource": "Telegraf",
+          "groupBy": [
+            {
+              "params": ["$__interval"],
+              "type": "time"
+            },
+            {
+              "params": ["null"],
+              "type": "fill"
+            }
+          ],
+          "hide": false,
+          "measurement": "lhm",
+          "orderByTime": "ASC",
+          "policy": "default",
+          "refId": "I",
+          "resultFormat": "time_series",
+          "select": [
+            [
+              {
+                "params": ["value"],
+                "type": "field"
+              },
+              {
+                "params": [],
+                "type": "mean"
+              }
+            ]
+          ],
+          "tags": [
+            {
+              "key": "host",
+              "operator": "=~",
+              "value": "/^$host$/"
+            },
+            {
+              "condition": "AND",
+              "key": "hardware_name",
+              "operator": "=~",
+              "value": "/^$cpu$/"
+            },
+            {
+              "condition": "AND",
+              "key": "type",
+              "operator": "=",
+              "value": "Voltage"
+            },
+            {
+              "condition": "AND",
+              "key": "name",
+              "operator": "=",
+              "value": "Core #7 VID"
+            }
+          ]
+        },
+        {
+          "alias": "Core #8 VID",
+          "datasource": "Telegraf",
+          "groupBy": [
+            {
+              "params": ["$__interval"],
+              "type": "time"
+            },
+            {
+              "params": ["null"],
+              "type": "fill"
+            }
+          ],
+          "hide": false,
+          "measurement": "lhm",
+          "orderByTime": "ASC",
+          "policy": "default",
+          "refId": "J",
+          "resultFormat": "time_series",
+          "select": [
+            [
+              {
+                "params": ["value"],
+                "type": "field"
+              },
+              {
+                "params": [],
+                "type": "mean"
+              }
+            ]
+          ],
+          "tags": [
+            {
+              "key": "host",
+              "operator": "=~",
+              "value": "/^$host$/"
+            },
+            {
+              "condition": "AND",
+              "key": "hardware_name",
+              "operator": "=~",
+              "value": "/^$cpu$/"
+            },
+            {
+              "condition": "AND",
+              "key": "type",
+              "operator": "=",
+              "value": "Voltage"
+            },
+            {
+              "condition": "AND",
+              "key": "name",
+              "operator": "=",
+              "value": "Core #8 VID"
+            }
+          ]
+        }
+      ],
+      "title": "Voltages",
+      "type": "timeseries"
+    },
+    {
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "palette-classic"
+          },
+          "custom": {
+            "axisLabel": "",
+            "axisPlacement": "auto",
+            "barAlignment": 0,
+            "drawStyle": "line",
+            "fillOpacity": 10,
+            "gradientMode": "opacity",
+            "hideFrom": {
+              "legend": false,
+              "tooltip": false,
+              "viz": false
+            },
+            "lineInterpolation": "smooth",
+            "lineWidth": 1,
+            "pointSize": 5,
+            "scaleDistribution": {
+              "type": "linear"
+            },
+            "showPoints": "never",
+            "spanNulls": false,
+            "stacking": {
+              "group": "A",
+              "mode": "none"
+            },
+            "thresholdsStyle": {
+              "mode": "off"
+            }
+          },
+          "mappings": [],
+          "min": 0,
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              }
+            ]
+          },
+          "unit": "watt"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 9,
+        "w": 12,
+        "x": 12,
+        "y": 16
+      },
+      "id": 6,
+      "interval": "$interval",
+      "links": [],
+      "options": {
+        "legend": {
+          "calcs": ["mean", "max", "min"],
+          "displayMode": "table",
+          "placement": "right"
+        },
+        "tooltip": {
+          "mode": "multi",
+          "sort": "none"
+        }
+      },
+      "pluginVersion": "8.4.3",
+      "targets": [
+        {
+          "alias": "CPU Package",
+          "datasource": "Telegraf",
+          "groupBy": [
+            {
+              "params": ["$__interval"],
+              "type": "time"
+            },
+            {
+              "params": ["null"],
+              "type": "fill"
+            }
+          ],
+          "measurement": "lhm",
+          "orderByTime": "ASC",
+          "policy": "default",
+          "refId": "A",
+          "resultFormat": "time_series",
+          "select": [
+            [
+              {
+                "params": ["value"],
+                "type": "field"
+              },
+              {
+                "params": [],
+                "type": "mean"
+              }
+            ]
+          ],
+          "tags": [
+            {
+              "key": "host",
+              "operator": "=~",
+              "value": "/^$host$/"
+            },
+            {
+              "condition": "AND",
+              "key": "hardware_name",
+              "operator": "=~",
+              "value": "/^$cpu$/"
+            },
+            {
+              "condition": "AND",
+              "key": "type",
+              "operator": "=",
+              "value": "Power"
+            },
+            {
+              "condition": "AND",
+              "key": "name",
+              "operator": "=",
+              "value": "Package"
+            }
+          ]
+        },
+        {
+          "alias": "GPU Package",
+          "datasource": "Telegraf",
+          "groupBy": [
+            {
+              "params": ["$__interval"],
+              "type": "time"
+            },
+            {
+              "params": ["null"],
+              "type": "fill"
+            }
+          ],
+          "measurement": "lhm",
+          "orderByTime": "ASC",
+          "policy": "default",
+          "refId": "B",
+          "resultFormat": "time_series",
+          "select": [
+            [
+              {
+                "params": ["value"],
+                "type": "field"
+              },
+              {
+                "params": [],
+                "type": "mean"
+              }
+            ]
+          ],
+          "tags": [
+            {
+              "key": "host",
+              "operator": "=~",
+              "value": "/^$host$/"
+            },
+            {
+              "condition": "AND",
+              "key": "hardware_name",
+              "operator": "=~",
+              "value": "/^$gpu$/"
+            },
+            {
+              "condition": "AND",
+              "key": "type",
+              "operator": "=",
+              "value": "Power"
+            },
+            {
+              "condition": "AND",
+              "key": "name",
+              "operator": "=",
+              "value": "GPU Package"
+            }
+          ]
+        },
+        {
+          "alias": "Core #1",
+          "datasource": "Telegraf",
+          "groupBy": [
+            {
+              "params": ["$__interval"],
+              "type": "time"
+            },
+            {
+              "params": ["null"],
+              "type": "fill"
+            }
+          ],
+          "measurement": "lhm",
+          "orderByTime": "ASC",
+          "policy": "default",
+          "refId": "C",
+          "resultFormat": "time_series",
+          "select": [
+            [
+              {
+                "params": ["value"],
+                "type": "field"
+              },
+              {
+                "params": [],
+                "type": "mean"
+              }
+            ]
+          ],
+          "tags": [
+            {
+              "key": "host",
+              "operator": "=~",
+              "value": "/^$host$/"
+            },
+            {
+              "condition": "AND",
+              "key": "hardware_name",
+              "operator": "=~",
+              "value": "/^$cpu$/"
+            },
+            {
+              "condition": "AND",
+              "key": "type",
+              "operator": "=",
+              "value": "Power"
+            },
+            {
+              "condition": "AND",
+              "key": "name",
+              "operator": "=",
+              "value": "Core #1 (SMU)"
+            }
+          ]
+        },
+        {
+          "alias": "Core #2",
+          "datasource": "Telegraf",
+          "groupBy": [
+            {
+              "params": ["$__interval"],
+              "type": "time"
+            },
+            {
+              "params": ["null"],
+              "type": "fill"
+            }
+          ],
+          "hide": false,
+          "measurement": "lhm",
+          "orderByTime": "ASC",
+          "policy": "default",
+          "refId": "E",
+          "resultFormat": "time_series",
+          "select": [
+            [
+              {
+                "params": ["value"],
+                "type": "field"
+              },
+              {
+                "params": [],
+                "type": "mean"
+              }
+            ]
+          ],
+          "tags": [
+            {
+              "key": "host",
+              "operator": "=~",
+              "value": "/^$host$/"
+            },
+            {
+              "condition": "AND",
+              "key": "hardware_name",
+              "operator": "=~",
+              "value": "/^$cpu$/"
+            },
+            {
+              "condition": "AND",
+              "key": "type",
+              "operator": "=",
+              "value": "Power"
+            },
+            {
+              "condition": "AND",
+              "key": "name",
+              "operator": "=",
+              "value": "Core #2 (SMU)"
+            }
+          ]
+        },
+        {
+          "alias": "Core #3",
+          "datasource": "Telegraf",
+          "groupBy": [
+            {
+              "params": ["$__interval"],
+              "type": "time"
+            },
+            {
+              "params": ["null"],
+              "type": "fill"
+            }
+          ],
+          "hide": false,
+          "measurement": "lhm",
+          "orderByTime": "ASC",
+          "policy": "default",
+          "refId": "G",
+          "resultFormat": "time_series",
+          "select": [
+            [
+              {
+                "params": ["value"],
+                "type": "field"
+              },
+              {
+                "params": [],
+                "type": "mean"
+              }
+            ]
+          ],
+          "tags": [
+            {
+              "key": "host",
+              "operator": "=~",
+              "value": "/^$host$/"
+            },
+            {
+              "condition": "AND",
+              "key": "hardware_name",
+              "operator": "=~",
+              "value": "/^$cpu$/"
+            },
+            {
+              "condition": "AND",
+              "key": "type",
+              "operator": "=",
+              "value": "Power"
+            },
+            {
+              "condition": "AND",
+              "key": "name",
+              "operator": "=",
+              "value": "Core #3 (SMU)"
+            }
+          ]
+        },
+        {
+          "alias": "Core #4",
+          "datasource": "Telegraf",
+          "groupBy": [
+            {
+              "params": ["$__interval"],
+              "type": "time"
+            },
+            {
+              "params": ["null"],
+              "type": "fill"
+            }
+          ],
+          "hide": false,
+          "measurement": "lhm",
+          "orderByTime": "ASC",
+          "policy": "default",
+          "refId": "F",
+          "resultFormat": "time_series",
+          "select": [
+            [
+              {
+                "params": ["value"],
+                "type": "field"
+              },
+              {
+                "params": [],
+                "type": "mean"
+              }
+            ]
+          ],
+          "tags": [
+            {
+              "key": "host",
+              "operator": "=~",
+              "value": "/^$host$/"
+            },
+            {
+              "condition": "AND",
+              "key": "hardware_name",
+              "operator": "=~",
+              "value": "/^$cpu$/"
+            },
+            {
+              "condition": "AND",
+              "key": "type",
+              "operator": "=",
+              "value": "Power"
+            },
+            {
+              "condition": "AND",
+              "key": "name",
+              "operator": "=",
+              "value": "Core #4 (SMU)"
+            }
+          ]
+        },
+        {
+          "alias": "Core #5",
+          "datasource": "Telegraf",
+          "groupBy": [
+            {
+              "params": ["$__interval"],
+              "type": "time"
+            },
+            {
+              "params": ["null"],
+              "type": "fill"
+            }
+          ],
+          "hide": false,
+          "measurement": "lhm",
+          "orderByTime": "ASC",
+          "policy": "default",
+          "refId": "I",
+          "resultFormat": "time_series",
+          "select": [
+            [
+              {
+                "params": ["value"],
+                "type": "field"
+              },
+              {
+                "params": [],
+                "type": "mean"
+              }
+            ]
+          ],
+          "tags": [
+            {
+              "key": "host",
+              "operator": "=~",
+              "value": "/^$host$/"
+            },
+            {
+              "condition": "AND",
+              "key": "hardware_name",
+              "operator": "=~",
+              "value": "/^$cpu$/"
+            },
+            {
+              "condition": "AND",
+              "key": "type",
+              "operator": "=",
+              "value": "Power"
+            },
+            {
+              "condition": "AND",
+              "key": "name",
+              "operator": "=",
+              "value": "Core #5 (SMU)"
+            }
+          ]
+        },
+        {
+          "alias": "Core #6",
+          "datasource": "Telegraf",
+          "groupBy": [
+            {
+              "params": ["$__interval"],
+              "type": "time"
+            },
+            {
+              "params": ["null"],
+              "type": "fill"
+            }
+          ],
+          "hide": false,
+          "measurement": "lhm",
+          "orderByTime": "ASC",
+          "policy": "default",
+          "refId": "J",
+          "resultFormat": "time_series",
+          "select": [
+            [
+              {
+                "params": ["value"],
+                "type": "field"
+              },
+              {
+                "params": [],
+                "type": "mean"
+              }
+            ]
+          ],
+          "tags": [
+            {
+              "key": "host",
+              "operator": "=~",
+              "value": "/^$host$/"
+            },
+            {
+              "condition": "AND",
+              "key": "hardware_name",
+              "operator": "=~",
+              "value": "/^$cpu$/"
+            },
+            {
+              "condition": "AND",
+              "key": "type",
+              "operator": "=",
+              "value": "Power"
+            },
+            {
+              "condition": "AND",
+              "key": "name",
+              "operator": "=",
+              "value": "Core #6 (SMU)"
+            }
+          ]
+        },
+        {
+          "alias": "Core #7",
+          "datasource": "Telegraf",
+          "groupBy": [
+            {
+              "params": ["$__interval"],
+              "type": "time"
+            },
+            {
+              "params": ["null"],
+              "type": "fill"
+            }
+          ],
+          "hide": false,
+          "measurement": "lhm",
+          "orderByTime": "ASC",
+          "policy": "default",
+          "refId": "K",
+          "resultFormat": "time_series",
+          "select": [
+            [
+              {
+                "params": ["value"],
+                "type": "field"
+              },
+              {
+                "params": [],
+                "type": "mean"
+              }
+            ]
+          ],
+          "tags": [
+            {
+              "key": "host",
+              "operator": "=~",
+              "value": "/^$host$/"
+            },
+            {
+              "condition": "AND",
+              "key": "hardware_name",
+              "operator": "=~",
+              "value": "/^$cpu$/"
+            },
+            {
+              "condition": "AND",
+              "key": "type",
+              "operator": "=",
+              "value": "Power"
+            },
+            {
+              "condition": "AND",
+              "key": "name",
+              "operator": "=",
+              "value": "Core #7 (SMU)"
+            }
+          ]
+        },
+        {
+          "alias": "Core #8",
+          "datasource": "Telegraf",
+          "groupBy": [
+            {
+              "params": ["$__interval"],
+              "type": "time"
+            },
+            {
+              "params": ["null"],
+              "type": "fill"
+            }
+          ],
+          "hide": false,
+          "measurement": "lhm",
+          "orderByTime": "ASC",
+          "policy": "default",
+          "refId": "H",
+          "resultFormat": "time_series",
+          "select": [
+            [
+              {
+                "params": ["value"],
+                "type": "field"
+              },
+              {
+                "params": [],
+                "type": "mean"
+              }
+            ]
+          ],
+          "tags": [
+            {
+              "key": "host",
+              "operator": "=~",
+              "value": "/^$host$/"
+            },
+            {
+              "condition": "AND",
+              "key": "hardware_name",
+              "operator": "=~",
+              "value": "/^$cpu$/"
+            },
+            {
+              "condition": "AND",
+              "key": "type",
+              "operator": "=",
+              "value": "Power"
+            },
+            {
+              "condition": "AND",
+              "key": "name",
+              "operator": "=",
+              "value": "Core #8 (SMU)"
+            }
+          ]
+        }
+      ],
+      "title": "Energy Consumption",
+      "type": "timeseries"
+    },
+    {
+      "collapsed": false,
+      "gridPos": {
+        "h": 1,
+        "w": 24,
+        "x": 0,
+        "y": 25
+      },
+      "id": 39,
+      "panels": [],
+      "title": "$cpu",
+      "type": "row"
+    },
+    {
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "palette-classic"
+          },
+          "custom": {
+            "axisLabel": "",
+            "axisPlacement": "auto",
+            "barAlignment": 0,
+            "drawStyle": "line",
+            "fillOpacity": 10,
+            "gradientMode": "opacity",
+            "hideFrom": {
+              "legend": false,
+              "tooltip": false,
+              "viz": false
+            },
+            "lineInterpolation": "smooth",
+            "lineWidth": 1,
+            "pointSize": 5,
+            "scaleDistribution": {
+              "type": "linear"
+            },
+            "showPoints": "never",
+            "spanNulls": false,
+            "stacking": {
+              "group": "A",
+              "mode": "none"
+            },
+            "thresholdsStyle": {
+              "mode": "off"
+            }
+          },
+          "mappings": [],
+          "max": 100,
+          "min": 0,
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              }
+            ]
+          },
+          "unit": "percent"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 9,
+        "w": 24,
+        "x": 0,
+        "y": 26
+      },
+      "id": 11,
+      "interval": "$interval",
+      "links": [],
+      "options": {
+        "legend": {
+          "calcs": ["mean", "max", "min"],
+          "displayMode": "table",
+          "placement": "right"
+        },
+        "tooltip": {
+          "mode": "multi",
+          "sort": "none"
+        }
+      },
+      "pluginVersion": "8.4.3",
+      "targets": [
+        {
+          "alias": "Total",
+          "datasource": "Telegraf",
+          "groupBy": [
+            {
+              "params": ["$interval"],
+              "type": "time"
+            },
+            {
+              "params": ["null"],
+              "type": "fill"
+            }
+          ],
+          "measurement": "lhm",
+          "orderByTime": "ASC",
+          "policy": "default",
+          "refId": "H",
+          "resultFormat": "time_series",
+          "select": [
+            [
+              {
+                "params": ["value"],
+                "type": "field"
+              },
+              {
+                "params": [],
+                "type": "mean"
+              }
+            ]
+          ],
+          "tags": [
+            {
+              "key": "host",
+              "operator": "=~",
+              "value": "/^$host$/"
+            },
+            {
+              "condition": "AND",
+              "key": "hardware_name",
+              "operator": "=~",
+              "value": "/^$cpu$/"
+            },
+            {
+              "condition": "AND",
+              "key": "type",
+              "operator": "=",
+              "value": "Load"
+            },
+            {
+              "condition": "AND",
+              "key": "name",
+              "operator": "=",
+              "value": "CPU Total"
+            }
+          ]
+        },
+        {
+          "alias": "Core #1",
+          "datasource": "Telegraf",
+          "groupBy": [
+            {
+              "params": ["$__interval"],
+              "type": "time"
+            },
+            {
+              "params": ["null"],
+              "type": "fill"
+            }
+          ],
+          "hide": false,
+          "measurement": "lhm",
+          "orderByTime": "ASC",
+          "policy": "default",
+          "refId": "B",
+          "resultFormat": "time_series",
+          "select": [
+            [
+              {
+                "params": ["value"],
+                "type": "field"
+              },
+              {
+                "params": [],
+                "type": "mean"
+              }
+            ]
+          ],
+          "tags": [
+            {
+              "key": "host",
+              "operator": "=~",
+              "value": "/^$host$/"
+            },
+            {
+              "condition": "AND",
+              "key": "hardware_name",
+              "operator": "=~",
+              "value": "/^$cpu$/"
+            },
+            {
+              "condition": "AND",
+              "key": "type",
+              "operator": "=",
+              "value": "Load"
+            },
+            {
+              "condition": "AND",
+              "key": "name",
+              "operator": "=",
+              "value": "CPU Core #1"
+            }
+          ]
+        },
+        {
+          "alias": "Core #2",
+          "datasource": "Telegraf",
+          "groupBy": [
+            {
+              "params": ["$__interval"],
+              "type": "time"
+            },
+            {
+              "params": ["null"],
+              "type": "fill"
+            }
+          ],
+          "hide": false,
+          "measurement": "lhm",
+          "orderByTime": "ASC",
+          "policy": "default",
+          "refId": "A",
+          "resultFormat": "time_series",
+          "select": [
+            [
+              {
+                "params": ["value"],
+                "type": "field"
+              },
+              {
+                "params": [],
+                "type": "mean"
+              }
+            ]
+          ],
+          "tags": [
+            {
+              "key": "host",
+              "operator": "=~",
+              "value": "/^$host$/"
+            },
+            {
+              "condition": "AND",
+              "key": "hardware_name",
+              "operator": "=~",
+              "value": "/^$cpu$/"
+            },
+            {
+              "condition": "AND",
+              "key": "type",
+              "operator": "=",
+              "value": "Load"
+            },
+            {
+              "condition": "AND",
+              "key": "name",
+              "operator": "=",
+              "value": "CPU Core #2"
+            }
+          ]
+        },
+        {
+          "alias": "Core #3",
+          "datasource": "Telegraf",
+          "groupBy": [
+            {
+              "params": ["$__interval"],
+              "type": "time"
+            },
+            {
+              "params": ["null"],
+              "type": "fill"
+            }
+          ],
+          "hide": false,
+          "measurement": "lhm",
+          "orderByTime": "ASC",
+          "policy": "default",
+          "refId": "C",
+          "resultFormat": "time_series",
+          "select": [
+            [
+              {
+                "params": ["value"],
+                "type": "field"
+              },
+              {
+                "params": [],
+                "type": "mean"
+              }
+            ]
+          ],
+          "tags": [
+            {
+              "key": "host",
+              "operator": "=~",
+              "value": "/^$host$/"
+            },
+            {
+              "condition": "AND",
+              "key": "hardware_name",
+              "operator": "=~",
+              "value": "/^$cpu$/"
+            },
+            {
+              "condition": "AND",
+              "key": "type",
+              "operator": "=",
+              "value": "Load"
+            },
+            {
+              "condition": "AND",
+              "key": "name",
+              "operator": "=",
+              "value": "CPU Core #3"
+            }
+          ]
+        },
+        {
+          "alias": "Core #4",
+          "datasource": "Telegraf",
+          "groupBy": [
+            {
+              "params": ["$__interval"],
+              "type": "time"
+            },
+            {
+              "params": ["null"],
+              "type": "fill"
+            }
+          ],
+          "hide": false,
+          "measurement": "lhm",
+          "orderByTime": "ASC",
+          "policy": "default",
+          "refId": "D",
+          "resultFormat": "time_series",
+          "select": [
+            [
+              {
+                "params": ["value"],
+                "type": "field"
+              },
+              {
+                "params": [],
+                "type": "mean"
+              }
+            ]
+          ],
+          "tags": [
+            {
+              "key": "host",
+              "operator": "=~",
+              "value": "/^$host$/"
+            },
+            {
+              "condition": "AND",
+              "key": "hardware_name",
+              "operator": "=~",
+              "value": "/^$cpu$/"
+            },
+            {
+              "condition": "AND",
+              "key": "type",
+              "operator": "=",
+              "value": "Load"
+            },
+            {
+              "condition": "AND",
+              "key": "name",
+              "operator": "=",
+              "value": "CPU Core #4"
+            }
+          ]
+        },
+        {
+          "alias": "Core #5",
+          "datasource": "Telegraf",
+          "groupBy": [
+            {
+              "params": ["$__interval"],
+              "type": "time"
+            },
+            {
+              "params": ["null"],
+              "type": "fill"
+            }
+          ],
+          "hide": false,
+          "measurement": "lhm",
+          "orderByTime": "ASC",
+          "policy": "default",
+          "refId": "E",
+          "resultFormat": "time_series",
+          "select": [
+            [
+              {
+                "params": ["value"],
+                "type": "field"
+              },
+              {
+                "params": [],
+                "type": "mean"
+              }
+            ]
+          ],
+          "tags": [
+            {
+              "key": "host",
+              "operator": "=~",
+              "value": "/^$host$/"
+            },
+            {
+              "condition": "AND",
+              "key": "hardware_name",
+              "operator": "=~",
+              "value": "/^$cpu$/"
+            },
+            {
+              "condition": "AND",
+              "key": "type",
+              "operator": "=",
+              "value": "Load"
+            },
+            {
+              "condition": "AND",
+              "key": "name",
+              "operator": "=",
+              "value": "CPU Core #5"
+            }
+          ]
+        },
+        {
+          "alias": "Core #6",
+          "datasource": "Telegraf",
+          "groupBy": [
+            {
+              "params": ["$__interval"],
+              "type": "time"
+            },
+            {
+              "params": ["null"],
+              "type": "fill"
+            }
+          ],
+          "hide": false,
+          "measurement": "lhm",
+          "orderByTime": "ASC",
+          "policy": "default",
+          "refId": "F",
+          "resultFormat": "time_series",
+          "select": [
+            [
+              {
+                "params": ["value"],
+                "type": "field"
+              },
+              {
+                "params": [],
+                "type": "mean"
+              }
+            ]
+          ],
+          "tags": [
+            {
+              "key": "host",
+              "operator": "=~",
+              "value": "/^$host$/"
+            },
+            {
+              "condition": "AND",
+              "key": "hardware_name",
+              "operator": "=~",
+              "value": "/^$cpu$/"
+            },
+            {
+              "condition": "AND",
+              "key": "type",
+              "operator": "=",
+              "value": "Load"
+            },
+            {
+              "condition": "AND",
+              "key": "name",
+              "operator": "=",
+              "value": "CPU Core #6"
+            }
+          ]
+        },
+        {
+          "alias": "Core #7",
+          "datasource": "Telegraf",
+          "groupBy": [
+            {
+              "params": ["$__interval"],
+              "type": "time"
+            },
+            {
+              "params": ["null"],
+              "type": "fill"
+            }
+          ],
+          "hide": false,
+          "measurement": "lhm",
+          "orderByTime": "ASC",
+          "policy": "default",
+          "refId": "G",
+          "resultFormat": "time_series",
+          "select": [
+            [
+              {
+                "params": ["value"],
+                "type": "field"
+              },
+              {
+                "params": [],
+                "type": "mean"
+              }
+            ]
+          ],
+          "tags": [
+            {
+              "key": "host",
+              "operator": "=~",
+              "value": "/^$host$/"
+            },
+            {
+              "condition": "AND",
+              "key": "hardware_name",
+              "operator": "=~",
+              "value": "/^$cpu$/"
+            },
+            {
+              "condition": "AND",
+              "key": "type",
+              "operator": "=",
+              "value": "Load"
+            },
+            {
+              "condition": "AND",
+              "key": "name",
+              "operator": "=",
+              "value": "CPU Core #7"
+            }
+          ]
+        },
+        {
+          "alias": "Core #8",
+          "datasource": "Telegraf",
+          "groupBy": [
+            {
+              "params": ["$__interval"],
+              "type": "time"
+            },
+            {
+              "params": ["null"],
+              "type": "fill"
+            }
+          ],
+          "hide": false,
+          "measurement": "lhm",
+          "orderByTime": "ASC",
+          "policy": "default",
+          "refId": "I",
+          "resultFormat": "time_series",
+          "select": [
+            [
+              {
+                "params": ["value"],
+                "type": "field"
+              },
+              {
+                "params": [],
+                "type": "mean"
+              }
+            ]
+          ],
+          "tags": [
+            {
+              "key": "host",
+              "operator": "=~",
+              "value": "/^$host$/"
+            },
+            {
+              "condition": "AND",
+              "key": "hardware_name",
+              "operator": "=~",
+              "value": "/^$cpu$/"
+            },
+            {
+              "condition": "AND",
+              "key": "type",
+              "operator": "=",
+              "value": "Load"
+            },
+            {
+              "condition": "AND",
+              "key": "name",
+              "operator": "=",
+              "value": "CPU Core #8"
+            }
+          ]
+        },
+        {
+          "alias": "Core #9",
+          "datasource": "Telegraf",
+          "groupBy": [
+            {
+              "params": ["$__interval"],
+              "type": "time"
+            },
+            {
+              "params": ["null"],
+              "type": "fill"
+            }
+          ],
+          "hide": false,
+          "measurement": "lhm",
+          "orderByTime": "ASC",
+          "policy": "default",
+          "refId": "J",
+          "resultFormat": "time_series",
+          "select": [
+            [
+              {
+                "params": ["value"],
+                "type": "field"
+              },
+              {
+                "params": [],
+                "type": "mean"
+              }
+            ]
+          ],
+          "tags": [
+            {
+              "key": "host",
+              "operator": "=~",
+              "value": "/^$host$/"
+            },
+            {
+              "condition": "AND",
+              "key": "hardware_name",
+              "operator": "=~",
+              "value": "/^$cpu$/"
+            },
+            {
+              "condition": "AND",
+              "key": "type",
+              "operator": "=",
+              "value": "Load"
+            },
+            {
+              "condition": "AND",
+              "key": "name",
+              "operator": "=",
+              "value": "CPU Core #9"
+            }
+          ]
+        },
+        {
+          "alias": "Core #10",
+          "datasource": "Telegraf",
+          "groupBy": [
+            {
+              "params": ["$__interval"],
+              "type": "time"
+            },
+            {
+              "params": ["null"],
+              "type": "fill"
+            }
+          ],
+          "hide": false,
+          "measurement": "lhm",
+          "orderByTime": "ASC",
+          "policy": "default",
+          "refId": "K",
+          "resultFormat": "time_series",
+          "select": [
+            [
+              {
+                "params": ["value"],
+                "type": "field"
+              },
+              {
+                "params": [],
+                "type": "mean"
+              }
+            ]
+          ],
+          "tags": [
+            {
+              "key": "host",
+              "operator": "=~",
+              "value": "/^$host$/"
+            },
+            {
+              "condition": "AND",
+              "key": "hardware_name",
+              "operator": "=~",
+              "value": "/^$cpu$/"
+            },
+            {
+              "condition": "AND",
+              "key": "type",
+              "operator": "=",
+              "value": "Load"
+            },
+            {
+              "condition": "AND",
+              "key": "name",
+              "operator": "=",
+              "value": "CPU Core #10"
+            }
+          ]
+        },
+        {
+          "alias": "Core #11",
+          "datasource": "Telegraf",
+          "groupBy": [
+            {
+              "params": ["$__interval"],
+              "type": "time"
+            },
+            {
+              "params": ["null"],
+              "type": "fill"
+            }
+          ],
+          "hide": false,
+          "measurement": "lhm",
+          "orderByTime": "ASC",
+          "policy": "default",
+          "refId": "L",
+          "resultFormat": "time_series",
+          "select": [
+            [
+              {
+                "params": ["value"],
+                "type": "field"
+              },
+              {
+                "params": [],
+                "type": "mean"
+              }
+            ]
+          ],
+          "tags": [
+            {
+              "key": "host",
+              "operator": "=~",
+              "value": "/^$host$/"
+            },
+            {
+              "condition": "AND",
+              "key": "hardware_name",
+              "operator": "=~",
+              "value": "/^$cpu$/"
+            },
+            {
+              "condition": "AND",
+              "key": "type",
+              "operator": "=",
+              "value": "Load"
+            },
+            {
+              "condition": "AND",
+              "key": "name",
+              "operator": "=",
+              "value": "CPU Core #11"
+            }
+          ]
+        },
+        {
+          "alias": "Core #12",
+          "datasource": "Telegraf",
+          "groupBy": [
+            {
+              "params": ["$__interval"],
+              "type": "time"
+            },
+            {
+              "params": ["null"],
+              "type": "fill"
+            }
+          ],
+          "hide": false,
+          "measurement": "lhm",
+          "orderByTime": "ASC",
+          "policy": "default",
+          "refId": "M",
+          "resultFormat": "time_series",
+          "select": [
+            [
+              {
+                "params": ["value"],
+                "type": "field"
+              },
+              {
+                "params": [],
+                "type": "mean"
+              }
+            ]
+          ],
+          "tags": [
+            {
+              "key": "host",
+              "operator": "=~",
+              "value": "/^$host$/"
+            },
+            {
+              "condition": "AND",
+              "key": "hardware_name",
+              "operator": "=~",
+              "value": "/^$cpu$/"
+            },
+            {
+              "condition": "AND",
+              "key": "type",
+              "operator": "=",
+              "value": "Load"
+            },
+            {
+              "condition": "AND",
+              "key": "name",
+              "operator": "=",
+              "value": "CPU Core #12"
+            }
+          ]
+        },
+        {
+          "alias": "Core #13",
+          "datasource": "Telegraf",
+          "groupBy": [
+            {
+              "params": ["$__interval"],
+              "type": "time"
+            },
+            {
+              "params": ["null"],
+              "type": "fill"
+            }
+          ],
+          "hide": false,
+          "measurement": "lhm",
+          "orderByTime": "ASC",
+          "policy": "default",
+          "refId": "N",
+          "resultFormat": "time_series",
+          "select": [
+            [
+              {
+                "params": ["value"],
+                "type": "field"
+              },
+              {
+                "params": [],
+                "type": "mean"
+              }
+            ]
+          ],
+          "tags": [
+            {
+              "key": "host",
+              "operator": "=~",
+              "value": "/^$host$/"
+            },
+            {
+              "condition": "AND",
+              "key": "hardware_name",
+              "operator": "=~",
+              "value": "/^$cpu$/"
+            },
+            {
+              "condition": "AND",
+              "key": "type",
+              "operator": "=",
+              "value": "Load"
+            },
+            {
+              "condition": "AND",
+              "key": "name",
+              "operator": "=",
+              "value": "CPU Core #13"
+            }
+          ]
+        },
+        {
+          "alias": "Core #14",
+          "datasource": "Telegraf",
+          "groupBy": [
+            {
+              "params": ["$__interval"],
+              "type": "time"
+            },
+            {
+              "params": ["null"],
+              "type": "fill"
+            }
+          ],
+          "hide": false,
+          "measurement": "lhm",
+          "orderByTime": "ASC",
+          "policy": "default",
+          "refId": "O",
+          "resultFormat": "time_series",
+          "select": [
+            [
+              {
+                "params": ["value"],
+                "type": "field"
+              },
+              {
+                "params": [],
+                "type": "mean"
+              }
+            ]
+          ],
+          "tags": [
+            {
+              "key": "host",
+              "operator": "=~",
+              "value": "/^$host$/"
+            },
+            {
+              "condition": "AND",
+              "key": "hardware_name",
+              "operator": "=~",
+              "value": "/^$cpu$/"
+            },
+            {
+              "condition": "AND",
+              "key": "type",
+              "operator": "=",
+              "value": "Load"
+            },
+            {
+              "condition": "AND",
+              "key": "name",
+              "operator": "=",
+              "value": "CPU Core #14"
+            }
+          ]
+        },
+        {
+          "alias": "Core #15",
+          "datasource": "Telegraf",
+          "groupBy": [
+            {
+              "params": ["$__interval"],
+              "type": "time"
+            },
+            {
+              "params": ["null"],
+              "type": "fill"
+            }
+          ],
+          "hide": false,
+          "measurement": "lhm",
+          "orderByTime": "ASC",
+          "policy": "default",
+          "refId": "P",
+          "resultFormat": "time_series",
+          "select": [
+            [
+              {
+                "params": ["value"],
+                "type": "field"
+              },
+              {
+                "params": [],
+                "type": "mean"
+              }
+            ]
+          ],
+          "tags": [
+            {
+              "key": "host",
+              "operator": "=~",
+              "value": "/^$host$/"
+            },
+            {
+              "condition": "AND",
+              "key": "hardware_name",
+              "operator": "=~",
+              "value": "/^$cpu$/"
+            },
+            {
+              "condition": "AND",
+              "key": "type",
+              "operator": "=",
+              "value": "Load"
+            },
+            {
+              "condition": "AND",
+              "key": "name",
+              "operator": "=",
+              "value": "CPU Core #15"
+            }
+          ]
+        },
+        {
+          "alias": "Core #16",
+          "datasource": "Telegraf",
+          "groupBy": [
+            {
+              "params": ["$__interval"],
+              "type": "time"
+            },
+            {
+              "params": ["null"],
+              "type": "fill"
+            }
+          ],
+          "hide": false,
+          "measurement": "lhm",
+          "orderByTime": "ASC",
+          "policy": "default",
+          "refId": "Q",
+          "resultFormat": "time_series",
+          "select": [
+            [
+              {
+                "params": ["value"],
+                "type": "field"
+              },
+              {
+                "params": [],
+                "type": "mean"
+              }
+            ]
+          ],
+          "tags": [
+            {
+              "key": "host",
+              "operator": "=~",
+              "value": "/^$host$/"
+            },
+            {
+              "condition": "AND",
+              "key": "hardware_name",
+              "operator": "=~",
+              "value": "/^$cpu$/"
+            },
+            {
+              "condition": "AND",
+              "key": "type",
+              "operator": "=",
+              "value": "Load"
+            },
+            {
+              "condition": "AND",
+              "key": "name",
+              "operator": "=",
+              "value": "CPU Core #16"
+            }
+          ]
+        }
+      ],
+      "title": "CPU Utilization",
+      "type": "timeseries"
+    },
+    {
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "palette-classic"
+          },
+          "custom": {
+            "axisLabel": "",
+            "axisPlacement": "auto",
+            "axisSoftMin": 1,
+            "barAlignment": 0,
+            "drawStyle": "line",
+            "fillOpacity": 10,
+            "gradientMode": "opacity",
+            "hideFrom": {
+              "legend": false,
+              "tooltip": false,
+              "viz": false
+            },
+            "lineInterpolation": "smooth",
+            "lineStyle": {
+              "fill": "solid"
+            },
+            "lineWidth": 1,
+            "pointSize": 5,
+            "scaleDistribution": {
+              "type": "linear"
+            },
+            "showPoints": "never",
+            "spanNulls": false,
+            "stacking": {
+              "group": "A",
+              "mode": "none"
+            },
+            "thresholdsStyle": {
+              "mode": "off"
+            }
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              }
+            ]
+          },
+          "unit": "decgbytes"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 7,
+        "w": 12,
+        "x": 0,
+        "y": 35
+      },
+      "id": 4,
+      "interval": "$interval",
+      "links": [],
+      "options": {
+        "legend": {
+          "calcs": ["mean", "max", "min"],
+          "displayMode": "table",
+          "placement": "right"
+        },
+        "tooltip": {
+          "mode": "multi",
+          "sort": "desc"
+        }
+      },
+      "pluginVersion": "8.4.3",
+      "targets": [
+        {
+          "alias": "System Memory Used",
+          "datasource": "Telegraf",
+          "groupBy": [
+            {
+              "params": ["$__interval"],
+              "type": "time"
+            },
+            {
+              "params": ["null"],
+              "type": "fill"
+            }
+          ],
+          "measurement": "lhm",
+          "orderByTime": "ASC",
+          "policy": "default",
+          "refId": "B",
+          "resultFormat": "time_series",
+          "select": [
+            [
+              {
+                "params": ["value"],
+                "type": "field"
+              },
+              {
+                "params": [],
+                "type": "mean"
+              }
+            ]
+          ],
+          "tags": [
+            {
+              "key": "host",
+              "operator": "=~",
+              "value": "/^$host$/"
+            },
+            {
+              "condition": "AND",
+              "key": "hardware_name",
+              "operator": "=",
+              "value": "Generic Memory"
+            },
+            {
+              "condition": "AND",
+              "key": "type",
+              "operator": "=",
+              "value": "Data"
+            },
+            {
+              "condition": "AND",
+              "key": "name",
+              "operator": "=",
+              "value": "Memory Used"
+            }
+          ]
+        },
+        {
+          "alias": "System Memory Available",
+          "datasource": "Telegraf",
+          "groupBy": [
+            {
+              "params": ["$__interval"],
+              "type": "time"
+            },
+            {
+              "params": ["null"],
+              "type": "fill"
+            }
+          ],
+          "hide": false,
+          "measurement": "lhm",
+          "orderByTime": "ASC",
+          "policy": "default",
+          "refId": "C",
+          "resultFormat": "time_series",
+          "select": [
+            [
+              {
+                "params": ["value"],
+                "type": "field"
+              },
+              {
+                "params": [],
+                "type": "mean"
+              }
+            ]
+          ],
+          "tags": [
+            {
+              "key": "host",
+              "operator": "=~",
+              "value": "/^$host$/"
+            },
+            {
+              "condition": "AND",
+              "key": "hardware_name",
+              "operator": "=",
+              "value": "Generic Memory"
+            },
+            {
+              "condition": "AND",
+              "key": "type",
+              "operator": "=",
+              "value": "Data"
+            },
+            {
+              "condition": "AND",
+              "key": "name",
+              "operator": "=",
+              "value": "Memory Available"
+            }
+          ]
+        },
+        {
+          "alias": "Virtual Memory Used",
+          "datasource": "Telegraf",
+          "groupBy": [
+            {
+              "params": ["$__interval"],
+              "type": "time"
+            },
+            {
+              "params": ["null"],
+              "type": "fill"
+            }
+          ],
+          "measurement": "lhm",
+          "orderByTime": "ASC",
+          "policy": "default",
+          "refId": "A",
+          "resultFormat": "time_series",
+          "select": [
+            [
+              {
+                "params": ["value"],
+                "type": "field"
+              },
+              {
+                "params": [],
+                "type": "mean"
+              }
+            ]
+          ],
+          "tags": [
+            {
+              "key": "host",
+              "operator": "=~",
+              "value": "/^$host$/"
+            },
+            {
+              "condition": "AND",
+              "key": "hardware_name",
+              "operator": "=",
+              "value": "Generic Memory"
+            },
+            {
+              "condition": "AND",
+              "key": "type",
+              "operator": "=",
+              "value": "Data"
+            },
+            {
+              "condition": "AND",
+              "key": "name",
+              "operator": "=",
+              "value": "Virtual Memory Used"
+            }
+          ]
+        },
+        {
+          "alias": "Virtual Memory Available",
+          "datasource": "Telegraf",
+          "groupBy": [
+            {
+              "params": ["$__interval"],
+              "type": "time"
+            },
+            {
+              "params": ["null"],
+              "type": "fill"
+            }
+          ],
+          "hide": false,
+          "measurement": "lhm",
+          "orderByTime": "ASC",
+          "policy": "default",
+          "refId": "D",
+          "resultFormat": "time_series",
+          "select": [
+            [
+              {
+                "params": ["value"],
+                "type": "field"
+              },
+              {
+                "params": [],
+                "type": "mean"
+              }
+            ]
+          ],
+          "tags": [
+            {
+              "key": "host",
+              "operator": "=~",
+              "value": "/^$host$/"
+            },
+            {
+              "condition": "AND",
+              "key": "hardware_name",
+              "operator": "=",
+              "value": "Generic Memory"
+            },
+            {
+              "condition": "AND",
+              "key": "type",
+              "operator": "=",
+              "value": "Data"
+            },
+            {
+              "condition": "AND",
+              "key": "name",
+              "operator": "=",
+              "value": "Virtual Memory Available"
+            }
+          ]
+        }
+      ],
+      "title": "System Memory",
+      "type": "timeseries"
+    },
+    {
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "palette-classic"
+          },
+          "custom": {
+            "axisLabel": "",
+            "axisPlacement": "auto",
+            "barAlignment": 0,
+            "drawStyle": "line",
+            "fillOpacity": 10,
+            "gradientMode": "opacity",
+            "hideFrom": {
+              "legend": false,
+              "tooltip": false,
+              "viz": false
+            },
+            "lineInterpolation": "smooth",
+            "lineWidth": 1,
+            "pointSize": 5,
+            "scaleDistribution": {
+              "type": "linear"
+            },
+            "showPoints": "never",
+            "spanNulls": false,
+            "stacking": {
+              "group": "A",
+              "mode": "none"
+            },
+            "thresholdsStyle": {
+              "mode": "off"
+            }
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              }
+            ]
+          },
+          "unit": "MHz"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 7,
+        "w": 12,
+        "x": 12,
+        "y": 35
+      },
+      "id": 17,
+      "interval": "$interval",
+      "links": [],
+      "options": {
+        "legend": {
+          "calcs": ["mean", "max", "min"],
+          "displayMode": "table",
+          "placement": "right"
+        },
+        "tooltip": {
+          "mode": "multi",
+          "sort": "none"
+        }
+      },
+      "pluginVersion": "8.4.3",
+      "targets": [
+        {
+          "alias": "Core #1",
+          "datasource": "Telegraf",
+          "groupBy": [
+            {
+              "params": ["$__interval"],
+              "type": "time"
+            },
+            {
+              "params": ["null"],
+              "type": "fill"
+            }
+          ],
+          "measurement": "lhm",
+          "orderByTime": "ASC",
+          "policy": "default",
+          "refId": "A",
+          "resultFormat": "time_series",
+          "select": [
+            [
+              {
+                "params": ["value"],
+                "type": "field"
+              },
+              {
+                "params": [],
+                "type": "mean"
+              }
+            ]
+          ],
+          "tags": [
+            {
+              "condition": "AND",
+              "key": "host",
+              "operator": "=~",
+              "value": "/^$host$/"
+            },
+            {
+              "condition": "AND",
+              "key": "hardware_name",
+              "operator": "=~",
+              "value": "/^$cpu$/"
+            },
+            {
+              "condition": "AND",
+              "key": "type",
+              "operator": "=",
+              "value": "Clock"
+            },
+            {
+              "condition": "AND",
+              "key": "name",
+              "operator": "=",
+              "value": "Core #1"
+            }
+          ]
+        },
+        {
+          "alias": "Core #2",
+          "datasource": "Telegraf",
+          "groupBy": [
+            {
+              "params": ["$__interval"],
+              "type": "time"
+            },
+            {
+              "params": ["null"],
+              "type": "fill"
+            }
+          ],
+          "hide": false,
+          "measurement": "lhm",
+          "orderByTime": "ASC",
+          "policy": "default",
+          "refId": "D",
+          "resultFormat": "time_series",
+          "select": [
+            [
+              {
+                "params": ["value"],
+                "type": "field"
+              },
+              {
+                "params": [],
+                "type": "mean"
+              }
+            ]
+          ],
+          "tags": [
+            {
+              "condition": "AND",
+              "key": "host",
+              "operator": "=~",
+              "value": "/^$host$/"
+            },
+            {
+              "condition": "AND",
+              "key": "hardware_name",
+              "operator": "=~",
+              "value": "/^$cpu$/"
+            },
+            {
+              "condition": "AND",
+              "key": "type",
+              "operator": "=",
+              "value": "Clock"
+            },
+            {
+              "condition": "AND",
+              "key": "name",
+              "operator": "=",
+              "value": "Core #2"
+            }
+          ]
+        },
+        {
+          "alias": "Core #3",
+          "datasource": "Telegraf",
+          "groupBy": [
+            {
+              "params": ["$__interval"],
+              "type": "time"
+            },
+            {
+              "params": ["null"],
+              "type": "fill"
+            }
+          ],
+          "hide": false,
+          "measurement": "lhm",
+          "orderByTime": "ASC",
+          "policy": "default",
+          "refId": "E",
+          "resultFormat": "time_series",
+          "select": [
+            [
+              {
+                "params": ["value"],
+                "type": "field"
+              },
+              {
+                "params": [],
+                "type": "mean"
+              }
+            ]
+          ],
+          "tags": [
+            {
+              "condition": "AND",
+              "key": "host",
+              "operator": "=~",
+              "value": "/^$host$/"
+            },
+            {
+              "condition": "AND",
+              "key": "hardware_name",
+              "operator": "=~",
+              "value": "/^$cpu$/"
+            },
+            {
+              "condition": "AND",
+              "key": "type",
+              "operator": "=",
+              "value": "Clock"
+            },
+            {
+              "condition": "AND",
+              "key": "name",
+              "operator": "=",
+              "value": "Core #3"
+            }
+          ]
+        },
+        {
+          "alias": "Core #4",
+          "datasource": "Telegraf",
+          "groupBy": [
+            {
+              "params": ["$__interval"],
+              "type": "time"
+            },
+            {
+              "params": ["null"],
+              "type": "fill"
+            }
+          ],
+          "hide": false,
+          "measurement": "lhm",
+          "orderByTime": "ASC",
+          "policy": "default",
+          "refId": "F",
+          "resultFormat": "time_series",
+          "select": [
+            [
+              {
+                "params": ["value"],
+                "type": "field"
+              },
+              {
+                "params": [],
+                "type": "mean"
+              }
+            ]
+          ],
+          "tags": [
+            {
+              "condition": "AND",
+              "key": "host",
+              "operator": "=~",
+              "value": "/^$host$/"
+            },
+            {
+              "condition": "AND",
+              "key": "hardware_name",
+              "operator": "=~",
+              "value": "/^$cpu$/"
+            },
+            {
+              "condition": "AND",
+              "key": "type",
+              "operator": "=",
+              "value": "Clock"
+            },
+            {
+              "condition": "AND",
+              "key": "name",
+              "operator": "=",
+              "value": "Core #4"
+            }
+          ]
+        },
+        {
+          "alias": "Core #5",
+          "datasource": "Telegraf",
+          "groupBy": [
+            {
+              "params": ["$__interval"],
+              "type": "time"
+            },
+            {
+              "params": ["null"],
+              "type": "fill"
+            }
+          ],
+          "hide": false,
+          "measurement": "lhm",
+          "orderByTime": "ASC",
+          "policy": "default",
+          "refId": "G",
+          "resultFormat": "time_series",
+          "select": [
+            [
+              {
+                "params": ["value"],
+                "type": "field"
+              },
+              {
+                "params": [],
+                "type": "mean"
+              }
+            ]
+          ],
+          "tags": [
+            {
+              "condition": "AND",
+              "key": "host",
+              "operator": "=~",
+              "value": "/^$host$/"
+            },
+            {
+              "condition": "AND",
+              "key": "hardware_name",
+              "operator": "=~",
+              "value": "/^$cpu$/"
+            },
+            {
+              "condition": "AND",
+              "key": "type",
+              "operator": "=",
+              "value": "Clock"
+            },
+            {
+              "condition": "AND",
+              "key": "name",
+              "operator": "=",
+              "value": "Core #5"
+            }
+          ]
+        },
+        {
+          "alias": "Core #6",
+          "datasource": "Telegraf",
+          "groupBy": [
+            {
+              "params": ["$__interval"],
+              "type": "time"
+            },
+            {
+              "params": ["null"],
+              "type": "fill"
+            }
+          ],
+          "hide": false,
+          "measurement": "lhm",
+          "orderByTime": "ASC",
+          "policy": "default",
+          "refId": "H",
+          "resultFormat": "time_series",
+          "select": [
+            [
+              {
+                "params": ["value"],
+                "type": "field"
+              },
+              {
+                "params": [],
+                "type": "mean"
+              }
+            ]
+          ],
+          "tags": [
+            {
+              "condition": "AND",
+              "key": "host",
+              "operator": "=~",
+              "value": "/^$host$/"
+            },
+            {
+              "condition": "AND",
+              "key": "hardware_name",
+              "operator": "=~",
+              "value": "/^$cpu$/"
+            },
+            {
+              "condition": "AND",
+              "key": "type",
+              "operator": "=",
+              "value": "Clock"
+            },
+            {
+              "condition": "AND",
+              "key": "name",
+              "operator": "=",
+              "value": "Core #6"
+            }
+          ]
+        },
+        {
+          "alias": "Core #7",
+          "datasource": "Telegraf",
+          "groupBy": [
+            {
+              "params": ["$__interval"],
+              "type": "time"
+            },
+            {
+              "params": ["null"],
+              "type": "fill"
+            }
+          ],
+          "hide": false,
+          "measurement": "lhm",
+          "orderByTime": "ASC",
+          "policy": "default",
+          "refId": "I",
+          "resultFormat": "time_series",
+          "select": [
+            [
+              {
+                "params": ["value"],
+                "type": "field"
+              },
+              {
+                "params": [],
+                "type": "mean"
+              }
+            ]
+          ],
+          "tags": [
+            {
+              "condition": "AND",
+              "key": "host",
+              "operator": "=~",
+              "value": "/^$host$/"
+            },
+            {
+              "condition": "AND",
+              "key": "hardware_name",
+              "operator": "=~",
+              "value": "/^$cpu$/"
+            },
+            {
+              "condition": "AND",
+              "key": "type",
+              "operator": "=",
+              "value": "Clock"
+            },
+            {
+              "condition": "AND",
+              "key": "name",
+              "operator": "=",
+              "value": "Core #7"
+            }
+          ]
+        },
+        {
+          "alias": "Core #8",
+          "datasource": "Telegraf",
+          "groupBy": [
+            {
+              "params": ["$__interval"],
+              "type": "time"
+            },
+            {
+              "params": ["null"],
+              "type": "fill"
+            }
+          ],
+          "hide": false,
+          "measurement": "lhm",
+          "orderByTime": "ASC",
+          "policy": "default",
+          "refId": "J",
+          "resultFormat": "time_series",
+          "select": [
+            [
+              {
+                "params": ["value"],
+                "type": "field"
+              },
+              {
+                "params": [],
+                "type": "mean"
+              }
+            ]
+          ],
+          "tags": [
+            {
+              "condition": "AND",
+              "key": "host",
+              "operator": "=~",
+              "value": "/^$host$/"
+            },
+            {
+              "condition": "AND",
+              "key": "hardware_name",
+              "operator": "=~",
+              "value": "/^$cpu$/"
+            },
+            {
+              "condition": "AND",
+              "key": "type",
+              "operator": "=",
+              "value": "Clock"
+            },
+            {
+              "condition": "AND",
+              "key": "name",
+              "operator": "=",
+              "value": "Core #8"
+            }
+          ]
+        }
+      ],
+      "title": "CPU Clocks",
+      "type": "timeseries"
+    },
+    {
+      "collapsed": false,
+      "gridPos": {
+        "h": 1,
+        "w": 24,
+        "x": 0,
+        "y": 42
+      },
+      "id": 41,
+      "panels": [],
+      "title": "$gpu",
+      "type": "row"
+    },
+    {
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "palette-classic"
+          },
+          "custom": {
+            "axisLabel": "",
+            "axisPlacement": "auto",
+            "barAlignment": 0,
+            "drawStyle": "line",
+            "fillOpacity": 10,
+            "gradientMode": "opacity",
+            "hideFrom": {
+              "legend": false,
+              "tooltip": false,
+              "viz": false
+            },
+            "lineInterpolation": "smooth",
+            "lineStyle": {
+              "fill": "solid"
+            },
+            "lineWidth": 1,
+            "pointSize": 5,
+            "scaleDistribution": {
+              "type": "linear"
+            },
+            "showPoints": "never",
+            "spanNulls": false,
+            "stacking": {
+              "group": "A",
+              "mode": "none"
+            },
+            "thresholdsStyle": {
+              "mode": "off"
+            }
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              }
+            ]
+          },
+          "unit": "percent"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 9,
+        "w": 12,
+        "x": 0,
+        "y": 43
+      },
+      "id": 13,
+      "interval": "$interval",
+      "links": [],
+      "options": {
+        "legend": {
+          "calcs": ["mean", "max", "min"],
+          "displayMode": "table",
+          "placement": "right"
+        },
+        "tooltip": {
+          "mode": "multi",
+          "sort": "none"
+        }
+      },
+      "pluginVersion": "8.4.3",
+      "targets": [
+        {
+          "alias": "Power",
+          "datasource": "Telegraf",
+          "groupBy": [
+            {
+              "params": ["$__interval"],
+              "type": "time"
+            },
+            {
+              "params": ["null"],
+              "type": "fill"
+            }
+          ],
+          "measurement": "lhm",
+          "orderByTime": "ASC",
+          "policy": "default",
+          "refId": "A",
+          "resultFormat": "time_series",
+          "select": [
+            [
+              {
+                "params": ["value"],
+                "type": "field"
+              },
+              {
+                "params": [],
+                "type": "mean"
+              }
+            ]
+          ],
+          "tags": [
+            {
+              "key": "host",
+              "operator": "=~",
+              "value": "/^$host$/"
+            },
+            {
+              "condition": "AND",
+              "key": "hardware_name",
+              "operator": "=~",
+              "value": "/^$gpu$/"
+            },
+            {
+              "condition": "AND",
+              "key": "type",
+              "operator": "=",
+              "value": "Load"
+            },
+            {
+              "condition": "AND",
+              "key": "name",
+              "operator": "=",
+              "value": "GPU Power"
+            }
+          ]
+        },
+        {
+          "alias": "Core",
+          "datasource": "Telegraf",
+          "groupBy": [
+            {
+              "params": ["$__interval"],
+              "type": "time"
+            },
+            {
+              "params": ["null"],
+              "type": "fill"
+            }
+          ],
+          "measurement": "lhm",
+          "orderByTime": "ASC",
+          "policy": "default",
+          "refId": "B",
+          "resultFormat": "time_series",
+          "select": [
+            [
+              {
+                "params": ["value"],
+                "type": "field"
+              },
+              {
+                "params": [],
+                "type": "mean"
+              }
+            ]
+          ],
+          "tags": [
+            {
+              "key": "host",
+              "operator": "=~",
+              "value": "/^$host$/"
+            },
+            {
+              "condition": "AND",
+              "key": "hardware_name",
+              "operator": "=~",
+              "value": "/^$gpu$/"
+            },
+            {
+              "condition": "AND",
+              "key": "type",
+              "operator": "=",
+              "value": "Load"
+            },
+            {
+              "condition": "AND",
+              "key": "name",
+              "operator": "=",
+              "value": "GPU Core"
+            }
+          ]
+        },
+        {
+          "alias": "Bus",
+          "datasource": "Telegraf",
+          "groupBy": [
+            {
+              "params": ["$__interval"],
+              "type": "time"
+            },
+            {
+              "params": ["null"],
+              "type": "fill"
+            }
+          ],
+          "measurement": "lhm",
+          "orderByTime": "ASC",
+          "policy": "default",
+          "refId": "C",
+          "resultFormat": "time_series",
+          "select": [
+            [
+              {
+                "params": ["value"],
+                "type": "field"
+              },
+              {
+                "params": [],
+                "type": "mean"
+              }
+            ]
+          ],
+          "tags": [
+            {
+              "key": "host",
+              "operator": "=~",
+              "value": "/^$host$/"
+            },
+            {
+              "condition": "AND",
+              "key": "hardware_name",
+              "operator": "=~",
+              "value": "/^$gpu$/"
+            },
+            {
+              "condition": "AND",
+              "key": "type",
+              "operator": "=",
+              "value": "Load"
+            },
+            {
+              "condition": "AND",
+              "key": "name",
+              "operator": "=",
+              "value": "GPU Bus"
+            }
+          ]
+        },
+        {
+          "alias": "Memory Controller",
+          "datasource": "Telegraf",
+          "groupBy": [
+            {
+              "params": ["$__interval"],
+              "type": "time"
+            },
+            {
+              "params": ["null"],
+              "type": "fill"
+            }
+          ],
+          "measurement": "lhm",
+          "orderByTime": "ASC",
+          "policy": "default",
+          "refId": "D",
+          "resultFormat": "time_series",
+          "select": [
+            [
+              {
+                "params": ["value"],
+                "type": "field"
+              },
+              {
+                "params": [],
+                "type": "mean"
+              }
+            ]
+          ],
+          "tags": [
+            {
+              "condition": "AND",
+              "key": "host",
+              "operator": "=~",
+              "value": "/^$host$/"
+            },
+            {
+              "condition": "AND",
+              "key": "hardware_name",
+              "operator": "=~",
+              "value": "/^$gpu$/"
+            },
+            {
+              "condition": "AND",
+              "key": "type",
+              "operator": "=",
+              "value": "Load"
+            },
+            {
+              "condition": "AND",
+              "key": "name",
+              "operator": "=",
+              "value": "GPU Memory Controller"
+            }
+          ]
+        },
+        {
+          "alias": "Board Power",
+          "datasource": "Telegraf",
+          "groupBy": [
+            {
+              "params": ["$__interval"],
+              "type": "time"
+            },
+            {
+              "params": ["null"],
+              "type": "fill"
+            }
+          ],
+          "hide": false,
+          "measurement": "lhm",
+          "orderByTime": "ASC",
+          "policy": "default",
+          "refId": "E",
+          "resultFormat": "time_series",
+          "select": [
+            [
+              {
+                "params": ["value"],
+                "type": "field"
+              },
+              {
+                "params": [],
+                "type": "mean"
+              }
+            ]
+          ],
+          "tags": [
+            {
+              "key": "host",
+              "operator": "=~",
+              "value": "/^$host$/"
+            },
+            {
+              "condition": "AND",
+              "key": "hardware_name",
+              "operator": "=~",
+              "value": "/^$gpu$/"
+            },
+            {
+              "condition": "AND",
+              "key": "type",
+              "operator": "=",
+              "value": "Load"
+            },
+            {
+              "condition": "AND",
+              "key": "name",
+              "operator": "=",
+              "value": "GPU Board Power"
+            }
+          ]
+        },
+        {
+          "alias": "Video Engine",
+          "datasource": "Telegraf",
+          "groupBy": [
+            {
+              "params": ["$__interval"],
+              "type": "time"
+            },
+            {
+              "params": ["null"],
+              "type": "fill"
+            }
+          ],
+          "hide": false,
+          "measurement": "lhm",
+          "orderByTime": "ASC",
+          "policy": "default",
+          "refId": "F",
+          "resultFormat": "time_series",
+          "select": [
+            [
+              {
+                "params": ["value"],
+                "type": "field"
+              },
+              {
+                "params": [],
+                "type": "mean"
+              }
+            ]
+          ],
+          "tags": [
+            {
+              "key": "host",
+              "operator": "=~",
+              "value": "/^$host$/"
+            },
+            {
+              "condition": "AND",
+              "key": "hardware_name",
+              "operator": "=~",
+              "value": "/^$gpu$/"
+            },
+            {
+              "condition": "AND",
+              "key": "type",
+              "operator": "=",
+              "value": "Load"
+            },
+            {
+              "condition": "AND",
+              "key": "name",
+              "operator": "=",
+              "value": "GPU Video Engine"
+            }
+          ]
+        }
+      ],
+      "title": "GPU Utilisation",
+      "type": "timeseries"
+    },
+    {
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "palette-classic"
+          },
+          "custom": {
+            "axisLabel": "",
+            "axisPlacement": "auto",
+            "barAlignment": 0,
+            "drawStyle": "line",
+            "fillOpacity": 10,
+            "gradientMode": "opacity",
+            "hideFrom": {
+              "legend": false,
+              "tooltip": false,
+              "viz": false
+            },
+            "lineInterpolation": "smooth",
+            "lineWidth": 1,
+            "pointSize": 5,
+            "scaleDistribution": {
+              "type": "linear"
+            },
+            "showPoints": "never",
+            "spanNulls": false,
+            "stacking": {
+              "group": "A",
+              "mode": "none"
+            },
+            "thresholdsStyle": {
+              "mode": "off"
+            }
+          },
+          "mappings": [],
+          "min": 0,
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          },
+          "unit": "percent"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 9,
+        "w": 12,
+        "x": 12,
+        "y": 43
+      },
+      "id": 8,
+      "interval": "$interval",
+      "links": [],
+      "options": {
+        "legend": {
+          "calcs": ["mean", "max", "min"],
+          "displayMode": "table",
+          "placement": "right"
+        },
+        "tooltip": {
+          "mode": "multi",
+          "sort": "none"
+        }
+      },
+      "pluginVersion": "8.4.3",
+      "targets": [
+        {
+          "alias": "D3D",
+          "datasource": "Telegraf",
+          "groupBy": [
+            {
+              "params": ["$__interval"],
+              "type": "time"
+            },
+            {
+              "params": ["null"],
+              "type": "fill"
+            }
+          ],
+          "measurement": "lhm",
+          "orderByTime": "ASC",
+          "policy": "default",
+          "refId": "A",
+          "resultFormat": "time_series",
+          "select": [
+            [
+              {
+                "params": ["value"],
+                "type": "field"
+              },
+              {
+                "params": [],
+                "type": "mean"
+              }
+            ]
+          ],
+          "tags": [
+            {
+              "key": "host",
+              "operator": "=~",
+              "value": "/^$host$/"
+            },
+            {
+              "condition": "AND",
+              "key": "hardware_name",
+              "operator": "=~",
+              "value": "/^$gpu$/"
+            },
+            {
+              "condition": "AND",
+              "key": "type",
+              "operator": "=",
+              "value": "Load"
+            },
+            {
+              "condition": "AND",
+              "key": "name",
+              "operator": "=",
+              "value": "D3D 3D"
+            }
+          ]
+        },
+        {
+          "alias": "Compute 0",
+          "datasource": "Telegraf",
+          "groupBy": [
+            {
+              "params": ["$__interval"],
+              "type": "time"
+            },
+            {
+              "params": ["null"],
+              "type": "fill"
+            }
+          ],
+          "hide": false,
+          "measurement": "lhm",
+          "orderByTime": "ASC",
+          "policy": "default",
+          "refId": "B",
+          "resultFormat": "time_series",
+          "select": [
+            [
+              {
+                "params": ["value"],
+                "type": "field"
+              },
+              {
+                "params": [],
+                "type": "mean"
+              }
+            ]
+          ],
+          "tags": [
+            {
+              "key": "host",
+              "operator": "=~",
+              "value": "/^$host$/"
+            },
+            {
+              "condition": "AND",
+              "key": "hardware_name",
+              "operator": "=~",
+              "value": "/^$gpu$/"
+            },
+            {
+              "condition": "AND",
+              "key": "type",
+              "operator": "=",
+              "value": "Load"
+            },
+            {
+              "condition": "AND",
+              "key": "name",
+              "operator": "=",
+              "value": "D3D Compute_0"
+            }
+          ]
+        },
+        {
+          "alias": "Compute 1",
+          "datasource": "Telegraf",
+          "groupBy": [
+            {
+              "params": ["$__interval"],
+              "type": "time"
+            },
+            {
+              "params": ["null"],
+              "type": "fill"
+            }
+          ],
+          "hide": false,
+          "measurement": "lhm",
+          "orderByTime": "ASC",
+          "policy": "default",
+          "refId": "C",
+          "resultFormat": "time_series",
+          "select": [
+            [
+              {
+                "params": ["value"],
+                "type": "field"
+              },
+              {
+                "params": [],
+                "type": "mean"
+              }
+            ]
+          ],
+          "tags": [
+            {
+              "key": "host",
+              "operator": "=~",
+              "value": "/^$host$/"
+            },
+            {
+              "condition": "AND",
+              "key": "hardware_name",
+              "operator": "=~",
+              "value": "/^$gpu$/"
+            },
+            {
+              "condition": "AND",
+              "key": "type",
+              "operator": "=",
+              "value": "Load"
+            },
+            {
+              "condition": "AND",
+              "key": "name",
+              "operator": "=",
+              "value": "D3D Compute_1"
+            }
+          ]
+        },
+        {
+          "alias": "Copy",
+          "datasource": "Telegraf",
+          "groupBy": [
+            {
+              "params": ["$__interval"],
+              "type": "time"
+            },
+            {
+              "params": ["null"],
+              "type": "fill"
+            }
+          ],
+          "hide": false,
+          "measurement": "lhm",
+          "orderByTime": "ASC",
+          "policy": "default",
+          "refId": "D",
+          "resultFormat": "time_series",
+          "select": [
+            [
+              {
+                "params": ["value"],
+                "type": "field"
+              },
+              {
+                "params": [],
+                "type": "mean"
+              }
+            ]
+          ],
+          "tags": [
+            {
+              "key": "host",
+              "operator": "=~",
+              "value": "/^$host$/"
+            },
+            {
+              "condition": "AND",
+              "key": "hardware_name",
+              "operator": "=~",
+              "value": "/^$gpu$/"
+            },
+            {
+              "condition": "AND",
+              "key": "type",
+              "operator": "=",
+              "value": "Load"
+            },
+            {
+              "condition": "AND",
+              "key": "name",
+              "operator": "=",
+              "value": "D3D Copy"
+            }
+          ]
+        },
+        {
+          "alias": "Cuda",
+          "datasource": "Telegraf",
+          "groupBy": [
+            {
+              "params": ["$__interval"],
+              "type": "time"
+            },
+            {
+              "params": ["null"],
+              "type": "fill"
+            }
+          ],
+          "hide": false,
+          "measurement": "lhm",
+          "orderByTime": "ASC",
+          "policy": "default",
+          "refId": "E",
+          "resultFormat": "time_series",
+          "select": [
+            [
+              {
+                "params": ["value"],
+                "type": "field"
+              },
+              {
+                "params": [],
+                "type": "mean"
+              }
+            ]
+          ],
+          "tags": [
+            {
+              "key": "host",
+              "operator": "=~",
+              "value": "/^$host$/"
+            },
+            {
+              "condition": "AND",
+              "key": "hardware_name",
+              "operator": "=~",
+              "value": "/^$gpu$/"
+            },
+            {
+              "condition": "AND",
+              "key": "type",
+              "operator": "=",
+              "value": "Load"
+            },
+            {
+              "condition": "AND",
+              "key": "name",
+              "operator": "=",
+              "value": "D3D Cuda"
+            }
+          ]
+        },
+        {
+          "alias": "Graphics 1",
+          "datasource": "Telegraf",
+          "groupBy": [
+            {
+              "params": ["$__interval"],
+              "type": "time"
+            },
+            {
+              "params": ["null"],
+              "type": "fill"
+            }
+          ],
+          "hide": false,
+          "measurement": "lhm",
+          "orderByTime": "ASC",
+          "policy": "default",
+          "refId": "F",
+          "resultFormat": "time_series",
+          "select": [
+            [
+              {
+                "params": ["value"],
+                "type": "field"
+              },
+              {
+                "params": [],
+                "type": "mean"
+              }
+            ]
+          ],
+          "tags": [
+            {
+              "key": "host",
+              "operator": "=~",
+              "value": "/^$host$/"
+            },
+            {
+              "condition": "AND",
+              "key": "hardware_name",
+              "operator": "=~",
+              "value": "/^$gpu$/"
+            },
+            {
+              "condition": "AND",
+              "key": "type",
+              "operator": "=",
+              "value": "Load"
+            },
+            {
+              "condition": "AND",
+              "key": "name",
+              "operator": "=",
+              "value": "D3D Graphics_1"
+            }
+          ]
+        },
+        {
+          "alias": "Overlay",
+          "datasource": "Telegraf",
+          "groupBy": [
+            {
+              "params": ["$__interval"],
+              "type": "time"
+            },
+            {
+              "params": ["null"],
+              "type": "fill"
+            }
+          ],
+          "hide": false,
+          "measurement": "lhm",
+          "orderByTime": "ASC",
+          "policy": "default",
+          "refId": "G",
+          "resultFormat": "time_series",
+          "select": [
+            [
+              {
+                "params": ["value"],
+                "type": "field"
+              },
+              {
+                "params": [],
+                "type": "mean"
+              }
+            ]
+          ],
+          "tags": [
+            {
+              "key": "host",
+              "operator": "=~",
+              "value": "/^$host$/"
+            },
+            {
+              "condition": "AND",
+              "key": "hardware_name",
+              "operator": "=~",
+              "value": "/^$gpu$/"
+            },
+            {
+              "condition": "AND",
+              "key": "type",
+              "operator": "=",
+              "value": "Load"
+            },
+            {
+              "condition": "AND",
+              "key": "name",
+              "operator": "=",
+              "value": "D3D Overlay"
+            }
+          ]
+        },
+        {
+          "alias": "Security",
+          "datasource": "Telegraf",
+          "groupBy": [
+            {
+              "params": ["$__interval"],
+              "type": "time"
+            },
+            {
+              "params": ["null"],
+              "type": "fill"
+            }
+          ],
+          "hide": false,
+          "measurement": "lhm",
+          "orderByTime": "ASC",
+          "policy": "default",
+          "refId": "H",
+          "resultFormat": "time_series",
+          "select": [
+            [
+              {
+                "params": ["value"],
+                "type": "field"
+              },
+              {
+                "params": [],
+                "type": "mean"
+              }
+            ]
+          ],
+          "tags": [
+            {
+              "key": "host",
+              "operator": "=~",
+              "value": "/^$host$/"
+            },
+            {
+              "condition": "AND",
+              "key": "hardware_name",
+              "operator": "=~",
+              "value": "/^$gpu$/"
+            },
+            {
+              "condition": "AND",
+              "key": "type",
+              "operator": "=",
+              "value": "Load"
+            },
+            {
+              "condition": "AND",
+              "key": "name",
+              "operator": "=",
+              "value": "D3D Security"
+            }
+          ]
+        },
+        {
+          "alias": "VR",
+          "datasource": "Telegraf",
+          "groupBy": [
+            {
+              "params": ["$__interval"],
+              "type": "time"
+            },
+            {
+              "params": ["null"],
+              "type": "fill"
+            }
+          ],
+          "hide": false,
+          "measurement": "lhm",
+          "orderByTime": "ASC",
+          "policy": "default",
+          "refId": "I",
+          "resultFormat": "time_series",
+          "select": [
+            [
+              {
+                "params": ["value"],
+                "type": "field"
+              },
+              {
+                "params": [],
+                "type": "mean"
+              }
+            ]
+          ],
+          "tags": [
+            {
+              "key": "host",
+              "operator": "=~",
+              "value": "/^$host$/"
+            },
+            {
+              "condition": "AND",
+              "key": "hardware_name",
+              "operator": "=~",
+              "value": "/^$gpu$/"
+            },
+            {
+              "condition": "AND",
+              "key": "type",
+              "operator": "=",
+              "value": "Load"
+            },
+            {
+              "condition": "AND",
+              "key": "name",
+              "operator": "=",
+              "value": "D3D VR"
+            }
+          ]
+        },
+        {
+          "alias": "Video Decode",
+          "datasource": "Telegraf",
+          "groupBy": [
+            {
+              "params": ["$__interval"],
+              "type": "time"
+            },
+            {
+              "params": ["null"],
+              "type": "fill"
+            }
+          ],
+          "hide": false,
+          "measurement": "lhm",
+          "orderByTime": "ASC",
+          "policy": "default",
+          "refId": "J",
+          "resultFormat": "time_series",
+          "select": [
+            [
+              {
+                "params": ["value"],
+                "type": "field"
+              },
+              {
+                "params": [],
+                "type": "mean"
+              }
+            ]
+          ],
+          "tags": [
+            {
+              "key": "host",
+              "operator": "=~",
+              "value": "/^$host$/"
+            },
+            {
+              "condition": "AND",
+              "key": "hardware_name",
+              "operator": "=~",
+              "value": "/^$gpu$/"
+            },
+            {
+              "condition": "AND",
+              "key": "type",
+              "operator": "=",
+              "value": "Load"
+            },
+            {
+              "condition": "AND",
+              "key": "name",
+              "operator": "=",
+              "value": "D3D Video Decode"
+            }
+          ]
+        },
+        {
+          "alias": "Video Processing",
+          "datasource": "Telegraf",
+          "groupBy": [
+            {
+              "params": ["$__interval"],
+              "type": "time"
+            },
+            {
+              "params": ["null"],
+              "type": "fill"
+            }
+          ],
+          "hide": false,
+          "measurement": "lhm",
+          "orderByTime": "ASC",
+          "policy": "default",
+          "refId": "K",
+          "resultFormat": "time_series",
+          "select": [
+            [
+              {
+                "params": ["value"],
+                "type": "field"
+              },
+              {
+                "params": [],
+                "type": "mean"
+              }
+            ]
+          ],
+          "tags": [
+            {
+              "key": "host",
+              "operator": "=~",
+              "value": "/^$host$/"
+            },
+            {
+              "condition": "AND",
+              "key": "hardware_name",
+              "operator": "=~",
+              "value": "/^$gpu$/"
+            },
+            {
+              "condition": "AND",
+              "key": "type",
+              "operator": "=",
+              "value": "Load"
+            },
+            {
+              "condition": "AND",
+              "key": "name",
+              "operator": "=",
+              "value": "D3D Video Processing"
+            }
+          ]
+        }
+      ],
+      "title": "Direct 3D",
+      "type": "timeseries"
+    },
+    {
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "palette-classic"
+          },
+          "custom": {
+            "axisLabel": "",
+            "axisPlacement": "auto",
+            "barAlignment": 0,
+            "drawStyle": "line",
+            "fillOpacity": 10,
+            "gradientMode": "opacity",
+            "hideFrom": {
+              "legend": false,
+              "tooltip": false,
+              "viz": false
+            },
+            "lineInterpolation": "smooth",
+            "lineWidth": 1,
+            "pointSize": 5,
+            "scaleDistribution": {
+              "type": "linear"
+            },
+            "showPoints": "never",
+            "spanNulls": false,
+            "stacking": {
+              "group": "A",
+              "mode": "none"
+            },
+            "thresholdsStyle": {
+              "mode": "off"
+            }
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              }
+            ]
+          },
+          "unit": "decmbytes"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 7,
+        "w": 12,
+        "x": 0,
+        "y": 52
+      },
+      "id": 35,
+      "interval": "$interval",
+      "links": [],
+      "options": {
+        "legend": {
+          "calcs": ["mean", "max", "min"],
+          "displayMode": "table",
+          "placement": "right"
+        },
+        "tooltip": {
+          "mode": "multi",
+          "sort": "desc"
+        }
+      },
+      "pluginVersion": "8.4.3",
+      "targets": [
+        {
+          "alias": "GPU Memory Used",
+          "datasource": "Telegraf",
+          "groupBy": [
+            {
+              "params": ["$__interval"],
+              "type": "time"
+            },
+            {
+              "params": ["null"],
+              "type": "fill"
+            }
+          ],
+          "hide": false,
+          "measurement": "lhm",
+          "orderByTime": "ASC",
+          "policy": "default",
+          "refId": "C",
+          "resultFormat": "time_series",
+          "select": [
+            [
+              {
+                "params": ["value"],
+                "type": "field"
+              },
+              {
+                "params": [],
+                "type": "mean"
+              }
+            ]
+          ],
+          "tags": [
+            {
+              "key": "host",
+              "operator": "=~",
+              "value": "/^$host$/"
+            },
+            {
+              "condition": "AND",
+              "key": "hardware_name",
+              "operator": "=~",
+              "value": "/^$gpu$/"
+            },
+            {
+              "condition": "AND",
+              "key": "type",
+              "operator": "=",
+              "value": "SmallData"
+            },
+            {
+              "condition": "AND",
+              "key": "name",
+              "operator": "=",
+              "value": "GPU Memory Used"
+            }
+          ]
+        },
+        {
+          "alias": "D3D Dedicated Memory Used",
+          "datasource": "Telegraf",
+          "groupBy": [
+            {
+              "params": ["$__interval"],
+              "type": "time"
+            },
+            {
+              "params": ["null"],
+              "type": "fill"
+            }
+          ],
+          "hide": false,
+          "measurement": "lhm",
+          "orderByTime": "ASC",
+          "policy": "default",
+          "refId": "E",
+          "resultFormat": "time_series",
+          "select": [
+            [
+              {
+                "params": ["value"],
+                "type": "field"
+              },
+              {
+                "params": [],
+                "type": "mean"
+              }
+            ]
+          ],
+          "tags": [
+            {
+              "key": "host",
+              "operator": "=~",
+              "value": "/^$host$/"
+            },
+            {
+              "condition": "AND",
+              "key": "hardware_name",
+              "operator": "=~",
+              "value": "/^$gpu$/"
+            },
+            {
+              "condition": "AND",
+              "key": "type",
+              "operator": "=",
+              "value": "SmallData"
+            },
+            {
+              "condition": "AND",
+              "key": "name",
+              "operator": "=",
+              "value": "D3D Dedicated Memory Used"
+            }
+          ]
+        },
+        {
+          "alias": "D3D Shared Memory Used",
+          "datasource": "Telegraf",
+          "groupBy": [
+            {
+              "params": ["$__interval"],
+              "type": "time"
+            },
+            {
+              "params": ["null"],
+              "type": "fill"
+            }
+          ],
+          "hide": false,
+          "measurement": "lhm",
+          "orderByTime": "ASC",
+          "policy": "default",
+          "refId": "F",
+          "resultFormat": "time_series",
+          "select": [
+            [
+              {
+                "params": ["value"],
+                "type": "field"
+              },
+              {
+                "params": [],
+                "type": "mean"
+              }
+            ]
+          ],
+          "tags": [
+            {
+              "key": "host",
+              "operator": "=~",
+              "value": "/^$host$/"
+            },
+            {
+              "condition": "AND",
+              "key": "hardware_name",
+              "operator": "=~",
+              "value": "/^$gpu$/"
+            },
+            {
+              "condition": "AND",
+              "key": "type",
+              "operator": "=",
+              "value": "SmallData"
+            },
+            {
+              "condition": "AND",
+              "key": "name",
+              "operator": "=",
+              "value": "D3D Shared Memory Used"
+            }
+          ]
+        }
+      ],
+      "title": "GPU Memory",
+      "type": "timeseries"
+    },
+    {
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "palette-classic"
+          },
+          "custom": {
+            "axisLabel": "",
+            "axisPlacement": "auto",
+            "barAlignment": 0,
+            "drawStyle": "line",
+            "fillOpacity": 10,
+            "gradientMode": "opacity",
+            "hideFrom": {
+              "legend": false,
+              "tooltip": false,
+              "viz": false
+            },
+            "lineInterpolation": "smooth",
+            "lineStyle": {
+              "fill": "solid"
+            },
+            "lineWidth": 1,
+            "pointSize": 5,
+            "scaleDistribution": {
+              "type": "linear"
+            },
+            "showPoints": "never",
+            "spanNulls": false,
+            "stacking": {
+              "group": "A",
+              "mode": "none"
+            },
+            "thresholdsStyle": {
+              "mode": "off"
+            }
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              }
+            ]
+          },
+          "unit": "MHz"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 7,
+        "w": 12,
+        "x": 12,
+        "y": 52
+      },
+      "id": 34,
+      "interval": "$interval",
+      "links": [],
+      "options": {
+        "legend": {
+          "calcs": ["mean", "max", "min"],
+          "displayMode": "table",
+          "placement": "right"
+        },
+        "tooltip": {
+          "mode": "multi",
+          "sort": "none"
+        }
+      },
+      "pluginVersion": "8.4.3",
+      "targets": [
+        {
+          "alias": "GPU Core",
+          "datasource": "Telegraf",
+          "groupBy": [
+            {
+              "params": ["$__interval"],
+              "type": "time"
+            },
+            {
+              "params": ["null"],
+              "type": "fill"
+            }
+          ],
+          "measurement": "lhm",
+          "orderByTime": "ASC",
+          "policy": "default",
+          "refId": "B",
+          "resultFormat": "time_series",
+          "select": [
+            [
+              {
+                "params": ["value"],
+                "type": "field"
+              },
+              {
+                "params": [],
+                "type": "mean"
+              }
+            ]
+          ],
+          "tags": [
+            {
+              "key": "host",
+              "operator": "=~",
+              "value": "/^$host$/"
+            },
+            {
+              "condition": "AND",
+              "key": "hardware_name",
+              "operator": "=~",
+              "value": "/^$gpu$/"
+            },
+            {
+              "condition": "AND",
+              "key": "type",
+              "operator": "=",
+              "value": "Clock"
+            },
+            {
+              "condition": "AND",
+              "key": "name",
+              "operator": "=",
+              "value": "GPU Core"
+            }
+          ]
+        },
+        {
+          "alias": "GPU Memory",
+          "datasource": "Telegraf",
+          "groupBy": [
+            {
+              "params": ["$__interval"],
+              "type": "time"
+            },
+            {
+              "params": ["null"],
+              "type": "fill"
+            }
+          ],
+          "measurement": "lhm",
+          "orderByTime": "ASC",
+          "policy": "default",
+          "refId": "C",
+          "resultFormat": "time_series",
+          "select": [
+            [
+              {
+                "params": ["value"],
+                "type": "field"
+              },
+              {
+                "params": [],
+                "type": "mean"
+              }
+            ]
+          ],
+          "tags": [
+            {
+              "key": "host",
+              "operator": "=~",
+              "value": "/^$host$/"
+            },
+            {
+              "condition": "AND",
+              "key": "hardware_name",
+              "operator": "=~",
+              "value": "/^$gpu$/"
+            },
+            {
+              "condition": "AND",
+              "key": "type",
+              "operator": "=",
+              "value": "Clock"
+            },
+            {
+              "condition": "AND",
+              "key": "name",
+              "operator": "=",
+              "value": "GPU Memory"
+            }
+          ]
+        }
+      ],
+      "title": "GPU Clocks",
+      "type": "timeseries"
+    }
+  ],
+  "refresh": "1m",
+  "schemaVersion": 35,
+  "style": "dark",
+  "tags": ["LHM"],
+  "templating": {
+    "list": [
+      {
+        "current": {},
+        "datasource": "Telegraf",
+        "definition": "SHOW TAG VALUES FROM \"lhm\" WITH KEY = \"host\"",
+        "hide": 0,
+        "includeAll": false,
+        "label": "Host",
+        "multi": false,
+        "name": "host",
+        "options": [],
+        "query": "SHOW TAG VALUES FROM \"lhm\" WITH KEY = \"host\"",
+        "refresh": 1,
+        "regex": "",
+        "skipUrlSync": false,
+        "sort": 0,
+        "type": "query"
+      },
+      {
+        "current": {},
+        "datasource": "Telegraf",
+        "definition": "SHOW TAG VALUES FROM \"lhm\" WITH KEY = \"hardware_name\" WHERE host =~ /$host/ AND hardware_type =~ /Gpu/",
+        "hide": 0,
+        "includeAll": false,
+        "label": "GPU",
+        "multi": false,
+        "name": "gpu",
+        "options": [],
+        "query": "SHOW TAG VALUES FROM \"lhm\" WITH KEY = \"hardware_name\" WHERE host =~ /$host/ AND hardware_type =~ /Gpu/",
+        "refresh": 1,
+        "regex": "",
+        "skipUrlSync": false,
+        "sort": 0,
+        "type": "query"
+      },
+      {
+        "current": {},
+        "datasource": "Telegraf",
+        "definition": "SHOW TAG VALUES FROM \"lhm\" WITH KEY = \"hardware_name\" WHERE host =~ /$host/ AND hardware_type =~ /Storage/",
+        "hide": 0,
+        "includeAll": false,
+        "label": "Disk",
+        "multi": true,
+        "name": "disk",
+        "options": [],
+        "query": "SHOW TAG VALUES FROM \"lhm\" WITH KEY = \"hardware_name\" WHERE host =~ /$host/ AND hardware_type =~ /Storage/",
+        "refresh": 1,
+        "regex": "",
+        "skipUrlSync": false,
+        "sort": 0,
+        "type": "query"
+      },
+      {
+        "current": {},
+        "datasource": "Telegraf",
+        "definition": "SHOW TAG VALUES FROM \"lhm\" WITH KEY = \"hardware_name\" WHERE host =~ /$host/ AND hardware_type =~ /Cpu/",
+        "hide": 0,
+        "includeAll": false,
+        "label": "CPU",
+        "multi": false,
+        "name": "cpu",
+        "options": [],
+        "query": "SHOW TAG VALUES FROM \"lhm\" WITH KEY = \"hardware_name\" WHERE host =~ /$host/ AND hardware_type =~ /Cpu/",
+        "refresh": 1,
+        "regex": "",
+        "skipUrlSync": false,
+        "sort": 0,
+        "type": "query"
+      },
+      {
+        "current": {},
+        "datasource": "Telegraf",
+        "definition": "SHOW TAG VALUES FROM \"lhm\" WITH KEY = \"hardware_name\" WHERE host =~ /$host/ AND hardware_type =~ /IO/",
+        "hide": 0,
+        "includeAll": false,
+        "label": "Chipset",
+        "multi": false,
+        "name": "chipset",
+        "options": [],
+        "query": "SHOW TAG VALUES FROM \"lhm\" WITH KEY = \"hardware_name\" WHERE host =~ /$host/ AND hardware_type =~ /IO/",
+        "refresh": 1,
+        "regex": "",
+        "skipUrlSync": false,
+        "sort": 0,
+        "type": "query"
+      },
+      {
+        "auto": false,
+        "auto_count": 30,
+        "auto_min": "10s",
+        "current": {
+          "selected": false,
+          "text": "5m",
+          "value": "5m"
+        },
+        "hide": 0,
+        "label": "Interval",
+        "name": "interval",
+        "options": [
+          {
+            "selected": false,
+            "text": "10s",
+            "value": "10s"
+          },
+          {
+            "selected": false,
+            "text": "30s",
+            "value": "30s"
+          },
+          {
+            "selected": false,
+            "text": "1m",
+            "value": "1m"
+          },
+          {
+            "selected": true,
+            "text": "5m",
+            "value": "5m"
+          },
+          {
+            "selected": false,
+            "text": "10m",
+            "value": "10m"
+          },
+          {
+            "selected": false,
+            "text": "30m",
+            "value": "30m"
+          },
+          {
+            "selected": false,
+            "text": "1h",
+            "value": "1h"
+          }
+        ],
+        "query": "10s,30s,1m,5m,10m,30m,1h",
+        "queryValue": "",
+        "refresh": 2,
+        "skipUrlSync": false,
+        "type": "interval"
+      }
+    ]
+  },
+  "time": {
+    "from": "now-3h",
+    "to": "now"
+  },
+  "timepicker": {
+    "refresh_intervals": [
+      "5s",
+      "10s",
+      "30s",
+      "1m",
+      "5m",
+      "15m",
+      "30m",
+      "1h",
+      "2h",
+      "1d"
+    ],
+    "time_options": ["5m", "15m", "1h", "6h", "12h", "24h", "2d", "7d", "30d"]
+  },
+  "timezone": "",
+  "title": "Windows: Libre Hardware Monitor",
+  "version": 1,
+  "weekStart": ""
+}
