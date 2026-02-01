@@ -1,0 +1,19 @@
+# LibreHardwareMonitor REST API
+#
+# Using VScode "REST Client" extension (https://github.com/Huachao/vscode-restclient)
+
+@host = localhost
+@port = 8085
+
+###
+
+GET http://{{host}}:{{port}}/metrics
+Content-Type: text/plain
+
+###
+
+GET http://{{host}}:{{port}}/data.json
+Accept: application/json
+Content-Type: application/json
+
+###
