@@ -7,26 +7,29 @@
 Write-Host "Begin Monitoring Setup."
 Write-Host ""
 
+# Ensure running as Administrator, if not, relaunch as Administrator
 If (-NOT ([Security.Principal.WindowsPrincipal][Security.Principal.WindowsIdentity]::GetCurrent()).IsInRole([Security.Principal.WindowsBuiltInRole] "Administrator")) {
     $arguments = "& '" + $myinvocation.mycommand.definition + "'"
     Start-Process powershell -Verb runAs -ArgumentList $arguments
     exit
 }
 
+# Change to script directory
 $SCRIPT_PATH = split-path -parent $PSCommandPath
 Set-Location ${SCRIPT_PATH}
 
 Write-Host ""
-
+Write-Host "Loading setup.ps1 for configuration."
 $SETUP_FILE = "${SCRIPT_PATH}\setup.ps1"
 if (!(Test-Path $SETUP_FILE)) {
-    Write-Host "Creating setup.ps1 with default values."
+    Write-Host "Setup not found, Creating setup.ps1 with default values."
     Add-Content $SETUP_FILE "`$BASE_DIR `= `"$env:USERPROFILE\AppData\Local\Monitoring`""
     Add-Content $SETUP_FILE "`$INFLUX_OUTPUT_HOST `= `"localhost`""
     Add-Content $SETUP_FILE "`$LOGGING_INTERVAL `= `"20s`""
 }
 . $SETUP_FILE
 
+# LibreHardwareMonitor Configuration, customize as needed.
 $LHM_CONFIG = @"
 <?xml version="1.0" encoding="utf-8"?>
 <configuration>
@@ -57,9 +60,11 @@ if ($yes -contains $answ) {
         $ProgressPreference = 'SilentlyContinue' # This exponentially speeds up Invoke-WebRequest
         # https://stackoverflow.com/questions/28682642/powershell-why-is-using-invoke-webrequest-much-slower-than-a-browser-download
 
+        Write-Host "Creating Base Directory and Copying Telegraf Config."
         New-Item -ItemType Directory -Force -Path  ${BASE_DIR} | Out-Null
         Copy-Item -Path ".\telegraf" -Destination ${BASE_DIR} -Recurse
 
+        Write-Host "Customizing Telegraf Config."
         $OUT_DIR = $BASE_DIR.Replace("\", "\\")
         $FILE_DATA = Get-Content ${BASE_DIR}\telegraf\telegraf.conf
         $FILE_DATA = $FILE_DATA.Replace("LIBRE*HARDWARE*FILE", "${OUT_DIR}\\telegraf\\librehardware.ps1")
@@ -69,7 +74,6 @@ if ($yes -contains $answ) {
 
         Write-Host ""
         Write-Host "Download Telegraf."
-
         $TELEGRAF_API_URL = "https://api.github.com/repos/influxdata/telegraf/releases/latest"
         $TELEGRAF_VERSION = (Invoke-RestMethod -Uri $TELEGRAF_API_URL).tag_name -replace '^v',''
         $TELEGRAF_ZIP = "telegraf-${TELEGRAF_VERSION}_windows_amd64.zip"
